@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth
+    username: postgres
+    password: izak7901
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    showSql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: public
+
+  flyway:
+    enable: true
+    baseline-on-migrate: true
+    schemas: public
+
+server:
+  port: 8090
