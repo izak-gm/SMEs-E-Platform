@@ -60,23 +60,25 @@ public class User implements UserDetails {
     return password;
   }
 
+
   @Override
   public boolean isAccountNonExpired() {
-    return UserDetails.super.isAccountNonExpired();
+    return this.isAccountNonExpired;
   }
 
   @Override
   public boolean isAccountNonLocked() {
-    return UserDetails.super.isAccountNonLocked();
+    return this.isAccountNonLocked;
   }
 
   @Override
   public boolean isCredentialsNonExpired() {
-    return UserDetails.super.isCredentialsNonExpired();
+    return this.isCredentialsNonExpired;
   }
 
   @Override
   public boolean isEnabled() {
-    return UserDetails.super.isEnabled();
+    return this.isEnabled;
   }
+
 }
