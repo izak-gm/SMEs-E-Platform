@@ -8,8 +8,8 @@ import com.izak.auth_service.configuration.JwtService;
 import com.izak.auth_service.user.entity.User;
 import com.izak.auth_service.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
