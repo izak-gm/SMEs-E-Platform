@@ -10,6 +10,8 @@ import com.izak.auth_service.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -29,6 +31,17 @@ public class AuthService {
   }
 
   public AuthResponse authenticate(AuthenticateRequest authenticateRequest) {
-return null;
-  };
+    authenticationManager.authenticate(
+          new UsernamePasswordAuthenticationToken(
+                authenticateRequest.email(),
+                authenticateRequest.password()
+          )
+    );
+    var user=userRepository.findByEmail(authenticateRequest.email())
+          .orElseThrow(()-> new UsernameNotFoundException("User not found"));
+    var jwtToken=jwtService.generateToken(user);
+    return AuthResponse.builder()
+          .token(jwtToken)
+          .build();
+  }
 }
