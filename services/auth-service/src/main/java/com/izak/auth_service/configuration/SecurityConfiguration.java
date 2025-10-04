@@ -3,7 +3,6 @@ package com.izak.auth_service.configuration;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -16,7 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfiguration {
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
-  private final AuthenticationProvider authenticationProvider;
 
   private static final String[] WHITE_LIST_URL={"api/v1/auth/**"};
   private static final String[] WHITE_LIST_USER_URL={"api/v1/auth/user/**"};
@@ -35,7 +33,6 @@ public class SecurityConfiguration {
           .sessionManagement(session->session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
           )
-          .authenticationProvider(authenticationProvider)
           .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
           .build();
   }

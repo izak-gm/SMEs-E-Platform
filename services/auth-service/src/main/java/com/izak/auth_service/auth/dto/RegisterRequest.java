@@ -19,6 +19,7 @@ public record RegisterRequest(
       Date dob,
       String gender,
       Auth auth,
+      @NotNull(message = "Password is Required")
       String password
 ) {
 }
