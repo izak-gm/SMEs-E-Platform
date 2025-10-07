@@ -38,7 +38,6 @@ ENV/
 nosetests.xml
 coverage.xml
 *.cover
-*.log
 
 # OS files
 .DS_Store

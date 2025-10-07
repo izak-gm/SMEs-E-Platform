@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import requests
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -71,13 +75,37 @@ WSGI_APPLICATION = 'bizhub.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+CONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')
+SERVER_NAME = config('SERVER_NAME',default='django-service')
+
+try:
+    response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
+    response.raise_for_status()
+    properties= response.json().get('propertySources',[])
+    config_data={}
+    for source in properties:
+        config_data.update(source.get('source',{}))
+except Exception as e:
+    print(f" Warning: Could not load from spring Config Server: {e}")
+    config_data={}
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': config_data.get('django.database.host'),
+        'PORT': config_data.get('django.database.port'),
+        'NAME': config_data.get('django.database.database'),
+        'USER': config_data.get('django.database.user'),
+        'PASSWORD': config_data.get('django.database.password'),
     }
 }
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
