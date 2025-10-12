@@ -15,9 +15,13 @@ spring:
         default_schema: public
 
   flyway:
-    enable: true
+    enabled: true
     baseline-on-migrate: true
     schemas: public
 
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 server:
   port: 8090

@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import java.util.Date;
 
 public record RegisterRequest(
-      Integer id,
+      Long id,
       @NotNull(message = "First name is required")
       String firstName,
       @NotNull(message = "Last name is required")

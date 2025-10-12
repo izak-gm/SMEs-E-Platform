@@ -8,3 +8,5 @@ gunicorn==21.2.0
 whitenoise==6.6.0
 pillow==10.4.0
 requests
+djangorestframework-simplejwt
+PyJWT

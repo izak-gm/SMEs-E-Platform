@@ -9,12 +9,14 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfigurationSource;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
+  private final CorsConfigurationSource corsConfigurationSource; // ✅ Injected bean
 
   private static final String[] WHITE_LIST_URL={"api/v1/auth/**"};
   private static final String[] WHITE_LIST_USER_URL={"api/v1/auth/user/**"};
@@ -23,6 +25,7 @@ public class SecurityConfiguration {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws Exception{
     return httpSecurity
+          .cors(cors -> cors.configurationSource(corsConfigurationSource)) // ✅ use external config
           .csrf(AbstractHttpConfigurer::disable)
           .authorizeHttpRequests( auth->auth
                 .requestMatchers(WHITE_LIST_URL).permitAll()
