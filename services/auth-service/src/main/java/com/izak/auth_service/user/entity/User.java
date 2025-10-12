@@ -1,5 +1,6 @@
 package com.izak.auth_service.user.entity;
 
+import com.izak.auth_service.address.entity.Address;
 import com.izak.auth_service.user.enums.Auth;
 import jakarta.persistence.*;
 import lombok.*;
@@ -29,7 +30,7 @@ public class User implements UserDetails {
         strategy = GenerationType.SEQUENCE,
         generator = "user_sequence"
   )
-  private Integer id;
+  private Long id;
   private String firstName;
   private String lastName;
   private String email;
@@ -37,6 +38,9 @@ public class User implements UserDetails {
   private String gender;
   private Date dob;
   private String password;
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "address_id", referencedColumnName = "id")
+  private Address address;
 
   @Enumerated(EnumType.STRING)
   private Auth auth;
