@@ -10,3 +10,4 @@ pillow==10.4.0
 requests
 djangorestframework-simplejwt
 PyJWT
+py_eureka_client
