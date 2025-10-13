@@ -1,0 +1,112 @@
+{
+  "project_info": {
+    "name": "resources",
+    "path": "/home/izak/development/SMEs platform/SMEs-E-Platform/services/config-server/src/main/resources",
+    "generated_at": "2025-10-13T17:16:30.109612357",
+    "total_files": 5,
+    "total_size": 1550
+  },
+  "structure": {
+    "application.yaml": {
+      "type": "file",
+      "info": {
+        "size": 204,
+        "last_modified": "2025-10-13T17:16:29.950068684",
+        "mime_type": "text/x-yaml",
+        "extension": ".yaml"
+      }
+    },
+    "configurations": {
+      "django-service.yml": {
+        "type": "file",
+        "info": {
+          "size": 300,
+          "last_modified": "2025-10-13T17:16:30.056468317",
+          "mime_type": "text/x-yaml",
+          "extension": ".yml"
+        }
+      },
+      "secrets": {
+        "secrets.yml": {
+          "type": "file",
+          "info": {
+            "size": 232,
+            "last_modified": "2025-10-13T17:16:30.067194213",
+            "mime_type": "text/x-yaml",
+            "extension": ".yml"
+          }
+        }
+      },
+      "discovery-service.yml": {
+        "type": "file",
+        "info": {
+          "size": 223,
+          "last_modified": "2025-10-13T17:16:30.074237326",
+          "mime_type": "text/x-yaml",
+          "extension": ".yml"
+        }
+      },
+      "auth-service.yml": {
+        "type": "file",
+        "info": {
+          "size": 591,
+          "last_modified": "2025-10-13T17:16:30.103779404",
+          "mime_type": "text/x-yaml",
+          "extension": ".yml"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "application.yaml",
+      "content": "spring:\n  profiles:\n    active: native\n  application:\n    name: config-server\n  cloud:\n    config:\n      server:\n        native:\n          search-locations: classpath:/configurations\n\nserver:\n  port: 8888",
+      "info": {
+        "size": 204,
+        "last_modified": "2025-10-13T17:16:29.950068684",
+        "mime_type": "text/x-yaml",
+        "extension": ".yaml"
+      }
+    },
+    {
+      "path": "configurations/django-service.yml",
+      "content": "django:\n  config:\n    import: file:./secrets/secret.yml\n\n  database:\n    name: ${DJANGO_DB}\n    host: ${POSTGRES_HOST}\n    port: ${POSTGRES_PORT}\n    user: ${POSTGRES_USER}\n    password: ${POSTGRES_PASSWORD}\n  kafka:\n    host: ${KAFKA_HOST}\n    port: ${KAFKA_PORT}\n#  secret_key: ${DJANGO_SECRET_KEY}",
+      "info": {
+        "size": 300,
+        "last_modified": "2025-10-13T17:16:30.056468317",
+        "mime_type": "text/x-yaml",
+        "extension": ".yml"
+      }
+    },
+    {
+      "path": "configurations/secrets/secrets.yml",
+      "content": "##postgres\nPOSTGRES_USER: postgres\nPOSTGRES_PASSWORD: izak7901\nPOSTGRES_HOST: localhost\nPOSTGRES_PORT: 5432\n# Kafka\nKAFKA_PORT: 9092\nKAFKA_HOST: localhost\n##Auth service\nAUTH_DB: auth\n#\n##Django\nDJANGO_DB: bizhub\nDJANGO_SECRET_KEY:\n",
+      "info": {
+        "size": 232,
+        "last_modified": "2025-10-13T17:16:30.067194213",
+        "mime_type": "text/x-yaml",
+        "extension": ".yml"
+      }
+    },
+    {
+      "path": "configurations/discovery-service.yml",
+      "content": "eureka:\n  instance:\n    hostname: localhost\n  client:\n    registerWithEureka: false\n    fetchRegistry: false\n    serviceUrl:\n      defaultZone: http://${eureka.instance.hostname}/${server.port}/eureka/\n\nserver:\n  port: 8761",
+      "info": {
+        "size": 223,
+        "last_modified": "2025-10-13T17:16:30.074237326",
+        "mime_type": "text/x-yaml",
+        "extension": ".yml"
+      }
+    },
+    {
+      "path": "configurations/auth-service.yml",
+      "content": "spring:\n  config:\n    import: file:./secrets/secret.yml\n  datasource:\n    url: jdbc:postgresql://localhost:5432/${AUTH_DB}\n    username: ${POSTGRES_USER}\n    password: ${POSTGRES_PASSWORD}\n    driver-class-name: org.postgresql.Driver\n\n  jpa:\n    showSql: true\n    hibernate:\n      ddl-auto: update\n    properties:\n      hibernate:\n        format_sql: true\n        default_schema: public\n\n  flyway:\n    enabled: true\n    baseline-on-migrate: true\n    schemas: public\n\nlogging:\n  level:\n    org.hibernate.SQL: DEBUG\n    org.hibernate.type.descriptor.sql.BasicBinder: TRACE\nserver:\n  port: 8090",
+      "info": {
+        "size": 591,
+        "last_modified": "2025-10-13T17:16:30.103779404",
+        "mime_type": "text/x-yaml",
+        "extension": ".yml"
+      }
+    }
+  ]
+}

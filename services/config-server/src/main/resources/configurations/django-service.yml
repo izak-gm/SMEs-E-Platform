@@ -1,3 +1,18 @@
+#django:
+#  config:
+#    import: file:./secrets/secret.yml
+#
+#  database:
+#    name: ${DJANGO_DB}
+#    host: ${POSTGRES_HOST}
+#    port: ${POSTGRES_PORT}
+#    user: ${POSTGRES_USER}
+#    password: ${POSTGRES_PASSWORD}
+#  kafka:
+#    host: ${KAFKA_HOST}
+#    port: ${KAFKA_PORT}
+##  secret_key: ${DJANGO_SECRET_KEY}
+
 django:
   database:
 #    name: ${DJANGO_DB}
@@ -11,4 +26,4 @@ django:
   kafka:
     host: localhost
     port: 9092
-#  secret_key: ${DJANGO_SECRET_KEY}
+#  secret_key: ${D

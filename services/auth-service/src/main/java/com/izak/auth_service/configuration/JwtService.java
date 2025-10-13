@@ -1,5 +1,6 @@
 package com.izak.auth_service.configuration;
 
+import com.izak.auth_service.user.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -17,23 +18,24 @@ import java.util.function.Function;
 
 @Service
 public class JwtService {
-  @Value("${secret_key}")
 
+  @Value("${secret_key}")
   private String SECRET_KEY;
-  public String extractUsername(String token){
-    return extractClaim(token,Claims::getSubject);
+
+  public String extractUsername(String token) {
+    return extractClaim(token, Claims::getSubject);
   }
 
-  private <T> T extractClaim(String token, Function<Claims ,T> claimsResolver) {
-    final Claims claims=extractAllClaims(token);
+  private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+    final Claims claims = extractAllClaims(token);
     return claimsResolver.apply(claims);
   }
 
-  private Claims extractAllClaims(String accessToken) {
+  private Claims extractAllClaims(String token) {
     return Jwts.parser()
           .verifyWith(getSignKey())
           .build()
-          .parseSignedClaims(accessToken)
+          .parseSignedClaims(token)
           .getPayload();
   }
 
@@ -41,33 +43,40 @@ public class JwtService {
     return Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
   }
 
-  public String generateToken(UserDetails userDetails) {
-    return generateTokenUserDetails(new HashMap<>(),userDetails);
-  }
-
-  private String generateTokenUserDetails(Map<String, Object> extraClaims, UserDetails userDetails) {
-    extraClaims.put("roles",userDetails.getAuthorities().stream()
+  // ✅ Generate token with User entity (includes id, email, and role)
+  public String generateToken(User user) {
+    Map<String, Object> claims = new HashMap<>();
+    claims.put("id", user.getId());
+    claims.put("email", user.getEmail());
+    claims.put("roles", user.getAuthorities().stream()
           .map(GrantedAuthority::getAuthority)
           .toList());
+
+    return buildToken(claims, user.getEmail());
+  }
+
+  private String buildToken(Map<String, Object> claims, String subject) {
+    long now = System.currentTimeMillis();
     return Jwts.builder()
-          .claims(extraClaims)
-          .subject(userDetails.getUsername())
-          .issuedAt(new Date(System.currentTimeMillis()))
-          .expiration(new Date(System.currentTimeMillis()))
+          .claims(claims)
+          .subject(subject)
+          .issuedAt(new Date(now))
+          // Set expiration (1 hour)
+          .expiration(new Date(now + 1000 * 60 * 60))
           .signWith(getSignKey())
           .compact();
   }
 
-  public boolean  isTokenValid(String token ,UserDetails userDetails){
-    final  String username=extractUsername(token);
+  public boolean isTokenValid(String token, UserDetails userDetails) {
+    final String username = extractUsername(token);
     return (username.equals(userDetails.getUsername())) && !isTokenExpired(token);
   }
 
   private boolean isTokenExpired(String token) {
-    return  extractExpiration(token).before(new Date());
+    return extractExpiration(token).before(new Date());
   }
 
   private Date extractExpiration(String token) {
-    return  extractClaim(token ,Claims::getExpiration);
+    return extractClaim(token, Claims::getExpiration);
   }
 }
