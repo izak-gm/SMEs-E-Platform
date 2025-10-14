@@ -4,7 +4,7 @@ import py_eureka_client.eureka_client as eureka_client
 
 class ApiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'api'
+    name = 'bizhub_products'
 
 EUREKA_SERVER = "http://localhost:8761/eureka"
 APP_NAME = "django-microservice"

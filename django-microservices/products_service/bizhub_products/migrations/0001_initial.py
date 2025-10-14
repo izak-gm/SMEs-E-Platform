@@ -34,15 +34,15 @@ class Migration(migrations.Migration):
                 ('order_type', models.CharField(max_length=100)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.products')),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bizhub_products.products')),
             ],
         ),
         migrations.CreateModel(
             name='OrderDetails',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.orders')),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.products')),
+                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bizhub_products.orders')),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bizhub_products.products')),
             ],
         ),
     ]
