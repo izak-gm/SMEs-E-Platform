@@ -1,0 +1,858 @@
+{
+  "project_info": {
+    "name": "django-microservices",
+    "path": "/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices",
+    "generated_at": "2025-10-15T13:43:50.838448396",
+    "total_files": 43,
+    "total_size": 26232
+  },
+  "structure": {
+    "__init__.py": {
+      "type": "file",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.386748746",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    ".gitignore": {
+      "type": "file",
+      "info": {
+        "size": 589,
+        "last_modified": "2025-10-15T13:43:50.484041947",
+        "mime_type": "text/plain",
+        "extension": ".gitignore"
+      }
+    },
+    "requirements.txt": {
+      "type": "file",
+      "info": {
+        "size": 266,
+        "last_modified": "2025-10-15T13:43:50.523040033",
+        "mime_type": "text/plain",
+        "extension": ".txt"
+      }
+    },
+    "products_service": {
+      "products": {
+        "__pycache__": {
+        },
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-15T13:43:50.552317827",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "settings.py": {
+          "type": "file",
+          "info": {
+            "size": 4210,
+            "last_modified": "2025-10-15T13:43:50.553774214",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "asgi.py": {
+          "type": "file",
+          "info": {
+            "size": 409,
+            "last_modified": "2025-10-15T13:43:50.591250083",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "bizhub.run.xml": {
+          "type": "file",
+          "info": {
+            "size": 186,
+            "last_modified": "2025-10-15T13:43:50.596789266",
+            "mime_type": "application/xml",
+            "extension": ".xml"
+          }
+        },
+        "wsgi.py": {
+          "type": "file",
+          "info": {
+            "size": 409,
+            "last_modified": "2025-10-15T13:43:50.60259618",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "urls.py": {
+          "type": "file",
+          "info": {
+            "size": 847,
+            "last_modified": "2025-10-15T13:43:50.607703571",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      },
+      "__init__.py": {
+        "type": "file",
+        "info": {
+          "size": 0,
+          "last_modified": "2025-10-15T13:43:50.614046771",
+          "mime_type": "text/x-python",
+          "extension": ".py"
+        }
+      },
+      "db.sqlite3": {
+        "type": "file",
+        "info": {
+          "size": 0,
+          "last_modified": "2025-10-15T13:43:50.615139052",
+          "mime_type": "application/octet-stream",
+          "extension": ".sqlite3"
+        }
+      },
+      "manage.py": {
+        "type": "file",
+        "info": {
+          "size": 672,
+          "last_modified": "2025-10-15T13:43:50.616596178",
+          "mime_type": "application/x-sh",
+          "extension": ".py"
+        }
+      },
+      "bizhub_products": {
+        "__pycache__": {
+        },
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-15T13:43:50.621853692",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "tests.py": {
+          "type": "file",
+          "info": {
+            "size": 60,
+            "last_modified": "2025-10-15T13:43:50.622978847",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "admin.py": {
+          "type": "file",
+          "info": {
+            "size": 63,
+            "last_modified": "2025-10-15T13:43:50.631276456",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "apps.py": {
+          "type": "file",
+          "info": {
+            "size": 504,
+            "last_modified": "2025-10-15T13:43:50.638552697",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "migrations": {
+          "__pycache__": {
+          },
+          "__init__.py": {
+            "type": "file",
+            "info": {
+              "size": 0,
+              "last_modified": "2025-10-15T13:43:50.673209304",
+              "mime_type": "text/x-python",
+              "extension": ".py"
+            }
+          },
+          "0001_initial.py": {
+            "type": "file",
+            "info": {
+              "size": 1939,
+              "last_modified": "2025-10-15T13:43:50.674937963",
+              "mime_type": "text/x-python",
+              "extension": ".py"
+            }
+          }
+        },
+        "models.py": {
+          "type": "file",
+          "info": {
+            "size": 1499,
+            "last_modified": "2025-10-15T13:43:50.682254881",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "views.py": {
+          "type": "file",
+          "info": {
+            "size": 443,
+            "last_modified": "2025-10-15T13:43:50.687850066",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "serializers.py": {
+          "type": "file",
+          "info": {
+            "size": 317,
+            "last_modified": "2025-10-15T13:43:50.694373527",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "urls.py": {
+          "type": "file",
+          "info": {
+            "size": 219,
+            "last_modified": "2025-10-15T13:43:50.700290231",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      }
+    },
+    "orders_service": {
+      "orders_service": {
+        "__pycache__": {
+          "urls.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 1086,
+              "last_modified": "2025-10-15T13:43:50.70882252",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "__init__.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 212,
+              "last_modified": "2025-10-15T13:43:50.744260401",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "settings.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 3865,
+              "last_modified": "2025-10-15T13:43:50.749217146",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          }
+        },
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-15T13:43:50.753687129",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "settings.py": {
+          "type": "file",
+          "info": {
+            "size": 4259,
+            "last_modified": "2025-10-15T13:43:50.754825037",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "asgi.py": {
+          "type": "file",
+          "info": {
+            "size": 405,
+            "last_modified": "2025-10-15T13:43:50.757950102",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "wsgi.py": {
+          "type": "file",
+          "info": {
+            "size": 405,
+            "last_modified": "2025-10-15T13:43:50.76115611",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "urls.py": {
+          "type": "file",
+          "info": {
+            "size": 770,
+            "last_modified": "2025-10-15T13:43:50.763907156",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      },
+      "manage.py": {
+        "type": "file",
+        "info": {
+          "size": 670,
+          "last_modified": "2025-10-15T13:43:50.767481226",
+          "mime_type": "application/x-sh",
+          "extension": ".py"
+        }
+      },
+      "bizhub_orders": {
+        "__pycache__": {
+          "models.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 252,
+              "last_modified": "2025-10-15T13:43:50.770164837",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "apps.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 588,
+              "last_modified": "2025-10-15T13:43:50.780537786",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "__init__.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 211,
+              "last_modified": "2025-10-15T13:43:50.787228495",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "admin.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 255,
+              "last_modified": "2025-10-15T13:43:50.791843428",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          }
+        },
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-15T13:43:50.796945886",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "tests.py": {
+          "type": "file",
+          "info": {
+            "size": 60,
+            "last_modified": "2025-10-15T13:43:50.797900511",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "admin.py": {
+          "type": "file",
+          "info": {
+            "size": 63,
+            "last_modified": "2025-10-15T13:43:50.802170179",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "apps.py": {
+          "type": "file",
+          "info": {
+            "size": 157,
+            "last_modified": "2025-10-15T13:43:50.806370486",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "migrations": {
+          "__pycache__": {
+            "__init__.cpython-313.pyc": {
+              "type": "file",
+              "info": {
+                "size": 222,
+                "last_modified": "2025-10-15T13:43:50.811462578",
+                "mime_type": "application/octet-stream",
+                "extension": ".pyc"
+              }
+            }
+          },
+          "__init__.py": {
+            "type": "file",
+            "info": {
+              "size": 0,
+              "last_modified": "2025-10-15T13:43:50.81716291",
+              "mime_type": "text/x-python",
+              "extension": ".py"
+            }
+          }
+        },
+        "models.py": {
+          "type": "file",
+          "info": {
+            "size": 57,
+            "last_modified": "2025-10-15T13:43:50.818601769",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "views.py": {
+          "type": "file",
+          "info": {
+            "size": 63,
+            "last_modified": "2025-10-15T13:43:50.826283106",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.386748746",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": ".gitignore",
+      "content": "# Python\n__pycache__/\n*.py[cod]\n*.pyo\n*.pyd\n*.so\n*.egg-info/\n.eggs/\n\n# Django\n*.log\n*.pot\n*.pyc\nproducts_service/db.sqlite3\nmedia/\nstaticfiles/\nlocal_settings.py\n\n# Environments\n.env\n.venv/\nvenv/\nenv/\nENV/\n\n# IDEs / Editors\n.vscode/\n.idea/\n*.swp\n\n# Migrations (optional – keep if you want to regenerate them each time)\n# */migrations/\n# !*/migrations/__init__.py\n\n# Testing\n.coverage\n.tox/\nnosetests.xml\ncoverage.xml\n*.cover\n\n# OS files\n.DS_Store\nThumbs.db\n\n# Deployment\n*.bak\n*.pid\n*.seed\n*.orig\n*.rej\n\n# PyInstaller\n*.manifest\n*.spec\nbuild/\ndist/\n\n# Docker\ndocker-compose.override.yml\n",
+      "info": {
+        "size": 589,
+        "last_modified": "2025-10-15T13:43:50.484041947",
+        "mime_type": "text/plain",
+        "extension": ".gitignore"
+      }
+    },
+    {
+      "path": "requirements.txt",
+      "content": "Django==5.1.2\ndjangorestframework==3.15.2\npsycopg[binary]\nkafka-python==2.0.2\npython-decouple==3.8\ndjango-cors-headers==4.4.0\ngunicorn==21.2.0\nwhitenoise==6.6.0\npillow==10.4.0\nrequests\ndjangorestframework-simplejwt\nPyJWT\npy_eureka_client\nminio\ndjango-storages\nboto3\n",
+      "info": {
+        "size": 266,
+        "last_modified": "2025-10-15T13:43:50.523040033",
+        "mime_type": "text/plain",
+        "extension": ".txt"
+      }
+    },
+    {
+      "path": "products_service/products/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.552317827",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/products/settings.py",
+      "content": "\"\"\"\nDjango settings for products_service project.\n\nGenerated by 'django-admin startproject' using Django 5.2.7.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.2/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/5.2/ref/settings/\n\"\"\"\n\nfrom pathlib import Path\nimport requests\nfrom decouple import config\n\n# Build paths inside the project like this: BASE_DIR / 'subdir'.\nBASE_DIR = Path(__file__).resolve().parent.parent\n\n\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/\n\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-#e((0q0@q0@6)jym604d-*u+^p2pu918-ub*g(0+-+zp1imzie'\n\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n\nALLOWED_HOSTS = [\"*\"]\n\n\n# Application definition\n\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'bizhub_products',\n    'rest_framework',\n]\n\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\n\nROOT_URLCONF = 'products_service.urls'\n\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',\n                'django.contrib.messages.context_processors.messages',\n            ],\n        },\n    },\n]\n\nWSGI_APPLICATION = 'products_service.wsgi.application'\n\n\n# Database\n# https://docs.djangoproject.com/en/5.2/ref/settings/#databases\nCONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')\nSERVER_NAME = config('SERVER_NAME',default='products-service')\n\ntry:\n    response = requests.get(f\"{CONFIG_SERVER_URL}/{SERVER_NAME}/default\")\n    response.raise_for_status()\n    properties= response.json().get('propertySources',[])\n    config_data={}\n    for source in properties:\n        config_data.update(source.get('source',{}))\nexcept Exception as e:\n    print(f\" Warning: Could not load from spring Config Server: {e}\")\n    config_data={}\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'HOST': config_data.get('django.database.host'),\n        'PORT': config_data.get('django.database.port'),\n        'NAME': config_data.get('django.database.database'),\n        'USER': config_data.get('django.database.user'),\n        'PASSWORD': config_data.get('django.database.password'),\n    }\n}\n#\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.sqlite3',\n#         'NAME': BASE_DIR / 'db.sqlite3',\n#     }\n# }\n\n\n# Password validation\n# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators\n\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',\n    },\n]\n\n\n# Internationalization\n# https://docs.djangoproject.com/en/5.2/topics/i18n/\n\nLANGUAGE_CODE = 'en-us'\n\nTIME_ZONE = 'UTC'\n\nUSE_I18N = True\n\nUSE_TZ = True\n\n\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\n\nSTATIC_URL = 'static/'\n\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\n\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n",
+      "info": {
+        "size": 4210,
+        "last_modified": "2025-10-15T13:43:50.553774214",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/products/asgi.py",
+      "content": "\"\"\"\nASGI config for products_service project.\n\nIt exposes the ASGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.2/howto/deployment/asgi/\n\"\"\"\n\nimport os\n\nfrom django.core.asgi import get_asgi_application\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'products_service.settings')\n\napplication = get_asgi_application()\n",
+      "info": {
+        "size": 409,
+        "last_modified": "2025-10-15T13:43:50.591250083",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/products/bizhub.run.xml",
+      "content": "<component name=\"ProjectRunConfigurationManager\">\n  <configuration default=\"false\" name=\"bizhub\" type=\"CompoundRunConfigurationType\">\n    <method v=\"2\" />\n  </configuration>\n</component>",
+      "info": {
+        "size": 186,
+        "last_modified": "2025-10-15T13:43:50.596789266",
+        "mime_type": "application/xml",
+        "extension": ".xml"
+      }
+    },
+    {
+      "path": "products_service/products/wsgi.py",
+      "content": "\"\"\"\nWSGI config for products_service project.\n\nIt exposes the WSGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/\n\"\"\"\n\nimport os\n\nfrom django.core.wsgi import get_wsgi_application\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'products_service.settings')\n\napplication = get_wsgi_application()\n",
+      "info": {
+        "size": 409,
+        "last_modified": "2025-10-15T13:43:50.60259618",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/products/urls.py",
+      "content": "\"\"\"\nURL configuration for products_service project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/5.2/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\n\"\"\"\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('bizhub_products/v1/', include('bizhub_products.urls')),\n]\n",
+      "info": {
+        "size": 847,
+        "last_modified": "2025-10-15T13:43:50.607703571",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.614046771",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/db.sqlite3",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.615139052",
+        "mime_type": "application/octet-stream",
+        "extension": ".sqlite3"
+      }
+    },
+    {
+      "path": "products_service/manage.py",
+      "content": "#!/usr/bin/env python\n\"\"\"Django's command-line utility for administrative tasks.\"\"\"\nimport os\nimport sys\n\n\ndef main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'products_service.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"\n        ) from exc\n    execute_from_command_line(sys.argv)\n\n\nif __name__ == '__main__':\n    main()\n",
+      "info": {
+        "size": 672,
+        "last_modified": "2025-10-15T13:43:50.616596178",
+        "mime_type": "application/x-sh",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.621853692",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/tests.py",
+      "content": "from django.test import TestCase\n\n# Create your tests here.\n",
+      "info": {
+        "size": 60,
+        "last_modified": "2025-10-15T13:43:50.622978847",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/admin.py",
+      "content": "from django.contrib import admin\n\n# Register your models here.\n",
+      "info": {
+        "size": 63,
+        "last_modified": "2025-10-15T13:43:50.631276456",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/apps.py",
+      "content": "from django.apps import AppConfig\nimport py_eureka_client.eureka_client as eureka_client\n\n\nclass ApiConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'bizhub_products'\n\n    def config(self):\n        EUREKA_SERVER = \"http://localhost:8761/eureka\"\n        APP_NAME = \"django-microservice\"\n        INSTANCE_PORT = 8000\n\n        eureka_client.init(\n            eureka_server=EUREKA_SERVER,\n            app_name=APP_NAME,\n            instance_port=INSTANCE_PORT\n        )\n",
+      "info": {
+        "size": 504,
+        "last_modified": "2025-10-15T13:43:50.638552697",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/migrations/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.673209304",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/migrations/0001_initial.py",
+      "content": "# Generated by Django 5.1.2 on 2025-10-07 18:19\n\nimport django.db.models.deletion\nfrom django.db import migrations, models\n\n\nclass Migration(migrations.Migration):\n\n    initial = True\n\n    dependencies = [\n    ]\n\n    operations = [\n        migrations.CreateModel(\n            name='Products',\n            fields=[\n                ('product_id', models.AutoField(primary_key=True, serialize=False)),\n                ('name', models.CharField(max_length=100)),\n                ('price', models.FloatField()),\n                ('quantity', models.IntegerField()),\n                ('image', models.ImageField(upload_to='images/')),\n                ('offer_price', models.FloatField()),\n                ('created', models.DateTimeField(auto_now_add=True)),\n                ('updated', models.DateTimeField(auto_now=True)),\n            ],\n        ),\n        migrations.CreateModel(\n            name='Orders',\n            fields=[\n                ('order_id', models.AutoField(primary_key=True, serialize=False)),\n                ('quantity', models.IntegerField()),\n                ('price', models.FloatField()),\n                ('order_type', models.CharField(max_length=100)),\n                ('created', models.DateTimeField(auto_now_add=True)),\n                ('updated', models.DateTimeField(auto_now=True)),\n                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bizhub_products.products')),\n            ],\n        ),\n        migrations.CreateModel(\n            name='OrderDetails',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bizhub_products.orders')),\n                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='bizhub_products.products')),\n            ],\n        ),\n    ]\n",
+      "info": {
+        "size": 1939,
+        "last_modified": "2025-10-15T13:43:50.674937963",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/models.py",
+      "content": "from django.db import models\n\n\n# Create your models here.\nclass Products(models.Model):\n    product_id = models.AutoField(primary_key=True)\n    name = models.CharField(max_length=100)\n    description = models.TextField()\n    price = models.FloatField()\n    quantity = models.IntegerField()\n    image = models.ImageField(upload_to='images/')\n    offer_price = models.FloatField()\n    created = models.DateField(auto_now_add=True,)\n    updated = models.DateField(auto_now=True)\n\n    def __str__(self):\n        name = self.name\n        description = self.description\n        price = self.price\n        quantity = self.quantity\n\n        return f'{name} , {description} - {price} - {quantity}'\n\n\nclass Orders(models.Model):\n    order_id = models.AutoField(primary_key=True)\n    product = models.ForeignKey(Products, on_delete=models.CASCADE)\n    quantity = models.IntegerField()\n    price = models.FloatField()\n    total_amount = models.FloatField(default=0.00)\n    order_type = models.CharField(max_length=100)\n    created = models.DateField(auto_now_add=True)\n    updated = models.DateField(auto_now=True)\n\n    def __str__(self):\n        order_type = self.order_type\n        product_id = self.product.id\n        quantity = self.quantity\n        price = self.price\n\n        return f'{order_type} , {product_id} - {quantity} - {price}'\n\n\nclass OrderDetails(models.Model):\n    order = models.ForeignKey(Orders, on_delete=models.CASCADE)\n    product = models.ForeignKey(Products, on_delete=models.CASCADE)\n",
+      "info": {
+        "size": 1499,
+        "last_modified": "2025-10-15T13:43:50.682254881",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/views.py",
+      "content": "from django.shortcuts import render\nfrom rest_framework import generics\nfrom .models import Products,Orders\nfrom .serializers import ProductSerializer, OrderSerializer\n\n\n# Create your views here.\nclass ProductList(generics.ListCreateAPIView):\n    queryset = Products.objects.all()\n    serializer_class = ProductSerializer\n\nclass OrderList(generics.ListCreateAPIView):\n    queryset = Orders.objects.all()\n    serializer_class = OrderSerializer\n",
+      "info": {
+        "size": 443,
+        "last_modified": "2025-10-15T13:43:50.687850066",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/serializers.py",
+      "content": "from rest_framework import serializers\nfrom .models import Products,Orders\n\nclass ProductSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Products\n        fields = '__all__'\n\nclass OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Orders\n        fields = '__all__'\n",
+      "info": {
+        "size": 317,
+        "last_modified": "2025-10-15T13:43:50.694373527",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/urls.py",
+      "content": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path(\"products/\", views.ProductList.as_view()),\n    path(\"products/\", views.ProductList.as_view()),\n    path(\"orders/\", views.OrderList.as_view()),\n]",
+      "info": {
+        "size": 219,
+        "last_modified": "2025-10-15T13:43:50.700290231",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__pycache__/urls.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh\u0002\u0003\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\\\u0000\u0000\u0000\u0000S\u0000r\u0000S\u0001S\u0002K\u0001J\u0002r\u0002 \u0000S\u0001S\u0003K\u0003J\u0004r\u0004 \u0000\\\u0004\"\u0000S\u0004\\\u0002R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u0000/\u0001r\u0007g\u0005)\u0006a\u0002\u0000\u0000\nURL configuration for orders_service project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/5.1/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\né\u0000\u0000\u0000\u0000)\u0001Ú\u0005admin)\u0001Ú\u0004pathz\u0006admin/N)\bÚ\u0007__doc__Ú\u000edjango.contribr\u0003\u0000\u0000\u0000Ú\u000bdjango.urlsr\u0004\u0000\u0000\u0000Ú\u0004siteÚ\u0004urlsÚ\u000burlpatterns©\u0000ó\u0000\u0000\u0000\u0000Úo/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/orders_service/urls.pyÚ\b<module>r\u000e\u0000\u0000\u0000\u0001\u0000\u0000\u0000s-\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001ñ\u0002\u000f\u0001\u0004õ \u0000\u0001!Ý\u0000\u001cñ\u0006\u0000\u0005\t\u00185::??Ó\u0004#ð\u0003\u0002\u000f\u0002\u000br\f\u0000\u0000\u0000",
+      "info": {
+        "size": 1086,
+        "last_modified": "2025-10-15T13:43:50.70882252",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Ús/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/orders_service/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 212,
+        "last_modified": "2025-10-15T13:43:50.744260401",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__pycache__/settings.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000xïh£\u0010\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\t\u0000\u0000\u0000\u0000\u0000\u0000\u0000óà\u0002\u0000\u0000\u0000S\u0000r\u0000S\u0001S\u0002K\u0001J\u0002r\u0002 \u0000S\u0001S\u0003K\u0003r\u0003S\u0001S\u0004K\u0004J\u0005r\u0005 \u0000\\\u0002\"\u0000\\\u00065\u0001\u0000\u0000\u0000\u0000\u0000\u0000R\u000f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\tS\u0005r\nS\u0006r\u000bS\u0007/\u0001r\f/\u0000S\bQ\u0001r\r/\u0000S\tQ\u0001r\u000eS\nr\u000fS\u000b/\u0000S\u0006S\f/\u0000S\rQ\u00010\u0001S\u000e.\u0004/\u0001r\u0010S\u000fr\u0011\\\u0005\"\u0000S\u0010S\u0011S\u00129\u0002r\u0012\\\u0005\"\u0000S\u0013S\u0014S\u00129\u0002r\u0013\u001e\u0000\\\u0003R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0012\u000e\u0000S\u0015\\\u0013\u000e\u0000S\u00163\u00045\u0001\u0000\u0000\u0000\u0000\u0000\u0000r\u0015\\\u0015R-\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\\\u0015R/\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0017/\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u0000r\u00180\u0000r\u0019\\\u0018\u0013\u0000H$\u0000\u0000r\u001a\\\u0019R7\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\\\u001aR)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00180\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u00005\u0001\u0000\u0000\u0000\u0000\u0000\u0000 \u0000M&\u0000\u0000\u000b\u0000 \u0000S\u001aS\u001b\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001c5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001d5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001e5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001f5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S 5\u0001\u0000\u0000\u0000\u0000\u0000\u0000S!.\u00060\u0001r\u001fS\"S#0\u0001S\"S$0\u0001S\"S%0\u0001S\"S&0\u0001/\u0004r S'r!S(r\"S\u0006r#S\u0006r$S)r%S*r&g\u0003!\u0000\\\u001c\u0007\u0000a\u0017\u0000\u0000r\u001d\\\u001e\"\u0000S\u0019\\\u001d\u000e\u00003\u00025\u0001\u0000\u0000\u0000\u0000\u0000\u0000 \u00000\u0000r\u0019\u001f\u0000S\u0003r\u001dC\u001dNS\u0003r\u001dC\u001df\u0001f\u0000=\u0003\u001f\u0000f\u0001)+a3\u0001\u0000\u0000\nDjango settings for orders_service project.\n\nGenerated by 'django-admin startproject' using Django 5.1.2.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/5.1/ref/settings/\né\u0000\u0000\u0000\u0000)\u0001Ú\u0004PathN)\u0001Ú\u0006configzBdjango-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#TÚ\u0001*)\bz\u0014django.contrib.adminz\u0013django.contrib.authz\u001bdjango.contrib.contenttypesz\u0017django.contrib.sessionsz\u0017django.contrib.messagesz\u001adjango.contrib.staticfilesÚ\rbizhub_ordersÚ\u000erest_framework)\u0007z-django.middleware.security.SecurityMiddlewarez4django.contrib.sessions.middleware.SessionMiddlewarez)django.middleware.common.CommonMiddlewarez)django.middleware.csrf.CsrfViewMiddlewarez7django.contrib.auth.middleware.AuthenticationMiddlewarez4django.contrib.messages.middleware.MessageMiddlewarez6django.middleware.clickjacking.XFrameOptionsMiddlewarez\u0013orders_service.urlsz/django.template.backends.django.DjangoTemplatesÚ\u0012context_processors)\u0004z(django.template.context_processors.debugz*django.template.context_processors.requestz+django.contrib.auth.context_processors.authz3django.contrib.messages.context_processors.messages)\u0004Ú\u0007BACKENDÚ\u0004DIRSÚ\bAPP_DIRSÚ\u0007OPTIONSz\u001forders_service.wsgi.applicationÚ\u0011CONFIG_SERVER_URLz\u0015http://localhost:8888)\u0001Ú\u0007defaultÚ\u000bSERVER_NAMEz\u000edjango-serviceÚ\u0001/z\b/defaultÚ\u000fpropertySourcesÚ\u0006sourcez4 Warning: Could not load from spring Config Server: r\u000e\u0000\u0000\u0000z\u001ddjango.db.backends.postgresqlz\u0014django.database.hostz\u0014django.database.portz\u0018django.database.databasez\u0014django.database.userz\u0018django.database.password)\u0006Ú\u0006ENGINEÚ\u0004HOSTÚ\u0004PORTÚ\u0004NAMEÚ\u0004USERÚ\bPASSWORDr\u0016\u0000\u0000\u0000zHdjango.contrib.auth.password_validation.UserAttributeSimilarityValidatorz>django.contrib.auth.password_validation.MinimumLengthValidatorz?django.contrib.auth.password_validation.CommonPasswordValidatorz@django.contrib.auth.password_validation.NumericPasswordValidatorz\u0005en-usÚ\u0003UTCz\u0007static/z\u001ddjango.db.models.BigAutoField)'Ú\u0007__doc__Ú\u0007pathlibr\u0003\u0000\u0000\u0000Ú\brequestsÚ\bdecoupler\u0004\u0000\u0000\u0000Ú\b__file__Ú\u0007resolveÚ\u0006parentÚ\bBASE_DIRÚ\nSECRET_KEYÚ\u0005DEBUGÚ\rALLOWED_HOSTSÚ\u000eINSTALLED_APPSÚ\nMIDDLEWAREÚ\fROOT_URLCONFÚ\tTEMPLATESÚ\u0010WSGI_APPLICATIONr\r\u0000\u0000\u0000r\u000f\u0000\u0000\u0000Ú\u0003getÚ\bresponseÚ\u0010raise_for_statusÚ\u0004jsonÚ\npropertiesÚ\u000bconfig_datar\u0012\u0000\u0000\u0000Ú\u0006updateÚ\tExceptionÚ\u0001eÚ\u0005printÚ\tDATABASESÚ\u0018AUTH_PASSWORD_VALIDATORSÚ\rLANGUAGE_CODEÚ\tTIME_ZONEÚ\bUSE_I18NÚ\u0006USE_TZÚ\nSTATIC_URLÚ\u0012DEFAULT_AUTO_FIELD©\u0000ó\u0000\u0000\u0000\u0000Ús/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/orders_service/settings.pyÚ\b<module>r?\u0000\u0000\u0000\u0001\u0000\u0000\u0000sø\u0001\u0000\u0000ð\u0003\u0001\u0001\u0001ñ\u0002\n\u0001\u0004õ\u0018\u0000\u0001\u0019Û\u0000\u000fÝ\u0000\u001bñ\b\u0000\f\u0010\b>×\u000b!Ñ\u000b!Ó\u000b#×\u000b*Ñ\u000b*×\u000b1Ñ\u000b1\bð\u000e\u0000\u000eR\u0001\nð\u0006\u0000\t\r\u0005à\u0011\u0014\u0005\rò\n\t\u0012\u0002\u000eò\u0016\b\u000e\u0002\nð\u0014\u0000\u0010%\fð\b\u0000\u0014E\u0001Ø\u0010\u0012Ø\u0014\u0018à\f ò\u0000\u0005#\u000eð\u0003\u0007\u0014\nñ\t\f\u0005\u0006ð\u0003\u000e\r\u0002\tð \u0000\u00145Ð\u0000\u0010ñ\n\u0000\u0015\u001bÐ\u001b.Ð7NÑ\u0014OÐ\u0000\u0011Ù\u000e\u0014]Ð+;Ñ\u000e<\u000bð\u0004\t\u0001\u0013Ø\u000f\u0017||Ð\u001f0Ð\u001e1°\u0011°;°-¸xÐ\u001cHÓ\u000fIHØ\u0004\f×\u0004\u001dÑ\u0004\u001dÔ\u0004\u001fØ\u0010\u0018\r\r\u000f×\u0010#Ñ\u0010#Ð$5°bÓ\u00109JØ\u0010\u0012KÛ\u0012\u001c\u0006Ø\b\u0013×\b\u001aÑ\b\u001a6:: h¨rÓ\u001b2Ö\b3ñ\u0003\u0000\u0013\u001dð\u000e\u0000\u0005\u000eØ\u00121Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0010\u001b\u000f\u000fÐ :Ó\u0010;Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0014\u001fOOÐ$>Ó\u0014?ñ\r\u0007\u0010\u0006ð\u0003\t\r\u0002\tð.\u0000\t\u000fÐ\u0010Zð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Pð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Qð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Rð\u0003\u0002\u0005\u0006ð\u0015\r\u001c\u0002Ð\u0000\u0018ð&\u0000\u0011\u0018\rà\f\u0011\tà\u000b\u000f\bà\t\r\u0006ð\f\u0000\u000e\u0017\nð\n\u0000\u00165Ñ\u0000\u0012øð{\u0001\u0000\b\u0011ó\u0000\u0002\u0001\u0013Ù\u0004\tÐ\f@À\u0011À\u0003Ð\nDÔ\u0004EØ\u0010\u0012Kûð\u0005\u0002\u0001\u0013ús\u0019\u0000\u0000\u0000Á+A4E\u0010\u0000Å\u0010\u0006E-\u0003Å\u0016\rE(\u0003Å(\u0005E-\u0003",
+      "info": {
+        "size": 3865,
+        "last_modified": "2025-10-15T13:43:50.749217146",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.753687129",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/settings.py",
+      "content": "\"\"\"\nDjango settings for orders_service project.\n\nGenerated by 'django-admin startproject' using Django 5.1.2.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/5.1/ref/settings/\n\"\"\"\n\nfrom pathlib import Path\nimport requests\nfrom decouple import config\n\n\n# Build paths inside the project like this: BASE_DIR / 'subdir'.\nBASE_DIR = Path(__file__).resolve().parent.parent\n\n\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#'\n\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n\nALLOWED_HOSTS = [\"*\"]\n\n\n# Application definition\n\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'bizhub_orders',\n    'rest_framework',\n]\n\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\n\nROOT_URLCONF = 'orders_service.urls'\n\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',\n                'django.contrib.messages.context_processors.messages',\n            ],\n        },\n    },\n]\n\nWSGI_APPLICATION = 'orders_service.wsgi.application'\n\n\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nCONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')\nSERVER_NAME = config('SERVER_NAME',default='django-service')\n\ntry:\n    response = requests.get(f\"{CONFIG_SERVER_URL}/{SERVER_NAME}/default\")\n    response.raise_for_status()\n    properties= response.json().get('propertySources',[])\n    config_data={}\n    for source in properties:\n        config_data.update(source.get('source',{}))\nexcept Exception as e:\n    print(f\" Warning: Could not load from spring Config Server: {e}\")\n    config_data={}\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'HOST': config_data.get('django.database.host'),\n        'PORT': config_data.get('django.database.port'),\n        'NAME': config_data.get('django.database.database'),\n        'USER': config_data.get('django.database.user'),\n        'PASSWORD': config_data.get('django.database.password'),\n    }\n}\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.sqlite3',\n#         'NAME': BASE_DIR / 'db.sqlite3',\n#     }\n# }\n\n\n# Password validation\n# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators\n\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',\n    },\n]\n\n\n# Internationalization\n# https://docs.djangoproject.com/en/5.1/topics/i18n/\n\nLANGUAGE_CODE = 'en-us'\n\nTIME_ZONE = 'UTC'\n\nUSE_I18N = True\n\nUSE_TZ = True\n\n\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\n\nSTATIC_URL = 'static/'\n\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\n\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n",
+      "info": {
+        "size": 4259,
+        "last_modified": "2025-10-15T13:43:50.754825037",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/asgi.py",
+      "content": "\"\"\"\nASGI config for orders_service project.\n\nIt exposes the ASGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/howto/deployment/asgi/\n\"\"\"\n\nimport os\n\nfrom django.core.asgi import get_asgi_application\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'orders_service.settings')\n\napplication = get_asgi_application()\n",
+      "info": {
+        "size": 405,
+        "last_modified": "2025-10-15T13:43:50.757950102",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/wsgi.py",
+      "content": "\"\"\"\nWSGI config for orders_service project.\n\nIt exposes the WSGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/\n\"\"\"\n\nimport os\n\nfrom django.core.wsgi import get_wsgi_application\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'orders_service.settings')\n\napplication = get_wsgi_application()\n",
+      "info": {
+        "size": 405,
+        "last_modified": "2025-10-15T13:43:50.76115611",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/urls.py",
+      "content": "\"\"\"\nURL configuration for orders_service project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/5.1/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\n\"\"\"\nfrom django.contrib import admin\nfrom django.urls import path\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n]\n",
+      "info": {
+        "size": 770,
+        "last_modified": "2025-10-15T13:43:50.763907156",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/manage.py",
+      "content": "#!/usr/bin/env python\n\"\"\"Django's command-line utility for administrative tasks.\"\"\"\nimport os\nimport sys\n\n\ndef main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'orders_service.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"\n        ) from exc\n    execute_from_command_line(sys.argv)\n\n\nif __name__ == '__main__':\n    main()\n",
+      "info": {
+        "size": 670,
+        "last_modified": "2025-10-15T13:43:50.767481226",
+        "mime_type": "application/x-sh",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__pycache__/models.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh9\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0010\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000g\u0002)\u0003é\u0000\u0000\u0000\u0000)\u0001Ú\u0006modelsN)\u0002Ú\tdjango.dbr\u0003\u0000\u0000\u0000©\u0000ó\u0000\u0000\u0000\u0000Úp/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/models.pyÚ\b<module>r\b\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\b\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Þ\u0000\u001cr\u0006\u0000\u0000\u0000",
+      "info": {
+        "size": 252,
+        "last_modified": "2025-10-15T13:43:50.770164837",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__pycache__/apps.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó&\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000\u0018\u0000\"\u0000S\u0002\u001a\u0000S\u0003\\\u00015\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0002g\u0004)\u0005é\u0000\u0000\u0000\u0000)\u0001Ú\tAppConfigc\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u001c\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003S\u0002r\u0004S\u0003r\u0005S\u0004r\u0006g\u0005)\u0006Ú\u0012BizhubOrdersConfigé\u0004\u0000\u0000\u0000z\u001ddjango.db.models.BigAutoFieldÚ\rbizhub_orders©\u0000N)\u0007Ú\b__name__Ú\n__module__Ú\f__qualname__Ú\u000f__firstlineno__Ú\u0012default_auto_fieldÚ\u0004nameÚ\u0015__static_attributes__r\b\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Ún/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/apps.pyr\u0005\u0000\u0000\u0000r\u0005\u0000\u0000\u0000\u0004\u0000\u0000\u0000s\r\u0000\u0000\u0000\u0000Ø\u00198Ð\u0004\u0016Ø\u000b\u001aDr\u0010\u0000\u0000\u0000r\u0005\u0000\u0000\u0000N)\u0003Ú\u000bdjango.appsr\u0003\u0000\u0000\u0000r\u0005\u0000\u0000\u0000r\b\u0000\u0000\u0000r\u0010\u0000\u0000\u0000r\u0011\u0000\u0000\u0000Ú\b<module>r\u0013\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0014\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Ý\u0000!ô\u0006\u0002\u0001\u001b\u0019õ\u0000\u0002\u0001\u001br\u0010\u0000\u0000\u0000",
+      "info": {
+        "size": 588,
+        "last_modified": "2025-10-15T13:43:50.780537786",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Úr/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 211,
+        "last_modified": "2025-10-15T13:43:50.787228495",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__pycache__/admin.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh?\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0010\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000g\u0002)\u0003é\u0000\u0000\u0000\u0000)\u0001Ú\u0005adminN)\u0002Ú\u000edjango.contribr\u0003\u0000\u0000\u0000©\u0000ó\u0000\u0000\u0000\u0000Úo/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/admin.pyÚ\b<module>r\b\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\b\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Þ\u0000 r\u0006\u0000\u0000\u0000",
+      "info": {
+        "size": 255,
+        "last_modified": "2025-10-15T13:43:50.791843428",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.796945886",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/tests.py",
+      "content": "from django.test import TestCase\n\n# Create your tests here.\n",
+      "info": {
+        "size": 60,
+        "last_modified": "2025-10-15T13:43:50.797900511",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/admin.py",
+      "content": "from django.contrib import admin\n\n# Register your models here.\n",
+      "info": {
+        "size": 63,
+        "last_modified": "2025-10-15T13:43:50.802170179",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/apps.py",
+      "content": "from django.apps import AppConfig\n\n\nclass BizhubOrdersConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'bizhub_orders'\n",
+      "info": {
+        "size": 157,
+        "last_modified": "2025-10-15T13:43:50.806370486",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/migrations/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Ú}/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/migrations/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 222,
+        "last_modified": "2025-10-15T13:43:50.811462578",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/migrations/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-15T13:43:50.81716291",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/models.py",
+      "content": "from django.db import models\n\n# Create your models here.\n",
+      "info": {
+        "size": 57,
+        "last_modified": "2025-10-15T13:43:50.818601769",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/views.py",
+      "content": "from django.shortcuts import render\n\n# Create your views here.\n",
+      "info": {
+        "size": 63,
+        "last_modified": "2025-10-15T13:43:50.826283106",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    }
+  ]
+}

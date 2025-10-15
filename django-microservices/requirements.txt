@@ -11,3 +11,6 @@ requests
 djangorestframework-simplejwt
 PyJWT
 py_eureka_client
+minio
+django-storages
+boto3

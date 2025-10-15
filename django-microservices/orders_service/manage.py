@@ -17,6 +17,8 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
+    if(len(sys.argv) > 1):
+        sys.argv += ["runserver","9002"]
 
 if __name__ == '__main__':
     main()

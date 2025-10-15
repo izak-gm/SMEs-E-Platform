@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import requests
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +28,7 @@ SECRET_KEY = 'django-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bizhub_orders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -72,13 +77,36 @@ WSGI_APPLICATION = 'orders_service.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+CONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')
+SERVER_NAME = config('SERVER_NAME',default='orders-service')
+
+try:
+    response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
+    response.raise_for_status()
+    properties= response.json().get('propertySources',[])
+    config_data={}
+    for source in properties:
+        config_data.update(source.get('source',{}))
+except Exception as e:
+    print(f" Warning: Could not load from spring Config Server: {e}")
+    config_data={}
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': config_data.get('django.database.host'),
+        'PORT': config_data.get('django.database.port'),
+        'NAME': config_data.get('django.database.name'),
+        'USER': config_data.get('django.database.user'),
+        'PASSWORD': config_data.get('django.database.password'),
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation

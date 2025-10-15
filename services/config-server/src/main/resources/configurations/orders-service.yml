@@ -1,0 +1,14 @@
+django:
+  database:
+    #    name: ${DJANGO_DB}
+    name: bizhub
+    host: localhost
+    port: 5432
+    #    user: ${POSTGRES_USER}
+    user: postgres
+    #    password: ${POSTGRES_PASSWORD}
+    password: izak7901
+  kafka:
+    host: localhost
+    port: 9092
+#  secret_key

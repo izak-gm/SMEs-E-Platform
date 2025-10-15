@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-#e((0q0@q0@6)jym604d-*u+^p2pu918-ub*g(0+-+zp1imzie
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'products_service.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 CONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')
-SERVER_NAME = config('SERVER_NAME',default='django-service')
+SERVER_NAME = config('SERVER_NAME',default='products-service')
 
 try:
     response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': config_data.get('django.database.host'),
         'PORT': config_data.get('django.database.port'),
-        'NAME': config_data.get('django.database.database'),
+        'NAME': config_data.get('django.database.name'),
         'USER': config_data.get('django.database.user'),
         'PASSWORD': config_data.get('django.database.password'),
     }
