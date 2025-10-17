@@ -3,12 +3,13 @@ package com.izak.auth_service.auth.service;
 import com.izak.auth_service.auth.dto.AuthResponse;
 import com.izak.auth_service.auth.dto.AuthenticateRequest;
 import com.izak.auth_service.auth.dto.RegisterRequest;
+import com.izak.auth_service.auth.dto.UpdateUser;
 import com.izak.auth_service.auth.mapper.AuthMapper;
+//import com.izak.auth_service.exceptions.UserNotFoundException;
 import com.izak.auth_service.configuration.JwtService;
 import com.izak.auth_service.user.entity.User;
 import com.izak.auth_service.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -43,5 +44,20 @@ public class AuthService {
     return AuthResponse.builder()
           .token(jwtToken)
           .build();
+  }
+
+  public User updateProfile(
+        Long id,
+        UpdateUser updateUser
+  ){
+    User user=userRepository.findById(id)
+          .orElseThrow(()->new RuntimeException("User not found with id "));
+
+    user.setFirstName(updateUser.firstName());
+    user.setLastName(updateUser.lastName());
+    user.setDob(updateUser.dob());
+    user.setGender(updateUser.gender());
+    user.setPhoneNumber(updateUser.phoneNumber());
+    return userRepository.save(user);
   }
 }

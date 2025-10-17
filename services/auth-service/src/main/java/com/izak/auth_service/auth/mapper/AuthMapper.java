@@ -1,6 +1,7 @@
 package com.izak.auth_service.auth.mapper;
 
 import com.izak.auth_service.auth.dto.RegisterRequest;
+import com.izak.auth_service.auth.dto.UpdateUser;
 import com.izak.auth_service.user.entity.User;
 import com.izak.auth_service.user.enums.Auth;
 import lombok.AllArgsConstructor;
@@ -15,14 +16,18 @@ public class AuthMapper {
   public User register(RegisterRequest registerRequest) {
     return User.builder()
           .id(registerRequest.id())
-          .firstName(registerRequest.firstName())
-          .lastName(registerRequest.lastName())
           .email(registerRequest.email())
-          .phoneNumber(registerRequest.phoneNumber())
-          .dob(registerRequest.dob())
-          .gender(registerRequest.gender())
           .auth(Auth.USER)
           .password(passwordEncoder.encode(registerRequest.password()))
+          .build();
+  }
+  public User updateUser(UpdateUser updateUser) {
+    return User.builder()
+          .firstName(updateUser.firstName())
+          .lastName(updateUser.lastName())
+          .dob(updateUser.dob())
+          .gender(updateUser.gender())
+          .phoneNumber(updateUser.phoneNumber())
           .build();
   }
 }

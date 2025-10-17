@@ -3,14 +3,13 @@ package com.izak.auth_service.auth.contoller;
 import com.izak.auth_service.auth.dto.AuthResponse;
 import com.izak.auth_service.auth.dto.AuthenticateRequest;
 import com.izak.auth_service.auth.dto.RegisterRequest;
+import com.izak.auth_service.auth.dto.UpdateUser;
 import com.izak.auth_service.auth.service.AuthService;
+import com.izak.auth_service.user.entity.User;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/auth")
@@ -27,4 +26,13 @@ public class AuthController {
   public ResponseEntity<AuthResponse> authenticate(@RequestBody AuthenticateRequest authenticateRequest){
     return ResponseEntity.ok(authService.authenticate(authenticateRequest));
   };
+
+  @PutMapping("user/update-profile/{userId}")
+  public ResponseEntity<User> updateProfile(
+        @RequestBody UpdateUser updateRequest,
+        @PathVariable Long id
+  ){
+    User updateUser=authService.updateProfile(id,updateRequest);
+    return ResponseEntity.ok(updateUser);
+  }
 }

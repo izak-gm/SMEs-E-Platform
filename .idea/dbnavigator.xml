@@ -24,7 +24,24 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3ce8197e-af73-462e-9358-3875c0f57beb">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[show database;]]></console>
+      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[show database;
+select
+    _u."address_id",
+    _u."auth",
+    _u."dob",
+    _u."email",
+    _u."first_name",
+    _u."gender",
+    _u."id",
+    _u."is_account_non_expired",
+    _u."is_account_non_locked",
+    _u."is_credentials_non_expired",
+    _u."is_enabled",
+    _u."last_name",
+    _u."password",
+    _u."phone_number"
+from
+    "_user" _u;]]></console>
     </connection>
     <connection id="1b3390bd-ed26-440e-9201-fe9141869f75">
       <console name="bizhub" type="STANDARD" schema="bizhub" session="Main" />
@@ -407,11 +424,14 @@
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />
           <content-type name="XHTML" enabled="true" />
+          <content-type name="Java" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
           <content-type name="JSON" enabled="true" />
           <content-type name="JSON5" enabled="true" />
+          <content-type name="Groovy" enabled="true" />
           <content-type name="YAML" enabled="true" />
+          <content-type name="Manifest" enabled="true" />
         </content-types>
       </qualified-text-editor>
       <record-navigation>
