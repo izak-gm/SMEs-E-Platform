@@ -24,24 +24,35 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3ce8197e-af73-462e-9358-3875c0f57beb">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[show database;
+      <console name="Connection" type="STANDARD" schema="public" session="Main">show database;
 select
-    _u."address_id",
-    _u."auth",
-    _u."dob",
-    _u."email",
-    _u."first_name",
-    _u."gender",
-    _u."id",
-    _u."is_account_non_expired",
-    _u."is_account_non_locked",
-    _u."is_credentials_non_expired",
-    _u."is_enabled",
-    _u."last_name",
-    _u."password",
-    _u."phone_number"
+    _u.&quot;address_id&quot;,
+    _u.&quot;auth&quot;,
+    _u.&quot;dob&quot;,
+    _u.&quot;email&quot;,
+    _u.&quot;first_name&quot;,
+    _u.&quot;gender&quot;,
+    _u.&quot;id&quot;,
+    _u.&quot;is_account_non_expired&quot;,
+    _u.&quot;is_account_non_locked&quot;,
+    _u.&quot;is_credentials_non_expired&quot;,
+    _u.&quot;is_enabled&quot;,
+    _u.&quot;last_name&quot;,
+    _u.&quot;password&quot;,
+    _u.&quot;phone_number&quot;
 from
-    "_user" _u;]]></console>
+    &quot;_user&quot; _u;
+
+
+select
+    a.&quot;city&quot;,
+    a.&quot;county&quot;,
+    a.&quot;id&quot;,
+    a.&quot;postal_code&quot;,
+    a.&quot;town&quot;,
+    a.&quot;user_id&quot;
+from
+    &quot;address&quot; a;</console>
     </connection>
     <connection id="1b3390bd-ed26-440e-9201-fe9141869f75">
       <console name="bizhub" type="STANDARD" schema="bizhub" session="Main" />
@@ -51,9 +62,7 @@ from
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="3ce8197e-af73-462e-9358-3875c0f57beb" object-ref="consoles/Connection" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="3ce8197e-af73-462e-9358-3875c0f57beb" />

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 import requests
 from decouple import config
@@ -108,6 +108,14 @@ DATABASES = {
 #     }
 # }
 
+#jwt_token to verify token from spring boot Auth service
+JWT_SECRET=os.getenv("JWT_SECRET_KEY")
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+    "common.authentication.JWTAuthentication",
+    ]
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

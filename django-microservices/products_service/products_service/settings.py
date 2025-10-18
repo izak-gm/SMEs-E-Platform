@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 import requests
 from decouple import config
@@ -99,7 +99,8 @@ DATABASES = {
         'PASSWORD': config_data.get('django.database.password'),
     }
 }
-#
+
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -107,6 +108,21 @@ DATABASES = {
 #     }
 # }
 
+MINIO_ENDPOINT=config_data.get('django.minio.MINIO_ENDPOINT')
+MINIO_ACCESS_KEY=config_data.get('django.minio.MINIO_ACCESS_KEY')
+MINIO_SECRET_KEY=config_data.get('django.minio.MINIO_SECRET_KEY')
+MINIO_BUCKET=config_data.get('django.minio.MINIO_BUCKET')
+
+#jwt_token to verify token from spring boot Auth service
+JWT_SECRET=os.getenv("JWT_SECRET_KEY")
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+    "common.authentication.JWTAuthentication",
+    ]
+}
+
+# Kafka config
+KAFKA_BOOTSTRAP_SERVER =config_data.get('django.kafka.KAFKA_BOOTSTRAP')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

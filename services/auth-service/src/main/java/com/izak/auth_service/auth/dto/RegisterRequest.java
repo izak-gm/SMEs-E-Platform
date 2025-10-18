@@ -8,7 +8,7 @@ import java.util.Date;
 
 public record RegisterRequest(
       Long id,
-//      @Email
+      @Email
       @NotNull(message = " Email is required")
       String email,
       Auth auth,
