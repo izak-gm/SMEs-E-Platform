@@ -1,7 +1,10 @@
 from rest_framework import viewsets, permissions
+from rest_framework.permissions import IsAuthenticated
+
 from .models import Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
 from .serializers import ProductSerializer, StoreKYCSerializer, BrandSerializer, CategorySerializer, ProductVariantSerializer,ProductImageSerializer
-
+from django_microservices.common.auth.authentication import JWTAuthentication
+from django_microservices.common.auth.role_based_permissions import IsBuyer,IsSeller
 
 # Create your views here.
 class StoreViewSet(viewsets.ModelViewSet):
@@ -9,7 +12,8 @@ class StoreViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
 
     # TODO Add permissions for Authenticated and Authorized Store owner
-    permission_classes = permissions.IsAuthenticated
+    authentication_classes = JWTAuthentication
+    permission_classes = (IsAuthenticated,IsSeller)
 
 class StoreKYCViewSet(viewsets.ModelViewSet):
     queryset = SellerKYC.objects.all()

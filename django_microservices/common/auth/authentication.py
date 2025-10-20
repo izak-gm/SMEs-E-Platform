@@ -1,0 +1,31 @@
+import jwt
+from rest_framework import authentication, exceptions
+from django.conf import settings
+
+class JWTAuthentication(authentication.BaseAuthentication):
+    def authenticate(self, request):
+        auth_header = request.headers.get("Authorization")
+        if not auth_header:
+            return None  # No header → skip authentication
+
+        parts = auth_header.split(" ")
+        if len(parts) != 2 or parts[0].lower() != "bearer":
+            raise exceptions.AuthenticationFailed("Invalid Authorization header format. Expected 'Bearer <token>'")
+
+        token = parts[1]
+
+        try:
+            decoded_token = jwt.decode(token, settings.JWT_SECRET, algorithms=["HS256"])
+        except jwt.ExpiredSignatureError:
+            raise exceptions.AuthenticationFailed("Token has expired")
+        except jwt.InvalidTokenError:
+            raise exceptions.AuthenticationFailed("Invalid token")
+
+        # You can return a dummy user or decoded claims
+        user = {
+            "id": decoded_token.get("sub"),
+            "username": decoded_token.get("username"),
+            "role": decoded_token.get("role"),
+        }
+
+        return user, token
