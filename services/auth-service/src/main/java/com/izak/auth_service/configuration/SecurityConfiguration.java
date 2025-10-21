@@ -20,6 +20,7 @@ public class SecurityConfiguration {
 
   private static final String[] WHITE_LIST_URL={"api/v1/auth/**"};
   private static final String[] WHITE_LIST_USER_URL={"api/v1/auth/user/**"};
+  private static final String[] WHITE_LIST_SELLER_URL={"api/v1/auth/seller/**"};
   private static final String[] WHITE_LIST_ADMIN_URL={"api/v1/auth/admin/**"};
 
   @Bean
@@ -30,6 +31,7 @@ public class SecurityConfiguration {
           .authorizeHttpRequests( auth->auth
                 .requestMatchers(WHITE_LIST_URL).permitAll()
                 .requestMatchers(WHITE_LIST_ADMIN_URL).hasRole("ADMIN")
+                .requestMatchers(WHITE_LIST_SELLER_URL).hasRole("SELLER")
                 .requestMatchers(WHITE_LIST_USER_URL).hasRole("USER")
                 .anyRequest().fullyAuthenticated()
           )

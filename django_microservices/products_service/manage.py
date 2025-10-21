@@ -3,6 +3,7 @@
 import os
 import sys
 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 def main():
     """Run administrative tasks."""
@@ -21,4 +22,6 @@ def main():
         sys.argv += ["runserver", "9001"]
 
 if __name__ == '__main__':
-    main()
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "products_service.settings")
+    from django.core.management import execute_from_command_line
+    execute_from_command_line(sys.argv)

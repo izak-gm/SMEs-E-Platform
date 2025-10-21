@@ -9,14 +9,26 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-import os
+import os,sys
 from pathlib import Path
 import requests
 from decouple import config
+from dotenv import load_dotenv
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Add the top-level project directory to Python path
+# Define base paths
 BASE_DIR = Path(__file__).resolve().parent.parent
+ENV_PATH = BASE_DIR.parent / ".env"
 
+# Load .env file
+if ENV_PATH.exists():
+    load_dotenv(ENV_PATH)
+else:
+    print(f"⚠️  .env file not found at: {ENV_PATH}")
+
+# Now read environment variables
+JWT_SECRET = os.getenv("JWT_SECRET")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -112,7 +124,7 @@ MINIO_BUCKET = config_data.get('django.minio.MINIO_BUCKET')
 #jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        'django_microservices.common.auth.authentication.SharedJWTAuthentication',
+        'django_microservices.common.auth.authentication.JWTAuthentication',
     ]
 }
 

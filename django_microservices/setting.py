@@ -1,10 +1,16 @@
 import os
-from dotenv import load_dotenv
 from pathlib import Path
+from dotenv import load_dotenv
 
-BASE_DIR = Path(__file__).resolve().parent
+# Base directory for this Django service
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-load_dotenv(os.path.join(BASE_DIR, '..', '.env'))
+# Path to the shared .env file in django_microservices/
+ENV_PATH = BASE_DIR.parent / ".env"
 
+# Load environment variables
+load_dotenv(ENV_PATH)
+
+# Access variables
 JWT_SECRET = os.getenv("JWT_SECRET")
 JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
