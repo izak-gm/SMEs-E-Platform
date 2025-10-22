@@ -1,3 +1,4 @@
+from types import SimpleNamespace
 import jwt
 from rest_framework import authentication, exceptions
 from django.conf import settings
@@ -15,17 +16,17 @@ class JWTAuthentication(authentication.BaseAuthentication):
         token = parts[1]
 
         try:
-            decoded_token = jwt.decode(token, settings.JWT_SECRET, algorithms=["HS256"])
+            decoded_token = jwt.decode(token, settings.JWT_SECRET, algorithms=["HS512"])
         except jwt.ExpiredSignatureError:
             raise exceptions.AuthenticationFailed("Token has expired")
         except jwt.InvalidTokenError:
             raise exceptions.AuthenticationFailed("Invalid token")
 
         # You can return a dummy user or decoded claims
-        user = {
-            "id": decoded_token.get("sub"),
-            "username": decoded_token.get("username"),
-            "role": decoded_token.get("role"),
-        }
-
+        user = SimpleNamespace(
+            id=decoded_token.get("id"),
+            email=decoded_token.get("email"),
+            role=decoded_token.get("roles"),
+            is_authenticated=True
+        )
         return user, token

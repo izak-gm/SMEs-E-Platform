@@ -19,7 +19,7 @@ def main():
     execute_from_command_line(sys.argv)
 
     if len(sys.argv) == 1:
-        sys.argv += ["runserver", "9001"]
+        sys.argv += ["runserver", "8012"]
 
 if __name__ == '__main__':
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "products_service.settings")

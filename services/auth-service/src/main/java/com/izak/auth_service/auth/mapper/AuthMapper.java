@@ -20,7 +20,7 @@ public class AuthMapper {
           .auth(Auth.USER)
           .password(passwordEncoder.encode(registerRequest.password()))
           .build();
-  }  public User register(RegisterRequest registerRequest) {
+  }  public User registerSeller(RegisterRequest registerRequest) {
     return User.builder()
           .id(registerRequest.id())
           .email(registerRequest.email())

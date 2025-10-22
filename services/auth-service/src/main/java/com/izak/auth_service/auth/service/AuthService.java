@@ -29,6 +29,19 @@ public class AuthService {
     return AuthResponse.builder()
           .token(jwtToken)
           .build();
+  } public AuthResponse registerSeller(RegisterRequest registerRequest) {
+    User user=userRepository.save(authMapper.registerSeller(registerRequest));
+    var jwtToken=jwtService.generateToken(user);
+    return AuthResponse.builder()
+          .token(jwtToken)
+          .build();
+  }
+  public AuthResponse registerAdmin(RegisterRequest registerRequest) {
+    User user=userRepository.save(authMapper.registerAdmin(registerRequest));
+    var jwtToken=jwtService.generateToken(user);
+    return AuthResponse.builder()
+          .token(jwtToken)
+          .build();
   }
 
   public AuthResponse authenticate(AuthenticateRequest authenticateRequest) {

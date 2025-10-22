@@ -38,16 +38,12 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     authentication_classes = [JWTAuthentication]
+    permission_classes = [IsSeller]  # only sellers can post, put, delete
 
     def get_permissions(self):
-        """
-        Allow:
-        - Sellers to create/update/delete products
-        - Buyers and Admins to view (GET, HEAD, OPTIONS)
-        """
-        if self.request.method in permissions.SAFE_METHODS:  # GET, HEAD, OPTIONS
-            return [IsAuthenticated(), (IsBuyer() | IsAdmin())]
-        return [IsAuthenticated(), IsSeller()]
+        if self.request.method in ['GET', 'HEAD']:
+            return []  # Anyone can view
+        return [IsSeller()]
 
 
 class ProductVariantViewSet(viewsets.ModelViewSet):
