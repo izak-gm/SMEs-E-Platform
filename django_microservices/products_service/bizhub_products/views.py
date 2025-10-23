@@ -7,16 +7,20 @@ from .models import (
     Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
 )
 from .serializers import (
-    ProductSerializer, StoreKYCSerializer, BrandSerializer,
+    ProductSerializer, StoreKYCSerializer, BrandSerializer,StoreSerializer,
     CategorySerializer, ProductVariantSerializer, ProductImageSerializer
 )
 
 # --- Store Views ---
 class StoreViewSet(viewsets.ModelViewSet):
     queryset = Store.objects.all()
-    serializer_class = ProductSerializer
+    serializer_class = StoreSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsSeller]
+
+    def perform_create(self, serializer):
+        # Assuming your JWT token has user.id
+        serializer.save(owner_id=self.request.user.id)
 
 class StoreKYCViewSet(viewsets.ModelViewSet):
     queryset = SellerKYC.objects.all()
@@ -49,8 +53,12 @@ class ProductViewSet(viewsets.ModelViewSet):
 class ProductVariantViewSet(viewsets.ModelViewSet):
     queryset = ProductVariant.objects.all()
     serializer_class = ProductVariantSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsSeller]
 
 
 class ProductImageViewSet(viewsets.ModelViewSet):
     queryset = ProductImage.objects.all()
     serializer_class = ProductImageSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsSeller]

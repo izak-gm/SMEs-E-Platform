@@ -33,5 +33,5 @@ django:
     MINIO_SECRET_KEY: 1xhS59CFJa4a1tA83l0nzt2U0GHYfPbpEeQr4oms
     MINIO_BUCKET: bizhub
     MINIO_PORT: 9000
-    MINIO_ENDPOINT: http://localhost:9000
+    MINIO_ENDPOINT: localhost:9000
 

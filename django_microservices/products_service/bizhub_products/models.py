@@ -1,12 +1,9 @@
 import uuid
-
-from django.contrib.auth import get_user_model
 from django.db import models
-Owner =get_user_model()
 
 class Store(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    owner_id =models.ForeignKey(Owner,on_delete=models.CASCADE)  # references auth user id
+    owner_id =models.IntegerField()  # references auth user id
     name = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
     description = models.TextField(blank=True)

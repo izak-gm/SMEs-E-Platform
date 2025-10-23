@@ -22,11 +22,15 @@ class JWTAuthentication(authentication.BaseAuthentication):
         except jwt.InvalidTokenError:
             raise exceptions.AuthenticationFailed("Invalid token")
 
+        # Normalize roles
+        roles = decoded_token.get("roles", [])
+        roles = [r.replace("ROLE_", "") for r in roles]
+
         # You can return a dummy user or decoded claims
         user = SimpleNamespace(
             id=decoded_token.get("id"),
             email=decoded_token.get("email"),
-            role=decoded_token.get("roles"),
+            roles=roles,
             is_authenticated=True
         )
         return user, token
