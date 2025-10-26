@@ -8,7 +8,7 @@ class ApiConfig(AppConfig):
 
     def ready(self):
         EUREKA_SERVER = "http://localhost:8761/eureka"
-        APP_NAME = "products-microservice"
+        APP_NAME = "DJANGO_products-microservice"
         INSTANCE_PORT = 8012
 
         eureka_client.init(

@@ -7,7 +7,7 @@ class BizhubOrdersConfig(AppConfig):
 
     def ready(self):
         EUREKA_SERVER = "http://localhost:8761/eureka"
-        APP_NAME = "orders-microservice"
+        APP_NAME = "DJANGO_orders-microservice"
         INSTANCE_PORT = 8011
 
         eureka_client.init(

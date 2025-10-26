@@ -1,7 +1,7 @@
 django:
   database:
     #    name: ${DJANGO_DB}
-    name: bizhub
+    name: orders
     host: localhost
     port: 5432
     #    user: ${POSTGRES_USER}
@@ -9,6 +9,6 @@ django:
     #    password: ${POSTGRES_PASSWORD}
     password: izak7901
   kafka:
-    KAFKA_BOOTSTRAP: http://localhost:9092
+    KAFKA_BOOTSTRAP: localhost:9092
     port: 9092
 #  secret_key

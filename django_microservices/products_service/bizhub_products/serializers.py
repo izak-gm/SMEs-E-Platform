@@ -25,10 +25,6 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = '__all__'
 
-from rest_framework import serializers
-from .models import Product, ProductVariant, ProductImage
-
-
 class ProductImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductImage
@@ -36,7 +32,6 @@ class ProductImageSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'product': {'read_only': True}
         }
-
 
 class ProductVariantSerializer(serializers.ModelSerializer):
     class Meta:

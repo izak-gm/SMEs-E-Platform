@@ -1,15 +1,16 @@
-from rest_framework import viewsets, permissions
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from django_microservices.common.auth.authentication import JWTAuthentication
-from django_microservices.common.auth.role_based_permissions import IsBuyer, IsSeller, IsAdmin
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 
+from django_microservices.common.auth.authentication import JWTAuthentication
+from django_microservices.common.auth.role_based_permissions import IsSeller
 from .models import (
     Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
 )
 from .serializers import (
-    ProductSerializer, StoreKYCSerializer, BrandSerializer,StoreSerializer,
+    ProductSerializer, StoreKYCSerializer, BrandSerializer, StoreSerializer,
     CategorySerializer, ProductVariantSerializer, ProductImageSerializer
 )
+
 
 # --- Store Views ---
 class StoreViewSet(viewsets.ModelViewSet):
