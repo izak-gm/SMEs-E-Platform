@@ -128,9 +128,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-# Kafka config
-KAFKA_BOOTSTRAP_SERVER = config_data.get('django.kafka.KAFKA_BOOTSTRAP')
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 

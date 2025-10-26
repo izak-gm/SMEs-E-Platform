@@ -13,10 +13,17 @@ import os
 from pathlib import Path
 import requests
 from decouple import config
-
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+ENV_PATH = BASE_DIR.parent / ".env"
+
+# Load .env file
+if ENV_PATH.exists():
+    load_dotenv(ENV_PATH)
+else:
+    print(f"⚠️  .env file not found at: {ENV_PATH}")
 
 
 # Quick-start development settings - unsuitable for production
@@ -111,7 +118,7 @@ DATABASES = {
 #jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        'django_microservices.common.auth.authentication.SharedJWTAuthentication',
+        'django_microservices.common.auth.authentication.JWTAuthentication',
     ]
 }
 # Password validation
