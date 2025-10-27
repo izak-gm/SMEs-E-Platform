@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from django_microservices.common.auth.authentication import JWTAuthentication
 from django_microservices.common.auth.role_based_permissions import IsSeller
-from .kafka_messages.signals import publish_product_events, publish_product_deleted
+from .kafka_messages.produce import publish_product_events, publish_product_deleted
 from .models import (
     Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
 )

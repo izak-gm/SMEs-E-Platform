@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bizhub_orders',
+    'django_microservices.common',
     'rest_framework',
 ]
 
@@ -114,6 +115,8 @@ DATABASES = {
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+KAFKA_BOOTSTRAP_SERVER= config_data.get('django.kafka.KAFKA_BOOTSTRAP')
 
 #jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {

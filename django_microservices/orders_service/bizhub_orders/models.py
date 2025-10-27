@@ -19,6 +19,7 @@ class Order(models.Model):
     default='pending')
     created_at = models.DateTimeField(default=timezone.now)
 
+
 class OrderItem(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
@@ -27,9 +28,10 @@ class OrderItem(models.Model):
     price = models.DecimalField(max_digits=12, decimal_places=2)
 
 class ProductCache(models.Model):
+    product_id = models.UUIDField(unique=True, null=True, blank=True)
     name = models.CharField(max_length=100)
-    price = models.DecimalField(max_digits=12, decimal_places=2)
+    base_price = models.DecimalField(max_digits=12, decimal_places=2)
     description = models.TextField()
-    stock = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
     updated_at = models.DateTimeField(auto_now=True)
+

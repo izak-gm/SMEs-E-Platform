@@ -1,5 +1,8 @@
+from confluent_kafka import Producer
 from django.apps import AppConfig
 import py_eureka_client.eureka_client as eureka_client
+from django.conf import settings
+
 
 class BizhubOrdersConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
@@ -15,3 +18,9 @@ class BizhubOrdersConfig(AppConfig):
             app_name=APP_NAME,
             instance_port=INSTANCE_PORT
         )
+
+        try:
+            producer = Producer({"bootstrap.servers": settings.KAFKA_BOOTSTRAP_SERVER})
+            print(f"[Kafka] ✅ Connection successful!")
+        except Exception as e:
+            print(f"[Kafka] ❌ Could not connect: {e}")

@@ -43,34 +43,3 @@ def send_message(topic:str,event_type:str, data: dict):
     except Exception as e:
         print(f"[Kafka ERROR] Failed to send to {topic}: {e}")
 
-def make_consumer(topics, group_id):
-    """
-    Creates a Kafka consumer subscribed to the given topics.
-    Deserializes JSON messages automatically.
-    """
-    consumer = Consumer({
-        "bootstrap.servers":BOOTSTRAP_KAFKA,
-        "group_id":group_id,
-        "auto_offset_reset":"earliest",  # start from beginning if no offset stored
-        "enable_auto_commit":True,}
-    )
-    consumer.subscribe(topics)
-    return consumer
-
-def consume_messages(consumer):
-    """
-    Poll for messages and decode JSON safely.
-    """
-    while True:
-        msg = consumer.poll(1.0)
-        if msg is None:
-            continue
-        if msg.error():
-            print(f"[Kafka ERROR] {msg.error()}")
-            continue
-
-        try:
-            data = json.loads(msg.value().decode("utf-8"))
-            print(f"[Kafka] Received: {data}")
-        except Exception as e:
-            print(f"[Kafka ERROR] JSON decode failed: {e}")
