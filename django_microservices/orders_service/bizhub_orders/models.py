@@ -25,3 +25,11 @@ class OrderItem(models.Model):
     product_id = models.UUIDField() # FK to Product Service
     quantity = models.PositiveIntegerField(default=1)
     price = models.DecimalField(max_digits=12, decimal_places=2)
+
+class ProductCache(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=12, decimal_places=2)
+    description = models.TextField()
+    stock = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+    updated_at = models.DateTimeField(auto_now=True)

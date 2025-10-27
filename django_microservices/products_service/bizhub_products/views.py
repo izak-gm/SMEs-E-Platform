@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from django_microservices.common.auth.authentication import JWTAuthentication
 from django_microservices.common.auth.role_based_permissions import IsSeller
+from .kafka_messages.signals import publish_product_events, publish_product_deleted
 from .models import (
     Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
 )
@@ -10,7 +11,6 @@ from .serializers import (
     ProductSerializer, StoreKYCSerializer, BrandSerializer, StoreSerializer,
     CategorySerializer, ProductVariantSerializer, ProductImageSerializer
 )
-
 
 # --- Store Views ---
 class StoreViewSet(viewsets.ModelViewSet):
@@ -49,6 +49,33 @@ class ProductViewSet(viewsets.ModelViewSet):
         if self.request.method in ['GET', 'HEAD']:
             return []  # Anyone can view
         return [IsSeller()]
+    #
+    # def perform_create(self, serializer):
+    #     product = serializer.save()
+    #
+    #     # Prepare event data for the broker
+    #     product_data = {
+    #         "id": str(product.id),
+    #         "name": product.name,
+    #         "base_price": float(product.base_price),
+    #         "description": product.description,
+    #         # "stock": product.stock,
+    #         "is_active": product.is_active,
+    #         # "updated_at": product.updated_at.isoformat(),
+    #     }
+    #     publish_product_events(
+    #         event_type="PRODUCT_CREATED",
+    #         payload=product_data,
+    #     )
+    #
+    # def perform_update(self, serializer):
+    #     product = serializer.save()
+    #     publish_product_events(event_type="PRODUCT_UPDATED",payload=product)
+    #
+    # def perform_destroy(self, instance):
+    #     product_data = {...}
+    #     publish_product_deleted(event_type="PRODUCT_DELETED",payload= product_data)
+    #     instance.delete()
 
 
 class ProductVariantViewSet(viewsets.ModelViewSet):

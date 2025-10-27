@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
                 ('product_id', models.UUIDField()),
-                ('quantity', models.PositiveIntegerField(default=1)),
+                ('stock', models.PositiveIntegerField(default=1)),
                 ('price', models.DecimalField(decimal_places=2, max_digits=12)),
                 ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='items', to='bizhub_orders.order')),
             ],

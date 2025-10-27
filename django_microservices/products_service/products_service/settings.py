@@ -28,7 +28,11 @@ else:
 
 # Now read environment variables
 JWT_SECRET = os.getenv("JWT_SECRET")
-JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
+# kafka_topics.py
+PRODUCT_CREATED = os.getenv("PRODUCT_CREATED")
+PRODUCT_UPDATED = os.getenv("PRODUCT_UPDATED")
+PRODUCT_DELETED = os.getenv("PRODUCT_DELETED")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -120,6 +124,8 @@ MINIO_ENDPOINT = config_data.get('django.minio.MINIO_ENDPOINT')
 MINIO_ACCESS_KEY = config_data.get('django.minio.MINIO_ACCESS_KEY')
 MINIO_SECRET_KEY = config_data.get('django.minio.MINIO_SECRET_KEY')
 MINIO_BUCKET = config_data.get('django.minio.MINIO_BUCKET')
+
+KAFKA_BOOTSTRAP_SERVER= config_data.get('django.kafka.KAFKA_BOOTSTRAP')
 
 #jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {
