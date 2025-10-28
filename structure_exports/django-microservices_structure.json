@@ -1,0 +1,1301 @@
+{
+  "project_info": {
+    "name": "django-microservices",
+    "path": "/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices",
+    "generated_at": "2025-10-18T20:38:33.091054974",
+    "total_files": 66,
+    "total_size": 63409
+  },
+  "structure": {
+    "__init__.py": {
+      "type": "file",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.280619743",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    ".env": {
+      "type": "file",
+      "info": {
+        "size": 82,
+        "last_modified": "2025-10-18T20:38:32.359515099",
+        "mime_type": "text/plain",
+        "extension": ".env"
+      }
+    },
+    ".gitignore": {
+      "type": "file",
+      "info": {
+        "size": 589,
+        "last_modified": "2025-10-18T20:38:32.415530901",
+        "mime_type": "text/plain",
+        "extension": ".gitignore"
+      }
+    },
+    "requirements.txt": {
+      "type": "file",
+      "info": {
+        "size": 266,
+        "last_modified": "2025-10-18T20:38:32.428735285",
+        "mime_type": "text/plain",
+        "extension": ".txt"
+      }
+    },
+    "products_service": {
+      "__init__.py": {
+        "type": "file",
+        "info": {
+          "size": 0,
+          "last_modified": "2025-10-18T20:38:32.451099885",
+          "mime_type": "text/x-python",
+          "extension": ".py"
+        }
+      },
+      "minio": {
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-18T20:38:32.453082878",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "minio.py": {
+          "type": "file",
+          "info": {
+            "size": 925,
+            "last_modified": "2025-10-18T20:38:32.454834277",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      },
+      ".gitignore": {
+        "type": "file",
+        "info": {
+          "size": 592,
+          "last_modified": "2025-10-18T20:38:32.482144347",
+          "mime_type": "text/plain",
+          "extension": ".gitignore"
+        }
+      },
+      "products_service": {
+        "__pycache__": {
+          "urls.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 1198,
+              "last_modified": "2025-10-18T20:38:32.492807808",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "__init__.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 216,
+              "last_modified": "2025-10-18T20:38:32.521777699",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "settings.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 3833,
+              "last_modified": "2025-10-18T20:38:32.541175691",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "wsgi.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 722,
+              "last_modified": "2025-10-18T20:38:32.547487284",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          }
+        },
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-18T20:38:32.57484019",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "settings.py": {
+          "type": "file",
+          "info": {
+            "size": 4766,
+            "last_modified": "2025-10-18T20:38:32.576595837",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "asgi.py": {
+          "type": "file",
+          "info": {
+            "size": 409,
+            "last_modified": "2025-10-18T20:38:32.59778823",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "wsgi.py": {
+          "type": "file",
+          "info": {
+            "size": 409,
+            "last_modified": "2025-10-18T20:38:32.607142248",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "urls.py": {
+          "type": "file",
+          "info": {
+            "size": 835,
+            "last_modified": "2025-10-18T20:38:32.61288454",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      },
+      "db.sqlite3": {
+        "type": "file",
+        "info": {
+          "size": 0,
+          "last_modified": "2025-10-18T20:38:32.629497934",
+          "mime_type": "application/octet-stream",
+          "extension": ".sqlite3"
+        }
+      },
+      "manage.py": {
+        "type": "file",
+        "info": {
+          "size": 741,
+          "last_modified": "2025-10-18T20:38:32.631312467",
+          "mime_type": "application/x-sh",
+          "extension": ".py"
+        }
+      },
+      "bizhub_products": {
+        "__pycache__": {
+          "serializers.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 838,
+              "last_modified": "2025-10-18T20:38:32.639562519",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "views.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 837,
+              "last_modified": "2025-10-18T20:38:32.65717836",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "urls.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 475,
+              "last_modified": "2025-10-18T20:38:32.671515979",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "models.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 5968,
+              "last_modified": "2025-10-18T20:38:32.679065302",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "apps.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 1005,
+              "last_modified": "2025-10-18T20:38:32.689071674",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "__init__.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 215,
+              "last_modified": "2025-10-18T20:38:32.697229739",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "admin.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 259,
+              "last_modified": "2025-10-18T20:38:32.704356923",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          }
+        },
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-18T20:38:32.710038838",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "tests.py": {
+          "type": "file",
+          "info": {
+            "size": 60,
+            "last_modified": "2025-10-18T20:38:32.711418062",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "admin.py": {
+          "type": "file",
+          "info": {
+            "size": 63,
+            "last_modified": "2025-10-18T20:38:32.71568033",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "apps.py": {
+          "type": "file",
+          "info": {
+            "size": 505,
+            "last_modified": "2025-10-18T20:38:32.719906581",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "migrations": {
+          "__pycache__": {
+            "0001_initial.cpython-313.pyc": {
+              "type": "file",
+              "info": {
+                "size": 5916,
+                "last_modified": "2025-10-18T20:38:32.725657943",
+                "mime_type": "application/octet-stream",
+                "extension": ".pyc"
+              }
+            },
+            "__init__.cpython-313.pyc": {
+              "type": "file",
+              "info": {
+                "size": 226,
+                "last_modified": "2025-10-18T20:38:32.749205625",
+                "mime_type": "application/octet-stream",
+                "extension": ".pyc"
+              }
+            }
+          },
+          "__init__.py": {
+            "type": "file",
+            "info": {
+              "size": 0,
+              "last_modified": "2025-10-18T20:38:32.754131147",
+              "mime_type": "text/x-python",
+              "extension": ".py"
+            }
+          },
+          "0001_initial.py": {
+            "type": "file",
+            "info": {
+              "size": 5056,
+              "last_modified": "2025-10-18T20:38:32.755207745",
+              "mime_type": "text/x-python",
+              "extension": ".py"
+            }
+          }
+        },
+        "models.py": {
+          "type": "file",
+          "info": {
+            "size": 3349,
+            "last_modified": "2025-10-18T20:38:32.761507617",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "views.py": {
+          "type": "file",
+          "info": {
+            "size": 1344,
+            "last_modified": "2025-10-18T20:38:32.779452031",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "serializers.py": {
+          "type": "file",
+          "info": {
+            "size": 1013,
+            "last_modified": "2025-10-18T20:38:32.809493902",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "urls.py": {
+          "type": "file",
+          "info": {
+            "size": 567,
+            "last_modified": "2025-10-18T20:38:32.83001909",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      }
+    },
+    "setting.py": {
+      "type": "file",
+      "info": {
+        "size": 220,
+        "last_modified": "2025-10-18T20:38:32.843231943",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    "orders_service": {
+      ".gitignore": {
+        "type": "file",
+        "info": {
+          "size": 589,
+          "last_modified": "2025-10-18T20:38:32.84716509",
+          "mime_type": "text/plain",
+          "extension": ".gitignore"
+        }
+      },
+      "orders_service": {
+        "__pycache__": {
+          "urls.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 1086,
+              "last_modified": "2025-10-18T20:38:32.851386976",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "__init__.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 212,
+              "last_modified": "2025-10-18T20:38:32.864299258",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "settings.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 3861,
+              "last_modified": "2025-10-18T20:38:32.886126423",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "wsgi.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 714,
+              "last_modified": "2025-10-18T20:38:32.897686967",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          }
+        },
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-18T20:38:32.928030735",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "settings.py": {
+          "type": "file",
+          "info": {
+            "size": 4475,
+            "last_modified": "2025-10-18T20:38:32.929576856",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "asgi.py": {
+          "type": "file",
+          "info": {
+            "size": 405,
+            "last_modified": "2025-10-18T20:38:32.948854851",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "wsgi.py": {
+          "type": "file",
+          "info": {
+            "size": 405,
+            "last_modified": "2025-10-18T20:38:32.951957646",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "urls.py": {
+          "type": "file",
+          "info": {
+            "size": 770,
+            "last_modified": "2025-10-18T20:38:32.954910143",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      },
+      "manage.py": {
+        "type": "file",
+        "info": {
+          "size": 738,
+          "last_modified": "2025-10-18T20:38:32.975572345",
+          "mime_type": "application/x-sh",
+          "extension": ".py"
+        }
+      },
+      "bizhub_orders": {
+        "__pycache__": {
+          "models.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 2034,
+              "last_modified": "2025-10-18T20:38:32.978562648",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "apps.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 1015,
+              "last_modified": "2025-10-18T20:38:32.982905963",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "__init__.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 211,
+              "last_modified": "2025-10-18T20:38:32.987697861",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          },
+          "admin.cpython-313.pyc": {
+            "type": "file",
+            "info": {
+              "size": 255,
+              "last_modified": "2025-10-18T20:38:32.990659602",
+              "mime_type": "application/octet-stream",
+              "extension": ".pyc"
+            }
+          }
+        },
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-18T20:38:32.994727242",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "tests.py": {
+          "type": "file",
+          "info": {
+            "size": 60,
+            "last_modified": "2025-10-18T20:38:32.996074286",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "admin.py": {
+          "type": "file",
+          "info": {
+            "size": 63,
+            "last_modified": "2025-10-18T20:38:32.999260178",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "apps.py": {
+          "type": "file",
+          "info": {
+            "size": 508,
+            "last_modified": "2025-10-18T20:38:33.02347611",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "migrations": {
+          "__pycache__": {
+            "__init__.cpython-313.pyc": {
+              "type": "file",
+              "info": {
+                "size": 222,
+                "last_modified": "2025-10-18T20:38:33.028604776",
+                "mime_type": "application/octet-stream",
+                "extension": ".pyc"
+              }
+            }
+          },
+          "__init__.py": {
+            "type": "file",
+            "info": {
+              "size": 0,
+              "last_modified": "2025-10-18T20:38:33.034466576",
+              "mime_type": "text/x-python",
+              "extension": ".py"
+            }
+          }
+        },
+        "models.py": {
+          "type": "file",
+          "info": {
+            "size": 1101,
+            "last_modified": "2025-10-18T20:38:33.036888705",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "views.py": {
+          "type": "file",
+          "info": {
+            "size": 63,
+            "last_modified": "2025-10-18T20:38:33.061253732",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      }
+    },
+    "common": {
+      "__init__.py": {
+        "type": "file",
+        "info": {
+          "size": 0,
+          "last_modified": "2025-10-18T20:38:33.06782196",
+          "mime_type": "text/x-python",
+          "extension": ".py"
+        }
+      },
+      "authentication.py": {
+        "type": "file",
+        "info": {
+          "size": 587,
+          "last_modified": "2025-10-18T20:38:33.069286432",
+          "mime_type": "text/x-python",
+          "extension": ".py"
+        }
+      },
+      "kafka": {
+        "__init__.py": {
+          "type": "file",
+          "info": {
+            "size": 0,
+            "last_modified": "2025-10-18T20:38:33.07373317",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        },
+        "producer.py": {
+          "type": "file",
+          "info": {
+            "size": 536,
+            "last_modified": "2025-10-18T20:38:33.075274667",
+            "mime_type": "text/x-python",
+            "extension": ".py"
+          }
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.280619743",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": ".env",
+      "content": "JWT_SECRET_KEY=\"ZKmeapmW/5fgkRI16seeGMtCeWU7B4XcE8ZavPvTHOozkWh+YFzr9AdWlS4iS1vU\"\n",
+      "info": {
+        "size": 82,
+        "last_modified": "2025-10-18T20:38:32.359515099",
+        "mime_type": "text/plain",
+        "extension": ".env"
+      }
+    },
+    {
+      "path": ".gitignore",
+      "content": "# Python\n__pycache__/\n*.py[cod]\n*.pyo\n*.pyd\n*.so\n*.egg-info/\n.eggs/\n\n# Django\n*.log\n*.pot\n*.pyc\nproducts_service/db.sqlite3\nmedia/\nstaticfiles/\nlocal_settings.py\n\n# Environments\n.env\n.venv/\nvenv/\nenv/\nENV/\n\n# IDEs / Editors\n.vscode/\n.idea/\n*.swp\n\n# Migrations (optional – keep if you want to regenerate them each time)\n# */migrations/\n# !*/migrations/__init__.py\n\n# Testing\n.coverage\n.tox/\nnosetests.xml\ncoverage.xml\n*.cover\n\n# OS files\n.DS_Store\nThumbs.db\n\n# Deployment\n*.bak\n*.pid\n*.seed\n*.orig\n*.rej\n\n# PyInstaller\n*.manifest\n*.spec\nbuild/\ndist/\n\n# Docker\ndocker-compose.override.yml\n",
+      "info": {
+        "size": 589,
+        "last_modified": "2025-10-18T20:38:32.415530901",
+        "mime_type": "text/plain",
+        "extension": ".gitignore"
+      }
+    },
+    {
+      "path": "requirements.txt",
+      "content": "Django==5.1.2\ndjangorestframework==3.15.2\npsycopg[binary]\nkafka-python==2.0.2\npython-decouple==3.8\ndjango-cors-headers==4.4.0\ngunicorn==21.2.0\nwhitenoise==6.6.0\npillow==10.4.0\nrequests\ndjangorestframework-simplejwt\nPyJWT\npy_eureka_client\nminio\ndjango-storages\nboto3\n",
+      "info": {
+        "size": 266,
+        "last_modified": "2025-10-18T20:38:32.428735285",
+        "mime_type": "text/plain",
+        "extension": ".txt"
+      }
+    },
+    {
+      "path": "products_service/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.451099885",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/minio/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.453082878",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/minio/minio.py",
+      "content": "from django.conf import settings\nfrom django.views.decorators.csrf import csrf_exempt\nfrom minio import Minio\nfrom django.http import JsonResponse\n\nclient=Minio(\n    endpoint=settings.MINIO_ENDPOINT,\n    access_key=settings.MINIO_ACCESS_KEY,\n    secret_key=settings.MINIO_SECRET_KEY,\n    secure=False\n)\nbucket_name=settings.MINIO_BUCKET\n\n# create a bucket if it does not exist make it\nif not client.bucket_exists(bucket_name):\n    client.make_bucket(bucket_name)\n@csrf_exempt\ndef upload_file(request):\n    if request.method == 'POST' and request.FILES['file']:\n        file = request.FILES['file']\n        filename = file.name\n\n        client.put_object(bucket_name, filename, file,length=file.size,content_type=file.content_type)\n        file_url=f\"products/{bucket_name}/{filename}\"\n        return JsonResponse({\"message\":\"File uploaded\",'url':file_url})\n    return JsonResponse({\"message\":\"File not supported\"},status=400)",
+      "info": {
+        "size": 925,
+        "last_modified": "2025-10-18T20:38:32.454834277",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/.gitignore",
+      "content": "# Python\n__pycache__/\n*.py[cod]\n*.pyo\n*.pyd\n*.so\n*.egg-info/\n.eggs/\n\n# Django\n*.log\n*.pot\n*.pyc\nproducts_service/db.sqlite3\nmedia/\nstaticfiles/\nlocal_settings.py\n\n# Environments\n../.env\n.venv/\nvenv/\nenv/\nENV/\n\n# IDEs / Editors\n.vscode/\n.idea/\n*.swp\n\n# Migrations (optional – keep if you want to regenerate them each time)\n# */migrations/\n# !*/migrations/__init__.py\n\n# Testing\n.coverage\n.tox/\nnosetests.xml\ncoverage.xml\n*.cover\n\n# OS files\n.DS_Store\nThumbs.db\n\n# Deployment\n*.bak\n*.pid\n*.seed\n*.orig\n*.rej\n\n# PyInstaller\n*.manifest\n*.spec\nbuild/\ndist/\n\n# Docker\ndocker-compose.override.yml\n",
+      "info": {
+        "size": 592,
+        "last_modified": "2025-10-18T20:38:32.482144347",
+        "mime_type": "text/plain",
+        "extension": ".gitignore"
+      }
+    },
+    {
+      "path": "products_service/products_service/__pycache__/urls.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïhO\u0003\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0007\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó|\u0000\u0000\u0000\u0000S\u0000r\u0000S\u0001S\u0002K\u0001J\u0002r\u0002 \u0000S\u0001S\u0003K\u0003J\u0004r\u0004J\u0005r\u0005 \u0000\\\u0004\"\u0000S\u0004\\\u0002R\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u0000\\\u0004\"\u0000S\u0005\\\u0005\"\u0000S\u00065\u0001\u0000\u0000\u0000\u0000\u0000\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u0000/\u0002r\bg\u0007)\ba\u0002\u0000\u0000\nURL configuration for products_service project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/5.2/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\né\u0000\u0000\u0000\u0000)\u0001Ú\u0005admin)\u0002Ú\u0004pathÚ\u0007includez\u0006admin/z\u0013bizhub_products/v1/z\u0014bizhub_products.urlsN)\tÚ\u0007__doc__Ú\u000edjango.contribr\u0003\u0000\u0000\u0000Ú\u000bdjango.urlsr\u0004\u0000\u0000\u0000r\u0005\u0000\u0000\u0000Ú\u0004siteÚ\u0004urlsÚ\u000burlpatterns©\u0000ó\u0000\u0000\u0000\u0000Ús/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/products_service/urls.pyÚ\b<module>r\u000f\u0000\u0000\u0000\u0001\u0000\u0000\u0000s>\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001ñ\u0002\u000f\u0001\u0004õ \u0000\u0001!ß\u0000%ñ\u0006\u0000\u0005\t\u00185::??Ó\u0004#Ù\u0004\bÐ\t\u001e¡\u0007Ð(>Ó ?Ó\u0004@ð\u0005\u0003\u000f\u0002\u000br\r\u0000\u0000\u0000",
+      "info": {
+        "size": 1198,
+        "last_modified": "2025-10-18T20:38:32.492807808",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/products_service/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Úw/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/products_service/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 216,
+        "last_modified": "2025-10-18T20:38:32.521777699",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/products_service/__pycache__/settings.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïhn\u0010\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\t\u0000\u0000\u0000\u0000\u0000\u0000\u0000óà\u0002\u0000\u0000\u0000S\u0000r\u0000S\u0001S\u0002K\u0001J\u0002r\u0002 \u0000S\u0001S\u0003K\u0003r\u0003S\u0001S\u0004K\u0004J\u0005r\u0005 \u0000\\\u0002\"\u0000\\\u00065\u0001\u0000\u0000\u0000\u0000\u0000\u0000R\u000f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\tS\u0005r\nS\u0006r\u000bS\u0007/\u0001r\f/\u0000S\bQ\u0001r\r/\u0000S\tQ\u0001r\u000eS\nr\u000fS\u000b/\u0000S\u0006S\f/\u0000S\rQ\u00010\u0001S\u000e.\u0004/\u0001r\u0010S\u000fr\u0011\\\u0005\"\u0000S\u0010S\u0011S\u00129\u0002r\u0012\\\u0005\"\u0000S\u0013S\u0014S\u00129\u0002r\u0013\u001e\u0000\\\u0003R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0012\u000e\u0000S\u0015\\\u0013\u000e\u0000S\u00163\u00045\u0001\u0000\u0000\u0000\u0000\u0000\u0000r\u0015\\\u0015R-\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\\\u0015R/\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0017/\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u0000r\u00180\u0000r\u0019\\\u0018\u0013\u0000H$\u0000\u0000r\u001a\\\u0019R7\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\\\u001aR)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00180\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u00005\u0001\u0000\u0000\u0000\u0000\u0000\u0000 \u0000M&\u0000\u0000\u000b\u0000 \u0000S\u001aS\u001b\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001c5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001d5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001e5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001f5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S 5\u0001\u0000\u0000\u0000\u0000\u0000\u0000S!.\u00060\u0001r\u001fS\"S#0\u0001S\"S$0\u0001S\"S%0\u0001S\"S&0\u0001/\u0004r S'r!S(r\"S\u0006r#S\u0006r$S)r%S*r&g\u0003!\u0000\\\u001c\u0007\u0000a\u0017\u0000\u0000r\u001d\\\u001e\"\u0000S\u0019\\\u001d\u000e\u00003\u00025\u0001\u0000\u0000\u0000\u0000\u0000\u0000 \u00000\u0000r\u0019\u001f\u0000S\u0003r\u001dC\u001dNS\u0003r\u001dC\u001df\u0001f\u0000=\u0003\u001f\u0000f\u0001)+a5\u0001\u0000\u0000\nDjango settings for products_service project.\n\nGenerated by 'django-admin startproject' using Django 5.2.7.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.2/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/5.2/ref/settings/\né\u0000\u0000\u0000\u0000)\u0001Ú\u0004PathN)\u0001Ú\u0006configzBdjango-insecure-#e((0q0@q0@6)jym604d-*u+^p2pu918-ub*g(0+-+zp1imzieTÚ\u0001*)\bz\u0014django.contrib.adminz\u0013django.contrib.authz\u001bdjango.contrib.contenttypesz\u0017django.contrib.sessionsz\u0017django.contrib.messagesz\u001adjango.contrib.staticfilesÚ\u000fbizhub_productsÚ\u000erest_framework)\u0007z-django.middleware.security.SecurityMiddlewarez4django.contrib.sessions.middleware.SessionMiddlewarez)django.middleware.common.CommonMiddlewarez)django.middleware.csrf.CsrfViewMiddlewarez7django.contrib.auth.middleware.AuthenticationMiddlewarez4django.contrib.messages.middleware.MessageMiddlewarez6django.middleware.clickjacking.XFrameOptionsMiddlewarez\u0015products_service.urlsz/django.template.backends.django.DjangoTemplatesÚ\u0012context_processors)\u0003z*django.template.context_processors.requestz+django.contrib.auth.context_processors.authz3django.contrib.messages.context_processors.messages)\u0004Ú\u0007BACKENDÚ\u0004DIRSÚ\bAPP_DIRSÚ\u0007OPTIONSz!products_service.wsgi.applicationÚ\u0011CONFIG_SERVER_URLz\u0015http://localhost:8888)\u0001Ú\u0007defaultÚ\u000bSERVER_NAMEz\u0010products-serviceÚ\u0001/z\b/defaultÚ\u000fpropertySourcesÚ\u0006sourcez4 Warning: Could not load from spring Config Server: r\u000e\u0000\u0000\u0000z\u001ddjango.db.backends.postgresqlz\u0014django.database.hostz\u0014django.database.portz\u0014django.database.namez\u0014django.database.userz\u0018django.database.password)\u0006Ú\u0006ENGINEÚ\u0004HOSTÚ\u0004PORTÚ\u0004NAMEÚ\u0004USERÚ\bPASSWORDr\u0016\u0000\u0000\u0000zHdjango.contrib.auth.password_validation.UserAttributeSimilarityValidatorz>django.contrib.auth.password_validation.MinimumLengthValidatorz?django.contrib.auth.password_validation.CommonPasswordValidatorz@django.contrib.auth.password_validation.NumericPasswordValidatorz\u0005en-usÚ\u0003UTCz\u0007static/z\u001ddjango.db.models.BigAutoField)'Ú\u0007__doc__Ú\u0007pathlibr\u0003\u0000\u0000\u0000Ú\brequestsÚ\bdecoupler\u0004\u0000\u0000\u0000Ú\b__file__Ú\u0007resolveÚ\u0006parentÚ\bBASE_DIRÚ\nSECRET_KEYÚ\u0005DEBUGÚ\rALLOWED_HOSTSÚ\u000eINSTALLED_APPSÚ\nMIDDLEWAREÚ\fROOT_URLCONFÚ\tTEMPLATESÚ\u0010WSGI_APPLICATIONr\r\u0000\u0000\u0000r\u000f\u0000\u0000\u0000Ú\u0003getÚ\bresponseÚ\u0010raise_for_statusÚ\u0004jsonÚ\npropertiesÚ\u000bconfig_datar\u0012\u0000\u0000\u0000Ú\u0006updateÚ\tExceptionÚ\u0001eÚ\u0005printÚ\tDATABASESÚ\u0018AUTH_PASSWORD_VALIDATORSÚ\rLANGUAGE_CODEÚ\tTIME_ZONEÚ\bUSE_I18NÚ\u0006USE_TZÚ\nSTATIC_URLÚ\u0012DEFAULT_AUTO_FIELD©\u0000ó\u0000\u0000\u0000\u0000Úw/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/products_service/settings.pyÚ\b<module>r?\u0000\u0000\u0000\u0001\u0000\u0000\u0000sø\u0001\u0000\u0000ð\u0003\u0001\u0001\u0001ñ\u0002\n\u0001\u0004õ\u0018\u0000\u0001\u0019Û\u0000\u000fÝ\u0000\u001bñ\u0006\u0000\f\u0010\b>×\u000b!Ñ\u000b!Ó\u000b#×\u000b*Ñ\u000b*×\u000b1Ñ\u000b1\bð\u000e\u0000\u000eR\u0001\nð\u0006\u0000\t\r\u0005à\u0011\u0014\u0005\rò\n\t\u0012\u0002\u000eò\u0016\b\u000e\u0002\nð\u0014\u0000\u0010'\fð\b\u0000\u0014E\u0001Ø\u0010\u0012Ø\u0014\u0018à\f ò\u0000\u0004#\u000eð\u0003\u0006\u0014\nñ\t\u000b\u0005\u0006ð\u0003\r\r\u0002\tð\u001e\u0000\u00147Ð\u0000\u0010ñ\n\u0000\u0015\u001bÐ\u001b.Ð7NÑ\u0014OÐ\u0000\u0011Ù\u000e\u0014]Ð+=Ñ\u000e>\u000bð\u0004\t\u0001\u0013Ø\u000f\u0017||Ð\u001f0Ð\u001e1°\u0011°;°-¸xÐ\u001cHÓ\u000fIHØ\u0004\f×\u0004\u001dÑ\u0004\u001dÔ\u0004\u001fØ\u0010\u0018\r\r\u000f×\u0010#Ñ\u0010#Ð$5°bÓ\u00109JØ\u0010\u0012KÛ\u0012\u001c\u0006Ø\b\u0013×\b\u001aÑ\b\u001a6:: h¨rÓ\u001b2Ö\b3ñ\u0003\u0000\u0013\u001dð\u000e\u0000\u0005\u000eØ\u00121Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0014\u001fOOÐ$>Ó\u0014?ñ\r\u0007\u0010\u0006ð\u0003\t\r\u0002\tð0\u0000\t\u000fÐ\u0010Zð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Pð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Qð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Rð\u0003\u0002\u0005\u0006ð\u0015\r\u001c\u0002Ð\u0000\u0018ð&\u0000\u0011\u0018\rà\f\u0011\tà\u000b\u000f\bà\t\r\u0006ð\f\u0000\u000e\u0017\nð\n\u0000\u00165Ñ\u0000\u0012øð}\u0001\u0000\b\u0011ó\u0000\u0002\u0001\u0013Ù\u0004\tÐ\f@À\u0011À\u0003Ð\nDÔ\u0004EØ\u0010\u0012Kûð\u0005\u0002\u0001\u0013ús\u0019\u0000\u0000\u0000Á+A4E\u0010\u0000Å\u0010\u0006E-\u0003Å\u0016\rE(\u0003Å(\u0005E-\u0003",
+      "info": {
+        "size": 3833,
+        "last_modified": "2025-10-18T20:38:32.541175691",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/products_service/__pycache__/wsgi.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh\u0001\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000ób\u0000\u0000\u0000\u0000S\u0000r\u0000S\u0001S\u0002K\u0001r\u0001S\u0001S\u0003K\u0002J\u0003r\u0003 \u0000\\\u0001R\b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0004S\u00055\u0002\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\\\u0003\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\u0006g\u0002)\u0006zà\nWSGI config for products_service project.\n\nIt exposes the WSGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/\né\u0000\u0000\u0000\u0000N)\u0001Ú\u0014get_wsgi_applicationÚ\u0016DJANGO_SETTINGS_MODULEz\u0019products_service.settings)\u0007Ú\u0007__doc__Ú\u0002osÚ\u0010django.core.wsgir\u0003\u0000\u0000\u0000Ú\u0007environÚ\nsetdefaultÚ\u000bapplication©\u0000ó\u0000\u0000\u0000\u0000Ús/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/products_service/wsgi.pyÚ\b<module>r\u000e\u0000\u0000\u0000\u0001\u0000\u0000\u0000s0\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001ñ\u0002\u0007\u0001\u0004ó\u0012\u0000\u0001\nå\u00001à\u0000\u0002\n\n×\u0000\u0015Ñ\u0000\u0015Ð\u0016.Ð0KÔ\u0000Lá\u000e\"Ó\u000e$\u000br\f\u0000\u0000\u0000",
+      "info": {
+        "size": 722,
+        "last_modified": "2025-10-18T20:38:32.547487284",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/products_service/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.57484019",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/products_service/settings.py",
+      "content": "\"\"\"\nDjango settings for products_service project.\n\nGenerated by 'django-admin startproject' using Django 5.2.7.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.2/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/5.2/ref/settings/\n\"\"\"\nimport os\nfrom pathlib import Path\nimport requests\nfrom decouple import config\n\n# Build paths inside the project like this: BASE_DIR / 'subdir'.\nBASE_DIR = Path(__file__).resolve().parent.parent\n\n\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/\n\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-#e((0q0@q0@6)jym604d-*u+^p2pu918-ub*g(0+-+zp1imzie'\n\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n\nALLOWED_HOSTS = [\"*\"]\n\n\n# Application definition\n\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'bizhub_products',\n    'rest_framework',\n]\n\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\n\nROOT_URLCONF = 'products_service.urls'\n\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',\n                'django.contrib.messages.context_processors.messages',\n            ],\n        },\n    },\n]\n\nWSGI_APPLICATION = 'products_service.wsgi.application'\n\n\n# Database\n# https://docs.djangoproject.com/en/5.2/ref/settings/#databases\nCONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')\nSERVER_NAME = config('SERVER_NAME',default='products-service')\n\ntry:\n    response = requests.get(f\"{CONFIG_SERVER_URL}/{SERVER_NAME}/default\")\n    response.raise_for_status()\n    properties= response.json().get('propertySources',[])\n    config_data={}\n    for source in properties:\n        config_data.update(source.get('source',{}))\nexcept Exception as e:\n    print(f\" Warning: Could not load from spring Config Server: {e}\")\n    config_data={}\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'HOST': config_data.get('django.database.host'),\n        'PORT': config_data.get('django.database.port'),\n        'NAME': config_data.get('django.database.name'),\n        'USER': config_data.get('django.database.user'),\n        'PASSWORD': config_data.get('django.database.password'),\n    }\n}\n\n\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.sqlite3',\n#         'NAME': BASE_DIR / 'db.sqlite3',\n#     }\n# }\n\nMINIO_ENDPOINT=config_data.get('django.minio.MINIO_ENDPOINT')\nMINIO_ACCESS_KEY=config_data.get('django.minio.MINIO_ACCESS_KEY')\nMINIO_SECRET_KEY=config_data.get('django.minio.MINIO_SECRET_KEY')\nMINIO_BUCKET=config_data.get('django.minio.MINIO_BUCKET')\n\n#jwt_token to verify token from spring boot Auth service\nJWT_SECRET=os.getenv(\"JWT_SECRET_KEY\")\nREST_FRAMEWORK = {\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n    \"common.authentication.JWTAuthentication\",\n    ]\n}\n\n# Kafka config\nKAFKA_BOOTSTRAP_SERVER =config_data.get('django.kafka.KAFKA_BOOTSTRAP')\n\n# Password validation\n# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators\n\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',\n    },\n]\n\n\n# Internationalization\n# https://docs.djangoproject.com/en/5.2/topics/i18n/\n\nLANGUAGE_CODE = 'en-us'\n\nTIME_ZONE = 'UTC'\n\nUSE_I18N = True\n\nUSE_TZ = True\n\n\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.2/howto/static-files/\n\nSTATIC_URL = 'static/'\n\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field\n\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n",
+      "info": {
+        "size": 4766,
+        "last_modified": "2025-10-18T20:38:32.576595837",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/products_service/asgi.py",
+      "content": "\"\"\"\nASGI config for products_service project.\n\nIt exposes the ASGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.2/howto/deployment/asgi/\n\"\"\"\n\nimport os\n\nfrom django.core.asgi import get_asgi_application\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'products_service.settings')\n\napplication = get_asgi_application()\n",
+      "info": {
+        "size": 409,
+        "last_modified": "2025-10-18T20:38:32.59778823",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/products_service/wsgi.py",
+      "content": "\"\"\"\nWSGI config for products_service project.\n\nIt exposes the WSGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/\n\"\"\"\n\nimport os\n\nfrom django.core.wsgi import get_wsgi_application\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'products_service.settings')\n\napplication = get_wsgi_application()\n",
+      "info": {
+        "size": 409,
+        "last_modified": "2025-10-18T20:38:32.607142248",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/products_service/urls.py",
+      "content": "\"\"\"\nURL configuration for products_service project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/5.2/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\n\"\"\"\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/v1/', include('bizhub_products.urls')),\n]\n",
+      "info": {
+        "size": 835,
+        "last_modified": "2025-10-18T20:38:32.61288454",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/db.sqlite3",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.629497934",
+        "mime_type": "application/octet-stream",
+        "extension": ".sqlite3"
+      }
+    },
+    {
+      "path": "products_service/manage.py",
+      "content": "#!/usr/bin/env python\n\"\"\"Django's command-line utility for administrative tasks.\"\"\"\nimport os\nimport sys\n\n\ndef main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'products_service.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"\n        ) from exc\n    execute_from_command_line(sys.argv)\n\n    if len(sys.argv) == 1:\n        sys.argv += [\"runserver\", \"9001\"]\n\nif __name__ == '__main__':\n    main()\n",
+      "info": {
+        "size": 741,
+        "last_modified": "2025-10-18T20:38:32.631312467",
+        "mime_type": "application/x-sh",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__pycache__/serializers.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh½\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000óF\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000S\u0002S\u0003K\u0002J\u0003r\u0003 \u0000\u0018\u0000\"\u0000S\u0004\u001a\u0000S\u0005\\\u0001R\b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0005g\u0006)\u0007é\u0000\u0000\u0000\u0000)\u0001Ú\u000bserializersé\u0001\u0000\u0000\u0000)\u0001Ú\u0007Productc\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó(\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\u0018\u0000\"\u0000S\u0002\u001a\u0000S\u00035\u0002\u0000\u0000\u0000\u0000\u0000\u0000r\u0004S\u0004r\u0005g\u0005)\u0006Ú\u0011ProductSerializeré\u0004\u0000\u0000\u0000c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u001c\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004r\u0005S\u0002r\u0006S\u0003r\u0007g\u0004)\u0005Ú\u0016ProductSerializer.Metaé\u0005\u0000\u0000\u0000Ú\u0007__all__©\u0000N)\bÚ\b__name__Ú\n__module__Ú\f__qualname__Ú\u000f__firstlineno__r\u0005\u0000\u0000\u0000Ú\u0005modelÚ\u0006fieldsÚ\u0015__static_attributes__r\r\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Úy/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/serializers.pyÚ\u0004Metar\n\u0000\u0000\u0000\u0005\u0000\u0000\u0000s\f\u0000\u0000\u0000\u0000Ø\u0010\u0017\u0005Ø\u0011\u001a\u0006r\u0015\u0000\u0000\u0000r\u0017\u0000\u0000\u0000r\r\u0000\u0000\u0000N)\u0006r\u000e\u0000\u0000\u0000r\u000f\u0000\u0000\u0000r\u0010\u0000\u0000\u0000r\u0011\u0000\u0000\u0000r\u0017\u0000\u0000\u0000r\u0014\u0000\u0000\u0000r\r\u0000\u0000\u0000r\u0015\u0000\u0000\u0000r\u0016\u0000\u0000\u0000r\u0007\u0000\u0000\u0000r\u0007\u0000\u0000\u0000\u0004\u0000\u0000\u0000s\f\u0000\u0000\u0000\u0000÷\u0002\u0002\u0005\u001bô\u0000\u0002\u0005\u001br\u0015\u0000\u0000\u0000r\u0007\u0000\u0000\u0000N)\u0006Ú\u000erest_frameworkr\u0003\u0000\u0000\u0000Ú\u0006modelsr\u0005\u0000\u0000\u0000Ú\u000fModelSerializerr\u0007\u0000\u0000\u0000r\r\u0000\u0000\u0000r\u0015\u0000\u0000\u0000r\u0016\u0000\u0000\u0000Ú\b<module>r\u001b\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u001d\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Ý\u0000&Ý\u0000\u001bô\u0004\u0003\u0001\u001b\u000b×\u00183Ñ\u00183õ\u0000\u0003\u0001\u001br\u0015\u0000\u0000\u0000",
+      "info": {
+        "size": 838,
+        "last_modified": "2025-10-18T20:38:32.639562519",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__pycache__/views.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh/\u0001\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000ób\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000S\u0000S\u0002K\u0002J\u0003r\u0003J\u0004r\u0004 \u0000S\u0003S\u0004K\u0005J\u0006r\u0006 \u0000S\u0003S\u0005K\u0007J\br\b \u0000\u0018\u0000\"\u0000S\u0006\u001a\u0000S\u0007\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\ng\b)\té\u0000\u0000\u0000\u0000)\u0001Ú\u0006render)\u0002Ú\bgenericsÚ\bviewsetsé\u0001\u0000\u0000\u0000)\u0001Ú\u0007Product)\u0001Ú\u0011ProductSerializerc\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000óL\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\r\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\u0007\\\br\tS\u0002r\ng\u0003)\u0004Ú\u000eProductViewSeté\b\u0000\u0000\u0000©\u0000N)\u000bÚ\b__name__Ú\n__module__Ú\f__qualname__Ú\u000f__firstlineno__r\u0007\u0000\u0000\u0000Ú\u0007objectsÚ\u0003allÚ\bquerysetr\b\u0000\u0000\u0000Ú\u0010serializer_classÚ\u0015__static_attributes__r\f\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Ús/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/views.pyr\n\u0000\u0000\u0000r\n\u0000\u0000\u0000\b\u0000\u0000\u0000s\u001a\u0000\u0000\u0000\u0000Ø\u000f\u0016×\u000f\"Ñ\u000f\"Ó\u000f$HØ\u0017(Ó\u0004\u0014r\u0016\u0000\u0000\u0000r\n\u0000\u0000\u0000N)\u000bÚ\u0010django.shortcutsr\u0003\u0000\u0000\u0000Ú\u000erest_frameworkr\u0004\u0000\u0000\u0000r\u0005\u0000\u0000\u0000Ú\u0006modelsr\u0007\u0000\u0000\u0000Ú\u000bserializersr\b\u0000\u0000\u0000Ú\fModelViewSetr\n\u0000\u0000\u0000r\f\u0000\u0000\u0000r\u0016\u0000\u0000\u0000r\u0017\u0000\u0000\u0000Ú\b<module>r\u001d\u0000\u0000\u0000\u0001\u0000\u0000\u0000s#\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Ý\u0000#ß\u0000-Ý\u0000\u001bÝ\u0000*ô\b\u0002\u0001)X×\u0015*Ñ\u0015*õ\u0000\u0002\u0001)r\u0016\u0000\u0000\u0000",
+      "info": {
+        "size": 837,
+        "last_modified": "2025-10-18T20:38:32.65717836",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__pycache__/urls.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh³\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000óf\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000S\u0002S\u0003K\u0002J\u0003r\u0003 \u0000\\\u0001\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\u0004\\\u0004R\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0004\\\u00035\u0002\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\\\u0004R\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\u0007g\u0005)\u0006é\u0000\u0000\u0000\u0000)\u0001Ú\rDefaultRouteré\u0001\u0000\u0000\u0000)\u0001Ú\u000eProductViewSetÚ\bproductsN)\bÚ\u0016rest_framework.routersr\u0003\u0000\u0000\u0000Ú\u0005viewsr\u0005\u0000\u0000\u0000Ú\u0006routerÚ\bregisterÚ\u0004urlsÚ\u000burlpatterns©\u0000ó\u0000\u0000\u0000\u0000Úr/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/urls.pyÚ\b<module>r\u0010\u0000\u0000\u0000\u0001\u0000\u0000\u0000s)\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Ý\u00000Ý\u0000!á\t\u0016\u001f\u0006Ø\u0000\u0006\u000f\u000f\u000b^Ô\u0000,Ø\u000e\u0014kk\u000br\u000e\u0000\u0000\u0000",
+      "info": {
+        "size": 475,
+        "last_modified": "2025-10-18T20:38:32.671515979",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__pycache__/models.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh®\f\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó>\u0001\u0000\u0000\u0000S\u0000S\u0001K\u0000r\u0000S\u0000S\u0002K\u0001J\u0002r\u0002 \u0000\u0018\u0000\"\u0000S\u0003\u001a\u0000S\u0004\\\u0002R\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0004\u0018\u0000\"\u0000S\u0005\u001a\u0000S\u0006\\\u0002R\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0005\u0018\u0000\"\u0000S\u0007\u001a\u0000S\b\\\u0002R\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0006\u0018\u0000\"\u0000S\t\u001a\u0000S\n\\\u0002R\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0007\u0018\u0000\"\u0000S\u000b\u001a\u0000S\f\\\u0002R\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\b\u0018\u0000\"\u0000S\r\u001a\u0000S\u000e\\\u0002R\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\t\u0018\u0000\"\u0000S\u000f\u001a\u0000S\u0010\\\u0002R\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\ng\u0001)\u0011é\u0000\u0000\u0000\u0000N)\u0001Ú\u0006modelsc\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó^\u0001\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0003S\u00049\u0003r\b\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\t\\\u0004R\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0005S\u00069\u0001r\u000b\\\u0004R\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u00079\u0001r\r\\\u0004R\u001c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\b9\u0001r\u000f\\\u0004R\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\t/\u0000S\nQ\u0001S\u000bS\f9\u0003r\u0010\\\u0004R\"\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\rS\u000eS\u000fS\u00109\u0003r\u0012\\\u0004R\"\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0011S\u000eS\u000fS\u00109\u0003r\u0013\\\u0004R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u00129\u0001r\u0015S\u0013r\u0016g\u0014)\u0015Ú\u0005Storeé\u0004\u0000\u0000\u0000TF©\u0003Ú\u000bprimary_keyÚ\u0007defaultÚ\beditableéx\u0000\u0000\u0000©\u0001Ú\nmax_length©\u0001Ú\u0006unique©\u0001Ú\u0005blanké\u0014\u0000\u0000\u0000)\u0003©\u0002Ú\u0007pendingÚ\u0007Pending)\u0002Ú\u0006activeÚ\u0006Active)\u0002Ú\tsuspendedÚ\tSuspendedr\u0014\u0000\u0000\u0000©\u0003r\r\u0000\u0000\u0000Ú\u0007choicesr\t\u0000\u0000\u0000é\u0003\u0000\u0000\u0000é\u0002\u0000\u0000\u0000r\u0002\u0000\u0000\u0000)\u0003Ú\nmax_digitsÚ\u000edecimal_placesr\t\u0000\u0000\u0000é\f\u0000\u0000\u0000©\u0001Ú\fauto_now_add©\u0000N)\u0017Ú\b__name__Ú\n__module__Ú\f__qualname__Ú\u000f__firstlineno__r\u0003\u0000\u0000\u0000Ú\tUUIDFieldÚ\u0004uuidÚ\u0005uuid4Ú\u0002idÚ\bowner_idÚ\tCharFieldÚ\u0004nameÚ\tSlugFieldÚ\u0004slugÚ\tTextFieldÚ\u000bdescriptionÚ\u0006statusÚ\fDecimalFieldÚ\u0006ratingÚ\u000btotal_salesÚ\rDateTimeFieldÚ\ncreated_atÚ\u0015__static_attributes__r#\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Út/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/models.pyr\u0005\u0000\u0000\u0000r\u0005\u0000\u0000\u0000\u0004\u0000\u0000\u0000sª\u0000\u0000\u0000\u0000Ø\t\u000f×\t\u0019Ò\t\u0019 d°D·J±JÈ\u0015Ñ\tOBØ\u000f\u0015×\u000f\u001fÒ\u000f\u001fÓ\u000f!HØ\u000b\u0011×\u000b\u001bÒ\u000b\u001b sÑ\u000b+DØ\u000b\u0011×\u000b\u001bÒ\u000b\u001b 4Ñ\u000b(DØ\u0012\u0018×\u0012\"Ò\u0012\"¨\u0014Ñ\u0012.KØ\r\u0013×\r\u001dÒ\r\u001d¨\u0012Ú\fQØ\f\u0015ñ\u0005\u0002\u000e\u0017Fð\u0006\u0000\u000e\u0014×\r Ò\r ¨A¸aÈ\u0011Ñ\rKFØ\u0012\u0018×\u0012%Ò\u0012%°\u0012ÀAÈqÑ\u0012QKØ\u0011\u0017×\u0011%Ò\u0011%°4Ñ\u00118Jr:\u0000\u0000\u0000r\u0005\u0000\u0000\u0000c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\f\u0001\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0003S\u00049\u0003r\b\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\n\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00059\u0002r\f\\\u0004R\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0006S\u00079\u0001r\u000e\\\u0004R\u001e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\u0010\\\u0004R\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\b/\u0000S\tQ\u0001S\nS\u000b9\u0003r\u0011\\\u0004R$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\f9\u0001r\u0013S\rr\u0014g\u000e)\u000fÚ\tSellerKYCé\u0011\u0000\u0000\u0000TFr\u0007\u0000\u0000\u0000)\u0001Ú\ton_deleteé2\u0000\u0000\u0000r\f\u0000\u0000\u0000r\u0012\u0000\u0000\u0000)\u0003r\u0013\u0000\u0000\u0000)\u0002Ú\bverifiedÚ\bVerified)\u0002Ú\brejectedÚ\bRejectedr\u0014\u0000\u0000\u0000r\u001a\u0000\u0000\u0000r!\u0000\u0000\u0000r#\u0000\u0000\u0000N)\u0015r$\u0000\u0000\u0000r%\u0000\u0000\u0000r&\u0000\u0000\u0000r'\u0000\u0000\u0000r\u0003\u0000\u0000\u0000r(\u0000\u0000\u0000r)\u0000\u0000\u0000r*\u0000\u0000\u0000r+\u0000\u0000\u0000Ú\rOneToOneFieldr\u0005\u0000\u0000\u0000Ú\u0007CASCADEÚ\u0005storer-\u0000\u0000\u0000Ú\bdoc_typeÚ\bURLFieldÚ\u0007doc_urlr3\u0000\u0000\u0000r7\u0000\u0000\u0000Ú\fsubmitted_atr9\u0000\u0000\u0000r#\u0000\u0000\u0000r:\u0000\u0000\u0000r;\u0000\u0000\u0000r=\u0000\u0000\u0000r=\u0000\u0000\u0000\u0011\u0000\u0000\u0000sv\u0000\u0000\u0000\u0000Ø\t\u000f×\t\u0019Ò\t\u0019 d°D·J±JÈ\u0015Ñ\tOBØ\f\u0012×\f Ò\f  \u0015°&·.±.Ñ\fAEØ\u000f\u0015×\u000f\u001fÒ\u000f\u001f¨2Ñ\u000f.HØ\u000e\u0014ooÓ\u000e\u001fGØ\r\u0013×\r\u001dÒ\r\u001d¨\u0012Ú\fSØ\f\u0015ñ\u0005\u0002\u000e\u0017Fð\u0006\u0000\u0014\u001a×\u0013'Ò\u0013'°TÑ\u0013:Lr:\u0000\u0000\u0000r=\u0000\u0000\u0000c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00039\u0002r\b\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0004S\u0002S\u00059\u0002r\n\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u00069\u0001r\fS\u0007r\rg\b)\tÚ\u0005Brandé\u001b\u0000\u0000\u0000T©\u0002r\b\u0000\u0000\u0000r\t\u0000\u0000\u0000r\u000b\u0000\u0000\u0000©\u0002r\r\u0000\u0000\u0000r\u000f\u0000\u0000\u0000r\u0010\u0000\u0000\u0000r#\u0000\u0000\u0000N)\u000er$\u0000\u0000\u0000r%\u0000\u0000\u0000r&\u0000\u0000\u0000r'\u0000\u0000\u0000r\u0003\u0000\u0000\u0000r(\u0000\u0000\u0000r)\u0000\u0000\u0000r*\u0000\u0000\u0000r+\u0000\u0000\u0000r-\u0000\u0000\u0000r.\u0000\u0000\u0000rI\u0000\u0000\u0000Ú\blogo_urlr9\u0000\u0000\u0000r#\u0000\u0000\u0000r:\u0000\u0000\u0000r;\u0000\u0000\u0000rM\u0000\u0000\u0000rM\u0000\u0000\u0000\u001b\u0000\u0000\u0000s8\u0000\u0000\u0000\u0000Ø\t\u000f×\t\u0019Ò\t\u0019 d°D·J±JÑ\t?BØ\u000b\u0011×\u000b\u001bÒ\u000b\u001b s°4Ñ\u000b8DØ\u000f\u0015 TÑ\u000f*Hr:\u0000\u0000\u0000rM\u0000\u0000\u0000c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0007\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó¤\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00039\u0002r\b\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0004S\u00059\u0001r\n\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0006S\u0002S\u0002\\\u0004R\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00079\u0004r\rS\br\u000eg\t)\nÚ\bCategoryé \u0000\u0000\u0000TrO\u0000\u0000\u0000r\u000b\u0000\u0000\u0000r\f\u0000\u0000\u0000Ú\u0004self©\u0003Ú\u0004nullr\u0011\u0000\u0000\u0000r?\u0000\u0000\u0000r#\u0000\u0000\u0000N)\u000fr$\u0000\u0000\u0000r%\u0000\u0000\u0000r&\u0000\u0000\u0000r'\u0000\u0000\u0000r\u0003\u0000\u0000\u0000r(\u0000\u0000\u0000r)\u0000\u0000\u0000r*\u0000\u0000\u0000r+\u0000\u0000\u0000r-\u0000\u0000\u0000r.\u0000\u0000\u0000Ú\nForeignKeyÚ\bSET_NULLÚ\u0006parentr9\u0000\u0000\u0000r#\u0000\u0000\u0000r:\u0000\u0000\u0000r;\u0000\u0000\u0000rS\u0000\u0000\u0000rS\u0000\u0000\u0000 \u0000\u0000\u0000sB\u0000\u0000\u0000\u0000Ø\t\u000f×\t\u0019Ò\t\u0019 d°D·J±JÑ\t?BØ\u000b\u0011×\u000b\u001bÒ\u000b\u001b sÑ\u000b+DØ\r\u0013×\r\u001eÒ\r\u001ev¨D¸\u0004È\u0006Ï\u000fÉ\u000fÑ\rXFr:\u0000\u0000\u0000rS\u0000\u0000\u0000c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0007\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u001e\u0002\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00039\u0002r\b\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nS\u0002S\u0002\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00049\u0004r\f\\\u0004R\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0005S\u0002S\u00069\u0002r\u000e\\\u0004R\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0007S\b9\u0001r\u000f\\\u0004R \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\t9\u0001r\u0011\\\u0004R$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\n9\u0001r\u0013\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0014S\u0002\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u000b9\u0003r\u0015\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0016S\u0002\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u000b9\u0003r\u0017\\\u0004R0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\fS\rS\u000e9\u0002r\u0019\\\u0004R0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\fS\rS\u0002S\u0002S\u000f9\u0004r\u001a\\\u0004R6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u00109\u0001r\u001c\\\u0004R:\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0011S\u00109\u0001r\u001e\\\u0004R>\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u00129\u0001r S\u0013r!g\u0014)\u0015Ú\u0007Producté%\u0000\u0000\u0000TrO\u0000\u0000\u0000rV\u0000\u0000\u0000éP\u0000\u0000\u0000rP\u0000\u0000\u0000éú\u0000\u0000\u0000r\f\u0000\u0000\u0000r\u000e\u0000\u0000\u0000r\u0010\u0000\u0000\u0000)\u0002rW\u0000\u0000\u0000r?\u0000\u0000\u0000r \u0000\u0000\u0000r\u001d\u0000\u0000\u0000©\u0002r\u001e\u0000\u0000\u0000r\u001f\u0000\u0000\u0000)\u0004r\u001e\u0000\u0000\u0000r\u001f\u0000\u0000\u0000rW\u0000\u0000\u0000r\u0011\u0000\u0000\u0000©\u0001r\t\u0000\u0000\u0000r\u0002\u0000\u0000\u0000r!\u0000\u0000\u0000r#\u0000\u0000\u0000N)\"r$\u0000\u0000\u0000r%\u0000\u0000\u0000r&\u0000\u0000\u0000r'\u0000\u0000\u0000r\u0003\u0000\u0000\u0000r(\u0000\u0000\u0000r)\u0000\u0000\u0000r*\u0000\u0000\u0000r+\u0000\u0000\u0000rX\u0000\u0000\u0000r\u0005\u0000\u0000\u0000rY\u0000\u0000\u0000rG\u0000\u0000\u0000r-\u0000\u0000\u0000Ú\u0003skur.\u0000\u0000\u0000r/\u0000\u0000\u0000r0\u0000\u0000\u0000r1\u0000\u0000\u0000r2\u0000\u0000\u0000rM\u0000\u0000\u0000Ú\u0005brandrS\u0000\u0000\u0000Ú\bcategoryr4\u0000\u0000\u0000Ú\nbase_priceÚ\u000ediscount_priceÚ\fBooleanFieldÚ\tis_activeÚ\u0014PositiveIntegerFieldÚ\u0005viewsr7\u0000\u0000\u0000r8\u0000\u0000\u0000r9\u0000\u0000\u0000r#\u0000\u0000\u0000r:\u0000\u0000\u0000r;\u0000\u0000\u0000r\\\u0000\u0000\u0000r\\\u0000\u0000\u0000%\u0000\u0000\u0000sÿ\u0000\u0000\u0000\u0000Ø\t\u000f×\t\u0019Ò\t\u0019 d°D·J±JÑ\t?BØ\f\u0012×\f\u001dÒ\f\u001de¨$°dÀfÇoÁoÑ\fVEØ\n\u0010×\n\u001aÒ\n\u001a b°\u0014Ñ\n6CØ\u000b\u0011×\u000b\u001bÒ\u000b\u001b sÑ\u000b+DØ\u000b\u0011×\u000b\u001bÒ\u000b\u001b 4Ñ\u000b(DØ\u0012\u0018×\u0012\"Ò\u0012\"¨\u0014Ñ\u0012.KØ\f\u0012×\f\u001dÒ\f\u001de¨$¸&¿/¹/Ñ\fJEØ\u000f\u0015×\u000f Ò\u000f  \u0018°\u0004À\u0006Ç\u000fÁ\u000fÑ\u000fPHØ\u0011\u0017×\u0011$Ò\u0011$°\u0002À1Ñ\u0011EJØ\u0015\u001b×\u0015(Ò\u0015(°BÀqÈtØ\n\u000eñ\u0003\u0001\u0016\u0010Nà\u0010\u0016×\u0010#Ò\u0010#¨DÑ\u00101IØ\f\u0012×\f'Ò\f'°\u0001Ñ\f2EØ\u0011\u0017×\u0011%Ò\u0011%°4Ñ\u00118Jr:\u0000\u0000\u0000r\\\u0000\u0000\u0000c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó$\u0001\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00039\u0002r\b\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nS\u0004\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00059\u0003r\f\\\u0004R\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0006S\u00079\u0001r\u000e\\\u0004R\u001e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0010S\b9\u0001r\u0011\\\u0004R$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\tS\nS\u000b9\u0002r\u0013\\\u0004R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\fS\b9\u0001r\u0015\\\u0004R,\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\b9\u0001r\u0017S\rr\u0018g\u000e)\u000fÚ\u000eProductVarianté5\u0000\u0000\u0000TrO\u0000\u0000\u0000Ú\bvariants©\u0002Ú\frelated_namer?\u0000\u0000\u0000r^\u0000\u0000\u0000r\f\u0000\u0000\u0000ra\u0000\u0000\u0000r \u0000\u0000\u0000r\u001d\u0000\u0000\u0000r`\u0000\u0000\u0000r\u0002\u0000\u0000\u0000r#\u0000\u0000\u0000N)\u0019r$\u0000\u0000\u0000r%\u0000\u0000\u0000r&\u0000\u0000\u0000r'\u0000\u0000\u0000r\u0003\u0000\u0000\u0000r(\u0000\u0000\u0000r)\u0000\u0000\u0000r*\u0000\u0000\u0000r+\u0000\u0000\u0000rX\u0000\u0000\u0000r\\\u0000\u0000\u0000rF\u0000\u0000\u0000Ú\u0007productr-\u0000\u0000\u0000rb\u0000\u0000\u0000Ú\tJSONFieldÚ\u0004dictÚ\nattributesr4\u0000\u0000\u0000Ú\u0005priceÚ\fIntegerFieldÚ\u0005stockrg\u0000\u0000\u0000r\u0016\u0000\u0000\u0000r9\u0000\u0000\u0000r#\u0000\u0000\u0000r:\u0000\u0000\u0000r;\u0000\u0000\u0000rl\u0000\u0000\u0000rl\u0000\u0000\u00005\u0000\u0000\u0000s\u0000\u0000\u0000\u0000Ø\t\u000f×\t\u0019Ò\t\u0019 d°D·J±JÑ\t?BØ\u000e\u0014×\u000e\u001fÒ\u000e\u001f \u0007°jØ\u000e\u0014nnñ\u0003\u0001\u000f\u001eGà\n\u0010×\n\u001aÒ\n\u001a bÑ\n)CØ\u0011\u0017×\u0011!Ò\u0011!¨$Ñ\u0011/JØ\f\u0012×\f\u001fÒ\f\u001f¨2¸aÑ\f@EØ\f\u0012×\f\u001fÒ\f\u001f¨\u0001Ñ\f*EØ\r\u0013×\r Ò\r ¨\u0014Ñ\r.Fr:\u0000\u0000\u0000rl\u0000\u0000\u0000c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000óæ\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00039\u0002r\b\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nS\u0004\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00059\u0003r\f\\\u0004R\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\u000e\\\u0004R\u001e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0006S\u0002S\u00079\u0002r\u0010\\\u0004R\"\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\bS\t9\u0001r\u0012S\nr\u0013g\u000b)\fÚ\fProductImageé?\u0000\u0000\u0000TrO\u0000\u0000\u0000Ú\u0006imagesro\u0000\u0000\u0000é\u0000\u0000\u0000)\u0002r\r\u0000\u0000\u0000r\u0011\u0000\u0000\u0000r\u0002\u0000\u0000\u0000ra\u0000\u0000\u0000r#\u0000\u0000\u0000N)\u0014r$\u0000\u0000\u0000r%\u0000\u0000\u0000r&\u0000\u0000\u0000r'\u0000\u0000\u0000r\u0003\u0000\u0000\u0000r(\u0000\u0000\u0000r)\u0000\u0000\u0000r*\u0000\u0000\u0000r+\u0000\u0000\u0000rX\u0000\u0000\u0000r\\\u0000\u0000\u0000rF\u0000\u0000\u0000rq\u0000\u0000\u0000rI\u0000\u0000\u0000Ú\u0003urlr-\u0000\u0000\u0000Ú\balt_textrv\u0000\u0000\u0000Ú\u0005orderr9\u0000\u0000\u0000r#\u0000\u0000\u0000r:\u0000\u0000\u0000r;\u0000\u0000\u0000ry\u0000\u0000\u0000ry\u0000\u0000\u0000?\u0000\u0000\u0000sa\u0000\u0000\u0000\u0000Ø\t\u000f×\t\u0019Ò\t\u0019 d°D·J±JÑ\t?BØ\u000e\u0014×\u000e\u001fÒ\u000e\u001f \u0007°hØ\u000e\u0014nnñ\u0003\u0001\u000f\u001eGà\n\u0010//Ó\n\u001bCØ\u000f\u0015×\u000f\u001fÒ\u000f\u001f¨3°dÑ\u000f;HØ\f\u0012×\f\u001fÒ\f\u001f¨\u0001Ñ\f*Er:\u0000\u0000\u0000ry\u0000\u0000\u0000)\u000br)\u0000\u0000\u0000Ú\tdjango.dbr\u0003\u0000\u0000\u0000Ú\u0005Modelr\u0005\u0000\u0000\u0000r=\u0000\u0000\u0000rM\u0000\u0000\u0000rS\u0000\u0000\u0000r\\\u0000\u0000\u0000rl\u0000\u0000\u0000ry\u0000\u0000\u0000r#\u0000\u0000\u0000r:\u0000\u0000\u0000r;\u0000\u0000\u0000Ú\b<module>r\u0000\u0000\u0000\u0001\u0000\u0000\u0000s}\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Û\u0000\u000bÝ\u0000\u001cô\u0004\u000b\u00019FLLô\u0000\u000b\u00019ô\u001a\b\u0001;\u0006\f\fô\u0000\b\u0001;ô\u0014\u0003\u0001+FLLô\u0000\u0003\u0001+ô\n\u0003\u0001Y\u0001v||ô\u0000\u0003\u0001Y\u0001ô\n\u000e\u00019fllô\u0000\u000e\u00019ô \b\u0001/V\\\\ô\u0000\b\u0001/ô\u0014\u0006\u0001+6<<õ\u0000\u0006\u0001+r:\u0000\u0000\u0000",
+      "info": {
+        "size": 5968,
+        "last_modified": "2025-10-18T20:38:32.679065302",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__pycache__/apps.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïhù\u0001\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó2\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000S\u0000S\u0002K\u0002J\u0003r\u0003 \u0000\u0018\u0000\"\u0000S\u0003\u001a\u0000S\u0004\\\u00015\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0004g\u0002)\u0005é\u0000\u0000\u0000\u0000)\u0001Ú\tAppConfigNc\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\"\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003S\u0002r\u0004S\u0003r\u0005S\u0004\u001a\u0000r\u0006S\u0005r\u0007g\u0006)\u0007Ú\tApiConfigé\u0005\u0000\u0000\u0000z\u001ddjango.db.models.BigAutoFieldÚ\u000fbizhub_productsc\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0003\u0000\u0000\u0000ó<\u0000\u0000\u0000\u0000S\u0001n\u0001S\u0002n\u0002S\u0003n\u0003[\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000U\u0001U\u0002U\u0003S\u00049\u0003 \u0000g\u0000)\u0005Nz\u001chttp://localhost:8761/eurekaz\u0015products-microserviceiL\u001f\u0000\u0000)\u0003Ú\reureka_serverÚ\bapp_nameÚ\rinstance_port)\u0002Ú\reureka_clientÚ\u0004init)\u0004Ú\u0004selfÚ\rEUREKA_SERVERÚ\bAPP_NAMEÚ\rINSTANCE_PORTs\u0004\u0000\u0000\u0000    Úr/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/apps.pyÚ\u0005readyÚ\u000fApiConfig.ready\t\u0000\u0000\u0000s(\u0000\u0000\u0000\u0000Ø\u00186\rØ\u0013*\bØ\u0018\u001c\rä\b\u0015×\b\u001aÒ\b\u001aØ\u001a'Ø\u0015\u001dØ\u001a'ó\u0007\u0004\t\nó\u0000\u0000\u0000\u0000©\u0000N)\bÚ\b__name__Ú\n__module__Ú\f__qualname__Ú\u000f__firstlineno__Ú\u0012default_auto_fieldÚ\u0004namer\u0013\u0000\u0000\u0000Ú\u0015__static_attributes__r\u0016\u0000\u0000\u0000r\u0015\u0000\u0000\u0000r\u0012\u0000\u0000\u0000r\u0005\u0000\u0000\u0000r\u0005\u0000\u0000\u0000\u0005\u0000\u0000\u0000s\u0012\u0000\u0000\u0000\u0000Ø\u00198Ð\u0004\u0016Ø\u000b\u001cDõ\u0004\t\u0005\nr\u0015\u0000\u0000\u0000r\u0005\u0000\u0000\u0000)\u0005Ú\u000bdjango.appsr\u0003\u0000\u0000\u0000Ú\u001epy_eureka_client.eureka_clientr\f\u0000\u0000\u0000r\u0005\u0000\u0000\u0000r\u0016\u0000\u0000\u0000r\u0015\u0000\u0000\u0000r\u0012\u0000\u0000\u0000Ú\b<module>r \u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0017\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Ý\u0000!Ý\u00006ô\u0006\r\u0001\n\tõ\u0000\r\u0001\nr\u0015\u0000\u0000\u0000",
+      "info": {
+        "size": 1005,
+        "last_modified": "2025-10-18T20:38:32.689071674",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Úv/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 215,
+        "last_modified": "2025-10-18T20:38:32.697229739",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__pycache__/admin.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh?\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0010\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000g\u0002)\u0003é\u0000\u0000\u0000\u0000)\u0001Ú\u0005adminN)\u0002Ú\u000edjango.contribr\u0003\u0000\u0000\u0000©\u0000ó\u0000\u0000\u0000\u0000Ús/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/admin.pyÚ\b<module>r\b\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\b\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Þ\u0000 r\u0006\u0000\u0000\u0000",
+      "info": {
+        "size": 259,
+        "last_modified": "2025-10-18T20:38:32.704356923",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.710038838",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/tests.py",
+      "content": "from django.test import TestCase\n\n# Create your tests here.\n",
+      "info": {
+        "size": 60,
+        "last_modified": "2025-10-18T20:38:32.711418062",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/admin.py",
+      "content": "from django.contrib import admin\n\n# Register your models here.\n",
+      "info": {
+        "size": 63,
+        "last_modified": "2025-10-18T20:38:32.71568033",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/apps.py",
+      "content": "from django.apps import AppConfig\nimport py_eureka_client.eureka_client as eureka_client\n\n\nclass ApiConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'bizhub_products'\n\n    def ready(self):\n        EUREKA_SERVER = \"http://localhost:8761/eureka\"\n        APP_NAME = \"products-microservice\"\n        INSTANCE_PORT = 8012\n\n        eureka_client.init(\n            eureka_server=EUREKA_SERVER,\n            app_name=APP_NAME,\n            instance_port=INSTANCE_PORT\n        )\n",
+      "info": {
+        "size": 505,
+        "last_modified": "2025-10-18T20:38:32.719906581",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/migrations/__pycache__/0001_initial.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïhÀ\u0013\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000óN\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000r\u0001S\u0000S\u0001K\u0002r\u0002S\u0000S\u0002K\u0003J\u0004r\u0004J\u0005r\u0005 \u0000\u0018\u0000\"\u0000S\u0003\u001a\u0000S\u0004\\\u0004R\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0006g\u0001)\u0005é\u0000\u0000\u0000\u0000N)\u0002Ú\nmigrationsÚ\u0006modelsc\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000óD\n\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003S\u0002r\u0004/\u0000r\u0005\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0003S\u0004\\\bR\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nR\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0002S\u0005S\u00069\u00034\u0002S\u0007\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\bS\u0002S\t9\u00024\u0002S\n\\\bR\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u000b9\u00014\u0002/\u0003S\f9\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\rS\u0004\\\bR\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nR\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0005S\u0002S\u0005S\u000e9\u00044\u0002S\u000f\\\bR\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u00004\u0002S\u0007\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\bS\u00109\u00014\u0002S\u0011\\\bR\u001c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u00129\u00014\u0002S\u0013\\\bR\u001e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u000b9\u00014\u0002S\u0014\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000/\u0000S\u0015Q\u0001S\u0016S\u0017S\u00189\u00034\u0002S\u0019\\\bR \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u001aS\u001bS\u001cS\u001d9\u00034\u0002S\u001e\\\bR \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u001aS\u001bS\u001fS\u001d9\u00034\u0002S \\\bR\"\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S!9\u00014\u0002/\tS\f9\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\"S\u0004\\\bR\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nR\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0002S\u0005S\u00069\u00034\u0002S\u0007\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\bS\u00109\u00014\u0002S#\\\bR$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u0002\\\u0013R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R*\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R,\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S$S%9\u00044\u0002/\u0003S\f9\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S&S\u0004\\\bR\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nR\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0002S\u0005S\u00069\u00034\u0002S'\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S(S\u0002S\t9\u00024\u0002S\u0007\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S)S\u00109\u00014\u0002S\u0011\\\bR\u001c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u00129\u00014\u0002S\u0013\\\bR\u001e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u000b9\u00014\u0002S*\\\bR \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u001aS\u001fS+9\u00024\u0002S,\\\bR \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u001aS\u001fS\u0002S-9\u00044\u0002S.\\\bR.\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S/9\u00014\u0002S0\\\bR0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u001bS/9\u00014\u0002S \\\bR\"\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S!9\u00014\u0002S1\\\bR$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0013R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R*\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R,\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S2S39\u00034\u0002S4\\\bR$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0013R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R*\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R,\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S$S39\u00034\u0002S5\\\bR$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S\u0002\\\u0013R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R*\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R,\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S6S%9\u00044\u0002/\rS\f9\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S7S\u0004\\\bR\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nR\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0002S\u0005S\u00069\u00034\u0002S8\\\bR\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u00004\u0002S9\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S:S;9\u00024\u0002S<\\\bR2\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u001bS/9\u00014\u0002S=\\\bR$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0013R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R*\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R4\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S>S?S@9\u00034\u0002/\u0005S\f9\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000SAS\u0004\\\bR\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nR\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0002S\u0005S\u00069\u00034\u0002S'\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S(S\u00109\u00014\u0002SB\\\bR6\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u001cS/9\u00014\u0002SC\\\bR \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u001aS\u001fS+9\u00024\u0002SD\\\bR2\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u001bS/9\u00014\u0002SE\\\bR.\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S/9\u00014\u0002S=\\\bR$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0013R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R*\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R4\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000SFS?S@9\u00034\u0002/\u0007S\f9\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000SGS\u0004\\\bR\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\nR\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0005S\u0002S\u0005S\u000e9\u00044\u0002SH\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000SIS\u00109\u00014\u0002SJ\\\bR\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u00004\u0002S\u0014\\\bR\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000/\u0000SKQ\u0001S\u0016S\u0017S\u00189\u00034\u0002SL\\\bR\"\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002S!9\u00014\u0002S5\\\bR:\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0013R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R*\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R4\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S6SM9\u00024\u0002/\u0006S\f9\u0002/\u0007r\u001eSNr\u001fgO)PÚ\tMigrationé\b\u0000\u0000\u0000TÚ\u0005BrandÚ\u0002idF)\u0003Ú\u0007defaultÚ\u000bprimary_keyÚ\tserializeÚ\u0004nameéx\u0000\u0000\u0000)\u0002Ú\nmax_lengthÚ\u0006uniqueÚ\blogo_url)\u0001Ú\u0005blank)\u0002r\r\u0000\u0000\u0000Ú\u0006fieldsÚ\u0005Store)\u0004r\n\u0000\u0000\u0000Ú\beditabler\u000b\u0000\u0000\u0000r\f\u0000\u0000\u0000Ú\bowner_id)\u0001r\u000f\u0000\u0000\u0000Ú\u0004slug)\u0001r\u0010\u0000\u0000\u0000Ú\u000bdescriptionÚ\u0006status)\u0003©\u0002Ú\u0007pendingÚ\u0007Pending)\u0002Ú\u0006activeÚ\u0006Active)\u0002Ú\tsuspendedÚ\tSuspendedr\u001b\u0000\u0000\u0000é\u0014\u0000\u0000\u0000)\u0003Ú\u0007choicesr\n\u0000\u0000\u0000r\u000f\u0000\u0000\u0000Ú\u0006ratingé\u0002\u0000\u0000\u0000r\u0002\u0000\u0000\u0000é\u0003\u0000\u0000\u0000)\u0003Ú\u000edecimal_placesr\n\u0000\u0000\u0000Ú\nmax_digitsÚ\u000btotal_salesé\f\u0000\u0000\u0000Ú\ncreated_at)\u0001Ú\fauto_now_addÚ\bCategoryÚ\u0006parentz\u0018bizhub_products.category)\u0004r\u0012\u0000\u0000\u0000Ú\u0004nullÚ\ton_deleteÚ\u0002toÚ\u0007ProductÚ\u0003skuéP\u0000\u0000\u0000éú\u0000\u0000\u0000Ú\nbase_price)\u0002r&\u0000\u0000\u0000r'\u0000\u0000\u0000Ú\u000ediscount_price)\u0004r\u0012\u0000\u0000\u0000r&\u0000\u0000\u0000r'\u0000\u0000\u0000r.\u0000\u0000\u0000Ú\tis_active)\u0001r\n\u0000\u0000\u0000Ú\u0005viewsÚ\u0005brandz\u0015bizhub_products.brand)\u0003r.\u0000\u0000\u0000r/\u0000\u0000\u0000r0\u0000\u0000\u0000Ú\bcategoryÚ\u0005storez\u0015bizhub_products.storeÚ\fProductImageÚ\u0003urlÚ\balt_texté\u0000\u0000\u0000)\u0002r\u0012\u0000\u0000\u0000r\u000f\u0000\u0000\u0000Ú\u0005orderÚ\u0007productÚ\u0006imagesz\u0017bizhub_products.product)\u0003r/\u0000\u0000\u0000Ú\frelated_namer0\u0000\u0000\u0000Ú\u000eProductVariantÚ\nattributesÚ\u0005priceÚ\u0005stockr\u001d\u0000\u0000\u0000Ú\bvariantsÚ\tSellerKYCÚ\bdoc_typeé2\u0000\u0000\u0000Ú\u0007doc_url)\u0003r\u001a\u0000\u0000\u0000)\u0002Ú\bverifiedÚ\bVerified)\u0002Ú\brejectedÚ\bRejectedÚ\fsubmitted_at)\u0002r/\u0000\u0000\u0000r0\u0000\u0000\u0000©\u0000N) Ú\b__name__Ú\n__module__Ú\f__qualname__Ú\u000f__firstlineno__Ú\u0007initialÚ\fdependenciesr\u0003\u0000\u0000\u0000Ú\u000bCreateModelr\u0004\u0000\u0000\u0000Ú\tUUIDFieldÚ\u0004uuidÚ\u0005uuid4Ú\tCharFieldÚ\bURLFieldÚ\tSlugFieldÚ\tTextFieldÚ\fDecimalFieldÚ\rDateTimeFieldÚ\nForeignKeyÚ\u0006djangoÚ\u0002dbÚ\bdeletionÚ\bSET_NULLÚ\fBooleanFieldÚ\u0014PositiveIntegerFieldÚ\fIntegerFieldÚ\u0007CASCADEÚ\tJSONFieldÚ\u0004dictÚ\rOneToOneFieldÚ\noperationsÚ\u0015__static_attributes__rR\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Ú/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/migrations/0001_initial.pyr\u0006\u0000\u0000\u0000r\u0006\u0000\u0000\u0000\b\u0000\u0000\u0000s¦\u0005\u0000\u0000\u0000à\u000e\u0012Gð\u0004\u0001\u0014\u0006Lð\b\u0000\t\u0013×\b\u001eÒ\b\u001eØ\u0011\u0018à\u0011\u0015v×\u0017'Ò\u0017'°\u0004·\n±\nÈ\u0004ÐX]Ñ\u0017^Ð\u0010_Ø\u0011\u0017\u0016×\u0019)Ò\u0019)°SÀ\u0014Ñ\u0019FÐ\u0010GØ\u0011\u001bV__°4Ñ\u001d8Ð\u00109ð\u0007\u0004\u0014\u000eñ\u0005\u0007\t\nð\u0010\u0000\t\u0013×\b\u001eÒ\b\u001eØ\u0011\u0018à\u0011\u0015v×\u0017'Ò\u0017'°\u0004·\n±\nÀUÐX\\ÐhmÑ\u0017nÐ\u0010oØ\u0011\u001bV×\u001d-Ò\u001d-Ó\u001d/Ð\u00100Ø\u0011\u0017\u0016×\u0019)Ò\u0019)°SÑ\u00199Ð\u0010:Ø\u0011\u0017\u0016×\u0019)Ò\u0019)°\u0014Ñ\u00196Ð\u00107Ø\u0011\u001e \u0006× 0Ò 0°tÑ <Ð\u0010=Ø\u0011\u00196×\u001b+Ò\u001b+Ò4~ð\u0000\u0000I\u0002R\u0002ð\u0000\u0000_\u0002a\u0002ñ\u0000\u0000\u001cb\u0002ð\u0000\u0000\u0011c\u0002Ø\u0011\u00196×\u001b.Ò\u001b.¸aÈ\u0011ÐWXÑ\u001bYÐ\u0010ZØ\u0011\u001e \u0006× 3Ò 3À1ÈaÐ\\^Ñ _Ð\u0010`Ø\u0011\u001dv×\u001f3Ò\u001f3À\u0014Ñ\u001fFÐ\u0010Gð\u0013\n\u0014\u000eñ\u0005\r\t\nð\u001c\u0000\t\u0013×\b\u001eÒ\b\u001eØ\u0011\u001bà\u0011\u0015v×\u0017'Ò\u0017'°\u0004·\n±\nÈ\u0004ÐX]Ñ\u0017^Ð\u0010_Ø\u0011\u0017\u0016×\u0019)Ò\u0019)°SÑ\u00199Ð\u0010:Ø\u0011\u00196×\u001b,Ò\u001b,°4¸dÈfÏiÉi×N^ÑN^×NgÑNg×NpÑNpð\u0000\u0000v\u0001P\u0002ñ\u0000\u0000\u001cQ\u0002ð\u0000\u0000\u0011R\u0002ð\u0007\u0004\u0014\u000eñ\u0005\u0007\t\nð\u0010\u0000\t\u0013×\b\u001eÒ\b\u001eØ\u0011\u001aà\u0011\u0015v×\u0017'Ò\u0017'°\u0004·\n±\nÈ\u0004ÐX]Ñ\u0017^Ð\u0010_Ø\u0011\u0016\u0006×\u0018(Ò\u0018(°B¸tÑ\u0018DÐ\u0010EØ\u0011\u0017\u0016×\u0019)Ò\u0019)°SÑ\u00199Ð\u0010:Ø\u0011\u0017\u0016×\u0019)Ò\u0019)°\u0014Ñ\u00196Ð\u00107Ø\u0011\u001e \u0006× 0Ò 0°tÑ <Ð\u0010=Ø\u0011\u001dv×\u001f2Ò\u001f2À!ÐPRÑ\u001fSÐ\u0010TØ\u0011! 6×#6Ò#6¸TÐRSÐ`bÐimÑ#nÐ\u0010oØ\u0011\u001cf×\u001e1Ò\u001e1¸$Ñ\u001e?Ð\u0010@Ø\u0011\u0018&×\u001a5Ò\u001a5¸aÑ\u001a@Ð\u0010AØ\u0011\u001dv×\u001f3Ò\u001f3À\u0014Ñ\u001fFÐ\u0010GØ\u0011\u0018&×\u001a+Ò\u001a+°\u0014À\u0016Ç\u0019Á\u0019×AQÑAQ×AZÑAZ×AcÑAcÐhñ\u0000\u0000\u001bA\u0002ð\u0000\u0000\u0011B\u0002Ø\u0011\u001bV×\u001d.Ò\u001d.°DÀFÇIÁI×DTÑDT×D]ÑD]×DfÑDfð\u0000\u0000l\u0001F\u0002ñ\u0000\u0000\u001eG\u0002ð\u0000\u0000\u0011H\u0002Ø\u0011\u0018&×\u001a+Ò\u001a+°$¸TÈVÏYÉY×M]ÑM]×MfÑMf×MoÑMoð\u0000\u0000u\u0001L\u0002ñ\u0000\u0000\u001bM\u0002ð\u0000\u0000\u0011N\u0002ð\u001b\u000e\u0014\u000eñ\u0005\u0011\t\nð$\u0000\t\u0013×\b\u001eÒ\b\u001eØ\u0011\u001fà\u0011\u0015v×\u0017'Ò\u0017'°\u0004·\n±\nÈ\u0004ÐX]Ñ\u0017^Ð\u0010_Ø\u0011\u0016\u0006\u000f\u000fÓ\u0018)Ð\u0010*Ø\u0011\u001bV×\u001d-Ò\u001d-°DÀSÑ\u001dIÐ\u0010JØ\u0011\u0018&×\u001a-Ò\u001a-°aÑ\u001a8Ð\u00109Ø\u0011\u001aF×\u001c-Ò\u001c-¸\u0006¿\t¹\t×8HÑ8H×8QÑ8Q×8YÑ8YÐhpð\u0000\u0000v\u0001O\u0002ñ\u0000\u0000\u001dP\u0002ð\u0000\u0000\u0011Q\u0002ð\u000b\u0006\u0014\u000eñ\u0005\t\t\nð\u0014\u0000\t\u0013×\b\u001eÒ\b\u001eØ\u0011!à\u0011\u0015v×\u0017'Ò\u0017'°\u0004·\n±\nÈ\u0004ÐX]Ñ\u0017^Ð\u0010_Ø\u0011\u0016\u0006×\u0018(Ò\u0018(°BÑ\u00187Ð\u00108Ø\u0011\u001dv×\u001f/Ò\u001f/¸\u0004Ñ\u001f=Ð\u0010>Ø\u0011\u0018&×\u001a-Ò\u001a-¸QÈ2Ñ\u001aNÐ\u0010OØ\u0011\u0018&×\u001a-Ò\u001a-°aÑ\u001a8Ð\u00109Ø\u0011\u00196×\u001b.Ò\u001b.°tÑ\u001b<Ð\u0010=Ø\u0011\u001aF×\u001c-Ò\u001c-¸\u0006¿\t¹\t×8HÑ8H×8QÑ8Q×8YÑ8YÐhrð\u0000\u0000x\u0001Q\u0002ñ\u0000\u0000\u001dR\u0002ð\u0000\u0000\u0011S\u0002ð\u000f\b\u0014\u000eñ\u0005\u000b\t\nð\u0018\u0000\t\u0013×\b\u001eÒ\b\u001eØ\u0011\u001cà\u0011\u0015v×\u0017'Ò\u0017'°\u0004·\n±\nÀUÐX\\ÐhmÑ\u0017nÐ\u0010oØ\u0011\u001bV×\u001d-Ò\u001d-¸\u0012Ñ\u001d<Ð\u0010=Ø\u0011\u001aFOOÓ\u001c-Ð\u0010.Ø\u0011\u00196×\u001b+Ò\u001b+ò\u0000\u00005A\u0002ð\u0000\u0000K\u0002T\u0002ð\u0000\u0000a\u0002c\u0002ñ\u0000\u0000\u001cd\u0002ð\u0000\u0000\u0011e\u0002Ø\u0011\u001f \u0016×!5Ò!5À4Ñ!HÐ\u0010IØ\u0011\u0018&×\u001a.Ò\u001a.¸\u0016¿\u0019¹\u0019×9IÑ9I×9RÑ9R×9ZÑ9ZÐ_vÑ\u001awÐ\u0010xð\r\u0007\u0014\u000eñ\u0005\n\t\nðO\u0002R\u0001\u0012\u0006Jrq\u0000\u0000\u0000r\u0006\u0000\u0000\u0000)\u0007Ú\u0019django.db.models.deletionrd\u0000\u0000\u0000r[\u0000\u0000\u0000Ú\tdjango.dbr\u0003\u0000\u0000\u0000r\u0004\u0000\u0000\u0000r\u0006\u0000\u0000\u0000rR\u0000\u0000\u0000rq\u0000\u0000\u0000rr\u0000\u0000\u0000Ú\b<module>ru\u0000\u0000\u0000\u0001\u0000\u0000\u0000s$\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001ó\u0006\u0000\u0001!Û\u0000\u000bß\u0000(ô\u0006Y\u0001\u0001\u0006\n×\u0010$Ñ\u0010$õ\u0000Y\u0001\u0001\u0006rq\u0000\u0000\u0000",
+      "info": {
+        "size": 5916,
+        "last_modified": "2025-10-18T20:38:32.725657943",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/migrations/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Ú/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/products_service/bizhub_products/migrations/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 226,
+        "last_modified": "2025-10-18T20:38:32.749205625",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/migrations/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.754131147",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/migrations/0001_initial.py",
+      "content": "# Generated by Django 5.1.2 on 2025-10-15 16:33\n\nimport django.db.models.deletion\nimport uuid\nfrom django.db import migrations, models\n\n\nclass Migration(migrations.Migration):\n\n    initial = True\n\n    dependencies = [\n    ]\n\n    operations = [\n        migrations.CreateModel(\n            name='Brand',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),\n                ('name', models.CharField(max_length=120, unique=True)),\n                ('logo_url', models.URLField(blank=True)),\n            ],\n        ),\n        migrations.CreateModel(\n            name='Store',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('owner_id', models.UUIDField()),\n                ('name', models.CharField(max_length=120)),\n                ('slug', models.SlugField(unique=True)),\n                ('description', models.TextField(blank=True)),\n                ('status', models.CharField(choices=[('pending', 'Pending'), ('active', 'Active'), ('suspended', 'Suspended')], default='pending', max_length=20)),\n                ('rating', models.DecimalField(decimal_places=2, default=0, max_digits=3)),\n                ('total_sales', models.DecimalField(decimal_places=2, default=0, max_digits=12)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),\n            ],\n        ),\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),\n                ('name', models.CharField(max_length=120)),\n                ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='bizhub_products.category')),\n            ],\n        ),\n        migrations.CreateModel(\n            name='Product',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),\n                ('sku', models.CharField(max_length=80, unique=True)),\n                ('name', models.CharField(max_length=250)),\n                ('slug', models.SlugField(unique=True)),\n                ('description', models.TextField(blank=True)),\n                ('base_price', models.DecimalField(decimal_places=2, max_digits=12)),\n                ('discount_price', models.DecimalField(blank=True, decimal_places=2, max_digits=12, null=True)),\n                ('is_active', models.BooleanField(default=True)),\n                ('views', models.PositiveIntegerField(default=0)),\n                ('created_at', models.DateTimeField(auto_now_add=True)),\n                ('brand', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='bizhub_products.brand')),\n                ('category', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='bizhub_products.category')),\n                ('store', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='bizhub_products.store')),\n            ],\n        ),\n        migrations.CreateModel(\n            name='ProductImage',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),\n                ('url', models.URLField()),\n                ('alt_text', models.CharField(blank=True, max_length=150)),\n                ('order', models.IntegerField(default=0)),\n                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='bizhub_products.product')),\n            ],\n        ),\n        migrations.CreateModel(\n            name='ProductVariant',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),\n                ('sku', models.CharField(max_length=80)),\n                ('attributes', models.JSONField(default=dict)),\n                ('price', models.DecimalField(decimal_places=2, max_digits=12)),\n                ('stock', models.IntegerField(default=0)),\n                ('active', models.BooleanField(default=True)),\n                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='variants', to='bizhub_products.product')),\n            ],\n        ),\n        migrations.CreateModel(\n            name='SellerKYC',\n            fields=[\n                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),\n                ('doc_type', models.CharField(max_length=50)),\n                ('doc_url', models.URLField()),\n                ('status', models.CharField(choices=[('pending', 'Pending'), ('verified', 'Verified'), ('rejected', 'Rejected')], default='pending', max_length=20)),\n                ('submitted_at', models.DateTimeField(auto_now_add=True)),\n                ('store', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='bizhub_products.store')),\n            ],\n        ),\n    ]\n",
+      "info": {
+        "size": 5056,
+        "last_modified": "2025-10-18T20:38:32.755207745",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/models.py",
+      "content": "import uuid\n\nfrom django.contrib.auth import get_user_model\nfrom django.db import models\nOwner =get_user_model()\n\nclass Store(models.Model):\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)\n    owner_id =models.ForeignKey(Owner,on_delete=models.CASCADE)  # references auth user id\n    name = models.CharField(max_length=120)\n    slug = models.SlugField(unique=True)\n    description = models.TextField(blank=True)\n    status = models.CharField(max_length=20,\n    choices=[('pending','Pending'),('active','Active'),('suspended','Suspended')],\n    default='pending')\n    rating = models.DecimalField(max_digits=3, decimal_places=2, default=0)\n    total_sales = models.DecimalField(max_digits=12, decimal_places=2, default=0)\n    created_at = models.DateTimeField(auto_now_add=True)\n\nclass SellerKYC(models.Model):\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)\n    store = models.OneToOneField(Store, on_delete=models.CASCADE)\n    doc_type = models.CharField(max_length=50)\n    doc_url = models.URLField()\n    status = models.CharField(max_length=20,\n    choices=[('pending','Pending'),('verified','Verified'),('rejected','Rejected')],\n    default='pending')\n    submitted_at = models.DateTimeField(auto_now_add=True)\n\nclass Brand(models.Model):\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4)\n    name = models.CharField(max_length=120, unique=True)\n    logo_url = models.URLField(blank=True)\n\nclass Category(models.Model):\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4)\n    name = models.CharField(max_length=120)\n    parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL)\n\nclass Product(models.Model):\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4)\n    store = models.ForeignKey(Store, null=True, blank=True, on_delete=models.SET_NULL)\n    sku = models.CharField(max_length=80, unique=True)\n    name = models.CharField(max_length=250)\n    slug = models.SlugField(unique=True)\n    description = models.TextField(blank=True)\n    brand = models.ForeignKey(Brand, null=True, on_delete=models.SET_NULL)\n    category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)\n    base_price = models.DecimalField(max_digits=12, decimal_places=2)\n    discount_price = models.DecimalField(max_digits=12, decimal_places=2, null=True,\n    blank=True)\n    is_active = models.BooleanField(default=True)\n    views = models.PositiveIntegerField(default=0)\n    created_at = models.DateTimeField(auto_now_add=True)\n\nclass ProductVariant(models.Model):\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4)\n    product = models.ForeignKey(Product, related_name='variants',\n    on_delete=models.CASCADE)\n    sku = models.CharField(max_length=80)\n    attributes = models.JSONField(default=dict) # ex {\"size\":\"M\",\"color\":\"red\"}\n    price = models.DecimalField(max_digits=12, decimal_places=2)\n    stock = models.IntegerField(default=0)\n    active = models.BooleanField(default=True)\n\nclass ProductImage(models.Model):\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4)\n    product = models.ForeignKey(Product, related_name='images',\n    on_delete=models.CASCADE)\n    url = models.URLField()\n    alt_text = models.CharField(max_length=150, blank=True)\n    order = models.IntegerField(default=0)",
+      "info": {
+        "size": 3349,
+        "last_modified": "2025-10-18T20:38:32.761507617",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/views.py",
+      "content": "from rest_framework import viewsets, permissions\nfrom .models import Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage\nfrom .serializers import ProductSerializer, StoreKYCSerializer, BrandSerializer, CategorySerializer, ProductVariantSerializer,ProductImageSerializer\n\n\n# Create your views here.\nclass StoreViewSet(viewsets.ModelViewSet):\n    queryset = Store.objects.all()\n    serializer_class = ProductSerializer\n\n    # TODO Add permissions for Authenticated and Authorized Store owner\n    permission_classes = permissions.IsAuthenticated\n\nclass StoreKYCViewSet(viewsets.ModelViewSet):\n    queryset = SellerKYC.objects.all()\n    serializer_class = StoreKYCSerializer\n\nclass BrandViewSet(viewsets.ModelViewSet):\n    queryset = Brand.objects.all()\n    serializer_class = BrandSerializer\n\nclass CategoryViewSet(viewsets.ModelViewSet):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n\nclass ProductViewSet(viewsets.ModelViewSet):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\n\nclass ProductVariantViewSet(viewsets.ModelViewSet):\n    queryset = ProductVariant.objects.all()\n    serializer_class = ProductVariantSerializer\n\nclass ProductImageViewSet(viewsets.ModelViewSet):\n    queryset = ProductImage.objects.all()\n    serializer_class = ProductImageSerializer",
+      "info": {
+        "size": 1344,
+        "last_modified": "2025-10-18T20:38:32.779452031",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/serializers.py",
+      "content": "from rest_framework import serializers\nfrom .models import Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage\n\n\nclass StoreSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Store\n        fields = '__all__'\n\n\nclass StoreKYCSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = SellerKYC\n        fields = '__all__'\n\n\nclass BrandSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Brand\n        fields = '__all__'\n\n\nclass CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = '__all__'\n\n\nclass ProductSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Product\n        fields = '__all__'\n\n\nclass ProductVariantSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ProductVariant\n        fields = '__all__'\n\n\nclass ProductImageSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = ProductImage\n        fields = '__all__'",
+      "info": {
+        "size": 1013,
+        "last_modified": "2025-10-18T20:38:32.809493902",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "products_service/bizhub_products/urls.py",
+      "content": "from rest_framework.routers import DefaultRouter\nfrom .views import ProductViewSet, StoreViewSet, StoreKYCViewSet, BrandViewSet, CategoryViewSet, ProductVariantViewSet, ProductImageViewSet\n\nrouter = DefaultRouter()\nrouter.register(r'store',StoreViewSet)\nrouter.register(r'storeKYC',StoreKYCViewSet)\nrouter.register(r'brand',BrandViewSet)\nrouter.register(r'category',CategoryViewSet)\nrouter.register(r'products', ProductViewSet)\nrouter.register(r'productVariants', ProductVariantViewSet)\nrouter.register(r'productImages', ProductImageViewSet)\nurlpatterns = router.urls",
+      "info": {
+        "size": 567,
+        "last_modified": "2025-10-18T20:38:32.83001909",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "setting.py",
+      "content": "#jwt_token to verify token from spring boot Auth service\nimport os\n\nJWT_SECRET=os.getenv(\"JWT_SECRET_KEY\")\nREST_FRAMEWORK = {\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n    \"common.authentication.JWTAuthentication\",\n    ]\n}",
+      "info": {
+        "size": 220,
+        "last_modified": "2025-10-18T20:38:32.843231943",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/.gitignore",
+      "content": "# Python\n__pycache__/\n*.py[cod]\n*.pyo\n*.pyd\n*.so\n*.egg-info/\n.eggs/\n\n# Django\n*.log\n*.pot\n*.pyc\nproducts_service/db.sqlite3\nmedia/\nstaticfiles/\nlocal_settings.py\n\n# Environments\n.env\n.venv/\nvenv/\nenv/\nENV/\n\n# IDEs / Editors\n.vscode/\n.idea/\n*.swp\n\n# Migrations (optional – keep if you want to regenerate them each time)\n# */migrations/\n# !*/migrations/__init__.py\n\n# Testing\n.coverage\n.tox/\nnosetests.xml\ncoverage.xml\n*.cover\n\n# OS files\n.DS_Store\nThumbs.db\n\n# Deployment\n*.bak\n*.pid\n*.seed\n*.orig\n*.rej\n\n# PyInstaller\n*.manifest\n*.spec\nbuild/\ndist/\n\n# Docker\ndocker-compose.override.yml\n",
+      "info": {
+        "size": 589,
+        "last_modified": "2025-10-18T20:38:32.84716509",
+        "mime_type": "text/plain",
+        "extension": ".gitignore"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__pycache__/urls.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000Éÿïh\u0002\u0003\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\\\u0000\u0000\u0000\u0000S\u0000r\u0000S\u0001S\u0002K\u0001J\u0002r\u0002 \u0000S\u0001S\u0003K\u0003J\u0004r\u0004 \u0000\\\u0004\"\u0000S\u0004\\\u0002R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u0000/\u0001r\u0007g\u0005)\u0006a\u0002\u0000\u0000\nURL configuration for orders_service project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/5.1/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\né\u0000\u0000\u0000\u0000)\u0001Ú\u0005admin)\u0001Ú\u0004pathz\u0006admin/N)\bÚ\u0007__doc__Ú\u000edjango.contribr\u0003\u0000\u0000\u0000Ú\u000bdjango.urlsr\u0004\u0000\u0000\u0000Ú\u0004siteÚ\u0004urlsÚ\u000burlpatterns©\u0000ó\u0000\u0000\u0000\u0000Úo/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/orders_service/urls.pyÚ\b<module>r\u000e\u0000\u0000\u0000\u0001\u0000\u0000\u0000s-\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001ñ\u0002\u000f\u0001\u0004õ \u0000\u0001!Ý\u0000\u001cñ\u0006\u0000\u0005\t\u00185::??Ó\u0004#ð\u0003\u0002\u000f\u0002\u000br\f\u0000\u0000\u0000",
+      "info": {
+        "size": 1086,
+        "last_modified": "2025-10-18T20:38:32.851386976",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Ús/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/orders_service/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 212,
+        "last_modified": "2025-10-18T20:38:32.864299258",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__pycache__/settings.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh\u0010\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\t\u0000\u0000\u0000\u0000\u0000\u0000\u0000óà\u0002\u0000\u0000\u0000S\u0000r\u0000S\u0001S\u0002K\u0001J\u0002r\u0002 \u0000S\u0001S\u0003K\u0003r\u0003S\u0001S\u0004K\u0004J\u0005r\u0005 \u0000\\\u0002\"\u0000\\\u00065\u0001\u0000\u0000\u0000\u0000\u0000\u0000R\u000f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\tS\u0005r\nS\u0006r\u000bS\u0007/\u0001r\f/\u0000S\bQ\u0001r\r/\u0000S\tQ\u0001r\u000eS\nr\u000fS\u000b/\u0000S\u0006S\f/\u0000S\rQ\u00010\u0001S\u000e.\u0004/\u0001r\u0010S\u000fr\u0011\\\u0005\"\u0000S\u0010S\u0011S\u00129\u0002r\u0012\\\u0005\"\u0000S\u0013S\u0014S\u00129\u0002r\u0013\u001e\u0000\\\u0003R(\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0012\u000e\u0000S\u0015\\\u0013\u000e\u0000S\u00163\u00045\u0001\u0000\u0000\u0000\u0000\u0000\u0000r\u0015\\\u0015R-\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\\\u0015R/\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0017/\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u0000r\u00180\u0000r\u0019\\\u0018\u0013\u0000H$\u0000\u0000r\u001a\\\u0019R7\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\\\u001aR)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u00180\u00005\u0002\u0000\u0000\u0000\u0000\u0000\u00005\u0001\u0000\u0000\u0000\u0000\u0000\u0000 \u0000M&\u0000\u0000\u000b\u0000 \u0000S\u001aS\u001b\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001c5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001d5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001e5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u001f5\u0001\u0000\u0000\u0000\u0000\u0000\u0000\\\u0019R)\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S 5\u0001\u0000\u0000\u0000\u0000\u0000\u0000S!.\u00060\u0001r\u001fS\"S#0\u0001S\"S$0\u0001S\"S%0\u0001S\"S&0\u0001/\u0004r S'r!S(r\"S\u0006r#S\u0006r$S)r%S*r&g\u0003!\u0000\\\u001c\u0007\u0000a\u0017\u0000\u0000r\u001d\\\u001e\"\u0000S\u0019\\\u001d\u000e\u00003\u00025\u0001\u0000\u0000\u0000\u0000\u0000\u0000 \u00000\u0000r\u0019\u001f\u0000S\u0003r\u001dC\u001dNS\u0003r\u001dC\u001df\u0001f\u0000=\u0003\u001f\u0000f\u0001)+a3\u0001\u0000\u0000\nDjango settings for orders_service project.\n\nGenerated by 'django-admin startproject' using Django 5.1.2.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/5.1/ref/settings/\né\u0000\u0000\u0000\u0000)\u0001Ú\u0004PathN)\u0001Ú\u0006configzBdjango-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#TÚ\u0001*)\bz\u0014django.contrib.adminz\u0013django.contrib.authz\u001bdjango.contrib.contenttypesz\u0017django.contrib.sessionsz\u0017django.contrib.messagesz\u001adjango.contrib.staticfilesÚ\rbizhub_ordersÚ\u000erest_framework)\u0007z-django.middleware.security.SecurityMiddlewarez4django.contrib.sessions.middleware.SessionMiddlewarez)django.middleware.common.CommonMiddlewarez)django.middleware.csrf.CsrfViewMiddlewarez7django.contrib.auth.middleware.AuthenticationMiddlewarez4django.contrib.messages.middleware.MessageMiddlewarez6django.middleware.clickjacking.XFrameOptionsMiddlewarez\u0013orders_service.urlsz/django.template.backends.django.DjangoTemplatesÚ\u0012context_processors)\u0004z(django.template.context_processors.debugz*django.template.context_processors.requestz+django.contrib.auth.context_processors.authz3django.contrib.messages.context_processors.messages)\u0004Ú\u0007BACKENDÚ\u0004DIRSÚ\bAPP_DIRSÚ\u0007OPTIONSz\u001forders_service.wsgi.applicationÚ\u0011CONFIG_SERVER_URLz\u0015http://localhost:8888)\u0001Ú\u0007defaultÚ\u000bSERVER_NAMEz\u000eorders-serviceÚ\u0001/z\b/defaultÚ\u000fpropertySourcesÚ\u0006sourcez4 Warning: Could not load from spring Config Server: r\u000e\u0000\u0000\u0000z\u001ddjango.db.backends.postgresqlz\u0014django.database.hostz\u0014django.database.portz\u0014django.database.namez\u0014django.database.userz\u0018django.database.password)\u0006Ú\u0006ENGINEÚ\u0004HOSTÚ\u0004PORTÚ\u0004NAMEÚ\u0004USERÚ\bPASSWORDr\u0016\u0000\u0000\u0000zHdjango.contrib.auth.password_validation.UserAttributeSimilarityValidatorz>django.contrib.auth.password_validation.MinimumLengthValidatorz?django.contrib.auth.password_validation.CommonPasswordValidatorz@django.contrib.auth.password_validation.NumericPasswordValidatorz\u0005en-usÚ\u0003UTCz\u0007static/z\u001ddjango.db.models.BigAutoField)'Ú\u0007__doc__Ú\u0007pathlibr\u0003\u0000\u0000\u0000Ú\brequestsÚ\bdecoupler\u0004\u0000\u0000\u0000Ú\b__file__Ú\u0007resolveÚ\u0006parentÚ\bBASE_DIRÚ\nSECRET_KEYÚ\u0005DEBUGÚ\rALLOWED_HOSTSÚ\u000eINSTALLED_APPSÚ\nMIDDLEWAREÚ\fROOT_URLCONFÚ\tTEMPLATESÚ\u0010WSGI_APPLICATIONr\r\u0000\u0000\u0000r\u000f\u0000\u0000\u0000Ú\u0003getÚ\bresponseÚ\u0010raise_for_statusÚ\u0004jsonÚ\npropertiesÚ\u000bconfig_datar\u0012\u0000\u0000\u0000Ú\u0006updateÚ\tExceptionÚ\u0001eÚ\u0005printÚ\tDATABASESÚ\u0018AUTH_PASSWORD_VALIDATORSÚ\rLANGUAGE_CODEÚ\tTIME_ZONEÚ\bUSE_I18NÚ\u0006USE_TZÚ\nSTATIC_URLÚ\u0012DEFAULT_AUTO_FIELD©\u0000ó\u0000\u0000\u0000\u0000Ús/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/orders_service/settings.pyÚ\b<module>r?\u0000\u0000\u0000\u0001\u0000\u0000\u0000sø\u0001\u0000\u0000ð\u0003\u0001\u0001\u0001ñ\u0002\n\u0001\u0004õ\u0018\u0000\u0001\u0019Û\u0000\u000fÝ\u0000\u001bñ\b\u0000\f\u0010\b>×\u000b!Ñ\u000b!Ó\u000b#×\u000b*Ñ\u000b*×\u000b1Ñ\u000b1\bð\u000e\u0000\u000eR\u0001\nð\u0006\u0000\t\r\u0005à\u0011\u0014\u0005\rò\n\t\u0012\u0002\u000eò\u0016\b\u000e\u0002\nð\u0014\u0000\u0010%\fð\b\u0000\u0014E\u0001Ø\u0010\u0012Ø\u0014\u0018à\f ò\u0000\u0005#\u000eð\u0003\u0007\u0014\nñ\t\f\u0005\u0006ð\u0003\u000e\r\u0002\tð \u0000\u00145Ð\u0000\u0010ñ\n\u0000\u0015\u001bÐ\u001b.Ð7NÑ\u0014OÐ\u0000\u0011Ù\u000e\u0014]Ð+;Ñ\u000e<\u000bð\u0004\t\u0001\u0013Ø\u000f\u0017||Ð\u001f0Ð\u001e1°\u0011°;°-¸xÐ\u001cHÓ\u000fIHØ\u0004\f×\u0004\u001dÑ\u0004\u001dÔ\u0004\u001fØ\u0010\u0018\r\r\u000f×\u0010#Ñ\u0010#Ð$5°bÓ\u00109JØ\u0010\u0012KÛ\u0012\u001c\u0006Ø\b\u0013×\b\u001aÑ\b\u001a6:: h¨rÓ\u001b2Ö\b3ñ\u0003\u0000\u0013\u001dð\u000e\u0000\u0005\u000eØ\u00121Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0010\u001b\u000f\u000fÐ 6Ó\u00107Ø\u0014\u001fOOÐ$>Ó\u0014?ñ\r\u0007\u0010\u0006ð\u0003\t\r\u0002\tð.\u0000\t\u000fÐ\u0010Zð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Pð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Qð\u0003\u0002\u0005\u0006ð\b\u0000\t\u000fÐ\u0010Rð\u0003\u0002\u0005\u0006ð\u0015\r\u001c\u0002Ð\u0000\u0018ð&\u0000\u0011\u0018\rà\f\u0011\tà\u000b\u000f\bà\t\r\u0006ð\f\u0000\u000e\u0017\nð\n\u0000\u00165Ñ\u0000\u0012øð{\u0001\u0000\b\u0011ó\u0000\u0002\u0001\u0013Ù\u0004\tÐ\f@À\u0011À\u0003Ð\nDÔ\u0004EØ\u0010\u0012Kûð\u0005\u0002\u0001\u0013ús\u0019\u0000\u0000\u0000Á+A4E\u0010\u0000Å\u0010\u0006E-\u0003Å\u0016\rE(\u0003Å(\u0005E-\u0003",
+      "info": {
+        "size": 3861,
+        "last_modified": "2025-10-18T20:38:32.886126423",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__pycache__/wsgi.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000í`îh\u0001\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000ób\u0000\u0000\u0000\u0000S\u0000r\u0000S\u0001S\u0002K\u0001r\u0001S\u0001S\u0003K\u0002J\u0003r\u0003 \u0000\\\u0001R\b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0004S\u00055\u0002\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\\\u0003\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\u0006g\u0002)\u0006zÞ\nWSGI config for orders_service project.\n\nIt exposes the WSGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/\né\u0000\u0000\u0000\u0000N)\u0001Ú\u0014get_wsgi_applicationÚ\u0016DJANGO_SETTINGS_MODULEz\u0017orders_service.settings)\u0007Ú\u0007__doc__Ú\u0002osÚ\u0010django.core.wsgir\u0003\u0000\u0000\u0000Ú\u0007environÚ\nsetdefaultÚ\u000bapplication©\u0000ó\u0000\u0000\u0000\u0000Úo/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/orders_service/wsgi.pyÚ\b<module>r\u000e\u0000\u0000\u0000\u0001\u0000\u0000\u0000s0\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001ñ\u0002\u0007\u0001\u0004ó\u0012\u0000\u0001\nå\u00001à\u0000\u0002\n\n×\u0000\u0015Ñ\u0000\u0015Ð\u0016.Ð0IÔ\u0000Já\u000e\"Ó\u000e$\u000br\f\u0000\u0000\u0000",
+      "info": {
+        "size": 714,
+        "last_modified": "2025-10-18T20:38:32.897686967",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.928030735",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/settings.py",
+      "content": "\"\"\"\nDjango settings for orders_service project.\n\nGenerated by 'django-admin startproject' using Django 5.1.2.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/5.1/ref/settings/\n\"\"\"\nimport os\nfrom pathlib import Path\nimport requests\nfrom decouple import config\n\n\n# Build paths inside the project like this: BASE_DIR / 'subdir'.\nBASE_DIR = Path(__file__).resolve().parent.parent\n\n\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#'\n\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\n\nALLOWED_HOSTS = [\"*\"]\n\n\n# Application definition\n\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'bizhub_orders',\n    'rest_framework',\n]\n\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\n\nROOT_URLCONF = 'orders_service.urls'\n\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',\n                'django.contrib.messages.context_processors.messages',\n            ],\n        },\n    },\n]\n\nWSGI_APPLICATION = 'orders_service.wsgi.application'\n\n\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nCONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')\nSERVER_NAME = config('SERVER_NAME',default='orders-service')\n\ntry:\n    response = requests.get(f\"{CONFIG_SERVER_URL}/{SERVER_NAME}/default\")\n    response.raise_for_status()\n    properties= response.json().get('propertySources',[])\n    config_data={}\n    for source in properties:\n        config_data.update(source.get('source',{}))\nexcept Exception as e:\n    print(f\" Warning: Could not load from spring Config Server: {e}\")\n    config_data={}\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'HOST': config_data.get('django.database.host'),\n        'PORT': config_data.get('django.database.port'),\n        'NAME': config_data.get('django.database.name'),\n        'USER': config_data.get('django.database.user'),\n        'PASSWORD': config_data.get('django.database.password'),\n    }\n}\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.sqlite3',\n#         'NAME': BASE_DIR / 'db.sqlite3',\n#     }\n# }\n\n#jwt_token to verify token from spring boot Auth service\nJWT_SECRET=os.getenv(\"JWT_SECRET_KEY\")\n\nREST_FRAMEWORK = {\n    \"DEFAULT_AUTHENTICATION_CLASSES\": [\n    \"common.authentication.JWTAuthentication\",\n    ]\n}\n\n# Password validation\n# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators\n\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',\n    },\n]\n\n\n# Internationalization\n# https://docs.djangoproject.com/en/5.1/topics/i18n/\n\nLANGUAGE_CODE = 'en-us'\n\nTIME_ZONE = 'UTC'\n\nUSE_I18N = True\n\nUSE_TZ = True\n\n\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\n\nSTATIC_URL = 'static/'\n\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\n\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n",
+      "info": {
+        "size": 4475,
+        "last_modified": "2025-10-18T20:38:32.929576856",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/asgi.py",
+      "content": "\"\"\"\nASGI config for orders_service project.\n\nIt exposes the ASGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/howto/deployment/asgi/\n\"\"\"\n\nimport os\n\nfrom django.core.asgi import get_asgi_application\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'orders_service.settings')\n\napplication = get_asgi_application()\n",
+      "info": {
+        "size": 405,
+        "last_modified": "2025-10-18T20:38:32.948854851",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/wsgi.py",
+      "content": "\"\"\"\nWSGI config for orders_service project.\n\nIt exposes the WSGI callable as a module-level variable named ``application``.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/\n\"\"\"\n\nimport os\n\nfrom django.core.wsgi import get_wsgi_application\n\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'orders_service.settings')\n\napplication = get_wsgi_application()\n",
+      "info": {
+        "size": 405,
+        "last_modified": "2025-10-18T20:38:32.951957646",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/orders_service/urls.py",
+      "content": "\"\"\"\nURL configuration for orders_service project.\n\nThe `urlpatterns` list routes URLs to views. For more information please see:\n    https://docs.djangoproject.com/en/5.1/topics/http/urls/\nExamples:\nFunction views\n    1. Add an import:  from my_app import views\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\nClass-based views\n    1. Add an import:  from other_app.views import Home\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\nIncluding another URLconf\n    1. Import the include() function: from django.urls import include, path\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\n\"\"\"\nfrom django.contrib import admin\nfrom django.urls import path\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n]\n",
+      "info": {
+        "size": 770,
+        "last_modified": "2025-10-18T20:38:32.954910143",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/manage.py",
+      "content": "#!/usr/bin/env python\n\"\"\"Django's command-line utility for administrative tasks.\"\"\"\nimport os\nimport sys\n\n\ndef main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'orders_service.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"\n        ) from exc\n    execute_from_command_line(sys.argv)\n\n    if(len(sys.argv) > 1):\n        sys.argv += [\"runserver\",\"9002\"]\n\nif __name__ == '__main__':\n    main()\n",
+      "info": {
+        "size": 738,
+        "last_modified": "2025-10-18T20:38:32.975572345",
+        "mime_type": "application/x-sh",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__pycache__/models.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000÷ïhM\u0004\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000óx\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000r\u0000S\u0000S\u0002K\u0001J\u0002r\u0002 \u0000S\u0000S\u0003K\u0003J\u0004r\u0004 \u0000\u0018\u0000\"\u0000S\u0004\u001a\u0000S\u0005\\\u0002R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0006\u0018\u0000\"\u0000S\u0006\u001a\u0000S\u0007\\\u0002R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00005\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0007g\u0001)\bé\u0000\u0000\u0000\u0000N)\u0001Ú\u0006models)\u0001Ú\btimezonec\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0012\u0001\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003/\u0000S\u0002Q\u0001r\u0004\\\u0005R\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0003\\\u0007R\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0004S\u00059\u0003r\t\\\u0005R\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\n\\\u0005R\f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\u000b\\\u0005R\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0006S\u0007S\b9\u0002r\r\\\u0005R\u001c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\t\\\u0004S\nS\u000b9\u0003r\u000f\\\u0005R \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\u0011R$\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\f9\u0001r\u0013S\rr\u0014g\u000e)\u000fÚ\u0005Orderé\u0006\u0000\u0000\u0000)\u0005)\u0002Ú\u0007pendingÚ\u0007Pending)\u0002Ú\tconfirmedÚ\tConfirmed)\u0002Ú\u0007shippedÚ\u0007Shipped)\u0002Ú\tdeliveredÚ\tDelivered)\u0002Ú\tcancelledÚ\tCancelledTF©\u0003Ú\u000bprimary_keyÚ\u0007defaultÚ\beditableé\f\u0000\u0000\u0000é\u0002\u0000\u0000\u0000©\u0002Ú\nmax_digitsÚ\u000edecimal_placesé\u0014\u0000\u0000\u0000r\b\u0000\u0000\u0000)\u0003Ú\nmax_lengthÚ\u0007choicesr\u0014\u0000\u0000\u0000©\u0001r\u0014\u0000\u0000\u0000©\u0000N)\u0015Ú\b__name__Ú\n__module__Ú\f__qualname__Ú\u000f__firstlineno__Ú\u000eSTATUS_CHOICESr\u0003\u0000\u0000\u0000Ú\tUUIDFieldÚ\u0004uuidÚ\u0005uuid4Ú\u0002idÚ\bbuyer_idÚ\bstore_idÚ\fDecimalFieldÚ\ftotal_amountÚ\tCharFieldÚ\u0006statusÚ\rDateTimeFieldr\u0004\u0000\u0000\u0000Ú\u0003nowÚ\ncreated_atÚ\u0015__static_attributes__r\u001f\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Úp/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/models.pyr\u0006\u0000\u0000\u0000r\u0006\u0000\u0000\u0000\u0006\u0000\u0000\u0000s|\u0000\u0000\u0000\u0000ò\u0002\u0006\u0016\u0006Nð\u000e\u0000\n\u0010×\t\u0019Ò\t\u0019 d°D·J±JÈ\u0015Ñ\tOBØ\u000f\u0015×\u000f\u001fÒ\u000f\u001fÓ\u000f!HØ\u000f\u0015×\u000f\u001fÒ\u000f\u001fÓ\u000f!HØ\u0013\u0019×\u0013&Ò\u0013&°\"ÀQÑ\u0013GLØ\r\u0013×\r\u001dÒ\r\u001d¨\u0012°^Ø\f\u0015ñ\u0003\u0001\u000e\u0017Fà\u0011\u0017×\u0011%Ò\u0011%¨h¯l©lÑ\u0011;Jr3\u0000\u0000\u0000r\u0006\u0000\u0000\u0000c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0000\u0000\u0000\u0000óè\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0002\\\u0006R\u000e\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0003S\u00049\u0003r\b\\\u0004R\u0012\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000\\\n\\\u0004R\u0016\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000S\u0005S\u00069\u0003r\f\\\u0004R\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u00005\u0000\u0000\u0000\u0000\u0000\u0000\u0000r\r\\\u0004R\u001c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\u0007S\b9\u0001r\u000f\\\u0004R \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000S\tS\nS\u000b9\u0002r\u0011S\fr\u0012g\r)\u000eÚ\tOrderItemé\u0016\u0000\u0000\u0000TFr\u0012\u0000\u0000\u0000Ú\u0005items)\u0002Ú\ton_deleteÚ\frelated_nameé\u0001\u0000\u0000\u0000r\u001e\u0000\u0000\u0000r\u0016\u0000\u0000\u0000r\u0017\u0000\u0000\u0000r\u0018\u0000\u0000\u0000r\u001f\u0000\u0000\u0000N)\u0013r \u0000\u0000\u0000r!\u0000\u0000\u0000r\"\u0000\u0000\u0000r#\u0000\u0000\u0000r\u0003\u0000\u0000\u0000r%\u0000\u0000\u0000r&\u0000\u0000\u0000r'\u0000\u0000\u0000r(\u0000\u0000\u0000Ú\nForeignKeyr\u0006\u0000\u0000\u0000Ú\u0007CASCADEÚ\u0005orderÚ\nproduct_idÚ\u0014PositiveIntegerFieldÚ\bquantityr+\u0000\u0000\u0000Ú\u0005pricer2\u0000\u0000\u0000r\u001f\u0000\u0000\u0000r3\u0000\u0000\u0000r4\u0000\u0000\u0000r6\u0000\u0000\u0000r6\u0000\u0000\u0000\u0016\u0000\u0000\u0000sb\u0000\u0000\u0000\u0000Ø\t\u000f×\t\u0019Ò\t\u0019 d°D·J±JÈ\u0015Ñ\tOBØ\f\u0012×\f\u001dÒ\f\u001de¨v¯~©~ÈGÑ\fTEØ\u0011\u0017×\u0011!Ò\u0011!Ó\u0011#JØ\u000f\u0015×\u000f*Ò\u000f*°1Ñ\u000f5HØ\f\u0012×\f\u001fÒ\f\u001f¨2¸aÑ\f@Er3\u0000\u0000\u0000r6\u0000\u0000\u0000)\br&\u0000\u0000\u0000Ú\tdjango.dbr\u0003\u0000\u0000\u0000Ú\fdjango.utilsr\u0004\u0000\u0000\u0000Ú\u0005Modelr\u0006\u0000\u0000\u0000r6\u0000\u0000\u0000r\u001f\u0000\u0000\u0000r3\u0000\u0000\u0000r4\u0000\u0000\u0000Ú\b<module>rF\u0000\u0000\u0000\u0001\u0000\u0000\u0000s0\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Û\u0000\u000bÝ\u0000\u001cÝ\u0000!ô\u0006\u000e\u0001<FLLô\u0000\u000e\u0001<ô \u0005\u0001A\u0001\u0006\f\fõ\u0000\u0005\u0001A\u0001r3\u0000\u0000\u0000",
+      "info": {
+        "size": 2034,
+        "last_modified": "2025-10-18T20:38:32.978562648",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__pycache__/apps.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïhü\u0001\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó2\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000S\u0000S\u0002K\u0002J\u0003r\u0003 \u0000\u0018\u0000\"\u0000S\u0003\u001a\u0000S\u0004\\\u00015\u0003\u0000\u0000\u0000\u0000\u0000\u0000r\u0004g\u0002)\u0005é\u0000\u0000\u0000\u0000)\u0001Ú\tAppConfigNc\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\"\u0000\u0000\u0000\u0000\\\u0000r\u0001S\u0000r\u0002S\u0001r\u0003S\u0002r\u0004S\u0003r\u0005S\u0004\u001a\u0000r\u0006S\u0005r\u0007g\u0006)\u0007Ú\u0012BizhubOrdersConfigé\u0004\u0000\u0000\u0000z\u001ddjango.db.models.BigAutoFieldÚ\rbizhub_ordersc\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0006\u0000\u0000\u0000\u0003\u0000\u0000\u0000ó<\u0000\u0000\u0000\u0000S\u0001n\u0001S\u0002n\u0002S\u0003n\u0003[\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000R\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\"\u0000U\u0001U\u0002U\u0003S\u00049\u0003 \u0000g\u0000)\u0005Nz\u001chttp://localhost:8761/eurekaz\u0013orders-microserviceiK\u001f\u0000\u0000)\u0003Ú\reureka_serverÚ\bapp_nameÚ\rinstance_port)\u0002Ú\reureka_clientÚ\u0004init)\u0004Ú\u0004selfÚ\rEUREKA_SERVERÚ\bAPP_NAMEÚ\rINSTANCE_PORTs\u0004\u0000\u0000\u0000    Ún/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/apps.pyÚ\u0005readyÚ\u0018BizhubOrdersConfig.ready\b\u0000\u0000\u0000s(\u0000\u0000\u0000\u0000Ø\u00186\rØ\u0013(\bØ\u0018\u001c\rä\b\u0015×\b\u001aÒ\b\u001aØ\u001a'Ø\u0015\u001dØ\u001a'ó\u0007\u0004\t\nó\u0000\u0000\u0000\u0000©\u0000N)\bÚ\b__name__Ú\n__module__Ú\f__qualname__Ú\u000f__firstlineno__Ú\u0012default_auto_fieldÚ\u0004namer\u0013\u0000\u0000\u0000Ú\u0015__static_attributes__r\u0016\u0000\u0000\u0000r\u0015\u0000\u0000\u0000r\u0012\u0000\u0000\u0000r\u0005\u0000\u0000\u0000r\u0005\u0000\u0000\u0000\u0004\u0000\u0000\u0000s\u0012\u0000\u0000\u0000\u0000Ø\u00198Ð\u0004\u0016Ø\u000b\u001aDõ\u0004\t\u0005\nr\u0015\u0000\u0000\u0000r\u0005\u0000\u0000\u0000)\u0005Ú\u000bdjango.appsr\u0003\u0000\u0000\u0000Ú\u001epy_eureka_client.eureka_clientr\f\u0000\u0000\u0000r\u0005\u0000\u0000\u0000r\u0016\u0000\u0000\u0000r\u0015\u0000\u0000\u0000r\u0012\u0000\u0000\u0000Ú\b<module>r \u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0017\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Ý\u0000!Ý\u00006ô\u0004\r\u0001\n\u0019õ\u0000\r\u0001\nr\u0015\u0000\u0000\u0000",
+      "info": {
+        "size": 1015,
+        "last_modified": "2025-10-18T20:38:32.982905963",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Úr/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 211,
+        "last_modified": "2025-10-18T20:38:32.987697861",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__pycache__/admin.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh?\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0010\u0000\u0000\u0000\u0000S\u0000S\u0001K\u0000J\u0001r\u0001 \u0000g\u0002)\u0003é\u0000\u0000\u0000\u0000)\u0001Ú\u0005adminN)\u0002Ú\u000edjango.contribr\u0003\u0000\u0000\u0000©\u0000ó\u0000\u0000\u0000\u0000Úo/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/admin.pyÚ\b<module>r\b\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\b\u0000\u0000\u0000ð\u0003\u0001\u0001\u0001Þ\u0000 r\u0006\u0000\u0000\u0000",
+      "info": {
+        "size": 255,
+        "last_modified": "2025-10-18T20:38:32.990659602",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:32.994727242",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/tests.py",
+      "content": "from django.test import TestCase\n\n# Create your tests here.\n",
+      "info": {
+        "size": 60,
+        "last_modified": "2025-10-18T20:38:32.996074286",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/admin.py",
+      "content": "from django.contrib import admin\n\n# Register your models here.\n",
+      "info": {
+        "size": 63,
+        "last_modified": "2025-10-18T20:38:32.999260178",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/apps.py",
+      "content": "from django.apps import AppConfig\nimport py_eureka_client.eureka_client as eureka_client\n\nclass BizhubOrdersConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'bizhub_orders'\n\n    def ready(self):\n        EUREKA_SERVER = \"http://localhost:8761/eureka\"\n        APP_NAME = \"orders-microservice\"\n        INSTANCE_PORT = 8011\n\n        eureka_client.init(\n            eureka_server=EUREKA_SERVER,\n            app_name=APP_NAME,\n            instance_port=INSTANCE_PORT\n        )",
+      "info": {
+        "size": 508,
+        "last_modified": "2025-10-18T20:38:33.02347611",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/migrations/__pycache__/__init__.cpython-313.pyc",
+      "content": "ó\r\r\n\u0000\u0000\u0000\u0000yÖïh\u0000\u0000\u0000\u0000ã\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000ó\u0004\u0000\u0000\u0000\u0000g\u0000)\u0001N©\u0000r\u0002\u0000\u0000\u0000ó\u0000\u0000\u0000\u0000Ú}/home/izak/development/SMEs platform/SMEs-E-Platform/django-microservices/orders_service/bizhub_orders/migrations/__init__.pyÚ\b<module>r\u0005\u0000\u0000\u0000\u0001\u0000\u0000\u0000s\u0005\u0000\u0000\u0000ñ\u0003\u0001\u0001\u0001r\u0003\u0000\u0000\u0000",
+      "info": {
+        "size": 222,
+        "last_modified": "2025-10-18T20:38:33.028604776",
+        "mime_type": "application/octet-stream",
+        "extension": ".pyc"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/migrations/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:33.034466576",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/models.py",
+      "content": "import uuid\nfrom django.db import models\nfrom django.utils import timezone\n\n# Create your models here.\nclass Order(models.Model):\n    STATUS_CHOICES = [\n    ('pending', 'Pending'),\n    ('confirmed', 'Confirmed'),\n    ('shipped', 'Shipped'),\n    ('delivered', 'Delivered'),\n    ('cancelled', 'Cancelled'),\n    ]\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)\n    buyer_id = models.UUIDField() # FK to Auth Service\n    store_id = models.UUIDField() # FK to Store Service\n    total_amount = models.DecimalField(max_digits=12, decimal_places=2)\n    status = models.CharField(max_length=20, choices=STATUS_CHOICES,\n    default='pending')\n    created_at = models.DateTimeField(default=timezone.now)\n\nclass OrderItem(models.Model):\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)\n    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')\n    product_id = models.UUIDField() # FK to Product Service\n    quantity = models.PositiveIntegerField(default=1)\n    price = models.DecimalField(max_digits=12, decimal_places=2)",
+      "info": {
+        "size": 1101,
+        "last_modified": "2025-10-18T20:38:33.036888705",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "orders_service/bizhub_orders/views.py",
+      "content": "from django.shortcuts import render\n\n# Create your views here.\n",
+      "info": {
+        "size": 63,
+        "last_modified": "2025-10-18T20:38:33.061253732",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "common/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:33.06782196",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "common/authentication.py",
+      "content": "import jwt\nfrom rest_framework import authentication, exceptions\nfrom django.conf import settings\n\nclass JWTAuthentication(authentication.BaseAuthentication):\n    def authenticate(self, request):\n        auth_header=request.headers.get('Authorization')\n        if not auth_header:\n            return None\n        try:\n            token=auth_header.split(\"\")[1]\n            decoded_token = jwt.decode(token, settings.JWT_SECRET, algorithms=[\"HS256\"])\n        except Exception as e:\n            raise exceptions.AuthenticationFailed(f\"Invalid token:{e}\")\n        return decoded_token, None",
+      "info": {
+        "size": 587,
+        "last_modified": "2025-10-18T20:38:33.069286432",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "common/kafka/__init__.py",
+      "content": "",
+      "info": {
+        "size": 0,
+        "last_modified": "2025-10-18T20:38:33.07373317",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    },
+    {
+      "path": "common/kafka/producer.py",
+      "content": "import json\nfrom django.conf import settings\nfrom kafka import KafkaProducer, KafkaConsumer\n\nBOOTSTRAP_KAFKA = bootstrap_servers=settings.KAFKA_BOOTSTRAP_SERVER,\n\ndef make_producer():\n     return KafkaProducer(bootstrap_servers=BOOTSTRAP_KAFKA,\n                        value_serializer=lambda v: json.dumps(v).encode('utf-8'))\n\ndef make_consumer(topics,group_id):\n    return KafkaConsumer(*topics,bootstrap_servers=BOOTSTRAP_KAFKA,group_id=group_id,\n                         value_deserializer=lambda v: json.loads(v.decode('utf-8')),)\n",
+      "info": {
+        "size": 536,
+        "last_modified": "2025-10-18T20:38:33.075274667",
+        "mime_type": "text/x-python",
+        "extension": ".py"
+      }
+    }
+  ]
+}
