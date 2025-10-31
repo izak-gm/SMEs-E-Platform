@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+      routes:
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/api/v1/auth/**
+
+        - id: products-service
+          uri: lb://DJANGO_PRODUCT-SERVICE
+          predicates:
+            - Path=/api/v1/auth/products/**
+
+        - id: orders-service
+          uri: lb://DJANGO_ORDERS-SERVICE
+          predicates:
+            - Path=/api/v1/auth/orders/**
+
+server:
+  port: 8222

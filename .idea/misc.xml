@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/services/discovery/pom.xml" />
         <option value="$PROJECT_DIR$/services/discovery-server/pom.xml" />
         <option value="$PROJECT_DIR$/services/auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/services/gateway/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -21,5 +22,5 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="23" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" project-jdk-name="25" project-jdk-type="JavaSDK" />
 </project>

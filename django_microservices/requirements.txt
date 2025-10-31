@@ -13,3 +13,5 @@ minio
 django-storages
 boto3
 dotenv
+python-decouple
+django-cors-headers
