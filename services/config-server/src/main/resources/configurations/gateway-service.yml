@@ -13,14 +13,16 @@ spring:
             - Path=/api/v1/auth/**
 
         - id: products-service
-          uri: lb://DJANGO_PRODUCT-SERVICE
+          #uri: lb://DJANGO_PRODUCTS-SERVICE
+          uri: http://localhost:8012
           predicates:
-            - Path=/api/v1/auth/products/**
+            - Path=/api/v1/bizhub/**
 
         - id: orders-service
-          uri: lb://DJANGO_ORDERS-SERVICE
+          #uri: lb://DJANGO_ORDERS-SERVICE
+          uri: http://localhost:8011
           predicates:
-            - Path=/api/v1/auth/orders/**
+            - Path=/api/v1/bizhub/orders/**
 
 server:
   port: 8222

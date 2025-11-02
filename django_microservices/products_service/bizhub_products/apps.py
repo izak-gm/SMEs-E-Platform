@@ -17,7 +17,7 @@ class ApiConfig(AppConfig):
         print("[Startup] Registering service and connecting to Kafka...")
 
         EUREKA_SERVER = "http://localhost:8761/eureka"
-        APP_NAME = "DJANGO_products-microservice"
+        APP_NAME = "django_products-service"
         INSTANCE_PORT = 8012
 
         eureka_client.init(
