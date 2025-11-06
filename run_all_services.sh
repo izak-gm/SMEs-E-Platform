@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+# Colors for logs
+GREEN="\e[32m"
+BLUE="\e[34m"
+YELLOW="\e[33m"
+RESET="\e[0m"
+
 echo "===================================="
 echo "|| =====     ==      ||   //        "
 echo "||    //    // \\    ||  //         " 
@@ -8,17 +14,18 @@ echo "||   //    //   \\   || //          "
 echo "||  //    // === \\  || \\          "
 echo "|| ====  //       \\ ||  \\         "
 echo "===================================="
-# ============================================
-# Run All Backend Services for SMEs E-Platform
-# ============================================
+
+echo "============================================"
+echo "🚀 Starting SMEs E-Platform Backend Services"
+echo "============================================"
+
 
 # Base directories
 BASE_DIR=$(pwd)
-# echo"Running on the base directory $BASE_DIR"
 SERVICES_DIR="$BASE_DIR/services"
 DJANGO_DIR="$BASE_DIR/django_microservices"
 
-# Services paths
+# Spring Boot services
 CONFIG_SERVER="$SERVICES_DIR/config-server"
 DISCOVERY_SERVER="$SERVICES_DIR/discovery-server"
 GATEWAY_SERVER="$SERVICES_DIR/gateway"
@@ -28,9 +35,7 @@ AUTH_SERVICE="$SERVICES_DIR/auth-service"
 DJANGO_PRODUCTS_SERVICE="$DJANGO_DIR/products_service"
 DJANGO_ORDERS_SERVICE="$DJANGO_DIR/orders_service"
 
-# --------------------------------------------
-# Define Service Ports
-# --------------------------------------------
+# Ports
 CONFIG_PORT=8888
 DISCOVERY_PORT=8761
 GATEWAY_PORT=8222
@@ -38,44 +43,49 @@ AUTH_PORT=8090
 PRODUCTS_PORT=8012
 ORDERS_PORT=8011
 
-
-# Python virtual environments
-GLOBAL_VENV="$BASE_DIR/.venv"  # shared virtual environment
+# Python virtual environment
+GLOBAL_VENV="$BASE_DIR/.venv"
 
 # Function to wait for a port to open
 wait_for_port() {
   local port=$1
   local name=$2
-  echo "⏳ Waiting for $name on port $port..."
+  echo "⏳ Waiting for $name to start on port $port..."
   while ! nc -z localhost $port; do
     sleep 2
   done
-  echo "✅ $name is up on port $port!"
+  echo "✅ $name is running on port $port!"
+}
+log() {
+  echo -e "${GREEN}[INFO]${RESET} $1"
 }
 
-echo "============================================"
-echo "🚀 Starting SMEs E-Platform Backend Services"
-echo "============================================"
+run_with_prefix() {
+  prefix=$1
+  shift
+  "$@" 2>&1 | sed "s/^/[${prefix}] /" &
+  echo $!
+}
 
-# --------------------------------------------
-# 1️⃣ Start Config Server
-# --------------------------------------------
+# Trap to stop all services cleanly
+trap "log '🛑 Stopping all services...'; \
+kill $CONFIG_PID $DISCOVERY_PID $GATEWAY_PID $AUTH_PID \
+$PRODUCTS_PID $ORDERS_PID $CONSUMER_PID 2>/dev/null; exit 0" SIGINT SIGTERM
+
+# 1️⃣ Start Spring Boot Services
 echo "🚀 Starting Config Server on port $CONFIG_PORT ..."
 cd "$CONFIG_SERVER"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$CONFIG_PORT" &
 CONFIG_PID=$!
-wait_for_port 8888 "Config Server"
+wait_for_port $CONFIG_PORT "Config Server"
 cd "$BASE_DIR"
 
-# --------------------------------------------
-# 2️⃣ Start Discovery Server
-# --------------------------------------------
+
 echo "🚀 Starting Discovery Server on port $DISCOVERY_PORT..."
 cd "$DISCOVERY_SERVER"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$DISCOVERY_PORT" &
 DISCOVERY_PID=$!
 wait_for_port $DISCOVERY_PORT "Discovery Server"
-cd "$BASE_DIR"
 
 # --------------------------------------------
 # 3️⃣ Start Gateway Service
@@ -85,15 +95,9 @@ cd "$GATEWAY_SERVER"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$GATEWAY_PORT" &
 GATEWAY_PID=$!
 wait_for_port $GATEWAY_PORT "Gateway Service"
-cd "$BASE_DIR"
 
-# --------------------------------------------
-# 4️⃣ Start Auth Service
-# --------------------------------------------
 echo "🚀 Starting Auth Service on port $AUTH_PORT..."
 cd "$AUTH_SERVICE"
-
-# Export secret key
 export secret_key=ZKmeapmW/5fgkRI16seeGMtCeWU7B4XcE8ZavPvTHOozkWh+YFzr9AdWlS4iS1vU
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$AUTH_PORT" &
 AUTH_PID=$!
@@ -110,34 +114,45 @@ echo "🔍 DEBUG: DJANGO_ORDERS_SERVICE=$DJANGO_ORDERS_SERVICE"
 Current=$(pwd)
 echo $Current
 
-echo "🚀 Activating virtual environment..."
+echo "🌍 Activating Python environment..."
 source "$GLOBAL_VENV/bin/activate"
 
+# Dependency optimization
 REQUIREMENTS_FILE="$DJANGO_DIR/requirements.txt"
 REQUIREMENTS_HASH_FILE="$GLOBAL_VENV/.requirements_hash"
 
 if [ -f "$REQUIREMENTS_FILE" ]; then
   new_hash=$(sha256sum "$REQUIREMENTS_FILE")
   if [ "$new_hash" != "$(cat $REQUIREMENTS_HASH_FILE 2>/dev/null)" ]; then
-    echo "📦 New dependencies detected — installing..."
+    echo "📦 Installing updated Python dependencies..."
     pip install -r "$REQUIREMENTS_FILE"
     echo "$new_hash" > "$REQUIREMENTS_HASH_FILE"
   else
-    echo "✅ Dependencies already up-to-date."
+    echo "✅ Python dependencies are up-to-date."
   fi
 fi
 
-echo "🚀 Starting Products Django Service on port $PRODUCTS_PORT..."
+echo "🚀 Starting Products Django Service on port $PRODUCTS_PORT... (Kafka Producer)..."
 cd "$DJANGO_PRODUCTS_SERVICE"
-python manage.py runserver $PRODUCTS_PORT &
-PRODUCTS_PID=$! & python manage.py run_consumer
+PRODUCTS_PID=$(run_with_prefix "PRODUCTS" python manage.py runserver 0.0.0.0:$PRODUCTS_PORT)
 wait_for_port $PRODUCTS_PORT "Products Django Service"
 
-echo "🚀 Starting Orders Django Service on port $ORDERS_PORT..."
+echo "👜 Starting Orders Django Service on port $ORDERS_PORT... (Consumer API)..."
 cd "$DJANGO_ORDERS_SERVICE"
-python manage.py runserver $ORDERS_PORT &
-ORDERS_PID=$!
+ORDERS_PID=$(run_with_prefix "ORDERS" python manage.py runserver 0.0.0.0:$ORDERS_PORT)
 wait_for_port $ORDERS_PORT "Orders Django Service"
+
+echo "☕ Starting Kafka Consumer (Auto-restart Enabled)..."
+cd "$DJANGO_ORDERS_SERVICE"
+run_kafka_consumer() {
+  while true; do
+    echo "▶️ Kafka Consumer Running..."
+    python manage.py run_consumer || echo "⚠️ Consumer crashed, restarting..."
+    sleep 5
+  done
+}
+CONSUMER_PID=$(run_with_prefix "ORDERS_CONSUMER" run_kafka_consumer)
+
 
 deactivate
 cd "$BASE_DIR"
