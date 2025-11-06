@@ -42,6 +42,10 @@ SECRET_KEY = 'django-insecure-#e((0q0@q0@6)jym604d-*u+^p2pu918-ub*g(0+-+zp1imzie
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Url not having the tailing slash at the end
+APPEND_SLASH = False
+
+# Cors handled by the Spring boot gateway
 # ALLOWED_HOSTS = ["*","django_products-service","django_orders_service","gateway-service","127.0.0.1"]
 
 # Application definition

@@ -130,7 +130,7 @@ fi
 echo "🚀 Starting Products Django Service on port $PRODUCTS_PORT..."
 cd "$DJANGO_PRODUCTS_SERVICE"
 python manage.py runserver $PRODUCTS_PORT &
-PRODUCTS_PID=$!
+PRODUCTS_PID=$! & python manage.py run_consumer
 wait_for_port $PRODUCTS_PORT "Products Django Service"
 
 echo "🚀 Starting Orders Django Service on port $ORDERS_PORT..."
