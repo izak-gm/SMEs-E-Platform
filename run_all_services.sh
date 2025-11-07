@@ -52,7 +52,7 @@ wait_for_port() {
   local name=$2
   echo "⏳ Waiting for $name to start on port $port..."
   while ! nc -z localhost $port; do
-    sleep 2
+    sleep 5
   done
   echo "✅ $name is running on port $port!"
 }
@@ -134,25 +134,33 @@ fi
 
 echo "🚀 Starting Products Django Service on port $PRODUCTS_PORT... (Kafka Producer)..."
 cd "$DJANGO_PRODUCTS_SERVICE"
-PRODUCTS_PID=$(run_with_prefix "PRODUCTS" python manage.py runserver 0.0.0.0:$PRODUCTS_PORT)
+echo $(pwd)
+echo "Entering danger zone of the product service"
+python manage.py runserver 0.0.0.0:$PRODUCTS_PORT &
+PRODUCTS_PID=$!
 wait_for_port $PRODUCTS_PORT "Products Django Service"
+echo "Completed running the product service"
 
 echo "👜 Starting Orders Django Service on port $ORDERS_PORT... (Consumer API)..."
 cd "$DJANGO_ORDERS_SERVICE"
-ORDERS_PID=$(run_with_prefix "ORDERS" python manage.py runserver 0.0.0.0:$ORDERS_PORT)
+python manage.py runserver 0.0.0.0:$ORDERS_PORT &
+ORDERS_PID=$!
+# Ensure the Orders API is actually up before starting the consumer
 wait_for_port $ORDERS_PORT "Orders Django Service"
-
-echo "☕ Starting Kafka Consumer (Auto-restart Enabled)..."
+echo "☕ Starting Kafka Consumer Worker (Auto-Restart Enabled)…"
 cd "$DJANGO_ORDERS_SERVICE"
-run_kafka_consumer() {
+
+run_consumer() {
   while true; do
-    echo "▶️ Kafka Consumer Running..."
-    python manage.py run_consumer || echo "⚠️ Consumer crashed, restarting..."
+    echo "[ORDERS_CONSUMER] ▶️ Kafka Consumer Running..."
+    python manage.py run_consumer
+    echo "[ORDERS_CONSUMER] ⚠️ Kafka consumer crashed. Restarting in 5 seconds..."
     sleep 5
   done
 }
-CONSUMER_PID=$(run_with_prefix "ORDERS_CONSUMER" run_kafka_consumer)
 
+run_consumer &
+CONSUMER_PID=$!
 
 deactivate
 cd "$BASE_DIR"
@@ -169,9 +177,11 @@ echo "Gateway:           PID=$GATEWAY_PID   | Port=$GATEWAY_PORT"
 echo "Auth Service:      PID=$AUTH_PID      | Port=$AUTH_PORT"
 echo "Products Service:  PID=$PRODUCTS_PID  | Port=$PRODUCTS_PORT"
 echo "Orders Service:    PID=$ORDERS_PID    | Port=$ORDERS_PORT"
+echo "Kafka Consumer:    PID=$CONSUMER_PID"
 echo "--------------------------------------------"
 echo "🧠 Use Ctrl + C to stop (or run stop_all_services.sh)"
 echo "============================================"
 
-# Keep the script alive to maintain subprocesses
-wait
+# Keep all services alive
+wait $CONFIG_PID $DISCOVERY_PID $GATEWAY_PID $AUTH_PID $PRODUCTS_PID $ORDERS_PID $CONSUMER_PID
+
