@@ -24,7 +24,6 @@ def consume_messages(consumer):
     """
     Poll for messages and decode JSON safely.
     """
-    """Poll for messages and decode JSON safely."""
     global running
     print("[Kafka] ✅ Consumer started. Listening for messages...")
     try:
@@ -70,7 +69,7 @@ def save_to_product_cache(product_data,event_type):
             }
         )
         action="create" if created else "update"
-        print(f"[Kafka] Product cache {action} object {obj}")
+        print(f"[Kafka] Product cache {action} object")
     except Exception as e:
         print(f"[Kafka ERROR] Failed to save product cache: {e}")
 

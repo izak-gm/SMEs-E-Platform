@@ -22,7 +22,7 @@ spring:
           #uri: lb://DJANGO_ORDERS-SERVICE
           uri: http://localhost:8011
           predicates:
-            - Path=/api/v1/bizhub/orders/**
+            - Path=/api/v1/bizhub-orderline/**
 
 server:
   port: 8222

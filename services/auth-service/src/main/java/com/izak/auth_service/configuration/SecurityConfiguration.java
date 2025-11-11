@@ -18,7 +18,7 @@ public class SecurityConfiguration {
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
   private final CorsConfigurationSource corsConfigurationSource; // ✅ Injected bean
 
-  private static final String[] WHITE_LIST_URL={"api/v1/auth/**"};
+  private static final String[] WHITE_LIST_URL={"api/v1/auth/**","/swagger-ui/**", "/v3/api-docs/**"};
   private static final String[] WHITE_LIST_USER_URL={"api/v1/user/**"};
   private static final String[] WHITE_LIST_SELLER_URL={"api/v1/user/store/**"};
   private static final String[] WHITE_LIST_ADMIN_URL={"api/v1/auth/admin/**"};

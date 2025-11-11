@@ -25,6 +25,9 @@ if ENV_PATH.exists():
 else:
     print(f"⚠️  .env file not found at: {ENV_PATH}")
 
+# Now read environment variables
+JWT_SECRET = os.getenv("JWT_SECRET")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -174,3 +177,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'ORDERS SERVICE API',
+    'DESCRIPTION': 'API documentation',
+    'VERSION': '1.0.0',
+}
