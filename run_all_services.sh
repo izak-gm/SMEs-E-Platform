@@ -31,6 +31,7 @@ DISCOVERY_SERVER="$SERVICES_DIR/discovery-server"
 GATEWAY_SERVER="$SERVICES_DIR/gateway"
 AUTH_SERVICE="$SERVICES_DIR/auth-service"
 PAYMENT_SERVICE="$SERVICES_DIR/payment-service"
+NOTIFICATION_SERVICE="$SERVICES_DIR/notification-service"
 
 # Django microservices
 DJANGO_PRODUCTS_SERVICE="$DJANGO_DIR/products_service"
@@ -44,6 +45,7 @@ AUTH_PORT=8090
 PRODUCTS_PORT=8012
 ORDERS_PORT=8011
 PAYMENT_PORT=8013
+NOTIFICATION_PORT=8014
 
 # Python virtual environment
 GLOBAL_VENV="$BASE_DIR/.venv"
@@ -113,6 +115,13 @@ PAYMENT_PID=$!
 wait_for_port $PAYMENT_PORT "Payment Service"
 cd "$BASE_DIR"
 
+echo "Starting Notification service on port $NOTIFICATION_PORT"
+cd "$NOTIFICATION_SERVICE"
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$NOTIFICATION_PORT" &
+NOTIFICATION_PID=$!
+wait_for_port $NOTIFICATION_PORT "Notification Service"
+cd "$BASE_DIR"
+
 # --------------------------------------------
 # 5️⃣ Start Django Services
 # --------------------------------------------
@@ -180,12 +189,14 @@ cd "$BASE_DIR"
 echo "============================================"
 echo "✅ All Services Started Successfully!"
 echo "--------------------------------------------"
-echo "Config Server:     PID=$CONFIG_PID  | Port=$CONFIG_PORT"
-echo "Discovery Server:  PID=$DISCOVERY_PID | Port=$DISCOVERY_PORT"
-echo "Gateway:           PID=$GATEWAY_PID   | Port=$GATEWAY_PORT"
-echo "Auth Service:      PID=$AUTH_PID      | Port=$AUTH_PORT"
-echo "Products Service:  PID=$PRODUCTS_PID  | Port=$PRODUCTS_PORT"
-echo "Orders Service:    PID=$ORDERS_PID    | Port=$ORDERS_PORT"
+echo "Config Server:     PID=$CONFIG_PID          | Port=$CONFIG_PORT"
+echo "Discovery Server:  PID=$DISCOVERY_PID       | Port=$DISCOVERY_PORT"
+echo "Gateway:           PID=$GATEWAY_PID         | Port=$GATEWAY_PORT"
+echo "Auth Service:      PID=$AUTH_PID            | Port=$AUTH_PORT"
+echo "Products Service:  PID=$PRODUCTS_PID        | Port=$PRODUCTS_PORT"
+echo "Orders Service:    PID=$ORDERS_PID          | Port=$ORDERS_PORT"
+echo "Orders Service:    PID=$PAYMENT_PID         | Port=$PAYMENT_PORT"
+echo "Orders Service:    PID=$NOTIFICATION_PID    | Port=$NOTIFICATION_PORT"
 echo "Kafka Consumer:    PID=$CONSUMER_PID"
 echo "--------------------------------------------"
 echo "🧠 Use Ctrl + C to stop (or run stop_all_services.sh)"

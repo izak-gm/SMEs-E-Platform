@@ -44,4 +44,4 @@ spring:
       org.hibernate.SQL: DEBUG
       org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 server:
-  port: 8013
+  port: 8014
