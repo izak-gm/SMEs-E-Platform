@@ -12,7 +12,7 @@ class Order(models.Model):
     ('cancelled', 'Cancelled'),
     ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    buyer_id = models.UUIDField() # FK to Auth Service
+    buyer_id = models.IntegerField() # FK to Auth Service
     store_id = models.UUIDField() # FK to Store Service
     total_amount = models.DecimalField(max_digits=12, decimal_places=2)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES,

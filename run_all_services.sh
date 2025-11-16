@@ -8,7 +8,7 @@ YELLOW="\e[33m"
 RESET="\e[0m"
 
 echo "===================================="
-echo "|| =====     ==      ||   //        "
+echo "|| =====     ===     ||   //        "
 echo "||    //    // \\    ||  //         " 
 echo "||   //    //   \\   || //          "
 echo "||  //    // === \\  || \\          "
@@ -30,6 +30,7 @@ CONFIG_SERVER="$SERVICES_DIR/config-server"
 DISCOVERY_SERVER="$SERVICES_DIR/discovery-server"
 GATEWAY_SERVER="$SERVICES_DIR/gateway"
 AUTH_SERVICE="$SERVICES_DIR/auth-service"
+PAYMENT_SERVICE="$SERVICES_DIR/payment-service"
 
 # Django microservices
 DJANGO_PRODUCTS_SERVICE="$DJANGO_DIR/products_service"
@@ -42,6 +43,7 @@ GATEWAY_PORT=8222
 AUTH_PORT=8090
 PRODUCTS_PORT=8012
 ORDERS_PORT=8011
+PAYMENT_PORT=8013
 
 # Python virtual environment
 GLOBAL_VENV="$BASE_DIR/.venv"
@@ -102,6 +104,13 @@ export secret_key=ZKmeapmW/5fgkRI16seeGMtCeWU7B4XcE8ZavPvTHOozkWh+YFzr9AdWlS4iS1
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$AUTH_PORT" &
 AUTH_PID=$!
 wait_for_port $AUTH_PORT "Auth Service"
+cd "$BASE_DIR"
+
+echo "Starting Payment service on port $PAYMENT_PORT..."
+cd "$PAYMENT_SERVICE"
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$PAYMENT_PORT" &
+PAYMENT_PID=$!
+wait_for_port $PAYMENT_PORT "Payment Service"
 cd "$BASE_DIR"
 
 # --------------------------------------------

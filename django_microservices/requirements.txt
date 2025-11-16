@@ -16,3 +16,8 @@ dotenv
 python-decouple
 django-cors-headers
 drf-spectacular
+opentelemetry-sdk
+opentelemetry-exporter-zipkin
+opentelemetry-instrumentation-django
+opentelemetry-instrumentation-requests
+opentelemetry-propagator-b3
