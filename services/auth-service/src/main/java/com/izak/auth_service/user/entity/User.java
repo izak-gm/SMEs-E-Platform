@@ -4,6 +4,8 @@ import com.izak.auth_service.address.entity.Address;
 import com.izak.auth_service.user.enums.Auth;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +20,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+// TODO :Check the annotation is it will crash then remove it safely
 @Builder
 @Table(name = "_user")
 public class User implements UserDetails {
@@ -45,6 +48,11 @@ public class User implements UserDetails {
 
   @Enumerated(EnumType.STRING)
   private Auth auth;
+
+  @CreatedDate
+  private Date createdAt;
+  @LastModifiedDate
+  private Date updatedAt;
 
   private boolean isEnabled=true;
   private boolean isAccountNonLocked=true;

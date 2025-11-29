@@ -20,20 +20,20 @@ public class AuthController {
   @PostMapping("register")
   public ResponseEntity<AuthResponse> register(@RequestBody @Valid RegisterRequest registerRequest){
     return ResponseEntity.ok(authService.register(registerRequest));
-  };
+  }
   @PostMapping("admin/register")
   public ResponseEntity<AuthResponse> registerSeller(@RequestBody @Valid RegisterRequest registerRequest){
-    return ResponseEntity.ok(authService.register(registerRequest));
-  };
+    return ResponseEntity.ok(authService.registerSeller(registerRequest));
+  }
   @PostMapping("seller/register")
   public ResponseEntity<AuthResponse> registerAdmin(@RequestBody @Valid RegisterRequest registerRequest){
-    return ResponseEntity.ok(authService.register(registerRequest));
-  };
+    return ResponseEntity.ok(authService.registerAdmin(registerRequest));
+  }
 
   @PostMapping("login")
   public ResponseEntity<AuthResponse> authenticate(@RequestBody AuthenticateRequest authenticateRequest){
     return ResponseEntity.ok(authService.authenticate(authenticateRequest));
-  };
+  }
 
   @PutMapping("user/update-profile/{userId}")
   public ResponseEntity<User> updateProfile(

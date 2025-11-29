@@ -49,34 +49,6 @@ class ProductViewSet(viewsets.ModelViewSet):
         if self.request.method in ['GET', 'HEAD']:
             return []  # Anyone can view
         return [IsSeller()]
-    #
-    # def perform_create(self, serializer):
-    #     product = serializer.save()
-    #
-    #     # Prepare event data for the broker
-    #     product_data = {
-    #         "id": str(product.id),
-    #         "name": product.name,
-    #         "base_price": float(product.base_price),
-    #         "description": product.description,
-    #         # "stock": product.stock,
-    #         "is_active": product.is_active,
-    #         # "updated_at": product.updated_at.isoformat(),
-    #     }
-    #     publish_product_events(
-    #         event_type="PRODUCT_CREATED",
-    #         payload=product_data,
-    #     )
-    #
-    # def perform_update(self, serializer):
-    #     product = serializer.save()
-    #     publish_product_events(event_type="PRODUCT_UPDATED",payload=product)
-    #
-    # def perform_destroy(self, instance):
-    #     product_data = {...}
-    #     publish_product_deleted(event_type="PRODUCT_DELETED",payload= product_data)
-    #     instance.delete()
-
 
 class ProductVariantViewSet(viewsets.ModelViewSet):
     queryset = ProductVariant.objects.all()
