@@ -3,13 +3,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/notification
     username: postgres
     password: izak7901
-    #    url: jdbc:postgresql://localhost:5432/${AUTH_DB}
-    #    username: ${POSTGRES_USER}
-    #    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   kafka:
-    bootstrap-servers: localhost:9092
+    # TODO:signals connection
+    bootstrap-servers: 172.25.0.3:9092
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -20,13 +18,13 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: ""
+        spring.json.trusted.packages: "*"  # allow all packages for deserialization
 
     listener:
       ack-mode: record
 
   jpa:
-    showSql: true
+    show-sql: true
     hibernate:
       ddl-auto: update
     properties:
@@ -34,14 +32,16 @@ spring:
         format_sql: true
         default_schema: public
 
-    flyway:
-      enabled: true
-      baseline-on-migrate: true
-      schemas: public
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    schemas: public
 
-  logging:
-    level:
-      org.hibernate.SQL: DEBUG
-      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
 server:
   port: 8013

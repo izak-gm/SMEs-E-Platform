@@ -29,6 +29,12 @@ else:
 JWT_SECRET = os.getenv("JWT_SECRET")
 JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
 
+# settings.py
+
+ORDER_CREATED = "order_created_topic"
+ORDER_UPDATED = "order_updated_topic"
+ORDER_DELETED = "order_deleted_topic"
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -53,7 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bizhub_orders',
+    'bizhub_orders.apps.BizhubOrdersConfig',
     'django_microservices.common',
     'rest_framework',
     'drf_spectacular',
@@ -126,7 +132,7 @@ DATABASES = {
 #     }
 # }
 
-KAFKA_BOOTSTRAP_SERVER= config_data.get('django.kafka.KAFKA_BOOTSTRAP')
+KAFKA_BOOTSTRAP_SERVER= config_data.get('django.signals.KAFKA_BOOTSTRAP')
 
 #jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {

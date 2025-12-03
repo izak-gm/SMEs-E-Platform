@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from ...kafka.consumer import make_consumer, consume_messages, start_consumer_thread
+from ...signals.consumer import make_consumer, consume_messages, start_consumer_thread
 
 
 class Command(BaseCommand):

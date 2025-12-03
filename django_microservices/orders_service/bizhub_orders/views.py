@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from django_microservices.common.auth.authentication import JWTAuthentication
 from .models import Order, OrderItem
 from .serializers import OrderSerializer, OrderItemSerializer
-
+from .signals.order_events import publish_order_events, publish_order_deleted_event
 
 # Create your views here.
 class OrderViewSet(viewsets.ModelViewSet):

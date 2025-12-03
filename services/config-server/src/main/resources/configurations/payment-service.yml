@@ -9,7 +9,8 @@ spring:
     driver-class-name: org.postgresql.Driver
 
   kafka:
-    bootstrap-servers: localhost:9092
+    # TODO:signals connection
+    bootstrap-servers: 172.25.0.3:9092
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -34,13 +35,13 @@ spring:
         format_sql: true
         default_schema: public
 
-    flyway:
-      enabled: true
-      baseline-on-migrate: true
-      schemas: public
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    schemas: public
 
-  logging:
-    level:
+logging:
+   level:
       org.hibernate.SQL: DEBUG
       org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 server:

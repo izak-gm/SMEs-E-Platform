@@ -16,24 +16,32 @@ import java.util.Map;
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
-  @Bean
-  public ConsumerFactory<String, OrderEvent> consumerFactory(){
-    JsonDeserializer<OrderEvent> deserializer=new JsonDeserializer<>(OrderEvent.class);
-    deserializer.addTrustedPackages("*");
 
-    return new DefaultKafkaConsumerFactory<>(Map.of(
-          ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,"localhost:9092",
-          ConsumerConfig.GROUP_ID_CONFIG,"order-service-group",
-          ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
-          ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,deserializer
-    ), new StringDeserializer(),deserializer);
+  @Bean
+  public ConsumerFactory<String, OrderEvent> consumerFactory() {
+    JsonDeserializer<OrderEvent> deserializer = new JsonDeserializer<>(OrderEvent.class);
+    deserializer.addTrustedPackages("*");
+    deserializer.setRemoveTypeHeaders(false);
+    deserializer.setUseTypeMapperForKey(true);
+
+    return new DefaultKafkaConsumerFactory<>(
+          Map.of(
+                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "172.25.0.3:9092",
+                ConsumerConfig.GROUP_ID_CONFIG, "payment-service-group",
+                ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
+                ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class
+          ),
+          new StringDeserializer(),
+          deserializer
+    );
   }
 
   @Bean
-  public ConcurrentKafkaListenerContainerFactory<String,OrderEvent> kafkaListenerContainerFactory(){
-    ConcurrentKafkaListenerContainerFactory<String, OrderEvent> factory=
+  public ConcurrentKafkaListenerContainerFactory<String, OrderEvent> orderEventKafkaFactory(
+        ConsumerFactory<String, OrderEvent> consumerFactory) {
+    ConcurrentKafkaListenerContainerFactory<String, OrderEvent> factory =
           new ConcurrentKafkaListenerContainerFactory<>();
-    factory.setConsumerFactory(consumerFactory());
+    factory.setConsumerFactory(consumerFactory);
     return factory;
   }
 }
