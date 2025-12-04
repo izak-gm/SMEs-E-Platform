@@ -31,9 +31,9 @@ JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
 
 # settings.py
 
-ORDER_CREATED = "order_created_topic"
-ORDER_UPDATED = "order_updated_topic"
-ORDER_DELETED = "order_deleted_topic"
+ORDER_CREATED = "order_created"
+ORDER_UPDATED = "order_updated"
+ORDER_DELETED = "order_deleted"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -132,7 +132,7 @@ DATABASES = {
 #     }
 # }
 
-KAFKA_BOOTSTRAP_SERVER= config_data.get('django.signals.KAFKA_BOOTSTRAP')
+KAFKA_BOOTSTRAP_SERVER= config_data.get('django.kafka.KAFKA_BOOTSTRAP')
 
 #jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {

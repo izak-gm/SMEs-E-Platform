@@ -1,6 +1,7 @@
 package com.izak.payment_service.configurations;
 
-import com.izak.payment_service.events.OrderEvent;
+import com.izak.payment_service.kafka.dto.OrderEventMessage;
+import com.izak.payment_service.kafka.events.OrderEvent;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
@@ -18,8 +19,8 @@ import java.util.Map;
 public class KafkaConsumerConfig {
 
   @Bean
-  public ConsumerFactory<String, OrderEvent> consumerFactory() {
-    JsonDeserializer<OrderEvent> deserializer = new JsonDeserializer<>(OrderEvent.class);
+  public ConsumerFactory<String, OrderEventMessage> consumerFactory() {
+    JsonDeserializer<OrderEventMessage> deserializer = new JsonDeserializer<>(OrderEventMessage.class);
     deserializer.addTrustedPackages("*");
     deserializer.setRemoveTypeHeaders(false);
     deserializer.setUseTypeMapperForKey(true);
@@ -37,9 +38,9 @@ public class KafkaConsumerConfig {
   }
 
   @Bean
-  public ConcurrentKafkaListenerContainerFactory<String, OrderEvent> orderEventKafkaFactory(
-        ConsumerFactory<String, OrderEvent> consumerFactory) {
-    ConcurrentKafkaListenerContainerFactory<String, OrderEvent> factory =
+  public ConcurrentKafkaListenerContainerFactory<String, OrderEventMessage> orderEventKafkaFactory(
+        ConsumerFactory<String, OrderEventMessage> consumerFactory) {
+    ConcurrentKafkaListenerContainerFactory<String, OrderEventMessage> factory =
           new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactory);
     return factory;

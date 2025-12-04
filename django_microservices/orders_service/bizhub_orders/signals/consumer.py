@@ -37,11 +37,11 @@ def consume_messages(consumer):
 
             try:
                 data = json.loads(msg.value().decode("utf-8"))
-                print(f"[Kafka] Received: {data}")
 
                 event_type = data.get("event_type")
                 product_data = data.get("data",{})
                 save_to_product_cache(product_data,event_type)
+                print(f"[Kafka] Received: {data}")
 
             except json.decoder.JSONDecodeError as e:
                 print("[Kafka ERROR] Failed to decode message JSON")
@@ -69,9 +69,9 @@ def save_to_product_cache(product_data,event_type):
             }
         )
         action="create" if created else "update"
-        print(f"[Kafka] Product cache {action} object")
+        print(f"[Kafka] Product cache {action} object in my Order Service ")
     except Exception as e:
-        print(f"[Kafka ERROR] Failed to save product cache: {e}")
+        print(f"[Kafka ERROR] Failed to save product cache: {e} in my Order Service")
 
 def start_consumer_thread(topics,group_id):
     """

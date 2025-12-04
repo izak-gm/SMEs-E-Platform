@@ -1,4 +1,4 @@
-package com.izak.payment_service.events;
+package com.izak.payment_service.kafka.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

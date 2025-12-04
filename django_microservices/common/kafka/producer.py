@@ -38,7 +38,7 @@ def send_message(topic:str,event_type:str, data: dict):
             topic,
             json.dumps(event).encode("utf-8"),
             callback=delivery_report)
-        producer.flush(3) # wait for 3 seconds for delivery
+        producer.flush(1) # wait for 3 seconds for delivery
         print(f"[Kafka] Sent message to topic '{topic}'")
     except Exception as e:
         print(f"[Kafka ERROR] Failed to send to {topic}: {e}")
