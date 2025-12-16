@@ -17,6 +17,4 @@ public class OrderEvent {
   private BigDecimal total_amount;
   private String status;
   private String created_at;
-
-
 }
