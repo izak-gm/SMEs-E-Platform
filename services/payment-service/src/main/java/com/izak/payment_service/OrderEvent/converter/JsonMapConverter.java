@@ -6,7 +6,7 @@ import jakarta.persistence.Converter;
 
 import java.util.Map;
 
-@Converter
+@Converter(autoApply = false)
 public class JsonMapConverter
       implements AttributeConverter<Map<String, Object>, String> {
 
@@ -15,6 +15,7 @@ public class JsonMapConverter
   @Override
   public String convertToDatabaseColumn(Map<String, Object> attribute) {
     try {
+
       return mapper.writeValueAsString(attribute);
     } catch (Exception e) {
       throw new IllegalArgumentException("Failed to serialize metadata");

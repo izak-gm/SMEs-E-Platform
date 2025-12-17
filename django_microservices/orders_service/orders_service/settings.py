@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'orders_service.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 CONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')
-SERVER_NAME = config('SERVER_NAME',default='orders-service')
+SERVER_NAME = config('SERVER_NAME',default='django-orders-service')
 
 try:
     response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")

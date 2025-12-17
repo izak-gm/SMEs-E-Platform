@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -41,8 +43,8 @@ import java.util.UUID;
   @Enumerated(EnumType.STRING)
   private PaymentStatus status = PaymentStatus.INITIATED;
 
+  @JdbcTypeCode(SqlTypes.JSON)
   @Column(columnDefinition = "jsonb")
-  @Convert(converter = JsonMapConverter.class)
   private Map<String, Object> metadata;
 
   @Column(name = "expires_at", nullable = false)
