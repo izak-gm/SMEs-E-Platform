@@ -15,6 +15,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -27,7 +28,7 @@ public class PaymentIntentService {
     OrderEvent  order= event.getData();
 
     // Get the id of the order from the event Kafka
-    String orderId =order.getId().toString();
+    UUID orderId =order.getId();
 
     // Idempotency
     paymentIntentRepository.findByOrderId(orderId).ifPresent(intent ->{
@@ -41,9 +42,9 @@ public class PaymentIntentService {
     // Persist Payment Intent
     PaymentIntent paymentIntent=new PaymentIntent();
     paymentIntent.setOrderId(orderId);
-    paymentIntent.setBuyerId(order.getBuyer_id().toString());
-    paymentIntent.setStoreId(order.getStore_id().toString());
-    paymentIntent.setAmount(order.getTotal_amount());
+    paymentIntent.setBuyerId(order.getBuyer_id());
+    paymentIntent.setStoreId(order.getStore_id());
+    paymentIntent.setTotal_amount(order.getTotal_amount());
     paymentIntent.setCurrency("KES");
     paymentIntent.setStatus(PaymentStatus.INITIATED);
     paymentIntent.setMetadata(metadata);

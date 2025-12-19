@@ -26,16 +26,16 @@ import java.util.UUID;
   private UUID id;
 
   @Column(name = "order_id", nullable = false)
-  private String orderId;
+  private UUID orderId;
 
   @Column(name = "buyer_id", nullable = false)
-  private String buyerId;
+  private UUID buyerId;
 
   @Column(name = "store_id", nullable = false)
-  private String storeId;
+  private UUID storeId;
 
   @Column(nullable = false, precision = 12, scale = 2)
-  private BigDecimal amount;
+  private BigDecimal total_amount;
 
   @Column(nullable = false)
   private String currency = "KES";
