@@ -1,17 +1,14 @@
 package com.izak.payment_service.kafka.events;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.UUID;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class PaymentEvent {
-  private String orderId;
-  private BigDecimal amount;
-  private String status;
-  private String paymentMethod;
+public record PaymentEvent(
+      UUID orderId,
+      BigDecimal amount,
+      String status,
+      String paymentMethod,
+      Instant createdAt
+) {
 }

@@ -1,7 +1,7 @@
 package com.izak.payment_service.payment.dto;
 
-import com.izak.payment_service.payment.enums.Method;
-import com.izak.payment_service.payment.enums.Status;
+import com.izak.payment_service.enums.PaymentMethod;
+import com.izak.payment_service.enums.PaymentStatus;
 import lombok.Builder;
 
 import java.math.BigDecimal;
@@ -12,8 +12,8 @@ public record PaymentResponse(
       String phoneNumber,
       String transactionReference,
       BigDecimal amount,
-      Status status,
-      Method method,
+      PaymentStatus paymentStatus,
+      PaymentMethod paymentMethod,
       UUID order_id,
       UUID buyer_id
 ) {

@@ -3,12 +3,14 @@ package com.izak.payment_service.OrderEvent.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.izak.payment_service.OrderEvent.entity.PaymentIntent;
-import com.izak.payment_service.OrderEvent.enums.PaymentStatus;
 import com.izak.payment_service.OrderEvent.repository.PaymentIntentRepository;
+import com.izak.payment_service.enums.PaymentStatus;
 import com.izak.payment_service.kafka.dto.OrderEventMessage;
 import com.izak.payment_service.kafka.events.OrderEvent;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -19,61 +21,63 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PaymentIntentService {
+
   private final PaymentIntentRepository paymentIntentRepository;
   private final ObjectMapper objectMapper;
 
   @Transactional
-  public PaymentIntent createPaymentIntent(OrderEventMessage event){
-    OrderEvent  order= event.getData();
+  public PaymentIntent createPaymentIntent(OrderEventMessage event) {
 
-    // Get the id of the order from the event Kafka
-    UUID orderId =order.getId();
+    OrderEvent order = event.getData();
+    UUID orderId = order.getId();
 
-    // Idempotency
-    paymentIntentRepository.findByOrderId(orderId).ifPresent(intent ->{
-      throw new IllegalStateException("PaymentIntent already exists for order "+orderId);
-    });
+    PaymentIntent intent = new PaymentIntent();
+    intent.setOrderId(orderId);
+    intent.setBuyerId(order.getBuyer_id());
+    intent.setStoreId(order.getStore_id());
+    intent.setTotal_amount(order.getTotal_amount());
+    intent.setCurrency("KES");
+    intent.setStatus(PaymentStatus.INITIATED);
+    intent.setMetadata(buildMetadata(event));
+    intent.setExpiresAt(Instant.now().plus(15, ChronoUnit.MINUTES));
 
-    // Create a metadata snapshot
-    // Build metadata snapshot (JSONB-safe)
-    Map<String, Object> metadata = buildMetadata(event);
-
-    // Persist Payment Intent
-    PaymentIntent paymentIntent=new PaymentIntent();
-    paymentIntent.setOrderId(orderId);
-    paymentIntent.setBuyerId(order.getBuyer_id());
-    paymentIntent.setStoreId(order.getStore_id());
-    paymentIntent.setTotal_amount(order.getTotal_amount());
-    paymentIntent.setCurrency("KES");
-    paymentIntent.setStatus(PaymentStatus.INITIATED);
-    paymentIntent.setMetadata(metadata);
-    paymentIntent.setExpiresAt(Instant.now().plus(15, ChronoUnit.MINUTES));
-
-    return paymentIntentRepository.save(paymentIntent);
+    try {
+      return paymentIntentRepository.save(intent);
+    } catch (DataIntegrityViolationException e) {
+      throw new IllegalStateException("PaymentIntent already exists for order " + orderId);
+    }
   }
 
-  /**
-    *Builds metadata map that is SAFE to persist as JSONB.
-    * No raw DTOs are stored directly.
-  */
-  private Map<String,Object> buildMetadata(OrderEventMessage orderEventMessage){
-    Map<String,Object> metadata=new HashMap<>();
-    metadata.put("event_type",orderEventMessage.getEvent_type());
-    metadata.put("order", orderEventMessage.getData());
-    metadata.put("received_at",Instant.now().toString());
+  @Transactional
+  public void updatePaymentIntent(OrderEventMessage event) {
 
-    return metadata;
+    OrderEvent order = event.getData();
+    UUID orderId = order.getId();
 
-    /*try{
-      // Serialize nested DTO explicitly
-      metadata.put(
-            "order",objectMapper.writeValueAsString(orderEventMessage.getData())
-      );
+    PaymentIntent intent = paymentIntentRepository
+          .findByOrderId(orderId)
+          .orElseThrow(() ->
+                new IllegalStateException("PaymentIntent not found for order " + orderId)
+          );
 
+    intent.setTotal_amount(order.getTotal_amount());
+    intent.setMetadata(buildMetadata(event));
+
+    paymentIntentRepository.save(intent);
+  }
+
+  private Map<String, Object> buildMetadata(OrderEventMessage event) {
+    try {
+      Map<String, Object> metadata = new HashMap<>();
+      metadata.put("event_type", event.getEvent_type());
+      metadata.put("order", objectMapper.writeValueAsString(event.getData()));
+      metadata.put("received_at", Instant.now().toString());
+      return metadata;
     } catch (JsonProcessingException e) {
-      throw new IllegalStateException("Failed to serialize order event metadata",e);
+      throw new IllegalStateException("Failed to serialize metadata", e);
     }
-  */
   }
 }
+

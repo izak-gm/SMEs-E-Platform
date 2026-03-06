@@ -10,21 +10,23 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
 public class KafkaProducerConfig {
   @Bean
-  public ProducerFactory<String, PaymentEvent> producerFactory(){
-    return new DefaultKafkaProducerFactory<>(Map.of(
-          ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"localhost:9092",
-          ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class,
-          ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class
-    ));
+  public ProducerFactory<String, PaymentEvent> producerFactory() {
+    Map<String, Object> config = new HashMap<>();
+    config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+    config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+    config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+
+    return new DefaultKafkaProducerFactory<>(config);
   }
 
   @Bean
-  public KafkaTemplate<String, PaymentEvent> kafkaTemplate(){
+  public KafkaTemplate<String, PaymentEvent> kafkaTemplate() {
     return new KafkaTemplate<>(producerFactory());
   }
 }

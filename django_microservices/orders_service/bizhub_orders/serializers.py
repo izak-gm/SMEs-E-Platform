@@ -42,4 +42,5 @@ class OrderSerializer(serializers.ModelSerializer):
 
         order.total_amount = total
         order.save()
+        print(f"The order made is : ",order)
         return order

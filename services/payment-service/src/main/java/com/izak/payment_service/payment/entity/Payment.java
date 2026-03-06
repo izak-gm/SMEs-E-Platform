@@ -1,14 +1,14 @@
 package com.izak.payment_service.payment.entity;
 
-import com.izak.payment_service.payment.enums.Method;
-import com.izak.payment_service.payment.enums.Status;
+import com.izak.payment_service.enums.PaymentMethod;
+import com.izak.payment_service.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.Instant;
 import java.util.UUID;
 
 @Getter
@@ -18,24 +18,35 @@ import java.util.UUID;
 @NoArgsConstructor
 @ToString
 @Entity
+@Table(name = "payments")
 public class Payment {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-
   private UUID id;
-  private UUID orderId;
-  private UUID buyerId;
-  private String phoneNumber;
-  private BigDecimal amount;
-  private String transactionReference;
-  @Enumerated(EnumType.STRING)
-  private Method method;
-  @Enumerated(EnumType.STRING)
-  private Status status;
 
-  @CreatedDate
-  private Date createdAt;
+  @Column(nullable = false, unique = true)
+  private UUID orderId;
+  @Column(nullable = false)
+  private UUID buyerId;
+
+  @Column(nullable = false)
+  private String phoneNumber;
+  @Column(nullable = false)
+  private BigDecimal amount;
+
+  @Column(nullable = false, unique = true)
+  private String transactionReference;
+
+  @Enumerated(EnumType.STRING)
+  private PaymentMethod paymentMethod;
+
+  @Enumerated(EnumType.STRING)
+  private PaymentStatus paymentStatus; // PENDING
+
+  @CreationTimestamp
+  private Instant createdAt;
+
   @LastModifiedDate
-  private Date updatedAt;
+  private Instant updatedAt;
 }

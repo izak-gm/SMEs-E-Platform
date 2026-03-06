@@ -1,7 +1,6 @@
 package com.izak.payment_service.OrderEvent.entity;
 
-import com.izak.payment_service.OrderEvent.converter.JsonMapConverter;
-import com.izak.payment_service.OrderEvent.enums.PaymentStatus;
+import com.izak.payment_service.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +19,8 @@ import java.util.UUID;
 @Table(
       name = "payment_intents",
       uniqueConstraints = @UniqueConstraint(columnNames = "order_id")
-)public class PaymentIntent {
+)
+public class PaymentIntent {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
