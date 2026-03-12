@@ -70,6 +70,9 @@ from
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
+  <component name="DBNavigator.Project.DatabasePrerequisiteManager">
+    <prerequisites />
+  </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="3ce8197e-af73-462e-9358-3875c0f57beb" />
     <connection id="1b3390bd-ed26-440e-9201-fe9141869f75" />

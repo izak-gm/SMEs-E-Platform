@@ -31,12 +31,14 @@ public class PaymentService {
   private final PaymentProducer paymentProducer;
 
   public PaymentResponse initiatePayment(PaymentRequest paymentRequest) {
+    log.info("Searching PaymentIntent for orderId: {}", paymentRequest.orderId());
     // Find the order for the buyer
     PaymentIntent paymentIntent = paymentIntentRepository.findByOrderId(paymentRequest.orderId()).orElseThrow(() ->
           new IllegalStateException(
                 "PaymentIntent not found for orderId :" + paymentRequest.orderId()
           )
     );
+    log.info("Searched PaymentIntent for orderId: {}", paymentRequest.orderId());
 
     // check which type of transaction Type the user want to use
     // Initiate the correct services for the user method of payment
@@ -45,13 +47,13 @@ public class PaymentService {
       case CARD -> {
         // handle card payment
         //TODO: Create a mpesa service that communicates with Mpesa endpoints values (amount,phoneNumber,TransactionReference)
-        log.info("Payment Initiated for the Mpesa method");
+        log.info("Payment Initiated for the Card method");
         // fetch buyers info from Auth Ms ie phoneNumber or have a field that can take a phone Number
 
       }
       case MPESA -> {
         // TODO: Create a service that communicates with banking api  services
-        log.info("Payment Initiated for the Card method");
+        log.info("Payment Initiated for the Mpesa method");
 
       }
       default -> throw new IllegalStateException(
@@ -81,10 +83,10 @@ public class PaymentService {
         String CheckoutRequestId,
         String TransactionID,
         String PhoneNumber,
-        String TransAmount,
-        String TransactionReference
+        String TransactionReference,
+        BigDecimal TransAmount
   ) {
-    log.info("M-Pesa SUCCESS | checkout={} receipt={}", CheckoutRequestId, TransactionID);
+    log.info("M-Pesa SUCCESS | checkout={} receipt={},using phone Number={} amount={}", CheckoutRequestId, TransactionID, PhoneNumber, TransAmount);
     // update payment
     Payment payment = paymentRepository.findByTransactionReference(TransactionReference).orElseThrow(() ->
           new IllegalStateException("Payment with transaction reference:" + TransactionReference + " does not exist in the payments.")

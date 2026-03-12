@@ -4,7 +4,7 @@ psycopg[binary]
 gunicorn==21.2.0
 confluent-kafka
 whitenoise==6.6.0
-pillow==10.4.0
+pillow
 requests
 djangorestframework-simplejwt
 PyJWT

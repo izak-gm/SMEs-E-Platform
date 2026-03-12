@@ -45,7 +45,8 @@ SECRET_KEY = 'django-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#
 DEBUG = True
 
 # Cors handled by the Spring boot gateway
-# ALLOWED_HOSTS = ["*"]
+# Also allow here
+ALLOWED_HOSTS = ["*"]
 
 # Url not having the tailing slash at the end
 APPEND_SLASH = False

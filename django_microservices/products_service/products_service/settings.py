@@ -46,7 +46,7 @@ DEBUG = True
 APPEND_SLASH = False
 
 # Cors handled by the Spring boot gateway
-# ALLOWED_HOSTS = ["*","django_products-service","django_orders_service","gateway-service","127.0.0.1"]
+ALLOWED_HOSTS = ["*","django_products-service","django_orders_service","gateway-service","127.0.0.1"]
 
 # Application definition
 

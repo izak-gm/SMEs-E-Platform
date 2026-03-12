@@ -8,7 +8,11 @@ CREATE TABLE IF NOT EXISTS public.payment (
     buyer_id UUID,
     phone_number VARCHAR(255),
     transaction_reference VARCHAR(255) UNIQUE,
-    amount FLOAT,
-    method VARCHAR(50),
-    status VARCHAR(50)
+    amount NUMERIC(12,2),
+    method VARCHAR(20) CHECK (method IN ('CARD','MPESA')),
+    status VARCHAR(20) CHECK (status IN ('PENDING','SUCCESS','FAILED'))
+    -- created_at TIMESTAMP DEFAULT now() NOT NULL,
+    -- updated_at TIMESTAMP DEFAULT now() NOT NULL
 );
+--CREATE INDEX idx_payment_order_id ON payment(order_id);
+--CREATE INDEX idx_payment_buyer_id ON payment(buyer_id);

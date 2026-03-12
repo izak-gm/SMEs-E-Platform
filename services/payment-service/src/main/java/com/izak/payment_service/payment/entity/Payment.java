@@ -5,7 +5,7 @@ import com.izak.payment_service.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.LastModifiedDate;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -18,7 +18,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "payments")
+@Table(name = "payment")
 public class Payment {
 
   @Id
@@ -47,6 +47,6 @@ public class Payment {
   @CreationTimestamp
   private Instant createdAt;
 
-  @LastModifiedDate
+  @UpdateTimestamp
   private Instant updatedAt;
 }

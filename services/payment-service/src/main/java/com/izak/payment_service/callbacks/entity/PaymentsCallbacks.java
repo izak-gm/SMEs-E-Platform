@@ -11,7 +11,7 @@ import java.time.Instant;
 
 @Entity
 @Table(
-      name = "payments",
+      name = "payments_callbacks",
       indexes = {
             @Index(name = "idx_payment_order", columnList = "orderId"),
             @Index(name = "idx_payment_tx", columnList = "transactionReference")
@@ -22,7 +22,7 @@ import java.time.Instant;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Payments {
+public class PaymentsCallbacks {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private String id;

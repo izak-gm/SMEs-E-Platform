@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/api/callbacks/mpesa")
+@RequestMapping("/api/v1/payment/callbacks/mpesa")
 @Slf4j
 @RequiredArgsConstructor
 public class MpesaCallbackController {
@@ -29,7 +29,7 @@ public class MpesaCallbackController {
               payload.TransactionID(),
               payload.PhoneNumber(),
               payload.TransactionReference(),
-              String.valueOf(payload.TransAmount())
+              payload.TransAmount()
         );
       } else {
         paymentService.markMpesaPaymentFailed(payload.CheckoutRequestId(), payload.callbackStatus().name());
