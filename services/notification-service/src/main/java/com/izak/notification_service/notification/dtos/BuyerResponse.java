@@ -2,7 +2,7 @@ package com.izak.notification_service.notification.dtos;
 
 import java.util.UUID;
 
-public record AuthResponse(
+public record BuyerResponse(
       UUID id,
       String firstName,
       String lastName,

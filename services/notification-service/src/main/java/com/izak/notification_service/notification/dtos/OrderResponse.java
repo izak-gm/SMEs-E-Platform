@@ -1,4 +1,4 @@
-package com.izak.notification_service.notification;
+package com.izak.notification_service.notification.dtos;
 
 import com.izak.notification_service.notification.enums.StatusChoice;
 

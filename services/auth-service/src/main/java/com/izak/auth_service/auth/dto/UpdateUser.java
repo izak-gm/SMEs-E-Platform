@@ -5,7 +5,7 @@ import java.util.Date;
 public record UpdateUser(
       String firstName,
       String lastName,
-//      String email,
+      String email,
       String phoneNumber,
       Date dob,
       String gender

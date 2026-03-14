@@ -1,6 +1,6 @@
 package com.izak.notification_service.kafka;
 
-import com.izak.notification_service.kafka_events.Payment;
+import com.izak.notification_service.kafka.kafka_events.Payment;
 import com.izak.notification_service.notification.service.NotificationService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
