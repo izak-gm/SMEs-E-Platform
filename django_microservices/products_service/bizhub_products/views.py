@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from django_microservices.common.auth.authentication import JWTAuthentication
 from django_microservices.common.auth.role_based_permissions import IsSeller
+from .signals.product_events import publish_product_events, publish_product_deleted
 from .models import (
     Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
 )
@@ -10,7 +11,6 @@ from .serializers import (
     ProductSerializer, StoreKYCSerializer, BrandSerializer, StoreSerializer,
     CategorySerializer, ProductVariantSerializer, ProductImageSerializer
 )
-
 
 # --- Store Views ---
 class StoreViewSet(viewsets.ModelViewSet):
@@ -49,7 +49,6 @@ class ProductViewSet(viewsets.ModelViewSet):
         if self.request.method in ['GET', 'HEAD']:
             return []  # Anyone can view
         return [IsSeller()]
-
 
 class ProductVariantViewSet(viewsets.ModelViewSet):
     queryset = ProductVariant.objects.all()

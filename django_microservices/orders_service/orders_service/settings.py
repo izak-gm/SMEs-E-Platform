@@ -13,11 +13,27 @@ import os
 from pathlib import Path
 import requests
 from decouple import config
-
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+ENV_PATH = BASE_DIR.parent / ".env"
 
+# Load .env file
+if ENV_PATH.exists():
+    load_dotenv(ENV_PATH)
+else:
+    print(f"⚠️  .env file not found at: {ENV_PATH}")
+
+# Now read environment variables
+JWT_SECRET = os.getenv("JWT_SECRET")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
+
+# settings.py
+
+ORDER_CREATED = "order_created"
+ORDER_UPDATED = "order_updated"
+ORDER_DELETED = "order_deleted"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -28,8 +44,12 @@ SECRET_KEY = 'django-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Cors handled by the Spring boot gateway
+# Also allow here
 ALLOWED_HOSTS = ["*"]
 
+# Url not having the tailing slash at the end
+APPEND_SLASH = False
 
 # Application definition
 
@@ -40,8 +60,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bizhub_orders',
+    'bizhub_orders.apps.BizhubOrdersConfig',
+    'django_microservices.common',
     'rest_framework',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +75,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'orders_service.urls'
 
@@ -78,7 +103,7 @@ WSGI_APPLICATION = 'orders_service.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 CONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')
-SERVER_NAME = config('SERVER_NAME',default='orders-service')
+SERVER_NAME = config('SERVER_NAME',default='django-orders-service')
 
 try:
     response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
@@ -108,11 +133,16 @@ DATABASES = {
 #     }
 # }
 
+KAFKA_BOOTSTRAP_SERVER= config_data.get('django.kafka.KAFKA_BOOTSTRAP')
+
 #jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        'django_microservices.common.auth.authentication.SharedJWTAuthentication',
-    ]
+        'django_microservices.common.auth.authentication.JWTAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -154,3 +184,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'ORDERS SERVICE API',
+    'DESCRIPTION': 'API documentation',
+    'VERSION': '1.0.0',
+}

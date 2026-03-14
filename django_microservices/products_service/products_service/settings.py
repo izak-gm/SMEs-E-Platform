@@ -28,7 +28,11 @@ else:
 
 # Now read environment variables
 JWT_SECRET = os.getenv("JWT_SECRET")
-JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
+# kafka_topics.py
+PRODUCT_CREATED = os.getenv("PRODUCT_CREATED")
+PRODUCT_UPDATED = os.getenv("PRODUCT_UPDATED")
+PRODUCT_DELETED = os.getenv("PRODUCT_DELETED")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -38,7 +42,11 @@ SECRET_KEY = 'django-insecure-#e((0q0@q0@6)jym604d-*u+^p2pu918-ub*g(0+-+zp1imzie
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+# Url not having the tailing slash at the end
+APPEND_SLASH = False
+
+# Cors handled by the Spring boot gateway
+ALLOWED_HOSTS = ["*","django_products-service","django_orders_service","gateway-service","127.0.0.1"]
 
 # Application definition
 
@@ -51,17 +59,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bizhub_products',
     'rest_framework',
+    'corsheaders',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+  #  'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'products_service.urls'
 
@@ -85,7 +99,7 @@ WSGI_APPLICATION = 'products_service.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 CONFIG_SERVER_URL = config('CONFIG_SERVER_URL', default='http://localhost:8888')
-SERVER_NAME = config('SERVER_NAME', default='products-service')
+SERVER_NAME = config('SERVER_NAME', default='django-products-service')
 
 try:
     response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
@@ -121,15 +135,17 @@ MINIO_ACCESS_KEY = config_data.get('django.minio.MINIO_ACCESS_KEY')
 MINIO_SECRET_KEY = config_data.get('django.minio.MINIO_SECRET_KEY')
 MINIO_BUCKET = config_data.get('django.minio.MINIO_BUCKET')
 
+KAFKA_BOOTSTRAP_SERVER= config_data.get('django.kafka.KAFKA_BOOTSTRAP')
+
 #jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         'django_microservices.common.auth.authentication.JWTAuthentication',
-    ]
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
-
-# Kafka config
-KAFKA_BOOTSTRAP_SERVER = config_data.get('django.kafka.KAFKA_BOOTSTRAP')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -169,3 +185,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'PRODUCTS SERVICE API',
+    'DESCRIPTION': 'API documentation',
+    'VERSION': '1.0.0',
+}

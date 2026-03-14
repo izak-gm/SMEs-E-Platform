@@ -11,10 +11,16 @@
   </component>
   <component name="DBNavigator.Project.DatabaseAssistantManager">
     <assistants>
-      <assistant-state connection-id="3ce8197e-af73-462e-9358-3875c0f57beb" default-profile-name="" selected-conversation-id="" assistant-type="GENERIC" availability="UNAVAILABLE" acknowledgement="NONE">
-        <conversations />
+      <assistant-state connection-id="3ce8197e-af73-462e-9358-3875c0f57beb" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE" selected="true">
+        <tools />
+      </assistant-state>
+      <assistant-state connection-id="1b3390bd-ed26-440e-9201-fe9141869f75" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="AVAILABLE" acknowledgement="NONE" selected="true">
+        <tools />
       </assistant-state>
     </assistants>
+    <selection-state>
+      <model-selection />
+    </selection-state>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
@@ -24,35 +30,35 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3ce8197e-af73-462e-9358-3875c0f57beb">
-      <console name="Connection" type="STANDARD" schema="public" session="Main">show database;
+      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[show database;
 select
-    _u.&quot;address_id&quot;,
-    _u.&quot;auth&quot;,
-    _u.&quot;dob&quot;,
-    _u.&quot;email&quot;,
-    _u.&quot;first_name&quot;,
-    _u.&quot;gender&quot;,
-    _u.&quot;id&quot;,
-    _u.&quot;is_account_non_expired&quot;,
-    _u.&quot;is_account_non_locked&quot;,
-    _u.&quot;is_credentials_non_expired&quot;,
-    _u.&quot;is_enabled&quot;,
-    _u.&quot;last_name&quot;,
-    _u.&quot;password&quot;,
-    _u.&quot;phone_number&quot;
+    _u."address_id",
+    _u."auth",
+    _u."dob",
+    _u."email",
+    _u."first_name",
+    _u."gender",
+    _u."id",
+    _u."is_account_non_expired",
+    _u."is_account_non_locked",
+    _u."is_credentials_non_expired",
+    _u."is_enabled",
+    _u."last_name",
+    _u."password",
+    _u."phone_number"
 from
-    &quot;_user&quot; _u;
+    "_user" _u;
 
 
 select
-    a.&quot;city&quot;,
-    a.&quot;county&quot;,
-    a.&quot;id&quot;,
-    a.&quot;postal_code&quot;,
-    a.&quot;town&quot;,
-    a.&quot;user_id&quot;
+    a."city",
+    a."county",
+    a."id",
+    a."postal_code",
+    a."town",
+    a."user_id"
 from
-    &quot;address&quot; a;</console>
+    "address" a;]]></console>
     </connection>
     <connection id="1b3390bd-ed26-440e-9201-fe9141869f75">
       <console name="bizhub" type="STANDARD" schema="bizhub" session="Main" />
@@ -63,6 +69,9 @@ from
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatabasePrerequisiteManager">
+    <prerequisites />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="3ce8197e-af73-462e-9358-3875c0f57beb" />
@@ -104,6 +113,12 @@ from
           <token-type value="" />
           <token-config-file value="" />
           <token-profile value="" />
+          <adb-compartment-ocid value="" />
+          <adb-database-ocid value="" />
+          <azure-token-database-id-uri value="" />
+          <azure-token-tenant-id value="" />
+          <azure-token-client-id value="" />
+          <azure-token-client-certificate-file value="" />
           <session-user value="postgres" />
         </database>
         <properties>
@@ -141,11 +156,20 @@ from
         </details>
         <debugger>
           <compile-dependencies value="true" />
-          <tcp-driver-tunneling value="false" />
           <tcp-host-address value="" />
           <tcp-port-from value="4000" />
           <tcp-port-to value="4999" />
+          <jdwp-tunnel-type value="NONE" />
           <debugger-type value="ASK" />
+          <reverse-ssh-tunnel>
+            <host value="" />
+            <port value="22" />
+            <bind-host value="127.0.0.1" />
+            <bind-port value="0" />
+            <auth-type value="PASSWORD" />
+            <user value="" />
+            <key-file value="" />
+          </reverse-ssh-tunnel>
         </debugger>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false" hide-audit-columns="false">
           <object-filters />
@@ -182,6 +206,7 @@ from
             <object-type name="DBLINK" enabled="true" />
             <object-type name="CREDENTIAL" enabled="true" />
             <object-type name="AI_PROFILE" enabled="true" />
+            <object-type name="AI_MODEL" enabled="true" />
           </object-type-filter>
         </object-filters>
       </connection>
@@ -209,6 +234,12 @@ from
           <token-type value="" />
           <token-config-file value="" />
           <token-profile value="" />
+          <adb-compartment-ocid value="" />
+          <adb-database-ocid value="" />
+          <azure-token-database-id-uri value="" />
+          <azure-token-tenant-id value="" />
+          <azure-token-client-id value="" />
+          <azure-token-client-certificate-file value="" />
           <session-user value="postgres" />
         </database>
         <properties>
@@ -246,11 +277,20 @@ from
         </details>
         <debugger>
           <compile-dependencies value="true" />
-          <tcp-driver-tunneling value="false" />
           <tcp-host-address value="" />
           <tcp-port-from value="4000" />
           <tcp-port-to value="4999" />
+          <jdwp-tunnel-type value="NONE" />
           <debugger-type value="JDBC" />
+          <reverse-ssh-tunnel>
+            <host value="" />
+            <port value="22" />
+            <bind-host value="127.0.0.1" />
+            <bind-port value="0" />
+            <auth-type value="PASSWORD" />
+            <user value="" />
+            <key-file value="" />
+          </reverse-ssh-tunnel>
         </debugger>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false" hide-audit-columns="false">
           <object-filters />
@@ -287,6 +327,7 @@ from
             <object-type name="DBLINK" enabled="true" />
             <object-type name="CREDENTIAL" enabled="true" />
             <object-type name="AI_PROFILE" enabled="true" />
+            <object-type name="AI_MODEL" enabled="true" />
           </object-type-filter>
         </object-filters>
       </connection>
@@ -333,6 +374,7 @@ from
           <object-type name="DBLINK" enabled="true" />
           <object-type name="CREDENTIAL" enabled="true" />
           <object-type name="AI_PROFILE" enabled="true" />
+          <object-type name="AI_MODEL" enabled="true" />
         </object-type-filter>
       </filters>
       <sorting>
@@ -640,6 +682,11 @@ from
         <debug-execution-timeout value="600" />
         <parameter-history-size value="10" />
       </method-execution>
+      <method-execution>
+        <execution-timeout value="30" />
+        <debug-execution-timeout value="600" />
+        <parameter-history-size value="10" />
+      </method-execution>
     </execution-engine-settings>
     <operation-settings>
       <transactions>
@@ -690,6 +737,9 @@ from
       <credential-settings>
         <credentials />
       </credential-settings>
+      <profile-settings>
+        <profiles />
+      </profile-settings>
     </assistant-settings>
     <general-settings>
       <regional-settings>

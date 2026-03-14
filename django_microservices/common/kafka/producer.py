@@ -1,6 +1,6 @@
 import json
 from django.conf import settings
-from kafka import KafkaProducer, KafkaConsumer
+from confluent_kafka import Producer, Consumer
 
 # NOTE: remove trailing comma — it makes this a tuple, not a string
 BOOTSTRAP_KAFKA = settings.KAFKA_BOOTSTRAP_SERVER
@@ -10,26 +10,36 @@ def make_producer():
     Creates a Kafka producer instance.
     Serializes values to JSON before sending.
     """
-    return KafkaProducer(
-        bootstrap_servers=BOOTSTRAP_KAFKA,
-        value_serializer=lambda v: json.dumps(v).encode("utf-8"),
-        acks='all',                # ensure message delivery
-        retries=3,                 # retry on failure
-        linger_ms=10,              # slight batching delay to improve throughput
-    )
+    return Producer({
+        "bootstrap.servers":BOOTSTRAP_KAFKA,
+        "acks":'all',                # ensure message delivery
+        "retries":3,                 # retry on failure
+        "linger.ms":10,
+    })
 
+def delivery_report(err, msg):
+    """Callback for Kafka message delivery."""
+    if err is not None:
+        print(f"[Kafka ERROR] Delivery failed: {err}")
+    else:
+        print(f"[Kafka] ✅ Message delivered to {msg.topic()} [{msg.partition()}]")
 
-def make_consumer(topics, group_id):
+def send_message(topic:str,event_type:str, data: dict):
     """
-    Creates a Kafka consumer subscribed to the given topics.
-    Deserializes JSON messages automatically.
+    Serialize to JSON and send message.
     """
-    consumer = KafkaConsumer(
-        *topics,
-        bootstrap_servers=BOOTSTRAP_KAFKA,
-        group_id=group_id,
-        value_deserializer=lambda v: json.loads(v.decode("utf-8")),
-        auto_offset_reset="earliest",  # start from beginning if no offset stored
-        enable_auto_commit=True,
-    )
-    return consumer
+    try:
+        producer = make_producer()
+        event = {
+            "event_type": event_type,
+            "data": data
+        }
+        producer.produce(
+            topic,
+            json.dumps(event).encode("utf-8"),
+            callback=delivery_report)
+        producer.flush(1) # wait for 3 seconds for delivery
+        print(f"[Kafka] Sent message to topic '{topic}'")
+    except Exception as e:
+        print(f"[Kafka ERROR] Failed to send to {topic}: {e}")
+

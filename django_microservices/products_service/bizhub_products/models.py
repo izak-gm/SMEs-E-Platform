@@ -34,6 +34,7 @@ class Category(models.Model):
     name = models.CharField(max_length=120)
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL)
 
+# TODO :Add a updated at in the product
 class Product(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     store = models.ForeignKey(Store, null=True, blank=True, on_delete=models.SET_NULL)
@@ -49,6 +50,7 @@ class Product(models.Model):
     is_active = models.BooleanField(default=True)
     views = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 class ProductVariant(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
