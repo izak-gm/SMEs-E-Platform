@@ -43,5 +43,19 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
+services:
+  gateway:
+    url: http//:gateway-service:8222
+feign:
+  client:
+    config:
+      default:
+        connectTimeOut: 5000
+        readTimeout: 5000
+        retryer:
+          period: 100
+          maxPeriod: 500
+          maxAttempts: 3
+          
 server:
   port: 8013
