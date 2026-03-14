@@ -2,7 +2,9 @@ package com.izak.payment_service.callbacks.controller;
 
 import com.izak.payment_service.callbacks.dto.MpesaCallbackDTO;
 import com.izak.payment_service.callbacks.enums.CallbackStatus;
+import com.izak.payment_service.callbacks.service.PaymentsCallbacksService;
 import com.izak.payment_service.payment.service.PaymentService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,10 +20,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class MpesaCallbackController {
   private final PaymentService paymentService;
+  private final PaymentsCallbacksService paymentsCallbacksService;
 
   @PostMapping("/stk")
+  @Transactional
   public ResponseEntity<?> handleStkCallback(@RequestBody MpesaCallbackDTO payload) {
     log.info("Mpesa STK Callback received: {}", payload);
+
+    // save the callbacks
+    paymentsCallbacksService.savePaymentCallback(payload);
     try {
       if (payload.callbackStatus() == CallbackStatus.PAID) {
         paymentService.markMpesaPaymentSuccess(

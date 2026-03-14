@@ -1,4 +1,4 @@
-package com.izak.notification_service.kafka_events;
+package com.izak.notification_service.kafka.kafka_events;
 
 import java.math.BigDecimal;
 import java.time.Instant;

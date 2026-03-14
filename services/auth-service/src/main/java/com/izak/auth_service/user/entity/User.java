@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -25,16 +26,9 @@ import java.util.List;
 @Table(name = "_user")
 public class User implements UserDetails {
   @Id
-  @SequenceGenerator(
-        name = "user_sequence",
-        sequenceName = "user_sequence",
-        allocationSize = 1
-  )
-  @GeneratedValue(
-        strategy = GenerationType.SEQUENCE,
-        generator = "user_sequence"
-  )
-  private Long id;
+  @GeneratedValue
+  @Column(columnDefinition = "uuid", updatable = false, nullable = false)
+  private UUID id;
   private String firstName;
   private String lastName;
   private String email;
@@ -54,20 +48,21 @@ public class User implements UserDetails {
   @LastModifiedDate
   private Date updatedAt;
 
-  private boolean isEnabled=true;
-  private boolean isAccountNonLocked=true;
-  private boolean isCredentialsNonExpired=true;
-  private boolean isAccountNonExpired=true;
+  private boolean isEnabled = true;
+  private boolean isAccountNonLocked = true;
+  private boolean isCredentialsNonExpired = true;
+  private boolean isAccountNonExpired = true;
 
   @Override
-  public Collection<? extends GrantedAuthority> getAuthorities(){
-    return List.of(new SimpleGrantedAuthority("ROLE_"+ auth.name()));
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return List.of(new SimpleGrantedAuthority("ROLE_" + auth.name()));
   }
 
   @Override
   public String getUsername() {
     return email;
   }
+
   @Override
   public String getPassword() {
     return password;

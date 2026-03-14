@@ -1,4 +1,4 @@
-package com.izak.notification_service.configurations;
+package com.izak.notification_service.configurations.kafka;
 
 import com.izak.notification_service.notification.entity.Notification;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
