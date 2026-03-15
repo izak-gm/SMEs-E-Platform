@@ -35,4 +35,4 @@ spring:
             - Path=/api/v1/notification/**
 
 server:
-  port: 8222
+  port: ${GATEWAY_PORT}

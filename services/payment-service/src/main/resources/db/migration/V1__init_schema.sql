@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS public.payment (
     -- created_at TIMESTAMP DEFAULT now() NOT NULL,
     -- updated_at TIMESTAMP DEFAULT now() NOT NULL
 );
---CREATE INDEX idx_payment_order_id ON payment(order_id);
---CREATE INDEX idx_payment_buyer_id ON payment(buyer_id);
+CREATE INDEX idx_payment_order_id ON payment(order_id);
+CREATE INDEX idx_payment_buyer_id ON payment(buyer_id);

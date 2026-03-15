@@ -1,9 +1,9 @@
--- Create sequence
-CREATE SEQUENCE IF NOT EXISTS public.user_sequence START 1 INCREMENT 1;
+-- Enable UUID generation
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
--- Create table
+-- Create _user table
 CREATE TABLE IF NOT EXISTS public._user (
-    id INT PRIMARY KEY DEFAULT nextval('public.user_sequence'),
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     email VARCHAR(255) UNIQUE,
