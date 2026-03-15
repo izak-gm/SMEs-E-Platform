@@ -1,6 +1,6 @@
 package com.izak.auth_service.auth.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 
@@ -10,7 +10,7 @@ public record UserResponse(
       String lastName,
       String email,
       String phoneNumber,
-      Date dob,
+      LocalDate dob,
       String gender
 ) {
 }

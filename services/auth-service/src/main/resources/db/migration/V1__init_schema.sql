@@ -15,5 +15,7 @@ CREATE TABLE IF NOT EXISTS public._user (
     is_enabled BOOLEAN DEFAULT TRUE,
     is_account_non_locked BOOLEAN DEFAULT TRUE,
     is_credentials_non_expired BOOLEAN DEFAULT TRUE,
-    is_account_non_expired BOOLEAN DEFAULT TRUE
+    is_account_non_expired BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

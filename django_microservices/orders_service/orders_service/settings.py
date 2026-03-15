@@ -31,15 +31,16 @@ JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
 
 # settings.py
 
-ORDER_CREATED = "order_created"
-ORDER_UPDATED = "order_updated"
-ORDER_DELETED = "order_deleted"
+ORDER_CREATED = os.getenv('ORDER_CREATED')
+ORDER_UPDATED = os.getenv('ORDER_UPDATED')
+ORDER_DELETED = os.getenv('ORDER_DELETED')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#'
+SECRET_KEY =config_data.get('django.SECRET_KEY')
+PORT=config_data.get('django.server.port')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -102,8 +103,8 @@ WSGI_APPLICATION = 'orders_service.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-CONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')
-SERVER_NAME = config('SERVER_NAME',default='django-orders-service')
+CONFIG_SERVER_URL = config('CONFIG_SERVER_URL')
+SERVER_NAME = config('SERVER_NAME')
 
 try:
     response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")

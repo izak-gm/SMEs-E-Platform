@@ -11,13 +11,7 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Table(
-      name = "payments_callbacks",
-      indexes = {
-            @Index(name = "idx_payment_order", columnList = "orderId"),
-            @Index(name = "idx_payment_tx", columnList = "transactionReference")
-      }
-)
+@Table(name = "payments_callbacks")
 @Getter
 @Setter
 @Builder
@@ -32,25 +26,26 @@ public class PaymentsCallbacks {
   @Column(nullable = false)
   private CallbackProvider callbackProvider; // CARD OR MPESA
 
-  @Column(nullable = false)
-  private BigDecimal TransAmount;
+  @Column(name = "trans_amount", nullable = false)
+  private BigDecimal transAmount;
 
-  @Column(nullable = false, unique = true)
+  @Column(name = "transaction_id", nullable = false, unique = true)
   // MpesaReceiptNumber OR Card reference
-  private String TransactionID;
+  private String transactionID;
 
-  @Column(nullable = false, unique = true)
+  @Column(name = "transaction_reference", nullable = false, unique = true)
   // MpesaTransReference OR Card reference
-  private String TransactionReference;
+  private String transactionReference;
 
-  private String PhoneNumber; // M-Pesa
-  @Column(nullable = false, unique = true)
-  private String CheckoutRequestId;
+  private String phoneNumber; // M-Pesa
+  @Column(name = "checkout_request_id", nullable = false, unique = true)
+  private String checkoutRequestId;
 
-  @Column(nullable = false)
+  @Column(name = "callback_status", nullable = false)
+  @Enumerated(EnumType.STRING)
   private CallbackStatus callbackStatus; // PAID
 
-  @Column(nullable = false)
+  @Column(name = "paid_at", nullable = false)
   private Instant paidAt;
 
   @CreationTimestamp

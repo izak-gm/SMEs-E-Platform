@@ -8,11 +8,11 @@ import java.util.UUID;
 
 public record MpesaCallbackDTO(
       UUID id,
-      String TransactionReference,
-      String TransactionID,
-      BigDecimal TransAmount,
-      String PhoneNumber,
-      String CheckoutRequestId,
+      String transactionReference,
+      String transactionID,
+      BigDecimal transAmount,
+      String phoneNumber,
+      String checkoutRequestId,
       CallbackStatus callbackStatus,
       CallbackProvider callbackProvider
 ) {

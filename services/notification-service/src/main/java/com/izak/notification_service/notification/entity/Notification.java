@@ -17,7 +17,6 @@ import java.util.UUID;
 @Entity
 @Table(name = "notification")
 public class Notification {
-
   String topic;
   String email;
   String message;

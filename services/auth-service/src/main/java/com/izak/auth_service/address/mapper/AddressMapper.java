@@ -7,14 +7,15 @@ import com.izak.auth_service.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
 public class AddressMapper {
   private UserRepository userRepository;
-  public Address myAddress(AddressRequest addressRequest){
-    Long userId = addressRequest.user().getId();
+
+  public Address myAddress(AddressRequest addressRequest) {
+    UUID userId = addressRequest.user().getId();
     User user = userRepository.findById(userId)
           .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
 

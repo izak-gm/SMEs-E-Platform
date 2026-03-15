@@ -27,9 +27,9 @@ public class PaymentMapper {
 
     log.info("Payment Intent found: orderId={}, totalAmount={}, buyerId={}",
           paymentIntent.getOrderId(),
-          paymentIntent.getTotal_amount(),
+          paymentIntent.getTotalAmount(),
           paymentIntent.getBuyerId());
-    BigDecimal order_amount = paymentIntent.getTotal_amount();
+    BigDecimal order_amount = paymentIntent.getTotalAmount();
 
     String transactionReference = generateTransactionReference();
     return Payment.builder()
