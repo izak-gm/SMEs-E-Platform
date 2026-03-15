@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.UUID;
 
 @FeignClient(
-      name = "gateway",
+      name = "auth-service",
       url = "${services.gateway.url}",
       configuration = FeignConfig.class
 )
