@@ -1,60 +1,14 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-.eggs/
+# Environment variables
+.env
+**/.env
 
-# Django
-*.log
-*.pot
-*.pyc
-products_service/db.sqlite3
-media/
-staticfiles/
-local_settings.py
-
-# Environments
-../.env
+# Python virtual environments
 .venv/
 venv/
-env/
-ENV/
 
-# IDEs / Editors
-.vscode/
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE
 .idea/
-*.swp
-
-# Migrations (optional – keep if you want to regenerate them each time)
-# */migrations/
-# !*/migrations/__init__.py
-
-# Testing
-.coverage
-.tox/
-nosetests.xml
-coverage.xml
-*.cover
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Deployment
-*.bak
-*.pid
-*.seed
-*.orig
-*.rej
-
-# PyInstaller
-*.manifest
-*.spec
-build/
-dist/
-
-# Docker
-docker-compose.override.yml
