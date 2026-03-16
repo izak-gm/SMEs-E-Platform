@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${SERVICES_HOST}
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${SERVICES_HOST}:${DISCOVERY_PORT}/eureka
 
 spring:
   cloud:

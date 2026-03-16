@@ -1,13 +1,13 @@
 package com.izak.auth_service.auth.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public record UpdateUser(
       String firstName,
       String lastName,
       String email,
       String phoneNumber,
-      Date dob,
+      LocalDate dob,
       String gender
 ) {
 }

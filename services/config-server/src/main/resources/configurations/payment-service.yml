@@ -1,16 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/payment
-    username: postgres
-    password: izak7901
-    #    url: jdbc:postgresql://localhost:5432/${AUTH_DB}
-    #    username: ${POSTGRES_USER}
-    #    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME_PAYMENT}?ssl=false&application_name=payment-service
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
     driver-class-name: org.postgresql.Driver
 
   kafka:
-    # TODO:signals connection
-    bootstrap-servers: 172.25.0.3:9092
+    # signals connection
+    bootstrap-servers: ${KAFKA_IP4_ADDRESS}
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -33,22 +31,32 @@ spring:
       ack-mode: record
 
   jpa:
-    showSql: true
+    show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     properties:
       hibernate:
         format_sql: true
         default_schema: public
+        jdbc:
+          batch_size: 20
+          fetch_size: 100
+          order_inserts: true
+          order_updates: true
 
   flyway:
     enabled: true
     baseline-on-migrate: true
     schemas: public
+    baseline-version: 0
+    validate-on-migrate: true
+
 
 logging:
   level:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
 server:
-  port: 8014
+  port: 8013
+#  port: ${PAYMENT_PORT}

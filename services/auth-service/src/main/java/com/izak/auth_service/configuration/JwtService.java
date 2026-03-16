@@ -19,7 +19,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-  @Value("${secret_key}")
+  @Value("${AUTH_SECRET_KEY}")
   private String SECRET_KEY;
 
   public String extractUsername(String token) {
@@ -43,7 +43,7 @@ public class JwtService {
     return Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
   }
 
-  // ✅ Generate token with User entity (includes id, email, and role)
+  // Generate token with User entity (includes id, email, and role)
   public String generateToken(User user) {
     Map<String, Object> claims = new HashMap<>();
     claims.put("id", user.getId());

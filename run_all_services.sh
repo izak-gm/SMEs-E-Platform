@@ -7,6 +7,18 @@ BLUE="\e[34m"
 YELLOW="\e[33m"
 RESET="\e[0m"
 
+# Load environment variables
+if [ -f .env ]; then
+  export $(grep -v '^#' .env | xargs )
+fi
+
+log() {
+  GREEN="\e[32m"
+  RESET="\e[0m"
+
+  echo -e "${GREEN}[INFO]${RESET} $1"
+}
+
 echo "===================================="
 echo "|| =====     ===     ||   //        "
 echo "||    //    // \\    ||  //         " 
@@ -37,16 +49,6 @@ NOTIFICATION_SERVICE="$SERVICES_DIR/notification-service"
 DJANGO_PRODUCTS_SERVICE="$DJANGO_DIR/products_service"
 DJANGO_ORDERS_SERVICE="$DJANGO_DIR/orders_service"
 
-# Ports
-CONFIG_PORT=8888
-DISCOVERY_PORT=8761
-GATEWAY_PORT=8222
-AUTH_PORT=8090
-PRODUCTS_PORT=8012
-ORDERS_PORT=8011
-PAYMENT_PORT=8013
-NOTIFICATION_PORT=8014
-
 # Python virtual environment
 GLOBAL_VENV="$BASE_DIR/.venv"
 
@@ -54,14 +56,11 @@ GLOBAL_VENV="$BASE_DIR/.venv"
 wait_for_port() {
   local port=$1
   local name=$2
-  echo "⏳ Waiting for $name to start on port $port..."
+  echo "Waiting for $name to start on port $port..."
   while ! nc -z localhost $port; do
     sleep 5
   done
-  echo "✅ $name is running on port $port!"
-}
-log() {
-  echo -e "${GREEN}[INFO]${RESET} $1"
+  echo "$name is running on port $port!"
 }
 
 run_with_prefix() {
@@ -72,7 +71,7 @@ run_with_prefix() {
 }
 
 # Trap to stop all services cleanly
-trap "log '🛑 Stopping all services...'; \
+trap "log 'Stopping all services...'; \
 kill $CONFIG_PID $DISCOVERY_PID $GATEWAY_PID $AUTH_PID \
 $PRODUCTS_PID $ORDERS_PID $CONSUMER_PID 2>/dev/null; exit 0" SIGINT SIGTERM
 
@@ -94,15 +93,14 @@ wait_for_port $DISCOVERY_PORT "Discovery Server"
 # --------------------------------------------
 # 3️⃣ Start Gateway Service
 # --------------------------------------------
-echo "🚀 Starting Gateway Service on port $GATEWAY_PORT..."
+echo "Starting Gateway Service on port $GATEWAY_PORT..."
 cd "$GATEWAY_SERVER"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$GATEWAY_PORT" &
 GATEWAY_PID=$!
 wait_for_port $GATEWAY_PORT "Gateway Service"
 
-echo "🚀 Starting Auth Service on port $AUTH_PORT..."
+echo "Starting Auth Service on port $AUTH_PORT..."
 cd "$AUTH_SERVICE"
-export secret_key=ZKmeapmW/5fgkRI16seeGMtCeWU7B4XcE8ZavPvTHOozkWh+YFzr9AdWlS4iS1vU
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$AUTH_PORT" &
 AUTH_PID=$!
 wait_for_port $AUTH_PORT "Auth Service"
@@ -126,13 +124,13 @@ cd "$BASE_DIR"
 # 5️⃣ Start Django Services
 # --------------------------------------------
 
-echo "🔍 DEBUG: DJANGO_PRODUCTS_SERVICE=$DJANGO_PRODUCTS_SERVICE"
-echo "🔍 DEBUG: DJANGO_ORDERS_SERVICE=$DJANGO_ORDERS_SERVICE"
+echo "DEBUG: DJANGO_PRODUCTS_SERVICE=$DJANGO_PRODUCTS_SERVICE"
+echo "DEBUG: DJANGO_ORDERS_SERVICE=$DJANGO_ORDERS_SERVICE"
 
 Current=$(pwd)
 echo $Current
 
-echo "🌍 Activating Python environment..."
+echo " Activating Python environment..."
 source "$GLOBAL_VENV/bin/activate"
 
 # Dependency optimization
@@ -142,15 +140,15 @@ REQUIREMENTS_HASH_FILE="$GLOBAL_VENV/.requirements_hash"
 if [ -f "$REQUIREMENTS_FILE" ]; then
   new_hash=$(sha256sum "$REQUIREMENTS_FILE")
   if [ "$new_hash" != "$(cat $REQUIREMENTS_HASH_FILE 2>/dev/null)" ]; then
-    echo "📦 Installing updated Python dependencies..."
+    echo "Installing updated Python dependencies..."
     pip install -r "$REQUIREMENTS_FILE"
     echo "$new_hash" > "$REQUIREMENTS_HASH_FILE"
   else
-    echo "✅ Python dependencies are up-to-date."
+    echo "Python dependencies are up-to-date."
   fi
 fi
 
-echo "🚀 Starting Products Django Service on port $PRODUCTS_PORT... (Kafka Producer)..."
+echo "Starting Products Django Service on port $PRODUCTS_PORT... (Kafka Producer)..."
 cd "$DJANGO_PRODUCTS_SERVICE"
 echo $(pwd)
 echo "Entering danger zone of the product service"
@@ -159,13 +157,13 @@ PRODUCTS_PID=$!
 wait_for_port $PRODUCTS_PORT "Products Django Service"
 echo "Completed running the product service"
 
-echo "👜 Starting Orders Django Service on port $ORDERS_PORT... (Consumer API)..."
+echo "Starting Orders Django Service on port $ORDERS_PORT... (Consumer API)..."
 cd "$DJANGO_ORDERS_SERVICE"
 python manage.py runserver 0.0.0.0:$ORDERS_PORT &
 ORDERS_PID=$!
 # Ensure the Orders API is actually up before starting the consumer
 wait_for_port $ORDERS_PORT "Orders Django Service"
-echo "☕ Starting Kafka Consumer Worker (Auto-Restart Enabled)…"
+echo "Starting Kafka Consumer Worker (Auto-Restart Enabled)…"
 cd "$DJANGO_ORDERS_SERVICE"
 
 run_consumer() {
@@ -184,10 +182,10 @@ deactivate
 cd "$BASE_DIR"
 
 # --------------------------------------------
-# ✅ Summary
+#  Summary
 # --------------------------------------------
 echo "============================================"
-echo "✅ All Services Started Successfully!"
+echo " All Services Started Successfully!"
 echo "--------------------------------------------"
 echo "Config Server:     PID=$CONFIG_PID          | Port=$CONFIG_PORT"
 echo "Discovery Server:  PID=$DISCOVERY_PID       | Port=$DISCOVERY_PORT"
@@ -199,7 +197,7 @@ echo "Payment Service:    PID=$PAYMENT_PID         | Port=$PAYMENT_PORT"
 echo "Notification Service:    PID=$NOTIFICATION_PID    | Port=$NOTIFICATION_PORT"
 echo "Kafka Consumer:    PID=$CONSUMER_PID"
 echo "--------------------------------------------"
-echo "🧠 Use Ctrl + C to stop (or run stop_all_services.sh)"
+echo "Use Ctrl + C to stop (or run stop_all_services.sh)"
 echo "============================================"
 
 # Keep all services alive

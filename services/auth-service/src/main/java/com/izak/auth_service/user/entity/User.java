@@ -10,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -18,10 +19,8 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-// TODO :Check the annotation is it will crash then remove it safely
 @Builder
 @Table(name = "_user")
 public class User implements UserDetails {
@@ -34,19 +33,25 @@ public class User implements UserDetails {
   private String email;
   private String phoneNumber;
   private String gender;
-  private Date dob;
+  private LocalDate dob;
   private String password;
+
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "address_id", referencedColumnName = "id")
   private Address address;
 
   @Enumerated(EnumType.STRING)
+  @Column(name = "auth")
   private Auth auth;
 
   @CreatedDate
+  @Column(name = "created_at")
   private Date createdAt;
+
   @LastModifiedDate
+  @Column(name = "updated_at")
   private Date updatedAt;
+
 
   private boolean isEnabled = true;
   private boolean isAccountNonLocked = true;

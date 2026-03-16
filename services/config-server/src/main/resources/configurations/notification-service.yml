@@ -1,13 +1,19 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/notification
-    username: postgres
-    password: izak7901
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME_NOTIFICATION}?ssl=false&application_name=notification-service
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
   kafka:
-    # TODO:signals connection
-    bootstrap-servers: 172.25.0.3:9092
+    # signals connection
+    bootstrap-servers: ${KAFKA_IP4_ADDRESS}
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -26,36 +32,48 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+
     properties:
       hibernate:
         format_sql: true
         default_schema: public
+        jdbc:
+          batch_size: 20
+          fetch_size: 100
+          order_inserts: true
+          order_updates: true
 
   flyway:
     enabled: true
     baseline-on-migrate: true
     schemas: public
+    baseline-version: 0
+    validate-on-migrate: true
 
 logging:
   level:
     root: INFO
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.flywaydb: DEBUG
 
 services:
   gateway:
-    url: http//:gateway-service:8222
+    url: http://gateway-service:${GATEWAY_PORT}
+
 feign:
   client:
     config:
       default:
-        connectTimeOut: 5000
+        connectTimeout: 5000
         readTimeout: 5000
         retryer:
           period: 100
           maxPeriod: 500
           maxAttempts: 3
-          
+
 server:
-  port: 8013
+  port: ${NOTIFICATION_PORT}

@@ -29,6 +29,7 @@ else:
 # Now read environment variables
 JWT_SECRET = os.getenv("JWT_SECRET")
 JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
+
 # kafka_topics.py
 PRODUCT_CREATED = os.getenv("PRODUCT_CREATED")
 PRODUCT_UPDATED = os.getenv("PRODUCT_UPDATED")
@@ -37,7 +38,7 @@ PRODUCT_DELETED = os.getenv("PRODUCT_DELETED")
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#e((0q0@q0@6)jym604d-*u+^p2pu918-ub*g(0+-+zp1imzie'
+SECRET_KEY = config_data.get('django.SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

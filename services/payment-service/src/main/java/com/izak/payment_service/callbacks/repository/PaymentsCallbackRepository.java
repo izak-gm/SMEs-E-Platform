@@ -10,5 +10,5 @@ import java.util.UUID;
 @Repository
 public interface PaymentsCallbackRepository extends JpaRepository<PaymentsCallbacks, UUID> {
 
-  Optional<PaymentsCallbacks> findByTransactionReference(String TransactionReference);
+  Optional<PaymentsCallbacks> findByTransactionReference(String transactionReference);
 }

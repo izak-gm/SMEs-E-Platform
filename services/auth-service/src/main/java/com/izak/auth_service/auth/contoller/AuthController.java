@@ -59,5 +59,4 @@ public class AuthController {
     return authService.getUsersById(id, userRequest);
   }
 
-
 }

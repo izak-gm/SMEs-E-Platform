@@ -15,15 +15,23 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "notification")
+@Table(name = "notifications") // plural to avoid reserved keyword issues
 public class Notification {
 
-  String topic;
-  String email;
-  String message;
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
+
+  @Column(nullable = false)
+  private String topic;
+
+  @Column(nullable = false)
+  private String email;
+
+  @Column(nullable = false, columnDefinition = "TEXT") // in case messages are long
+  private String message;
+
   @CreationTimestamp
+  @Column(nullable = false, updatable = false)
   private Instant createdAt;
 }

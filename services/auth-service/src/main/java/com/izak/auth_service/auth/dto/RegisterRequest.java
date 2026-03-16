@@ -4,10 +4,10 @@ import com.izak.auth_service.user.enums.Auth;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
-import java.util.Date;
+import java.util.UUID;
 
 public record RegisterRequest(
-      Long id,
+      UUID id,
       @Email
       @NotNull(message = " Email is required")
       String email,

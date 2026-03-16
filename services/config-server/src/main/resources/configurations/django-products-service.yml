@@ -1,37 +1,24 @@
-#django:
-#  config:
-#    import: file:./secrets/secret.yml
-#
-#  database:
-#    name: ${DJANGO_DB}
-#    host: ${POSTGRES_HOST}
-#    port: ${POSTGRES_PORT}
-#    user: ${POSTGRES_USER}
-#    password: ${POSTGRES_PASSWORD}
-#  signals:
-#    host: ${KAFKA_HOST}
-#    port: ${KAFKA_PORT}
-##  secret_key: ${DJANGO_SECRET_KEY}
-
 django:
   database:
-#    name: ${DJANGO_DB}
-    name: bizhub
-    host: localhost
-    port: 5432
-#    user: ${POSTGRES_USER}
-    user: postgres
-#    password: ${POSTGRES_PASSWORD}
-    password: izak7901
+    name: ${DB_NAME_PRODUCT}
+    host: ${DB_HOST}
+    port: ${DB_PORT}
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
   kafka:
-    # TODO:signals connection
-    KAFKA_BOOTSTRAP:  172.25.0.3:9092
+    # signals connection
+    KAFKA_BOOTSTRAP: ${KAFKA_IP4_ADDRESS}
 
-#  minio configurations
+  #  minio configurations
   minio:
-    MINIO_ACCESS_KEY: CFHfnFtYZLWhVbHpIB9r
-    MINIO_SECRET_KEY: 1xhS59CFJa4a1tA83l0nzt2U0GHYfPbpEeQr4oms
-    MINIO_BUCKET: bizhub
-    MINIO_PORT: 9000
-    MINIO_ENDPOINT: localhost:9000
+    MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
+    MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+    MINIO_BUCKET: ${MINIO_BUCKET}
+    MINIO_PORT: ${MINIO_PORT}
+    MINIO_ENDPOINT: ${MINIO_ENDPOINT}
 
+  SECRET_KEY: ${PRODUCT_SERVICE_SECRET_KEY}
+
+  server:
+    host: ${DEFAULT_HOST}
+    port: ${PRODUCTS_PORT}

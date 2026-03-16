@@ -37,7 +37,7 @@ public class PaymentIntentService {
     intent.setOrderId(orderId);
     intent.setBuyerId(order.getBuyer_id());
     intent.setStoreId(order.getStore_id());
-    intent.setTotal_amount(order.getTotal_amount());
+    intent.setTotalAmount(order.getTotal_amount());
     intent.setCurrency("KES");
     intent.setStatus(PaymentStatus.INITIATED);
     intent.setMetadata(buildMetadata(event));
@@ -62,7 +62,7 @@ public class PaymentIntentService {
                 new IllegalStateException("PaymentIntent not found for order " + orderId)
           );
 
-    intent.setTotal_amount(order.getTotal_amount());
+    intent.setTotalAmount(order.getTotal_amount());
     intent.setMetadata(buildMetadata(event));
 
     paymentIntentRepository.save(intent);
