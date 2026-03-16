@@ -62,13 +62,13 @@ logging:
 
 services:
   gateway:
-    url: http//:gateway-service:${GATEWAY_PORT}
+    url: http://gateway-service:${GATEWAY_PORT}
 
 feign:
   client:
     config:
       default:
-        connectTimeOut: 5000
+        connectTimeout: 5000
         readTimeout: 5000
         retryer:
           period: 100
