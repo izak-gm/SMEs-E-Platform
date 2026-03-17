@@ -15,27 +15,26 @@ import org.springframework.web.cors.CorsConfigurationSource;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
+  private static final String[] WHITE_LIST_URL = {"v1/api/auth/**", "/swagger-ui/**", "/v3/api-docs/**,v1/api/auth/users/**,"};
+  private static final String[] WHITE_LIST_USER_URL = {"v1/api/auth/me/**"};
+  private static final String[] WHITE_LIST_SELLER_URL = {"v1/api/auth/me/**,v1/api/auth/buyers/**"};
+  private static final String[] WHITE_LIST_ADMIN_URL = {"v1/api/auth/me/**,v1/api/auth/users/**,v1/api/auth/buyers/**,v1/api/auth/sellers/**"};
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
-  private final CorsConfigurationSource corsConfigurationSource; // ✅ Injected bean
-
-  private static final String[] WHITE_LIST_URL={"api/v1/auth/**","/swagger-ui/**", "/v3/api-docs/**"};
-  private static final String[] WHITE_LIST_USER_URL={"api/v1/user/**"};
-  private static final String[] WHITE_LIST_SELLER_URL={"api/v1/user/store/**"};
-  private static final String[] WHITE_LIST_ADMIN_URL={"api/v1/auth/admin/**"};
+  private final CorsConfigurationSource corsConfigurationSource; //  Injected bean
 
   @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws Exception{
+  public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
     return httpSecurity
-          .cors(cors -> cors.configurationSource(corsConfigurationSource)) // ✅ use external config
+          .cors(cors -> cors.configurationSource(corsConfigurationSource)) //  use external config
           .csrf(AbstractHttpConfigurer::disable)
-          .authorizeHttpRequests( auth->auth
+          .authorizeHttpRequests(auth -> auth
                 .requestMatchers(WHITE_LIST_URL).permitAll()
                 .requestMatchers(WHITE_LIST_ADMIN_URL).hasRole("ADMIN")
                 .requestMatchers(WHITE_LIST_SELLER_URL).hasRole("SELLER")
                 .requestMatchers(WHITE_LIST_USER_URL).hasRole("USER")
                 .anyRequest().fullyAuthenticated()
           )
-          .sessionManagement(session->session
+          .sessionManagement(session -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
           )
           .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

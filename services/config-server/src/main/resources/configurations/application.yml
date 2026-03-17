@@ -8,7 +8,10 @@ eureka:
 spring:
   cloud:
     config:
+      allow-override: true
+      override-none: false
       override-system-properties: false
+      fail-fast: true
 
 management:
   tracing:

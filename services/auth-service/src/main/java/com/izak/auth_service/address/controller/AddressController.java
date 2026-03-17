@@ -3,8 +3,6 @@ package com.izak.auth_service.address.controller;
 import com.izak.auth_service.address.dto.AddressRequest;
 import com.izak.auth_service.address.service.AddressService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("api/v1/user")
+@RequestMapping("v1/api/auth/user")
 public class AddressController {
   private final AddressService addressService;
 

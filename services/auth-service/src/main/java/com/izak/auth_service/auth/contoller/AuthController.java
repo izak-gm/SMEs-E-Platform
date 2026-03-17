@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/v1/auth")
+@RequestMapping("v1/api/auth")
 @AllArgsConstructor
 public class AuthController {
   private final AuthService authService;
@@ -48,7 +48,7 @@ public class AuthController {
 
   @GetMapping("users")
   public List<UserResponse> getUsersByIds(
-        @RequestParam List<UUID> ids,
+        @RequestParam(required = false) List<UUID> ids,
         @ModelAttribute UserRequest userRequest
   ) {
     return authService.getUsersByIds(ids, userRequest);

@@ -1,18 +1,16 @@
 package com.izak.auth_service.user.entity;
 
 import com.izak.auth_service.address.entity.Address;
+import com.izak.auth_service.user.audit.Auditable;
 import com.izak.auth_service.user.enums.Auth;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -23,7 +21,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Table(name = "_user")
-public class User implements UserDetails {
+public class User extends Auditable implements UserDetails {
   @Id
   @GeneratedValue
   @Column(columnDefinition = "uuid", updatable = false, nullable = false)
@@ -43,15 +41,6 @@ public class User implements UserDetails {
   @Enumerated(EnumType.STRING)
   @Column(name = "auth")
   private Auth auth;
-
-  @CreatedDate
-  @Column(name = "created_at")
-  private Date createdAt;
-
-  @LastModifiedDate
-  @Column(name = "updated_at")
-  private Date updatedAt;
-
 
   private boolean isEnabled = true;
   private boolean isAccountNonLocked = true;
