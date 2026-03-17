@@ -9,16 +9,18 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-import os,sys
+import os
 from pathlib import Path
-import requests
-from decouple import config
+
 from dotenv import load_dotenv
 
 # Add the top-level project directory to Python path
 # Define base paths
 BASE_DIR = Path(__file__).resolve().parent.parent
-ENV_PATH = BASE_DIR.parent / ".env"
+ENV_PATH = Path(__file__).resolve().parents[3] / ".env"
+
+print("BASE_DIR:", BASE_DIR)
+print("ENV_PATH:", ENV_PATH)
 
 # Load .env file
 if ENV_PATH.exists():
@@ -27,17 +29,17 @@ else:
     print(f"⚠️  .env file not found at: {ENV_PATH}")
 
 # Now read environment variables
+# jwt_token to verify token from spring boot Auth service
 JWT_SECRET = os.getenv("JWT_SECRET")
 JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
+
 # kafka_topics.py
 PRODUCT_CREATED = os.getenv("PRODUCT_CREATED")
 PRODUCT_UPDATED = os.getenv("PRODUCT_UPDATED")
 PRODUCT_DELETED = os.getenv("PRODUCT_DELETED")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#e((0q0@q0@6)jym604d-*u+^p2pu918-ub*g(0+-+zp1imzie'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -46,7 +48,7 @@ DEBUG = True
 APPEND_SLASH = False
 
 # Cors handled by the Spring boot gateway
-ALLOWED_HOSTS = ["*","django_products-service","django_orders_service","gateway-service","127.0.0.1"]
+ALLOWED_HOSTS = ["*", "django_products-service", "django_orders_service", "gateway-service", "127.0.0.1"]
 
 # Application definition
 
@@ -66,7 +68,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-  #  'corsheaders.middleware.CorsMiddleware',
+    #  'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -98,28 +100,40 @@ WSGI_APPLICATION = 'products_service.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-CONFIG_SERVER_URL = config('CONFIG_SERVER_URL', default='http://localhost:8888')
-SERVER_NAME = config('SERVER_NAME', default='django-products-service')
+# CONFIG_SERVER_URL = config('CONFIG_SERVER_URL')
+# SERVER_NAME = config('SERVER_NAME_PRODUCT')
+#
+# try:
+#     response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
+#     response.raise_for_status()
+#     properties = response.json().get('propertySources', [])
+#     config_data = {}
+#     for source in properties:
+#         config_data.update(source.get('source', {}))
+# except Exception as e:
+#     print(f" Warning: Could not load from spring Config Server: {e}")
+#     config_data = {}
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'HOST': config_data.get('django.database.host'),
+#         'PORT': config_data.get('django.database.port'),
+#         'NAME': config_data.get('django.database.name'),
+#         'USER': config_data.get('django.database.user'),
+#         'PASSWORD': config_data.get('django.database.password'),
+#     }
+# }
 
-try:
-    response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
-    response.raise_for_status()
-    properties = response.json().get('propertySources', [])
-    config_data = {}
-    for source in properties:
-        config_data.update(source.get('source', {}))
-except Exception as e:
-    print(f" Warning: Could not load from spring Config Server: {e}")
-    config_data = {}
-
+# SECURITY WARNING: keep the secret key used in production secret!
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': config_data.get('django.database.host'),
-        'PORT': config_data.get('django.database.port'),
-        'NAME': config_data.get('django.database.name'),
-        'USER': config_data.get('django.database.user'),
-        'PASSWORD': config_data.get('django.database.password'),
+        'HOST': os.getenv("DB_HOST"),
+        'PORT': os.getenv("DB_PORT"),
+        'NAME': os.getenv("DB_NAME_PRODUCT"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
     }
 }
 
@@ -130,14 +144,21 @@ DATABASES = {
 #     }
 # }
 
-MINIO_ENDPOINT = config_data.get('django.minio.MINIO_ENDPOINT')
-MINIO_ACCESS_KEY = config_data.get('django.minio.MINIO_ACCESS_KEY')
-MINIO_SECRET_KEY = config_data.get('django.minio.MINIO_SECRET_KEY')
-MINIO_BUCKET = config_data.get('django.minio.MINIO_BUCKET')
+PORT = os.getenv("ORDERS_PORT")
+KAFKA_BOOTSTRAP_SERVER = os.getenv("KAFKA_IP4_ADDRESS")
+SECRET_KEY = os.getenv('PRODUCT_SERVICE_SECRET_KEY')
 
-KAFKA_BOOTSTRAP_SERVER= config_data.get('django.kafka.KAFKA_BOOTSTRAP')
+# MinIO
 
-#jwt_token to verify token from spring boot Auth service
+# MINIO_ENDPOINT = config_data.get('django.minio.MINIO_ENDPOINT')
+# MINIO_ACCESS_KEY = config_data.get('django.minio.MINIO_ACCESS_KEY')
+# MINIO_SECRET_KEY = config_data.get('django.minio.MINIO_SECRET_KEY')
+# MINIO_BUCKET = config_data.get('django.minio.MINIO_BUCKET')
+MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
+MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY")
+MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
+MINIO_BUCKET = os.getenv("MINIO_BUCKET")
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         'django_microservices.common.auth.authentication.JWTAuthentication',

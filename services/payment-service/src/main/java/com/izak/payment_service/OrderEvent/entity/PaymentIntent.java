@@ -35,7 +35,7 @@ public class PaymentIntent {
   private UUID storeId;
 
   @Column(nullable = false, precision = 12, scale = 2)
-  private BigDecimal total_amount;
+  private BigDecimal totalAmount;
 
   @Column(nullable = false)
   private String currency = "KES";

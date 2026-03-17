@@ -32,14 +32,14 @@ public class MpesaCallbackController {
     try {
       if (payload.callbackStatus() == CallbackStatus.PAID) {
         paymentService.markMpesaPaymentSuccess(
-              payload.CheckoutRequestId(),
-              payload.TransactionID(),
-              payload.PhoneNumber(),
-              payload.TransactionReference(),
-              payload.TransAmount()
+              payload.checkoutRequestId(),
+              payload.transactionID(),
+              payload.phoneNumber(),
+              payload.transactionReference(),
+              payload.transAmount()
         );
       } else {
-        paymentService.markMpesaPaymentFailed(payload.CheckoutRequestId(), payload.callbackStatus().name());
+        paymentService.markMpesaPaymentFailed(payload.checkoutRequestId(), payload.callbackStatus().name());
       }
       return ResponseEntity.ok("Mpesa Transaction completed and event published successfully");
     } catch (Exception e) {

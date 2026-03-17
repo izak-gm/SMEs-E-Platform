@@ -91,7 +91,13 @@ public class AuthService {
   }
 
   public List<UserResponse> getUsersByIds(List<UUID> ids, UserRequest userRequest) {
-    List<User> users = userRepository.findAllById(ids);
+    List<User> users;
+
+    if (ids == null || ids.isEmpty()) {
+      users = userRepository.findAll();
+    } else {
+      users = userRepository.findAllById(ids);
+    }
 
     List<User> filteredUsers = users.stream()
           .filter(user -> userRequest.getFilter() == null

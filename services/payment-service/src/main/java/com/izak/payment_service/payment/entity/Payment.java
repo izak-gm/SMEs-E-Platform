@@ -39,9 +39,11 @@ public class Payment {
   private String transactionReference;
 
   @Enumerated(EnumType.STRING)
+  @Column(name = "payment_method")
   private PaymentMethod paymentMethod;
 
   @Enumerated(EnumType.STRING)
+  @Column(name = "payment_status")
   private PaymentStatus paymentStatus; // PENDING
 
   @CreationTimestamp

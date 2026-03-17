@@ -11,13 +11,15 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
-import requests
-from decouple import config
+
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-ENV_PATH = BASE_DIR.parent / ".env"
+ENV_PATH = Path(__file__).resolve().parents[3] / ".env"
+
+print("BASE_DIR:", BASE_DIR)
+print("ENV_PATH:", ENV_PATH)
 
 # Load .env file
 if ENV_PATH.exists():
@@ -31,15 +33,12 @@ JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS512")
 
 # settings.py
 
-ORDER_CREATED = "order_created"
-ORDER_UPDATED = "order_updated"
-ORDER_DELETED = "order_deleted"
+ORDER_CREATED = os.getenv('ORDER_CREATED')
+ORDER_UPDATED = os.getenv('ORDER_UPDATED')
+ORDER_DELETED = os.getenv('ORDER_DELETED')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-toq9ox&4to06g$!4h0c5^)s3@4#hr^y@8sj5d82$7x9%+eah_#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -99,33 +98,54 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'orders_service.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-CONFIG_SERVER_URL = config('CONFIG_SERVER_URL',default='http://localhost:8888')
-SERVER_NAME = config('SERVER_NAME',default='django-orders-service')
-
-try:
-    response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
-    response.raise_for_status()
-    properties= response.json().get('propertySources',[])
-    config_data={}
-    for source in properties:
-        config_data.update(source.get('source',{}))
-except Exception as e:
-    print(f" Warning: Could not load from spring Config Server: {e}")
-    config_data={}
-
+# CONFIG_SERVER_URL = config('CONFIG_SERVER_URL')
+# SERVER_NAME = config('SERVER_NAME_ORDER', default="django-orders_service")
+#
+# try:
+#     response = requests.get(f"{CONFIG_SERVER_URL}/{SERVER_NAME}/default")
+#     response.raise_for_status()
+#     properties = response.json().get('propertySources', [])
+#     config_data = {}
+#     for source in properties:
+#         config_data.update(source.get('source', {}))
+#
+#     print("✅ Config data loaded from Spring Config Server:")
+#     print(config_data)
+#
+# except Exception as e:
+#     print(f" Warning: Could not load from spring Config Server: {e}")
+#     config_data = {}
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'HOST': config_data.get('django.database.host'),
+#         'PORT': config_data.get('django.database.port'),
+#         'NAME': config_data.get('django.database.name'),
+#         'USER': config_data.get('django.database.user'),
+#         'PASSWORD': config_data.get('django.database.password'),
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': config_data.get('django.database.host'),
-        'PORT': config_data.get('django.database.port'),
-        'NAME': config_data.get('django.database.name'),
-        'USER': config_data.get('django.database.user'),
-        'PASSWORD': config_data.get('django.database.password'),
+        'HOST': os.getenv("DB_HOST"),
+        'PORT': os.getenv("DB_PORT"),
+        'NAME': os.getenv("DB_NAME_ORDER"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
     }
 }
+
+PORT = os.getenv("ORDERS_PORT")
+
+KAFKA_BOOTSTRAP_SERVER = os.getenv("KAFKA_IP4_ADDRESS")
+SECRET_KEY = os.getenv('ORDER_SERVICE_SECRET_KEY')
+
+# # SECURITY WARNING: keep the secret key used in production secret!
+# PORT = config_data.get('django.server.port')
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -133,9 +153,8 @@ DATABASES = {
 #     }
 # }
 
-KAFKA_BOOTSTRAP_SERVER= config_data.get('django.kafka.KAFKA_BOOTSTRAP')
 
-#jwt_token to verify token from spring boot Auth service
+# jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         'django_microservices.common.auth.authentication.JWTAuthentication',
@@ -162,7 +181,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -173,7 +191,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
