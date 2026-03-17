@@ -2,6 +2,7 @@
 .env
 /env
 **/.env
+<<<<<<< HEAD
 
 # Python virtual environments
 .venv/
@@ -13,3 +14,5 @@ __pycache__/
 
 # IDE
 .idea/
+=======
+>>>>>>> 34c1c4be4eece0d5ee216917db0e132f8c39bb33
