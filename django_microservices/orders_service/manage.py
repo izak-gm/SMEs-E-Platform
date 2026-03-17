@@ -5,6 +5,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
+
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'orders_service.settings')
@@ -18,10 +19,11 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
 
-    if len(sys.argv) > 1:
-        sys.argv += ["runserver",f"{settings.PORT}:{settings.PORT}"]
+    if len(sys.argv) == 2 and sys.argv[1] == "runserver":
+        sys.argv.append(str(settings.PORT))
 
     execute_from_command_line(sys.argv)
+
 
 if __name__ == '__main__':
     main()

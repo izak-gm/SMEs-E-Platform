@@ -6,7 +6,7 @@ django:
     user: ${DB_USER}
     password: ${DB_PASSWORD}
   kafka:
-    # TODO:signals connection
+    # signals connection
     KAFKA_BOOTSTRAP: ${KAFKA_IP4_ADDRESS}
 
   #  secret_key

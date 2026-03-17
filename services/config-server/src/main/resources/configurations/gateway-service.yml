@@ -10,19 +10,19 @@ spring:
         - id: auth-service
           uri: lb://AUTH-SERVICE
           predicates:
-            - Path=/api/v1/auth/**
+            - Path=/v1/api/auth/**
 
         - id: products-service
           uri: lb://DJANGO-PRODUCTS-SERVICE
           #          uri: http://localhost:8012
           predicates:
-            - Path=/api/v1/bizhub/**
+            - Path=/v1/api/bizhub/**
 
         - id: orders-service
           uri: lb://DJANGO-ORDERS-SERVICE
           #          uri: http://localhost:8011
           predicates:
-            - Path=/api/v1/bizhub-orderline/**
+            - Path=/v1/api/bizhub-orderline/**
 
         - id: payment-service
           uri: lb://PAYMENT-SERVICE
@@ -32,7 +32,7 @@ spring:
         - id: notification-service
           uri: lb://NOTIFICATION-SERVICE
           predicates:
-            - Path=/api/v1/notification/**
+            - Path=/v1/api/notification/**
 
 server:
   port: ${GATEWAY_PORT}
