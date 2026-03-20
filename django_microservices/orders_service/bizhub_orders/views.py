@@ -21,7 +21,7 @@ class OrderViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
 
         order = serializer.save()  # 👈 calls OrderSerializer.create()
-        publish_order_events_for(order)
+#         publish_order_events_for(order)
         return Response(
             {
                 "message": "Successfully ordered",

@@ -1,9 +1,9 @@
 package com.izak.payment_service.configurations;
 
 import com.izak.payment_service.kafka.dto.OrderEventMessage;
-import com.izak.payment_service.kafka.events.OrderEvent;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
@@ -17,6 +17,8 @@ import java.util.Map;
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
+  @Value("${KAFKA_IP4_ADDRESS}")
+  private String KAFKA_IP4_ADDRESS;
 
   @Bean
   public ConsumerFactory<String, OrderEventMessage> consumerFactory() {
@@ -27,7 +29,7 @@ public class KafkaConsumerConfig {
 
     return new DefaultKafkaConsumerFactory<>(
           Map.of(
-                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "172.25.0.3:9092",
+                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_IP4_ADDRESS,
                 ConsumerConfig.GROUP_ID_CONFIG, "payment-service-group",
                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class
