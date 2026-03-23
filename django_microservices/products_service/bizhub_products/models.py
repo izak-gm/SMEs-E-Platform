@@ -4,14 +4,19 @@ from django.db import models
 
 
 class Store(models.Model):
+    class Status(models.TextChoices):
+        PENDING = 'pending', 'Pending'
+        ACTIVE = 'active', 'Active'
+        SUSPENDED = 'suspended', 'Suspended'
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     owner_id = models.UUIDField()  # references auth user id
     name = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
     description = models.TextField(blank=True)
     status = models.CharField(max_length=20,
-                              choices=[('pending', 'Pending'), ('active', 'Active'), ('suspended', 'Suspended')],
-                              default='pending')
+                              choices=Status.choices,
+                              default=Status.PENDING)
     rating = models.DecimalField(max_digits=3, decimal_places=2, default=0)
     total_sales = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -40,7 +45,7 @@ class Category(models.Model):
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL)
 
 
-# Add a updated at in the product
+# Add an updated at in the product
 class Product(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     store = models.ForeignKey(Store, null=True, blank=True, on_delete=models.SET_NULL)

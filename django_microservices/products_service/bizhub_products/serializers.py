@@ -1,5 +1,8 @@
+import uuid
+
 from django.db import transaction
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
 
 from .models import Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
 
@@ -69,10 +72,24 @@ class ProductSerializer(serializers.ModelSerializer):
             'variants', 'images'
         ]
 
-    # def validate_sku(self, value):
-    #     if Product.objects.filter(sku=value).exists():
-    #         raise serializers.ValidationError("SKU already exists")
-    #     return value
+    def validate_store(self, store):
+        request = self.context.get('request')
+        if store.status != Store.Status.ACTIVE:
+            raise ValidationError('Store must be active')
+        try:
+            user_id = uuid.UUID(str(request.user.id))
+        except Exception:
+            raise ValidationError("Invalid user ID in request")
+
+        if store.owner_id != user_id:
+            raise ValidationError('You do not own this store')
+
+        return store
+
+    def validate_sku(self, value):
+        if Product.objects.filter(sku=value).exists():
+            raise serializers.ValidationError("SKU already exists")
+        return value
 
     @transaction.atomic
     def create(self, validated_data):
