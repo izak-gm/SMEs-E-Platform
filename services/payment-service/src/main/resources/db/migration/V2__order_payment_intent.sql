@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS payment_intents (
     store_id UUID,
     total_amount NUMERIC(12,2),
     currency VARCHAR(20) CHECK (currency IN ('KES')),
-    status VARCHAR(20) CHECK (status IN ('PENDING','SUCCESS','FAILED')),
+    status VARCHAR(20) CHECK (status IN ('INITIATED', 'PENDING', 'SUCCESS', 'FAILED','PAID','EXPIRED')),
     metadata JSONB,
     expires_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

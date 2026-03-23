@@ -11,6 +11,7 @@ public record UserResponse(
       String email,
       String phoneNumber,
       LocalDate dob,
-      String gender
+      String gender,
+      AUTH auth
 ) {
 }

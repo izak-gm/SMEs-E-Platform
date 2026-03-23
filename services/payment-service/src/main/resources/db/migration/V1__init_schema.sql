@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS public.payment (
     transaction_reference VARCHAR(255) UNIQUE,
     amount NUMERIC(12,2),
     payment_method VARCHAR(20) CHECK (payment_method IN ('CARD','MPESA')),
-    payment_status VARCHAR(20) CHECK (payment_status IN ('PENDING','SUCCESS','FAILED')),
+    payment_status VARCHAR(20) CHECK (payment_status IN  ('INITIATED', 'PENDING', 'SUCCESS', 'FAILED','PAID','EXPIRED')),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
