@@ -47,14 +47,14 @@ public class AuthService {
           .build();
   }
 
-  public AuthResponse authenticate(AuthenticateRequest authenticateRequest) {
+  public AuthResponse authenticate(RegisterRequest registerRequest) {
     authenticationManager.authenticate(
           new UsernamePasswordAuthenticationToken(
-                authenticateRequest.email(),
-                authenticateRequest.password()
+                registerRequest.email(),
+                registerRequest.password()
           )
     );
-    var user = userRepository.findByEmail(authenticateRequest.email())
+    var user = userRepository.findByEmail(registerRequest.email())
           .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     var jwtToken = jwtService.generateToken(user);
     return AuthResponse.builder()
