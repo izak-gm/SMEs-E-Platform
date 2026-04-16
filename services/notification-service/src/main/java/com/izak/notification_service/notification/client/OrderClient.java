@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.UUID;
 
 @FeignClient(
-      name = "order-service",
+      name = "django-order-service",
       url = "${services.gateway.url}",
       configuration = FeignConfig.class
 )
 public interface OrderClient {
-  @GetMapping("v1/api/bizhub-orderline/orders/{id}")
-  OrderResponse getOrder(@PathVariable UUID id);
+  @GetMapping("v1/api/bizhub-orderline/orders/{id}/")
+  OrderResponse getOrderById(@PathVariable UUID id);
 }

@@ -1,4 +1,5 @@
 package com.izak.payment_service.kafka.service;
+
 import com.izak.payment_service.OrderEvent.service.PaymentIntentService;
 import com.izak.payment_service.kafka.dto.OrderEventMessage;
 import com.izak.payment_service.kafka.events.OrderEvent;
@@ -17,32 +18,32 @@ public class OrderEventListener {
   // TODO: Add a queue to read the data from the database as a QUEUE
   // private final PaymentQueueService paymentQueueService;
 
-    @KafkaListener(
-          topics = "order_created",
-          containerFactory = "orderEventKafkaFactory",
-          groupId = "payment-ms"
-    )
-    @Transactional
-    public void handleOrderCreated(OrderEventMessage orderEventMessage) {
-      OrderEvent orderEvent= orderEventMessage.getData();
-      log.info("Order created event received for order {}", orderEvent.getId());
+  @KafkaListener(
+        topics = "order_created",
+        containerFactory = "orderEventKafkaFactory",
+        groupId = "payment-ms"
+  )
+  @Transactional
+  public void handleOrderCreated(OrderEventMessage orderEventMessage) {
+    OrderEvent orderEvent = orderEventMessage.getData();
+    log.info("Order created event received for order {}", orderEvent.getId());
 
-      try {
-        paymentIntentService.createPaymentIntent(orderEventMessage);
-      } catch (DataIntegrityViolationException e) {
-        log.warn("PaymentIntent already exists for order {}", orderEvent.getId());
-      }
+    try {
+      paymentIntentService.createPaymentIntent(orderEventMessage);
+    } catch (DataIntegrityViolationException e) {
+      log.warn("PaymentIntent already exists for order {}", orderEvent.getId());
     }
+  }
 
-    @KafkaListener(
-          topics = "order_updated",
-          containerFactory = "orderEventKafkaFactory",
-          groupId = "payment-ms"
-    )
-    @Transactional
-    public void handleOrderUpdated(OrderEventMessage orderEventMessage) {
-      OrderEvent orderEvent=orderEventMessage.getData();
-      log.info("Order updated event received for order {}", orderEvent.getId());
-      paymentIntentService.updatePaymentIntent(orderEventMessage);
-    }
+  @KafkaListener(
+        topics = "order_updated",
+        containerFactory = "orderEventKafkaFactory",
+        groupId = "payment-ms"
+  )
+
+  public void handleOrderUpdated(OrderEventMessage orderEventMessage) {
+    OrderEvent orderEvent = orderEventMessage.getData();
+    log.info("Order updated event received for order {}", orderEvent.getId());
+    paymentIntentService.updatePaymentIntent(orderEventMessage);
+  }
 }

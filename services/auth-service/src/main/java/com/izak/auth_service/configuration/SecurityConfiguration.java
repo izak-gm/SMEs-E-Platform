@@ -15,11 +15,30 @@ import org.springframework.web.cors.CorsConfigurationSource;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-  private static final String[] WHITE_LIST_URL = {"v1/api/auth/**", "/swagger-ui/**", "/v3/api-docs/**,v1/api/auth/users/**,"};
-  private static final String[] WHITE_LIST_USER_URL = {"v1/api/auth/me/**"};
-  private static final String[] WHITE_LIST_SELLER_URL = {"v1/api/auth/me/**,v1/api/auth/buyers/**"};
-  private static final String[] WHITE_LIST_ADMIN_URL = {"v1/api/auth/me/**,v1/api/auth/users/**,v1/api/auth/buyers/**,v1/api/auth/sellers/**"};
+  private static final String[] WHITE_LIST_URL = {
+        "/v1/api/auth/**",
+        "/swagger-ui/**",
+        "/v3/api-docs/**"
+  };
+
+  private static final String[] WHITE_LIST_USER_URL = {
+        "/v1/api/auth/me/**"
+  };
+
+  private static final String[] WHITE_LIST_SELLER_URL = {
+        "/v1/api/auth/me/**",
+        "/v1/api/auth/buyers/**"
+  };
+
+  private static final String[] WHITE_LIST_ADMIN_URL = {
+        "/v1/api/auth/me/**",
+        "/v1/api/auth/users/**",
+        "/v1/api/auth/buyers/**",
+        "/v1/api/auth/sellers/**"
+  };
+
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
+  private final InternalServiceAuthFilter internalServiceAuthFilter;
   private final CorsConfigurationSource corsConfigurationSource; //  Injected bean
 
   @Bean
@@ -29,14 +48,15 @@ public class SecurityConfiguration {
           .csrf(AbstractHttpConfigurer::disable)
           .authorizeHttpRequests(auth -> auth
                 .requestMatchers(WHITE_LIST_URL).permitAll()
-                .requestMatchers(WHITE_LIST_ADMIN_URL).hasRole("ADMIN")
                 .requestMatchers(WHITE_LIST_SELLER_URL).hasRole("SELLER")
                 .requestMatchers(WHITE_LIST_USER_URL).hasRole("USER")
+                .requestMatchers(WHITE_LIST_ADMIN_URL).hasAnyRole("ADMIN", "SERVICE")
                 .anyRequest().fullyAuthenticated()
           )
           .sessionManagement(session -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
           )
+          .addFilterBefore(internalServiceAuthFilter, UsernamePasswordAuthenticationFilter.class)
           .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
           .build();
   }

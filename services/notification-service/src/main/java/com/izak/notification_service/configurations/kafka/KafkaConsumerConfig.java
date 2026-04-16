@@ -1,6 +1,6 @@
 package com.izak.notification_service.configurations.kafka;
 
-import com.izak.notification_service.notification.entity.Notification;
+import com.izak.notification_service.kafka.kafka_events.Payment;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,8 +21,8 @@ public class KafkaConsumerConfig {
   private String KAFKA_IP4_ADDRESS;
 
   @Bean
-  public ConsumerFactory<String, Notification> consumerFactory() {
-    JsonDeserializer<Notification> deserializer = new JsonDeserializer<>(Notification.class);
+  public ConsumerFactory<String, Payment> consumerFactory() {
+    JsonDeserializer<Payment> deserializer = new JsonDeserializer<>(Payment.class);
     deserializer.addTrustedPackages("*");
     deserializer.setRemoveTypeHeaders(false);
     deserializer.setUseTypeMapperForKey(true);
@@ -40,9 +40,9 @@ public class KafkaConsumerConfig {
   }
 
   @Bean
-  public ConcurrentKafkaListenerContainerFactory<String, Notification> notificationEventKafkaFactory(
-        ConsumerFactory<String, Notification> consumerFactory) {
-    ConcurrentKafkaListenerContainerFactory<String, Notification> factory =
+  public ConcurrentKafkaListenerContainerFactory<String, Payment> paymentEventKafkaFactory(
+        ConsumerFactory<String, Payment> consumerFactory) {
+    ConcurrentKafkaListenerContainerFactory<String, Payment> factory =
           new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactory);
     return factory;

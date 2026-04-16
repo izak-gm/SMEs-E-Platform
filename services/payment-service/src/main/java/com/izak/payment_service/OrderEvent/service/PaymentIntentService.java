@@ -11,6 +11,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -50,7 +51,7 @@ public class PaymentIntentService {
     }
   }
 
-  @Transactional
+  @Async
   public void updatePaymentIntent(OrderEventMessage event) {
 
     OrderEvent order = event.getData();

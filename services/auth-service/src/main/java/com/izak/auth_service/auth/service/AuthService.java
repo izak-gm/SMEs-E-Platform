@@ -105,7 +105,12 @@ public class AuthService {
                 || user.getFirstName().toLowerCase().contains(userRequest.getFilter().toLowerCase()))
           .collect(Collectors.toList());
     return filteredUsers.stream()
-          .map(user -> new UserResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getPhoneNumber(), user.getDob(), user.getGender(),user.getAuth())
+          .map(user -> new UserResponse(
+                user.getId(), user.getFirstName(),
+                user.getLastName(), user.getEmail(),
+                user.getPhoneNumber(), user.getDob(),
+                user.getGender(), user.getAuth()
+          ))
           .collect(Collectors.toList());
   }
 }
