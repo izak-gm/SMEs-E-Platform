@@ -31,7 +31,7 @@ public class PaymentsCallbacks {
 
   @Column(name = "transaction_id", nullable = false, unique = true)
   // MpesaReceiptNumber OR Card reference
-  private String transactionID;
+  private String transactionId;
 
   @Column(name = "transaction_reference", nullable = false, unique = true)
   // MpesaTransReference OR Card reference

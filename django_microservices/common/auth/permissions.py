@@ -1,10 +1,15 @@
 from rest_framework import permissions
 
-class RolePermission(permissions.BasePermission):
+
+class IsServiceOrRolePermission(permissions.BasePermission):
     allowed_roles = []
 
     def has_permission(self, request, view):
         user = getattr(request, "user", None)
+
+        if getattr(user, "is_service", False):
+            return True  # internal service calls bypass roles
+
         if not user:
             return False
 

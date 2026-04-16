@@ -1,8 +1,9 @@
 package com.izak.notification_service.configurations.kafka;
 
-import com.izak.notification_service.notification.entity.Notification;
+import com.izak.notification_service.kafka.kafka_events.Payment;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
@@ -16,17 +17,19 @@ import java.util.Map;
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
+  @Value("${KAFKA_IP4_ADDRESS}")
+  private String KAFKA_IP4_ADDRESS;
 
   @Bean
-  public ConsumerFactory<String, Notification> consumerFactory() {
-    JsonDeserializer<Notification> deserializer = new JsonDeserializer<>(Notification.class);
+  public ConsumerFactory<String, Payment> consumerFactory() {
+    JsonDeserializer<Payment> deserializer = new JsonDeserializer<>(Payment.class);
     deserializer.addTrustedPackages("*");
     deserializer.setRemoveTypeHeaders(false);
     deserializer.setUseTypeMapperForKey(true);
 
     return new DefaultKafkaConsumerFactory<>(
           Map.of(
-                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092",
+                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_IP4_ADDRESS,
                 ConsumerConfig.GROUP_ID_CONFIG, "notification-service-group",
                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, deserializer
@@ -37,9 +40,9 @@ public class KafkaConsumerConfig {
   }
 
   @Bean
-  public ConcurrentKafkaListenerContainerFactory<String, Notification> notificationEventKafkaFactory(
-        ConsumerFactory<String, Notification> consumerFactory) {
-    ConcurrentKafkaListenerContainerFactory<String, Notification> factory =
+  public ConcurrentKafkaListenerContainerFactory<String, Payment> paymentEventKafkaFactory(
+        ConsumerFactory<String, Payment> consumerFactory) {
+    ConcurrentKafkaListenerContainerFactory<String, Payment> factory =
           new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactory);
     return factory;

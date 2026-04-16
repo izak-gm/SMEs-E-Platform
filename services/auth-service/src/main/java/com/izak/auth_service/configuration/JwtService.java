@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class JwtService {
@@ -62,7 +63,9 @@ public class JwtService {
           .subject(subject)
           .issuedAt(new Date(now))
           // Set expiration (1 hour)
-          .expiration(new Date(now + 1000 * 60 * 60))
+          //.expiration(new Date(now + 1000 * 60 * 60))
+          // Expiration: 7 days
+          .expiration(new Date(now + TimeUnit.DAYS.toMillis(7)))
           .signWith(getSignKey())
           .compact();
   }

@@ -13,7 +13,7 @@ public class PaymentsCallbackMapper {
           .id(callbackDTO.id())
           .callbackProvider(callbackDTO.callbackProvider())
           .transAmount(callbackDTO.transAmount())
-          .transactionID(callbackDTO.transactionID())
+          .transactionId(callbackDTO.transactionId())
           .transactionReference(callbackDTO.transactionReference())
           .phoneNumber(callbackDTO.phoneNumber())
           .checkoutRequestId(callbackDTO.checkoutRequestId())

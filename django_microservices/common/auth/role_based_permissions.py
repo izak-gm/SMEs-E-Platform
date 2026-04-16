@@ -1,10 +1,13 @@
-from .permissions import RolePermission
+from .permissions import IsServiceOrRolePermission
 
-class IsAdmin(RolePermission):
-    allowed_roles = ["SUPER_ADMIN","ADMIN"]
 
-class IsBuyer(RolePermission):
+class IsAdmin(IsServiceOrRolePermission):
+    allowed_roles = ["SUPER_ADMIN", "ADMIN"]
+
+
+class IsBuyer(IsServiceOrRolePermission):
     allowed_roles = ["USER"]
 
-class IsSeller(RolePermission):
+
+class IsSeller(IsServiceOrRolePermission):
     allowed_roles = ["SELLER"]
