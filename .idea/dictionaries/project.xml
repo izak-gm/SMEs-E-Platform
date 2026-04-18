@@ -5,6 +5,7 @@
       <w>bizhub</w>
       <w>configserver</w>
       <w>corsheaders</w>
+      <w>healthcheck</w>
       <w>hikari</w>
       <w>izak</w>
       <w>jdbc</w>

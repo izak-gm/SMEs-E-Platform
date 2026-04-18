@@ -1,5 +1,7 @@
 package com.izak.auth_service.auth.dto;
 
+import com.izak.auth_service.user.enums.Auth;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -12,6 +14,6 @@ public record UserResponse(
       String phoneNumber,
       LocalDate dob,
       String gender,
-      AUTH auth
+      Auth auth
 ) {
 }

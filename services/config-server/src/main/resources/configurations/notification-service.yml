@@ -62,7 +62,7 @@ logging:
 
 services:
   gateway:
-    url: http://gateway-service:${GATEWAY_PORT}
+    url: http://localhost:${GATEWAY_PORT}
 
 feign:
   client:

@@ -9,7 +9,7 @@ import java.util.UUID;
 public record MpesaCallbackDTO(
       UUID id,
       String transactionReference,
-      String transactionID,
+      String transactionId,
       BigDecimal transAmount,
       String phoneNumber,
       String checkoutRequestId,

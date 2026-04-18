@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from django_microservices.common.auth.authentication import JWTAuthentication
+from django_microservices.common.auth.internal_service_authentication import InternalServiceAuthentication
 from .models import Order, OrderItem
 from .serializers import OrderSerializer, OrderItemSerializer
 
@@ -11,7 +12,11 @@ from .serializers import OrderSerializer, OrderItemSerializer
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
-    authentication_classes = [JWTAuthentication]
+
+    authentication_classes = [
+        InternalServiceAuthentication,  # 👈 ADD THIS FIRST
+        JWTAuthentication
+    ]
     permission_classes = [IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
@@ -32,4 +37,4 @@ class OrderItemViewSet(viewsets.ModelViewSet):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
     authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]

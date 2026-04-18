@@ -106,19 +106,19 @@ AUTH_PID=$!
 wait_for_port $AUTH_PORT "Auth Service"
 cd "$BASE_DIR"
 
-#echo "Starting Payment service on port $PAYMENT_PORT..."
-#cd "$PAYMENT_SERVICE"
-#./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$PAYMENT_PORT" &
-#PAYMENT_PID=$!
-#wait_for_port $PAYMENT_PORT "Payment Service"
-#cd "$BASE_DIR"
-#
-#echo "Starting Notification service on port $NOTIFICATION_PORT"
-#cd "$NOTIFICATION_SERVICE"
-#./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$NOTIFICATION_PORT" &
-#NOTIFICATION_PID=$!
-#wait_for_port $NOTIFICATION_PORT "Notification Service"
-#cd "$BASE_DIR"
+echo "Starting Payment service on port $PAYMENT_PORT..."
+cd "$PAYMENT_SERVICE"
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$PAYMENT_PORT" &
+PAYMENT_PID=$!
+wait_for_port $PAYMENT_PORT "Payment Service"
+cd "$BASE_DIR"
+
+echo "Starting Notification service on port $NOTIFICATION_PORT"
+cd "$NOTIFICATION_SERVICE"
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$NOTIFICATION_PORT" &
+NOTIFICATION_PID=$!
+wait_for_port $NOTIFICATION_PORT "Notification Service"
+cd "$BASE_DIR"
 
 # --------------------------------------------
 # 5️⃣ Start Django Services
@@ -157,14 +157,14 @@ PRODUCTS_PID=$!
 wait_for_port $PRODUCTS_PORT "Products Django Service"
 echo "Completed running the product service"
 
-#echo "Starting Orders Django Service on port $ORDERS_PORT... (Consumer API)..."
-#cd "$DJANGO_ORDERS_SERVICE"
-#python manage.py runserver 0.0.0.0:$ORDERS_PORT &
-#ORDERS_PID=$!
-## Ensure the Orders API is actually up before starting the consumer
-#wait_for_port $ORDERS_PORT "Orders Django Service"
-#echo "Starting Kafka Consumer Worker (Auto-Restart Enabled)…"
-#cd "$DJANGO_ORDERS_SERVICE"
+echo "Starting Orders Django Service on port $ORDERS_PORT... (Consumer API)..."
+cd "$DJANGO_ORDERS_SERVICE"
+python manage.py runserver 0.0.0.0:$ORDERS_PORT &
+ORDERS_PID=$!
+# Ensure the Orders API is actually up before starting the consumer
+wait_for_port $ORDERS_PORT "Orders Django Service"
+echo "Starting Kafka Consumer Worker (Auto-Restart Enabled)…"
+cd "$DJANGO_ORDERS_SERVICE"
 
 run_consumer() {
   while true; do

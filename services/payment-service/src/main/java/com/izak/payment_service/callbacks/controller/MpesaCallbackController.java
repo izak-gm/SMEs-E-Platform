@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/payment/callbacks/mpesa")
+@RequestMapping("/v1/api/payment/callbacks/mpesa")
 @Slf4j
 @RequiredArgsConstructor
 public class MpesaCallbackController {
@@ -33,7 +33,7 @@ public class MpesaCallbackController {
       if (payload.callbackStatus() == CallbackStatus.PAID) {
         paymentService.markMpesaPaymentSuccess(
               payload.checkoutRequestId(),
-              payload.transactionID(),
+              payload.transactionId(),
               payload.phoneNumber(),
               payload.transactionReference(),
               payload.transAmount()

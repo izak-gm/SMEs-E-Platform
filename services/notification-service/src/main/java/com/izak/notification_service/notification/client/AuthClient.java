@@ -15,5 +15,5 @@ import java.util.UUID;
 )
 public interface AuthClient {
   @GetMapping("v1/api/auth/users/{id}")
-  BuyerResponse getBuyer(@PathVariable UUID id);
+  BuyerResponse getBuyerById(@PathVariable UUID id);
 }

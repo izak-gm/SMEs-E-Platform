@@ -157,6 +157,7 @@ SECRET_KEY = os.getenv('ORDER_SERVICE_SECRET_KEY')
 # jwt_token to verify token from spring boot Auth service
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
+        'django_microservices.common.auth.internal_service_authentication.InternalServiceAuthentication',
         'django_microservices.common.auth.authentication.JWTAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',

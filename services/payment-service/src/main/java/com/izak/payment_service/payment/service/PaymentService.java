@@ -44,18 +44,12 @@ public class PaymentService {
     // Initiate the correct services for the user method of payment
     // TODO :When the payment is initiated then direct the method to use ie Card | Mpesa
     switch (paymentRequest.paymentMethod()) {
-      case CARD -> {
-        // handle card payment
+      case CARD -> // handle card payment
         //TODO: Create a mpesa service that communicates with Mpesa endpoints values (amount,phoneNumber,TransactionReference)
-        log.info("Payment Initiated for the Card method");
         // fetch buyers info from Auth Ms ie phoneNumber or have a field that can take a phone Number
-
-      }
-      case MPESA -> {
-        // TODO: Create a service that communicates with banking api  services
-        log.info("Payment Initiated for the Mpesa method");
-
-      }
+            log.info("Payment Initiated for the Card method :{}", paymentIntent);
+      case MPESA -> // TODO: Create a service that communicates with banking api  services
+            log.info("Payment Initiated for the Mpesa method:{}", paymentIntent);
       default -> throw new IllegalStateException(
             "Unsupported payment method: " + paymentRequest.paymentMethod()
       );
