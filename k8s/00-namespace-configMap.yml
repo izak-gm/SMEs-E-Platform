@@ -1,0 +1,104 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: microservices
+# TODO: Resource Quota
+spec:
+  hard:
+    requests_cpu: "2"
+    requests_memory: 4Gi
+    limits_cpu: "4"
+    limits_memory: 8Gi
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: discovery-server
+  namespace: microservices
+data:
+  EUREKA_SERVER: "http://discovery-server:8761/eureka"
+  CONFIG_SERVER: "http://config-server:8888"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: microservice-config
+  namespace: microservices
+data:
+  # PostgreSQL Host (changes in K8s)
+  DB_HOST: "postgres-service"  # Changed from localhost to K8s service name
+  DB_PORT: "5432"
+  DB_USER: "postgres"
+
+  # Database Names
+  DB_NAME_AUTH: "auth"
+  DB_NAME_PAYMENT: "payment"
+  DB_NAME_NOTIFICATION: "notification"
+  DB_NAME_ORDER: "orders"
+  DB_NAME_PRODUCT: "bizhub"
+
+  # Hosts
+  SERVICES_HOST: "microservices"  # K8s namespace
+  DEFAULT_HOST: "0.0.0.0"
+  KAFKA_IP4_ADDRESS: kafka:9092 # TODO: kafka on the container on this repo. Make it the same network for all
+
+  # MinIO Configuration
+  MINIO_PORT: "9000"
+  MINIO_ENDPOINT: "minio-service"  # Changed to K8s service name
+  MINIO_BUCKET: "bizhub"
+
+  # JWT Algorithm
+  JWT_ALGORITHM: "HS256"
+
+  # Service Ports
+  CONFIG_PORT: "8888"
+  DISCOVERY_PORT: "8761"
+  GATEWAY_PORT: "8222"
+  AUTH_PORT: "8090"
+  PAYMENT_PORT: "8013"
+  NOTIFICATION_PORT: "8014"
+  PRODUCTS_PORT: "8012"
+  ORDERS_PORT: "8011"
+
+  # kafka_topics
+  # Products
+  PRODUCT_CREATED=: product_created
+  PRODUCT_UPDATED: product_updated
+  PRODUCT_DELETED: product_deleted
+
+  # Orders
+  ORDER_CREATED: order_created
+  ORDER_UPDATED: order_updated
+  ORDER_DELETED: order_deleted
+
+
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-server-config
+  namespace: microservices
+data:
+  SERVER_PORT: "8888"
+  SPRING_PROFILES_ACTIVE: "native"
+  SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS: "file:/config/"
+  EUREKA_CLIENT_REGISTER_WITH_EUREKA: "false"
+  EUREKA_CLIENT_FETCH_REGISTRY: "false"
+  ENCRYPT_KEY: "config-server-encryption-key"
+  LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_CLOUD_CONFIG: "INFO"
+  EUREKA_CLIENT_ENABLED: "false"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: springBoot-serverProfile-config
+  namespace: microservices
+data:
+  SERVER_PORT: "8888"
+  SPRING_PROFILES_ACTIVE: "native"
+  SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS: "file:/config/"
+  EUREKA_CLIENT_ENABLED: "false"

@@ -58,5 +58,4 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
 server:
-  port: 8013
-#  port: ${PAYMENT_PORT}
+  port: ${PAYMENT_PORT}

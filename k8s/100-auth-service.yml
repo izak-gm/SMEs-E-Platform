@@ -1,0 +1,112 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+  namespace: microservices
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auth-service
+  template:
+    metadata:
+      labels: auth-service
+  spec:
+    containers:
+      - name: auth-service
+        image: localhost:5000/auth-service
+        imagePullPolicy: always
+        ports:
+          - containersPort: 8090
+        env:
+          #server port
+          - name: AUTH_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: microservices-config
+                key: AUTH_PORT
+          # database-config
+          - name: DB_HOST
+            value: "postgres-service" # TODO: create postgres-service for postgres
+          - name: DB_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: microservices-config
+                key: DB_PORT
+          - name: DB_USER
+            valueFrom:
+              configMapKeyRef:
+                name: microservices-config
+                key: DB_USER
+          - name: DB_NAME_AUTH
+            valueFrom:
+              configMapKeyRef:
+                name: microservices-config
+                key: DB_NAME_AUTH
+          # Eureka
+          - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            valueFrom:
+              configMapKeyRef:
+              name: auth-service-config
+              key: EUREKA_SERVER
+
+          # Database password (from secret)
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: app-secrets
+                key: DB_PASSWORD
+          # JWT Secret
+          - name: AUTH_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: auth-secrets
+                key: AUTH_SECRET_KEY
+
+          - name: SPRING_PROFILES_ACTIVE
+            valueFrom:
+            configMapKeyRef:
+              name: springBoot-serverProfile-config
+              key: SPRING_PROFILES_ACTIVE
+          # Build database URL
+          - name: SPRING_DATASOURCE_URL
+            value: "jdbc:postgresql://$(DB_HOST):$(DB_PORT)/$(DB_NAME)"
+          - name: SPRING_DATASOURCE_USERNAME
+            value: $(DB_USER)
+          - name: SPRING_DATASOURCE_PASSWORD
+            value: $(DB_PASSWORD)
+
+          - name: KAFKA_IP4_ADDRESS
+            valueFrom:
+              configMapKeyRef:
+                name: microservices-config
+                key: KAFKA_IP4_ADDRESS
+          # jwt algorithm
+          - name: JWT_ALGORITHM
+            valueFrom:
+              configMapKeyRef:
+                name: microservices-config
+                key: JWT_ALGORITHM
+
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-service
+  namespace: microservices
+spec:
+  selector:
+    app: auth-service
+  ports:
+    - port: 8090
+      targetPort: 8090

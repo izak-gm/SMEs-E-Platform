@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-server
+  namespace: microservices
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-server # means this app name belongs  to the app name of this kind***
+  template:
+    metadata:
+      app: config-server
+    spec:
+      containers:
+        - name: config-server
+          image: localhost:5000/config-server:latest # Remember the building of images local registry
+          imagePullPolicy: always
+          ports:
+            - containerPort: 8888
+          env:
+            - name: SERVER_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: config-server-config
+                  key: SERVER_PORT
+            - name: SPRING_PROFILES_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: config-server-config
+                  key: SPRING_PROFILES_ACTIVE
+          #            - name: SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS
+          #              valueFrom:
+          #                configMapKeyRef:
+          #                  name: config-server-config
+          #                  key: SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS
+          resources:
+            requests:
+              memory: "256Mi" # 256 megabytes
+              cpu: "100m" # millicore
+            limits:
+              memory: "512Mi"
+              cpu: "200m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: config-server
+  namespace: microservices
+spec:
+  selector:
+    app: config-server
+  ports:
+    - port: 8888
+      targetPort: 8888

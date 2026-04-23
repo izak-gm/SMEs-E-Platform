@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discovery-server
+  namespace: microservices
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discovery-server
+  template:
+    metadata:
+      labels: discovery-server
+  spec:
+    containers:
+      - name: discovery-server
+        image: localhost:5000/dicovery-server:latest
+        imagePullPolicy: always
+        ports:
+          - containersPort: 8761
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "100"
+      limits:
+        memory: "512Mi"
+        cpu: "200"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: discovery-server
+  namespace: microservices
+spec:
+  selector:
+    app: discovery-server
+  ports:
+    - port: 8761
+      targetPort: 8761
