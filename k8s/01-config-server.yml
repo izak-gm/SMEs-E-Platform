@@ -10,29 +10,30 @@ spec:
       app: config-server # means this app name belongs  to the app name of this kind***
   template:
     metadata:
-      app: config-server
+      labels:
+        app: config-server
     spec:
       containers:
         - name: config-server
           image: localhost:5000/config-server:latest # Remember the building of images local registry
-          imagePullPolicy: always
+          imagePullPolicy: Always
           ports:
             - containerPort: 8888
           env:
             - name: SERVER_PORT
               valueFrom:
                 configMapKeyRef:
-                  name: config-server-config
+                  name: spring-server-config
                   key: SERVER_PORT
             - name: SPRING_PROFILES_ACTIVE
               valueFrom:
                 configMapKeyRef:
-                  name: config-server-config
+                  name: spring-server-config
                   key: SPRING_PROFILES_ACTIVE
           #            - name: SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS
           #              valueFrom:
           #                configMapKeyRef:
-          #                  name: config-server-config
+          #                  name: spring-server-config
           #                  key: SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS
           resources:
             requests:

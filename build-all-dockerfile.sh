@@ -71,19 +71,20 @@ build_django_service(){
   docker build -t "$REGISTRY/$service:latest" .
   docker push "$REGISTRY/$service:latest"
 
-  cd ..  echo "Built $service for Django service successfully"
+  cd ..
+  echo "Built $service for Django service successfully"
 }
 # Build spring Services
 for service_port in "${SPRING_SERVICES[@]}";do
   service="${service_port%:*}"
-  port="${service_port%:*}"
+  port="${service_port#*:}"     # Gets "8888"
   build_spring_service "$service" "$port"
 done
 
 #Build Django services
 for service_port in "${DJANGO_SERVICES[@]}";do
    service="${service_port%:*}"
-   port="${service_port%:*}"
+   port="${service_port#*:}"
   build_django_service "$service" "$port"
 done
 echo "ALL MICROSERVICES BUILT AND PUSHED LOCALLY AT $REGISTRY SUCCESSFULLY"

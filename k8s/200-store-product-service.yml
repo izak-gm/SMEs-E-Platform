@@ -1,4 +1,4 @@
-apiVersion: qpps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: products-service
@@ -10,67 +10,69 @@ spec:
       app: products-service
   template:
     metadata:
-      labels: products-service
-  spec:
-    containers:
-      - name: products-service
-        image: localhost:5000/notificaation-service:latest
-        imagePullPolicy: always
-        env:
-          - name: PRODUCTS_PORT
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: PRODUCTS_PORT
-          - name: KAFKA_IP4_ADDRESS
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: KAFKA_IP4_ADDRESS
-          # database-config
-          - name: DB_HOST
-            value: "postgres-service" # TODO: create postgres-service for postgres
-          - name: DB_PORT
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: DB_PORT
-          - name: DB_USER
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: DB_USER
-          - name: DB_NAME_ORDER
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: DB_NAME_ORDER
-          # Eureka
-          - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-            valueFrom:
-              configMapKeyRef:
-              name: auth-service-config
-              key: EUREKA_SERVER
-          # Database password (from secret)
-          - name: DB_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: app-secrets
-                key: DB_PASSWORD
-          # jwt algorithm
-          - name: JWT_ALGORITHM
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: JWT_ALGORITHM
-
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "100"
-          limits:
-            memory: "512Mi"
-            cpu: "200"
+      labels:
+        app: products-service
+    spec:
+      containers:
+        - name: products-service
+          image: localhost:5000/products-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8012
+          env:
+            - name: PRODUCTS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: PRODUCTS_PORT
+            # Database password (from secret)
+            # database-config
+            - name: DB_HOST
+              value: "postgres-service"
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_PORT
+            - name: DB_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-config
+                  key: DB_PASSWORD
+            - name: DB_NAME_ORDER
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_NAME_ORDER
+            #            # Eureka
+            #            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            #              valueFrom:
+            #                configMapKeyRef:
+            #                name: auth-service-config
+            #                key: EUREKA_SERVER
+            - name: KAFKA_IP4_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: KAFKA_IP4_ADDRESS
+            # jwt algorithm
+            - name: JWT_ALGORITHM
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: JWT_ALGORITHM
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100"
+            limits:
+              memory: "512Mi"
+              cpu: "200"
 
 ---
 apiVersion: v1

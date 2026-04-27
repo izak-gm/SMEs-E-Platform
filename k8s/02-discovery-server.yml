@@ -1,43 +1,41 @@
-# Pod
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gateway-service
+  name: discovery-server
   namespace: microservices
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gateway-service
+      app: discovery-server
   template:
     metadata:
       labels:
-        app: gateway-service
+        app: discovery-server
     spec:
       containers:
-        - name: gateway-service
-          image: localhost:5000/gateway-service:latest
+        - name: discovery-server
+          image: localhost:5000/dicovery-server:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8222
+            - containerPort: 8761
           resources:
             requests:
               memory: "256Mi"
               cpu: "100"
             limits:
               memory: "512Mi"
-              cpu: "200"
+              cpu: "220000"
 
 ---
-# Service
 apiVersion: v1
 kind: Service
 metadata:
-  name: gateway-service
+  name: discovery-server
   namespace: microservices
 spec:
   selector:
-    app: gateway-service
+    app: discovery-server
   ports:
-    - port: 8222
-      targetPort: 8222
+    - port: 8761
+      targetPort: 8761

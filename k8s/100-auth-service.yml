@@ -11,91 +11,99 @@ spec:
       app: auth-service
   template:
     metadata:
-      labels: auth-service
-  spec:
-    containers:
-      - name: auth-service
-        image: localhost:5000/auth-service
-        imagePullPolicy: always
-        ports:
-          - containersPort: 8090
-        env:
-          #server port
-          - name: AUTH_PORT
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: AUTH_PORT
-          # database-config
-          - name: DB_HOST
-            value: "postgres-service" # TODO: create postgres-service for postgres
-          - name: DB_PORT
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: DB_PORT
-          - name: DB_USER
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: DB_USER
-          - name: DB_NAME_AUTH
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: DB_NAME_AUTH
-          # Eureka
-          - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-            valueFrom:
-              configMapKeyRef:
-              name: auth-service-config
-              key: EUREKA_SERVER
+      labels:
+        app: auth-service
+    spec:
+      containers:
+        - name: auth-service
+          image: localhost:5000/auth-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8090
+          env:
+            #server port
+            - name: AUTH_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: AUTH_PORT
 
-          # Database password (from secret)
-          - name: DB_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: app-secrets
-                key: DB_PASSWORD
-          # JWT Secret
-          - name: AUTH_SECRET_KEY
-            valueFrom:
-              secretKeyRef:
-                name: auth-secrets
-                key: AUTH_SECRET_KEY
+            # database-config
+            - name: DB_HOST
+              value: "postgres-service" # TODO: create postgres-service for postgres
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_PORT
+            - name: DB_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_USER
+            - name: DB_NAME_AUTH
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_NAME_AUTH
+            # Database password (from secret)
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-config
+                  key: DB_PASSWORD
+            # Build database URL
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://$(DB_HOST):$(DB_PORT)/$(DB_NAME)"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: $(DB_USER)
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: $(DB_PASSWORD)
 
-          - name: SPRING_PROFILES_ACTIVE
-            valueFrom:
-            configMapKeyRef:
-              name: springBoot-serverProfile-config
-              key: SPRING_PROFILES_ACTIVE
-          # Build database URL
-          - name: SPRING_DATASOURCE_URL
-            value: "jdbc:postgresql://$(DB_HOST):$(DB_PORT)/$(DB_NAME)"
-          - name: SPRING_DATASOURCE_USERNAME
-            value: $(DB_USER)
-          - name: SPRING_DATASOURCE_PASSWORD
-            value: $(DB_PASSWORD)
+            # JWT Secret
+            - name: AUTH_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: auth-secrets
+                  key: AUTH_SECRET_KEY
 
-          - name: KAFKA_IP4_ADDRESS
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: KAFKA_IP4_ADDRESS
-          # jwt algorithm
-          - name: JWT_ALGORITHM
-            valueFrom:
-              configMapKeyRef:
-                name: microservices-config
-                key: JWT_ALGORITHM
+            #            # Eureka
+            #            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            #              valueFrom:
+            #                configMapKeyRef:
+            #                name: auth-service-config
+            #                key: EUREKA_SERVER
 
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "100m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
+            #Spring boot Profile
+            - name: SPRING_PROFILES_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-server-config
+                  key: SPRING_PROFILES_ACTIVE
+
+            # Kafka
+            - name: KAFKA_IP4_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: KAFKA_IP4_ADDRESS
+
+            # TODO: Add Kafka topics
+
+            # jwt algorithm
+            - name: JWT_ALGORITHM
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: JWT_ALGORITHM
+
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
 
 ---
 
