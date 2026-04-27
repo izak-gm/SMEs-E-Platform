@@ -7,6 +7,10 @@ BLUE="\e[34m"
 YELLOW="\e[33m"
 RESET="\e[0m"
 
+print_success(){
+  echo -e "${GREEN}"
+}
+
 # Load environment variables
 if [ -f .env ]; then
   export $(grep -v '^#' .env | xargs )
