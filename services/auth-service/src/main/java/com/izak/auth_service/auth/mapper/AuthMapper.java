@@ -15,7 +15,6 @@ public class AuthMapper {
 
   public User register(RegisterRequest registerRequest) {
     return User.builder()
-          .id(registerRequest.id())
           .email(registerRequest.email())
           .auth(Auth.USER)
           .password(passwordEncoder.encode(registerRequest.password()))
@@ -24,7 +23,6 @@ public class AuthMapper {
 
   public User registerSeller(RegisterRequest registerRequest) {
     return User.builder()
-          .id(registerRequest.id())
           .email(registerRequest.email())
           .auth(Auth.SELLER)
           .password(passwordEncoder.encode(registerRequest.password()))
@@ -33,13 +31,12 @@ public class AuthMapper {
 
   public User registerAdmin(RegisterRequest registerRequest) {
     return User.builder()
-          .id(registerRequest.id())
           .email(registerRequest.email())
           .auth(Auth.ADMIN)
           .password(passwordEncoder.encode(registerRequest.password()))
           .build();
   }
-  
+
   public User updateUser(UpdateUser updateUser) {
     return User.builder()
           .firstName(updateUser.firstName())

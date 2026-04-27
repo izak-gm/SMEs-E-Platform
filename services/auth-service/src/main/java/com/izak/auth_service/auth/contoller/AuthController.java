@@ -18,6 +18,7 @@ import java.util.UUID;
 @RequestMapping("v1/api/auth")
 @AllArgsConstructor
 public class AuthController {
+
   private final AuthService authService;
 
   @PostMapping("register")
@@ -36,9 +37,9 @@ public class AuthController {
   }
 
   @PostMapping("login")
-  public ResponseEntity<AuthResponse> authenticate(@RequestBody AuthenticateRequest authenticateRequest) {
+  public ResponseEntity<AuthResponse> authenticate(@RequestBody RegisterRequest registerRequest) {
     return ResponseEntity.ok(authService.
-          authenticate(authenticateRequest));
+          authenticate(registerRequest));
   }
 
   @PutMapping("user/update-profile/{userId}")

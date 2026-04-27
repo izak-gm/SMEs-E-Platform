@@ -13,3 +13,5 @@ __pycache__/
 
 # IDE
 .idea/
+*/secrets.yml
+k8s/secrets.yml

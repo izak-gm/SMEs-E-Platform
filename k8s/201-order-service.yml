@@ -1,0 +1,134 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-service
+  namespace: microservices
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orders-service
+  template:
+    metadata:
+      labels:
+        app: orders-service
+    spec:
+      containers:
+        - name: orders-service
+          image: localhost:5000/orders-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8011
+          env:
+            - name: ORDER_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: ORDER_PORT
+            # database-config
+            # Database password (from secret)
+            - name: DB_HOST
+              value: "postgres-service" # TODO: create postgres-service for postgres
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_PORT
+            - name: DB_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_USER
+            - name: DB_NAME_ORDER
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: DB_NAME_ORDER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: DB_PASSWORD
+            # MinIO server
+            - name: MINIO_ENDPOINT
+              value: "minio-service"
+            - name: MINIO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: MINIO_PORT
+            - name: MINIO_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: MINIO_BUCKET
+            # kafka-topics
+            # products
+            - name: PRODUCT_CREATED
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: PRODUCT_CREATED
+            - name: PRODUCT_UPDATED
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: PRODUCT_UPDATED
+            - name: PRODUCT_DELETED
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: PRODUCT_DELETED
+            # orders
+            - name: ORDER_CREATED
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: ORDER_CREATED
+            - name: ORDER_UPDATED
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: ORDER_UPDATED
+            - name: ORDER_DELETED
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: ORDER_DELETED
+            # jwt algorithm
+            - name: JWT_ALGORITHM
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: JWT_ALGORITHM
+            - name: KAFKA_IP4_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: microservice-config
+                  key: KAFKA_IP4_ADDRESS
+          #            # Eureka
+          #            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+          #              valueFrom:
+          #                configMapKeyRef:
+          #                name: auth-service-config
+          #                key: EUREKA_SERVER
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100"
+            limits:
+              memory: "512Mi"
+              cpu: "200"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-service
+  namespace: microservices
+spec:
+  selector:
+    app: orders-service
+  ports:
+    - port: 8011
+      targetPort: 8011
