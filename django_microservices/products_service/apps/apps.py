@@ -1,24 +1,24 @@
 import os
+
+import py_eureka_client.eureka_client as eureka_client
 from confluent_kafka import Producer
 from django.apps import AppConfig
-import py_eureka_client.eureka_client as eureka_client
 from django.conf import settings
-
 # --- OpenTelemetry Imports ---
 from opentelemetry import trace
-from opentelemetry.sdk.resources import Resource
-from opentelemetry.sdk.trace import TracerProvider
-from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from opentelemetry.exporter.zipkin.json import ZipkinExporter
 from opentelemetry.instrumentation.django import DjangoInstrumentor
 from opentelemetry.instrumentation.requests import RequestsInstrumentor
 from opentelemetry.propagate import set_global_textmap
 from opentelemetry.propagators.b3 import B3MultiFormat
+from opentelemetry.sdk.resources import Resource
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
 
 
 class ApiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'bizhub_products'
+    name = 'django_microservices.products_service.apps'
 
     def ready(self):
         # Prevent running twice (common during development)

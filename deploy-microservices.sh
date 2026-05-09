@@ -36,7 +36,7 @@ kubectl apply -f k8s/secrets.yml
 print_success "Deploying Config Server..."
 kubectl apply -f k8s/01-config-server.yml
 
-# Wait for the config-server to start and test if it was deployed successfully
+# Wait for the config-server to start and testsdss if it was deployed successfully
 print_success " Waiting for Config Server..."
 #kubectl wait --for=condition=ready -n microservices pod -l app=config-server --timeout=120s
 kubectl get pods -n microservices -l app=config-server

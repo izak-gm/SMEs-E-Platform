@@ -9,12 +9,12 @@ import java.util.UUID;
 
 @Builder
 public record PaymentResponse(
+      BigDecimal amount,
       String phoneNumber,
       String transactionReference,
-      BigDecimal amount,
-      PaymentStatus paymentStatus,
-      PaymentMethod paymentMethod,
       UUID order_id,
-      UUID buyer_id
+      UUID buyer_id,
+      PaymentStatus paymentStatus,
+      PaymentMethod paymentMethod
 ) {
 }

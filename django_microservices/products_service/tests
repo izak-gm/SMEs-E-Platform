@@ -1,0 +1,588 @@
+# tests/test_views.py
+from django.test import TestCase
+from django.urls import reverse
+from rest_framework.test import APIClient
+from rest_framework import status
+from django.contrib.auth import get_user_model
+from unittest.mock import patch
+from decimal import Decimal
+
+from django_microservices.product_management.models import (
+    Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
+)
+
+User = get_user_model()
+Ba
+
+class BaseTestCase(TestCase):
+    """Base test class with common setup"""
+
+    def setUp(self):
+        self.client = APIClient()
+
+        # Create users with different roles
+        self.admin_user = User.objects.create_user(
+            id=1,
+            username='admin',
+            email='admin@example.com',
+            password='adminpass123',
+            role='admin'
+        )
+
+        self.seller_user = User.objects.create_user(
+            id=2,
+            username='seller',
+            email='seller@example.com',
+            password='sellerpass123',
+            role='seller'
+        )
+
+        self.other_seller = User.objects.create_user(
+            id=3,
+            username='other_seller',
+            email='other@example.com',
+            password='otherpass123',
+            role='seller'
+        )
+
+        self.customer_user = User.objects.create_user(
+            id=4,
+            username='customer',
+            email='customer@example.com',
+            password='customerpass123',
+            role='customer'
+        )
+
+        # Create test data
+        self.brand = Brand.objects.create(
+            name='Test Brand',
+            description='Test Description'
+        )
+
+        self.category = Category.objects.create(
+            name='Electronics',
+            slug='electronics'
+        )
+
+        self.store = Store.objects.create(
+            name='Test Store',
+            owner=self.seller_user,
+            status=Store.Status.ACTIVE
+        )
+
+        self.product = Product.objects.create(
+            name='Test Product',
+            description='Test Description',
+            price=Decimal('99.99'),
+            stock=10,
+            store=self.store,
+            brand=self.brand,
+            category=self.category
+        )
+
+        self.variant = ProductVariant.objects.create(
+            product=self.product,
+            sku='TEST-SKU-001',
+            price=Decimal('109.99'),
+            stock=5,
+            attributes={'color': 'red', 'size': 'M'}
+        )
+
+        self.product_image = ProductImage.objects.create(
+            product=self.product,
+            image='test_image.jpg',
+            is_primary=True
+        )
+
+
+class StoreViewSetTestCase(BaseTestCase):
+    """Tests for Store ViewSet"""
+
+    def setUp(self):
+        super().setUp()
+
+        # Create pending store for approval tests
+        self.pending_store = Store.objects.create(
+            name='Pending Store',
+            owner=self.seller_user,
+            status=Store.Status.PENDING
+        )
+
+    def authenticate_as(self, user):
+        """Helper method to authenticate as different users"""
+        # Mock JWT authentication - adjust based on your JWT implementation
+        self.client.force_authenticate(user=user)
+
+    def test_unauthenticated_cannot_create_store(self):
+        """Test that unauthenticated users cannot create stores"""
+        url = reverse('store-list')
+        data = {
+            'name': 'New Store',
+            'description': 'Store Description'
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_seller_can_create_store(self):
+        """Test that sellers can create stores"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('store-list')
+        data = {
+            'name': 'Seller Store',
+            'description': 'My Awesome Store',
+            'owner': self.seller_user.id
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Store.objects.filter(name='Seller Store').count(), 1)
+        store = Store.objects.get(name='Seller Store')
+        self.assertEqual(store.owner_id, self.seller_user.id)
+
+    def test_customer_cannot_create_store(self):
+        """Test that customers cannot create stores"""
+        self.authenticate_as(self.customer_user)
+        url = reverse('store-list')
+        data = {
+            'name': 'Customer Store',
+            'description': 'Store Description'
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_admin_can_approve_store(self):
+        """Test that admin can approve pending stores"""
+        self.authenticate_as(self.admin_user)
+        url = reverse('store-approve', args=[self.pending_store.id])
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.pending_store.refresh_from_db()
+        self.assertEqual(self.pending_store.status, Store.Status.ACTIVE)
+
+    def test_approve_already_active_store(self):
+        """Test approving already active store returns error"""
+        self.authenticate_as(self.admin_user)
+        url = reverse('store-approve', args=[self.store.id])
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('Already Approved', response.data['message'])
+
+    def test_non_admin_cannot_approve_store(self):
+        """Test that non-admin users cannot approve stores"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('store-approve', args=[self.pending_store.id])
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_seller_can_view_own_store(self):
+        """Test that sellers can view their own store"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('store-detail', args=[self.store.id])
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['name'], 'Test Store')
+
+    def test_list_stores(self):
+        """Test listing all stores"""
+        self.authenticate_as(self.customer_user)
+        url = reverse('store-list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 2)  # Test Store + Pending Store
+
+
+class ProductViewSetTestCase(BaseTestCase):
+    """Tests for Product ViewSet"""
+
+    def setUp(self):
+        super().setUp()
+
+        # Create additional products for different sellers
+        self.other_seller_store = Store.objects.create(
+            name='Other Store',
+            owner=self.other_seller,
+            status=Store.Status.ACTIVE
+        )
+
+        self.other_product = Product.objects.create(
+            name='Other Product',
+            description='Other Description',
+            price=Decimal('49.99'),
+            stock=20,
+            store=self.other_seller_store,
+            brand=self.brand,
+            category=self.category
+        )
+
+    def authenticate_as(self, user):
+        self.client.force_authenticate(user=user)
+
+    def test_anyone_can_view_products(self):
+        """Test that unauthenticated users can view products"""
+        url = reverse('product-list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 2)
+
+    def test_anyone_can_view_single_product(self):
+        """Test that unauthenticated users can view a single product"""
+        url = reverse('product-detail', args=[self.product.id])
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['name'], 'Test Product')
+
+    def test_seller_can_create_product(self):
+        """Test that sellers can create products"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('product-list')
+        data = {
+            'name': 'New Product',
+            'description': 'New Description',
+            'price': '149.99',
+            'stock': 15,
+            'store': self.store.id,
+            'brand': self.brand.id,
+            'category': self.category.id
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Product.objects.filter(name='New Product').count(), 1)
+
+    def test_customer_cannot_create_product(self):
+        """Test that customers cannot create products"""
+        self.authenticate_as(self.customer_user)
+        url = reverse('product-list')
+        data = {
+            'name': 'Customer Product',
+            'description': 'Description',
+            'price': '99.99',
+            'stock': 10,
+            'store': self.store.id,
+            'brand': self.brand.id,
+            'category': self.category.id
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_seller_can_update_own_product(self):
+        """Test that sellers can update their own products"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('product-detail', args=[self.product.id])
+        data = {'name': 'Updated Product Name', 'price': '129.99'}
+        response = self.client.patch(url, data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.product.refresh_from_db()
+        self.assertEqual(self.product.name, 'Updated Product Name')
+        self.assertEqual(self.product.price, Decimal('129.99'))
+
+    def test_seller_cannot_update_other_seller_product(self):
+        """Test that sellers cannot update products from other sellers"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('product-detail', args=[self.other_product.id])
+        data = {'name': 'Hacked Name'}
+        response = self.client.patch(url, data)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_seller_can_delete_own_product(self):
+        """Test that sellers can delete their own products"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('product-detail', args=[self.product.id])
+        response = self.client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(Product.objects.filter(id=self.product.id).count(), 0)
+
+    def test_filter_products_by_category(self):
+        """Test filtering products by category"""
+        url = reverse('product-list')
+        response = self.client.get(url, {'category': self.category.id})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 2)
+
+        # Create new category
+        new_category = Category.objects.create(name='Books', slug='books')
+        url = reverse('product-list')
+        response = self.client.get(url, {'category': new_category.id})
+        self.assertEqual(len(response.data), 0)
+
+    def test_filter_products_by_price_range(self):
+        """Test filtering products by price range"""
+        url = reverse('product-list')
+        response = self.client.get(url, {'min_price': 50, 'max_price': 100})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)  # Only Test Product (99.99)
+        self.assertEqual(response.data[0]['name'], 'Test Product')
+
+
+class ProductVariantViewSetTestCase(BaseTestCase):
+    """Tests for Product Variant ViewSet"""
+
+    def authenticate_as(self, user):
+        self.client.force_authenticate(user=user)
+
+    def test_seller_can_create_variant(self):
+        """Test that sellers can create variants for their products"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('productvariant-list')
+        data = {
+            'product': self.product.id,
+            'sku': 'NEW-SKU-002',
+            'price': '119.99',
+            'stock': 8,
+            'attributes': {'color': 'blue', 'size': 'L'}
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(ProductVariant.objects.filter(sku='NEW-SKU-002').count(), 1)
+
+    def test_seller_cannot_create_variant_for_other_product(self):
+        """Test that sellers cannot create variants for others' products"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('productvariant-list')
+        data = {
+            'product': self.other_product.id,
+            'sku': 'HACKED-SKU',
+            'price': '99.99',
+            'stock': 5,
+            'attributes': {}
+        }
+        response = self.client.post(url, data)
+        # Should be 404 or 403 depending on your permission implementation
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_update_variant(self):
+        """Test updating variant price and stock"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('productvariant-detail', args=[self.variant.id])
+        data = {'price': '129.99', 'stock': 3}
+        response = self.client.patch(url, data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        self.variant.refresh_from_db()
+        self.assertEqual(self.variant.price, Decimal('129.99'))
+        self.assertEqual(self.variant.stock, 3)
+
+
+class ProductImageViewSetTestCase(BaseTestCase):
+    """Tests for Product Image ViewSet"""
+
+    def setUp(self):
+        super().setUp()
+        from django.core.files.uploadedfile import SimpleUploadedFile
+
+        self.test_image = SimpleUploadedFile(
+            "test_image.jpg",
+            b"file_content",
+            content_type="image/jpeg"
+        )
+
+    def authenticate_as(self, user):
+        self.client.force_authenticate(user=user)
+
+    def test_seller_can_add_image_to_product(self):
+        """Test that sellers can add images to their products"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('productimage-list')
+        data = {
+            'product': self.product.id,
+            'image': self.test_image,
+            'is_primary': False
+        }
+        response = self.client.post(url, data, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(ProductImage.objects.filter(product=self.product).count(), 2)
+
+    def test_seller_cannot_add_image_to_other_product(self):
+        """Test that sellers cannot add images to others' products"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('productimage-list')
+        data = {
+            'product': self.other_product.id,
+            'image': self.test_image,
+            'is_primary': False
+        }
+        response = self.client.post(url, data, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_only_one_primary_image_per_product(self):
+        """Test that setting a new primary image updates the old one"""
+        self.authenticate_as(self.seller_user)
+
+        # Create new image as primary
+        new_image = ProductImage.objects.create(
+            product=self.product,
+            image='new_image.jpg',
+            is_primary=True
+        )
+
+        # Old primary should be False now
+        self.product_image.refresh_from_db()
+        self.assertFalse(self.product_image.is_primary)
+        self.assertTrue(new_image.is_primary)
+
+
+class BrandAndCategoryViewSetTestCase(BaseTestCase):
+    """Tests for Brand and Category ViewSets (public)"""
+
+    def test_list_brands(self):
+        """Test listing all brands"""
+        url = reverse('brand-list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)
+        self.assertEqual(response.data[0]['name'], 'Test Brand')
+
+    def test_create_brand_requires_auth(self):
+        """Test that creating a brand requires authentication"""
+        url = reverse('brand-list')
+        data = {'name': 'New Brand', 'description': 'New Description'}
+
+        # Unauthenticated
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_list_categories(self):
+        """Test listing all categories"""
+        url = reverse('category-list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)
+
+    def test_category_hierarchy(self):
+        """Test category parent-child relationship"""
+        parent_category = Category.objects.create(
+            name='Parent',
+            slug='parent'
+        )
+        child_category = Category.objects.create(
+            name='Child',
+            slug='child',
+            parent=parent_category
+        )
+
+        url = reverse('category-list')
+        response = self.client.get(url)
+        categories = response.data
+
+        # Find parent category
+        parent_data = next(c for c in categories if c['id'] == parent_category.id)
+        self.assertEqual(parent_data['name'], 'Parent')
+
+
+class PermissionTests(BaseTestCase):
+    """Comprehensive permission tests"""
+
+    def test_store_owner_permissions(self):
+        """Test that only store owner can modify their store"""
+        self.authenticate_as(self.seller_user)
+
+        # Can update own store
+        url = reverse('store-detail', args=[self.store.id])
+        response = self.client.patch(url, {'name': 'Updated Name'})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        # Cannot update other store
+        other_store = Store.objects.create(
+            name='Other Store',
+            owner=self.other_seller,
+            status=Store.Status.ACTIVE
+        )
+        url = reverse('store-detail', args=[other_store.id])
+        response = self.client.patch(url, {'name': 'Hacked Name'})
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_admin_has_all_permissions(self):
+        """Test that admin can access all endpoints"""
+        self.authenticate_as(self.admin_user)
+
+        # Can approve stores
+        pending_store = Store.objects.create(
+            name='Pending',
+            owner=self.seller_user,
+            status=Store.Status.PENDING
+        )
+        url = reverse('store-approve', args=[pending_store.id])
+        response = self.client.post(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        # Can edit any product
+        url = reverse('product-detail', args=[self.other_product.id])
+        response = self.client.patch(url, {'price': '199.99'})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
+class StoreKYCTestCase(BaseTestCase):
+    """Tests for Store KYC ViewSet"""
+
+    def test_seller_can_submit_kyc(self):
+        """Test that sellers can submit KYC documents"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('sellerkyc-list')
+        data = {
+            'store': self.store.id,
+            'document_type': 'PAN_CARD',
+            'document_number': 'ABCDE1234F',
+            'document_image': 'pan_card.jpg'
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(SellerKYC.objects.filter(store=self.store).count(), 1)
+
+
+# Performance and Edge Cases
+class EdgeCaseTestCase(BaseTestCase):
+    """Test edge cases and error handling"""
+
+    def test_get_nonexistent_product(self):
+        """Test retrieving a non-existent product"""
+        url = reverse('product-detail', args=[99999])
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_create_product_with_negative_price(self):
+        """Test validation for negative price"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('product-list')
+        data = {
+            'name': 'Invalid Product',
+            'description': 'Description',
+            'price': '-10.00',
+            'stock': 10,
+            'store': self.store.id,
+            'brand': self.brand.id,
+            'category': self.category.id
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('price', response.data)
+
+    def test_create_product_with_negative_stock(self):
+        """Test validation for negative stock"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('product-list')
+        data = {
+            'name': 'Invalid Stock Product',
+            'description': 'Description',
+            'price': '99.99',
+            'stock': -5,
+            'store': self.store.id,
+            'brand': self.brand.id,
+            'category': self.category.id
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_duplicate_sku_validation(self):
+        """Test that SKU must be unique"""
+        self.authenticate_as(self.seller_user)
+        url = reverse('productvariant-list')
+        data = {
+            'product': self.product.id,
+            'sku': 'TEST-SKU-001',  # Already exists
+            'price': '99.99',
+            'stock': 5,
+            'attributes': {}
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('sku', response.data)

@@ -5,23 +5,28 @@ set -e
 GREEN="\e[32m"
 BLUE="\e[34m"
 YELLOW="\e[33m"
-RESET="\e[0m"
+RED="\e[31m"
+NC="\e[0m"
 
+print_status() {
+  echo -e "${BLUE}[INFO]${NC} $1"
+}
 print_success(){
-  echo -e "${GREEN}"
+  echo -e "${GREEN} [SUCCESS]${NC} $1"
+}
+print_error() {
+  echo -e "${RED}[ERROR]${NC} $1"
+}
+print_warning() {
+  echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
 # Load environment variables
-if [ -f .env ]; then
-  export $(grep -v '^#' .env | xargs )
+if [ -f .env ];then
+  set -a
+  source .env
+  set +a
 fi
-
-log() {
-  GREEN="\e[32m"
-  RESET="\e[0m"
-
-  echo -e "${GREEN}[INFO]${RESET} $1"
-}
 
 echo "===================================="
 echo "|| =====     ===     ||   //        "
@@ -60,11 +65,11 @@ GLOBAL_VENV="$BASE_DIR/.venv"
 wait_for_port() {
   local port=$1
   local name=$2
-  echo "Waiting for $name to start on port $port..."
+  print_status "Waiting for $name to start on port $port..."
   while ! nc -z localhost $port; do
     sleep 5
   done
-  echo "$name is running on port $port!"
+  print_success "$name is running on port $port!"
 }
 
 run_with_prefix() {
@@ -79,8 +84,8 @@ trap "log 'Stopping all services...'; \
 kill $CONFIG_PID $DISCOVERY_PID $GATEWAY_PID $AUTH_PID \
 $PRODUCTS_PID $ORDERS_PID $CONSUMER_PID 2>/dev/null; exit 0" SIGINT SIGTERM
 
-# 1️⃣ Start Spring Boot Services
-echo "🚀 Starting Config Server on port $CONFIG_PORT ..."
+# Start Spring Boot Services
+print_status "Starting Config Server on port $CONFIG_PORT ..."
 cd "$CONFIG_SERVER"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$CONFIG_PORT" &
 CONFIG_PID=$!
@@ -88,36 +93,36 @@ wait_for_port $CONFIG_PORT "Config Server"
 cd "$BASE_DIR"
 
 
-echo "🚀 Starting Discovery Server on port $DISCOVERY_PORT..."
+print_status "Starting Discovery Server on port $DISCOVERY_PORT..."
 cd "$DISCOVERY_SERVER"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$DISCOVERY_PORT" &
 DISCOVERY_PID=$!
 wait_for_port $DISCOVERY_PORT "Discovery Server"
 
 # --------------------------------------------
-# 3️⃣ Start Gateway Service
+# Start Gateway Service
 # --------------------------------------------
-echo "Starting Gateway Service on port $GATEWAY_PORT..."
+print_status "Starting Gateway Service on port $GATEWAY_PORT..."
 cd "$GATEWAY_SERVER"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$GATEWAY_PORT" &
 GATEWAY_PID=$!
 wait_for_port $GATEWAY_PORT "Gateway Service"
 
-echo "Starting Auth Service on port $AUTH_PORT..."
+print_status "Starting Auth Service on port $AUTH_PORT..."
 cd "$AUTH_SERVICE"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$AUTH_PORT" &
 AUTH_PID=$!
 wait_for_port $AUTH_PORT "Auth Service"
 cd "$BASE_DIR"
 
-echo "Starting Payment service on port $PAYMENT_PORT..."
+print_status "Starting Payment service on port $PAYMENT_PORT..."
 cd "$PAYMENT_SERVICE"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$PAYMENT_PORT" &
 PAYMENT_PID=$!
 wait_for_port $PAYMENT_PORT "Payment Service"
 cd "$BASE_DIR"
 
-echo "Starting Notification service on port $NOTIFICATION_PORT"
+print_status "Starting Notification service on port $NOTIFICATION_PORT"
 cd "$NOTIFICATION_SERVICE"
 ./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=$NOTIFICATION_PORT" &
 NOTIFICATION_PID=$!
@@ -125,16 +130,16 @@ wait_for_port $NOTIFICATION_PORT "Notification Service"
 cd "$BASE_DIR"
 
 # --------------------------------------------
-# 5️⃣ Start Django Services
+# Start Django Services
 # --------------------------------------------
 
-echo "DEBUG: DJANGO_PRODUCTS_SERVICE=$DJANGO_PRODUCTS_SERVICE"
-echo "DEBUG: DJANGO_ORDERS_SERVICE=$DJANGO_ORDERS_SERVICE"
+print_status "DEBUG: DJANGO_PRODUCTS_SERVICE=$DJANGO_PRODUCTS_SERVICE"
+print_status "DEBUG: DJANGO_ORDERS_SERVICE=$DJANGO_ORDERS_SERVICE"
 
 Current=$(pwd)
 echo $Current
 
-echo " Activating Python environment..."
+print_status "Activating Python environment..."
 source "$GLOBAL_VENV/bin/activate"
 
 # Dependency optimization
@@ -144,37 +149,37 @@ REQUIREMENTS_HASH_FILE="$GLOBAL_VENV/.requirements_hash"
 if [ -f "$REQUIREMENTS_FILE" ]; then
   new_hash=$(sha256sum "$REQUIREMENTS_FILE")
   if [ "$new_hash" != "$(cat $REQUIREMENTS_HASH_FILE 2>/dev/null)" ]; then
-    echo "Installing updated Python dependencies..."
+    print_status "Installing updated Python dependencies..."
     pip install -r "$REQUIREMENTS_FILE"
     echo "$new_hash" > "$REQUIREMENTS_HASH_FILE"
   else
-    echo "Python dependencies are up-to-date."
+    print_error "Python dependencies are up-to-date."
   fi
 fi
 
-echo "Starting Products Django Service on port $PRODUCTS_PORT... (Kafka Producer)..."
+print_status "Starting Products Django Service on port $PRODUCTS_PORT... (Kafka Producer)..."
 cd "$DJANGO_PRODUCTS_SERVICE"
 echo $(pwd)
-echo "Entering danger zone of the product service"
+print_status "Entering danger zone of the product service"
 python manage.py runserver 0.0.0.0:$PRODUCTS_PORT &
 PRODUCTS_PID=$!
 wait_for_port $PRODUCTS_PORT "Products Django Service"
-echo "Completed running the product service"
+print_success "Completed running the product service"
 
-echo "Starting Orders Django Service on port $ORDERS_PORT... (Consumer API)..."
+print_status "Starting Orders Django Service on port $ORDERS_PORT... (Consumer API)..."
 cd "$DJANGO_ORDERS_SERVICE"
 python manage.py runserver 0.0.0.0:$ORDERS_PORT &
 ORDERS_PID=$!
 # Ensure the Orders API is actually up before starting the consumer
 wait_for_port $ORDERS_PORT "Orders Django Service"
-echo "Starting Kafka Consumer Worker (Auto-Restart Enabled)…"
+print_status "Starting Kafka Consumer Worker (Auto-Restart Enabled)…"
 cd "$DJANGO_ORDERS_SERVICE"
 
 run_consumer() {
   while true; do
-    echo "[ORDERS_CONSUMER] ▶️ Kafka Consumer Running..."
+    print_status "[ORDERS_CONSUMER] ▶️ Kafka Consumer Running..."
     python manage.py run_consumer
-    echo "[ORDERS_CONSUMER] ⚠️ Kafka consumer crashed. Restarting in 5 seconds..."
+    print_warning "[ORDERS_CONSUMER] ⚠️ Kafka consumer crashed. Restarting in 5 seconds..."
     sleep 5
   done
 }
@@ -189,7 +194,7 @@ cd "$BASE_DIR"
 #  Summary
 # --------------------------------------------
 echo "============================================"
-echo " All Services Started Successfully!"
+print_success " All Services Started Successfully!"
 echo "--------------------------------------------"
 echo "Config Server:     PID=$CONFIG_PID          | Port=$CONFIG_PORT"
 echo "Discovery Server:  PID=$DISCOVERY_PID       | Port=$DISCOVERY_PORT"

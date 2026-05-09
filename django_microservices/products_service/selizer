@@ -1,0 +1,616 @@
+# tests/test_serializers.py
+import uuid
+from django.test import TestCase
+from django.contrib.auth import get_user_model
+from decimal import Decimal
+
+from django_microservices.product_management.models import (
+    Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
+)
+from django_microservices.product_management.serializers import (
+    ProductSerializer, StoreSerializer, BrandSerializer, CategorySerializer,
+    ProductVariantSerializer, ProductImageSerializer, StoreKYCSerializer
+)
+
+User = get_user_model()
+
+
+class StoreSerializerTest(TestCase):
+    """Test Store Serializer with UUID"""
+
+    def setUp(self):
+        self.user = User.objects.create_user(
+            id=1,  # This might still be integer PK
+            username='seller',
+            password='testpass123'
+        )
+        self.serializer_data = {
+            'name': 'Test Store',
+            'description': 'Test Description',
+            'owner': self.user.id,
+            'status': 'pending'
+        }
+
+    def test_uuid_is_generated_automatically(self):
+        """Test UUID is auto-generated on creation"""
+        store = Store.objects.create(
+            name='Store',
+            owner=self.user,
+            status=Store.Status.PENDING
+        )
+
+        # Check that id is a UUID
+        self.assertIsInstance(store.id, uuid.UUID)
+        self.assertNotEqual(store.id, uuid.UUID(int=0))  # Not empty
+
+        # Check string representation
+        self.assertEqual(len(str(store.id)), 36)  # UUID format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+    def test_serializer_handles_uuid_correctly(self):
+        """Test serializer correctly serializes UUID fields"""
+        store = Store.objects.create(
+            name='Store',
+            owner=self.user,
+            status=Store.Status.PENDING
+        )
+
+        serializer = StoreSerializer(store)
+        data = serializer.data
+
+        # UUID should be serialized as string
+        self.assertIn('id', data)
+        self.assertIsInstance(data['id'], str)
+
+        # Try to parse it back to UUID
+        try:
+            uuid.UUID(data['id'])
+            is_valid_uuid = True
+        except ValueError:
+            is_valid_uuid = False
+        self.assertTrue(is_valid_uuid)
+
+        # Verify it's the same UUID
+        self.assertEqual(str(store.id), data['id'])
+
+    def test_create_store_without_providing_uuid(self):
+        """Test creating store doesn't require UUID in request"""
+        serializer = StoreSerializer(data=self.serializer_data)
+        self.assertTrue(serializer.is_valid())
+
+        store = serializer.save()
+
+        # UUID should be auto-generated
+        self.assertIsNotNone(store.id)
+        self.assertIsInstance(store.id, uuid.UUID)
+
+        # Verify UUID is not in validated_data (should be read-only)
+        self.assertNotIn('id', serializer.validated_data)
+
+    def test_cannot_set_uuid_manually(self):
+        """Test UUID is read-only and cannot be set via serializer"""
+        custom_uuid = uuid.uuid4()
+        self.serializer_data['id'] = str(custom_uuid)
+
+        serializer = StoreSerializer(data=self.serializer_data)
+        self.assertTrue(serializer.is_valid())
+
+        # id should be ignored (not in validated_data)
+        self.assertNotIn('id', serializer.validated_data)
+
+        store = serializer.save()
+        # Store should have a different auto-generated UUID
+        self.assertNotEqual(str(store.id), str(custom_uuid))
+
+    def test_update_store_preserves_uuid(self):
+        """Test updating store doesn't change UUID"""
+        original_store = Store.objects.create(
+            name='Original',
+            owner=self.user,
+            status=Store.Status.PENDING
+        )
+        original_uuid = original_store.id
+
+        # Update store
+        serializer = StoreSerializer(
+            instance=original_store,
+            data={'name': 'Updated Name'},
+            partial=True
+        )
+        self.assertTrue(serializer.is_valid())
+        updated_store = serializer.save()
+
+        # UUID should remain the same
+        self.assertEqual(updated_store.id, original_uuid)
+        self.assertEqual(str(updated_store.id), str(original_uuid))
+
+    def test_lookup_by_uuid(self):
+        """Test retrieving store by UUID"""
+        store = Store.objects.create(
+            name='Store',
+            owner=self.user,
+            status=Store.Status.PENDING
+        )
+
+        # Convert UUID to string for lookup
+        store_uuid_str = str(store.id)
+
+        # Lookup using string representation
+        retrieved_store = Store.objects.get(id=store_uuid_str)
+        self.assertEqual(retrieved_store.id, store.id)
+
+        # Lookup using UUID object
+        retrieved_store = Store.objects.get(id=store.id)
+        self.assertEqual(retrieved_store.name, 'Store')
+
+
+class ProductSerializerTest(TestCase):
+    """Test Product Serializer with UUID"""
+
+    def setUp(self):
+        self.user = User.objects.create_user(
+            id=1,
+            username='seller',
+            password='testpass123'
+        )
+        self.store = Store.objects.create(
+            name='Test Store',
+            owner=self.user,
+            status=Store.Status.ACTIVE
+        )
+        self.brand = Brand.objects.create(
+            name='Test Brand',
+            description='Brand Desc'
+        )
+        self.category = Category.objects.create(
+            name='Electronics',
+            slug='electronics'
+        )
+
+        self.serializer_data = {
+            'name': 'iPhone 13',
+            'description': 'Latest iPhone',
+            'price': '999.99',
+            'stock': 50,
+            'store': str(self.store.id),  # Convert UUID to string
+            'brand': self.brand.id,       # Might be integer PK
+            'category': self.category.id
+        }
+
+    def test_uuid_foreign_key_handling(self):
+        """Test serializer handles UUID foreign keys"""
+        serializer = ProductSerializer(data=self.serializer_data)
+        self.assertTrue(serializer.is_valid())
+
+        # Store ID in validated_data should be UUID or the model instance
+        self.assertIn('store', serializer.validated_data)
+
+        product = serializer.save()
+        self.assertEqual(product.store.id, self.store.id)
+
+    def test_uuid_foreign_key_string_input(self):
+        """Test UUID foreign key accepts string representation"""
+        # Pass store ID as string
+        self.serializer_data['store'] = str(self.store.id)
+
+        serializer = ProductSerializer(data=self.serializer_data)
+        self.assertTrue(serializer.is_valid())
+
+        product = serializer.save()
+        self.assertEqual(product.store, self.store)
+
+    def test_uuid_foreign_key_uuid_object_input(self):
+        """Test UUID foreign key accepts UUID object"""
+        # Pass store ID as UUID object
+        self.serializer_data['store'] = self.store.id
+
+        serializer = ProductSerializer(data=self.serializer_data)
+        self.assertTrue(serializer.is_valid())
+
+        product = serializer.save()
+        self.assertEqual(product.store, self.store)
+
+    def test_invalid_uuid_format(self):
+        """Test error with invalid UUID format"""
+        self.serializer_data['store'] = 'invalid-uuid-format'
+
+        serializer = ProductSerializer(data=self.serializer_data)
+        self.assertFalse(serializer.is_valid())
+        self.assertIn('store', serializer.errors)
+        self.assertIn('UUID', str(serializer.errors['store'][0]))
+
+    def test_nonexistent_uuid(self):
+        """Test error with valid UUID format but non-existent record"""
+        non_existent_uuid = uuid.uuid4()
+        self.serializer_data['store'] = str(non_existent_uuid)
+
+        serializer = ProductSerializer(data=self.serializer_data)
+        self.assertFalse(serializer.is_valid())
+        self.assertIn('store', serializer.errors)
+        self.assertEqual(
+            serializer.errors['store'][0].code,
+            'does_not_exist'
+        )
+
+    def test_product_serialization_includes_uuid(self):
+        """Test product serializer includes UUID in response"""
+        product = Product.objects.create(
+            name='Test Product',
+            description='Desc',
+            price=100,
+            stock=10,
+            store=self.store,
+            brand=self.brand,
+            category=self.category
+        )
+
+        serializer = ProductSerializer(product)
+        data = serializer.data
+
+        # Product ID should be UUID
+        self.assertIn('id', data)
+        self.assertIsInstance(data['id'], str)
+
+        # Verify it's valid UUID
+        uuid.UUID(data['id'])
+
+        # Store should be nested with its UUID
+        self.assertIn('store', data)
+        self.assertIsInstance(data['store']['id'], str)
+        uuid.UUID(data['store']['id'])
+
+    def test_filter_products_by_store_uuid(self):
+        """Test filtering products by store UUID"""
+        product1 = Product.objects.create(
+            name='Product 1',
+            description='Desc',
+            price=100,
+            stock=10,
+            store=self.store,
+            brand=self.brand,
+            category=self.category
+        )
+
+        # In view test, you'd use: /products/?store={store_uuid}
+        # Here we just test the queryset filtering
+        products = Product.objects.filter(store_id=self.store.id)
+        self.assertEqual(products.count(), 1)
+        self.assertEqual(products.first().id, product1.id)
+
+
+class ProductVariantSerializerTest(TestCase):
+    """Test Product Variant Serializer with UUID relations"""
+
+    def setUp(self):
+        self.user = User.objects.create_user(id=1, username='seller')
+        self.store = Store.objects.create(
+            name='Store',
+            owner=self.user,
+            status=Store.Status.ACTIVE
+        )
+        self.product = Product.objects.create(
+            name='Product',
+            description='Desc',
+            price=100,
+            stock=10,
+            store=self.store,
+            brand=Brand.objects.create(name='Brand'),
+            category=Category.objects.create(name='Category', slug='cat')
+        )
+
+        self.serializer_data = {
+            'product': str(self.product.id),  # UUID as string
+            'sku': 'SKU-001',
+            'price': '109.99',
+            'stock': 5,
+            'attributes': {'color': 'red', 'size': 'M'}
+        }
+
+    def test_create_variant_with_uuid_product(self):
+        """Test creating variant with product UUID"""
+        serializer = ProductVariantSerializer(data=self.serializer_data)
+        self.assertTrue(serializer.is_valid())
+
+        variant = serializer.save()
+        self.assertEqual(variant.product.id, self.product.id)
+
+    def test_variant_serialization_includes_uuids(self):
+        """Test variant serializer includes UUIDs"""
+        variant = ProductVariant.objects.create(
+            product=self.product,
+            sku='SKU-002',
+            price=100,
+            stock=5,
+            attributes={}
+        )
+
+        serializer = ProductVariantSerializer(variant)
+        data = serializer.data
+
+        # Check UUID fields
+        self.assertIn('id', data)
+        self.assertIn('product', data)
+
+        uuid.UUID(data['id'])
+        uuid.UUID(data['product'])
+
+
+class StoreKYCSerializerTest(TestCase):
+    """Test KYC Serializer with UUID store reference"""
+
+    def setUp(self):
+        self.user = User.objects.create_user(id=1, username='seller')
+        self.store = Store.objects.create(
+            name='Store',
+            owner=self.user,
+            status=Store.Status.PENDING
+        )
+
+        self.serializer_data = {
+            'store': str(self.store.id),  # UUID as string
+            'document_type': 'PAN_CARD',
+            'document_number': 'ABCDE1234F',
+            'document_image': 'pan_card.jpg'
+        }
+
+    def test_kyc_creation_with_store_uuid(self):
+        """Test KYC creation with store UUID"""
+        serializer = StoreKYCSerializer(data=self.serializer_data)
+        self.assertTrue(serializer.is_valid())
+
+        kyc = serializer.save()
+        self.assertEqual(kyc.store.id, self.store.id)
+
+    def test_kyc_serialization_includes_store_uuid(self):
+        """Test KYC serializer includes store UUID in response"""
+        kyc = SellerKYC.objects.create(
+            store=self.store,
+            document_type='PAN_CARD',
+            document_number='ABCDE1234F',
+            document_image='pan.jpg'
+        )
+
+        serializer = StoreKYCSerializer(kyc)
+        data = serializer.data
+
+        # Store should be serialized as UUID string
+        self.assertIn('store', data)
+        self.assertIsInstance(data['store'], str)
+        uuid.UUID(data['store'])
+
+
+class NestedSerializerWithUUIDTest(TestCase):
+    """Test nested serialization with UUID fields"""
+
+    def setUp(self):
+        self.user = User.objects.create_user(id=1, username='seller')
+        self.store = Store.objects.create(
+            name='Store',
+            owner=self.user,
+            status=Store.Status.ACTIVE
+        )
+        self.product = Product.objects.create(
+            name='Product',
+            description='Desc',
+            price=100,
+            stock=10,
+            store=self.store,
+            brand=Brand.objects.create(name='Brand'),
+            category=Category.objects.create(name='Category', slug='cat')
+        )
+
+    def test_nested_store_serialization_with_uuid(self):
+        """Test nested store includes UUID"""
+        serializer = ProductSerializer(self.product)
+        data = serializer.data
+
+        # Check nested store object
+        self.assertIn('store', data)
+        self.assertIsInstance(data['store']['id'], str)
+        uuid.UUID(data['store']['id'])
+
+        # Check nested brand (if brand uses integer PK)
+        self.assertIn('brand', data)
+        if hasattr(self.product.brand, 'id'):
+            # Brand might have integer PK
+            self.assertIsNotNone(data['brand']['id'])
+
+    def test_serialize_with_uuids_in_list(self):
+        """Test serializing multiple objects with UUIDs"""
+        products = [
+            Product.objects.create(
+                name=f'Product {i}',
+                description='Desc',
+                price=100,
+                stock=10,
+                store=self.store,
+                brand=Brand.objects.create(name=f'Brand {i}'),
+                category=Category.objects.create(name=f'Cat {i}', slug=f'cat{i}')
+            )
+            for i in range(5)
+        ]
+
+        serializer = ProductSerializer(products, many=True)
+        data = serializer.data
+
+        self.assertEqual(len(data), 5)
+        for item in data:
+            # Each product should have valid UUID
+            self.assertIn('id', item)
+            uuid.UUID(item['id'])
+
+            # Each store in product should have UUID
+            uuid.UUID(item['store']['id'])
+
+
+class CustomUUIDValidationTest(TestCase):
+    """Test custom UUID validation scenarios"""
+
+    def setUp(self):
+        self.user = User.objects.create_user(id=1, username='seller')
+        self.store = Store.objects.create(
+            name='Store',
+            owner=self.user,
+            status=Store.Status.ACTIVE
+        )
+
+    def test_empty_uuid_string(self):
+        """Test handling of empty UUID string"""
+        serializer = ProductSerializer(data={
+            'name': 'Product',
+            'description': 'Desc',
+            'price': '100',
+            'stock': 10,
+            'store': '',  # Empty string
+            'brand': 1,
+            'category': 1
+        })
+
+        self.assertFalse(serializer.is_valid())
+        self.assertIn('store', serializer.errors)
+
+    def test_none_uuid_value(self):
+        """Test handling of None for UUID field"""
+        serializer = ProductSerializer(data={
+            'name': 'Product',
+            'description': 'Desc',
+            'price': '100',
+            'stock': 10,
+            'store': None,
+            'brand': 1,
+            'category': 1
+        })
+
+        self.assertFalse(serializer.is_valid())
+        self.assertIn('store', serializer.errors)
+
+    def test_uuid_with_whitespace(self):
+        """Test UUID with whitespace"""
+        store_uuid_with_spaces = f" {str(self.store.id)} "
+
+        serializer = ProductSerializer(data={
+            'name': 'Product',
+            'description': 'Desc',
+            'price': '100',
+            'stock': 10,
+            'store': store_uuid_with_spaces,
+            'brand': 1,
+            'category': 1
+        })
+
+        # DRF usually strips whitespace automatically
+        self.assertTrue(serializer.is_valid())
+
+    def test_case_sensitivity(self):
+        """Test UUID case insensitivity"""
+        # UUIDs are case-insensitive in string representation
+        store_uuid_upper = str(self.store.id).upper()
+        store_uuid_lower = str(self.store.id).lower()
+
+        self.assertEqual(store_uuid_upper, store_uuid_lower.upper())
+
+        # Both should work
+        serializer1 = ProductSerializer(data={
+            'name': 'Product 1',
+            'description': 'Desc',
+            'price': '100',
+            'stock': 10,
+            'store': store_uuid_upper,
+            'brand': 1,
+            'category': 1
+        })
+
+        serializer2 = ProductSerializer(data={
+            'name': 'Product 2',
+            'description': 'Desc',
+            'price': '100',
+            'stock': 10,
+            'store': store_uuid_lower,
+            'brand': 1,
+            'category': 1
+        })
+
+        self.assertTrue(serializer1.is_valid())
+        self.assertTrue(serializer2.is_valid())
+
+
+class UUIDInURLsTest(TestCase):
+    """Test URL patterns with UUIDs (for view tests)"""
+
+    def test_uuid_in_url_pattern(self):
+        """Test that URLs accept UUID format"""
+        from django.urls import reverse
+
+        store = Store.objects.create(
+            name='Store',
+            owner=User.objects.create_user(id=1, username='seller'),
+            status=Store.Status.ACTIVE
+        )
+
+        # In your urls.py, you should have:
+        # path('stores/<uuid:pk>/', StoreDetailView.as_view())
+
+        # Generate URL with UUID
+        url = reverse('store-detail', args=[str(store.id)])
+
+        # URL should contain the UUID string
+        self.assertIn(str(store.id), url)
+        self.assertEqual(len(str(store.id)), 36)
+
+
+# Helper mixin for UUID tests
+class UUIDTestMixin:
+    """Mixin with common UUID test helpers"""
+
+    def assertIsValidUUID(self, value, msg=None):
+        """Assert that value is a valid UUID string"""
+        try:
+            uuid.UUID(value)
+        except (ValueError, AttributeError, TypeError):
+            raise AssertionError(f"{value} is not a valid UUID")
+
+    def assertUUIDEqual(self, uuid1, uuid2, msg=None):
+        """Assert two UUIDs are equal (accepts string or UUID objects)"""
+        if isinstance(uuid1, str):
+            uuid1 = uuid.UUID(uuid1)
+        if isinstance(uuid2, str):
+            uuid2 = uuid.UUID(uuid2)
+        self.assertEqual(uuid1, uuid2, msg)
+
+    def get_uuid_string(self, uuid_obj):
+        """Convert UUID to string safely"""
+        if isinstance(uuid_obj, uuid.UUID):
+            return str(uuid_obj)
+        return uuid_obj
+
+
+# Apply mixin to test classes
+class EnhancedProductSerializerTest(UUIDTestMixin, TestCase):
+    """Product serializer tests with UUID mixin"""
+
+    def setUp(self):
+        self.user = User.objects.create_user(id=1, username='seller')
+        self.store = Store.objects.create(
+            name='Store',
+            owner=self.user,
+            status=Store.Status.ACTIVE
+        )
+
+    def test_uuid_validation_with_mixin(self):
+        """Test using UUID helper methods"""
+        product = Product.objects.create(
+            name='Product',
+            description='Desc',
+            price=100,
+            stock=10,
+            store=self.store,
+            brand=Brand.objects.create(name='Brand'),
+            category=Category.objects.create(name='Cat', slug='cat')
+        )
+
+        serializer = ProductSerializer(product)
+        data = serializer.data
+
+        # Use custom assertions
+        self.assertIsValidUUID(data['id'])
+        self.assertIsValidUUID(data['store']['id'])
+        self.assertUUIDEqual(data['id'], product.id)
