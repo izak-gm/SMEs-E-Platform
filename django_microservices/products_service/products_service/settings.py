@@ -24,9 +24,9 @@ print("ENV_PATH:", ENV_PATH)
 
 # Load .env file
 if ENV_PATH.exists():
-    load_dotenv(ENV_PATH)
+  load_dotenv(ENV_PATH)
 else:
-    print(f"⚠️  .env file not found at: {ENV_PATH}")
+  print(f"⚠️  .env file not found at: {ENV_PATH}")
 
 # Now read environment variables
 # jwt_token to verify token from spring boot Auth service
@@ -48,32 +48,32 @@ DEBUG = True
 APPEND_SLASH = False
 
 # Cors handled by the Spring boot gateway
-ALLOWED_HOSTS = ["*", "django_products-service", "django_orders_service", "gateway-service", "127.0.0.1"]
+ALLOWED_HOSTS = ["*", "django_products-service", "django_orders-service", "gateway-service", "127.0.0.1"]
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'bizhub_products',
-    'rest_framework',
-    'corsheaders',
-    'drf_spectacular',
+  'django.contrib.admin',
+  'django.contrib.auth',
+  'django.contrib.contenttypes',
+  'django.contrib.sessions',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+  "django_microservices.products_service.apps.apps.ApiConfig",
+  'rest_framework',
+  'corsheaders',
+  'drf_spectacular',
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    #  'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'django.middleware.security.SecurityMiddleware',
+  'django.contrib.sessions.middleware.SessionMiddleware',
+  #  'corsheaders.middleware.CorsMiddleware',
+  'django.middleware.common.CommonMiddleware',
+  'django.middleware.csrf.CsrfViewMiddleware',
+  'django.contrib.auth.middleware.AuthenticationMiddleware',
+  'django.contrib.messages.middleware.MessageMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -82,18 +82,18 @@ CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'products_service.urls'
 
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+  {
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [],
+    'APP_DIRS': True,
+    'OPTIONS': {
+      'context_processors': [
+        'django.template.context_processors.request',
+        'django.contrib.auth.context_processors.auth',
+        'django.contrib.messages.context_processors.messages',
+      ],
     },
+  },
 ]
 
 WSGI_APPLICATION = 'products_service.wsgi.application'
@@ -126,23 +126,23 @@ WSGI_APPLICATION = 'products_service.wsgi.application'
 # }
 
 # SECURITY WARNING: keep the secret key used in production secret!
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.getenv("DB_HOST"),
-        'PORT': os.getenv("DB_PORT"),
-        'NAME': os.getenv("DB_NAME_PRODUCT"),
-        'USER': os.getenv("DB_USER"),
-        'PASSWORD': os.getenv("DB_PASSWORD"),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'HOST': os.getenv("DB_HOST"),
+#         'PORT': os.getenv("DB_PORT"),
+#         'NAME': os.getenv("DB_NAME_PRODUCT"),
+#         'USER': os.getenv("DB_USER"),
+#         'PASSWORD': os.getenv("DB_PASSWORD"),
 #     }
 # }
+
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': 'testsdss',
+  }
+}
 
 PORT = os.getenv("ORDERS_PORT")
 KAFKA_BOOTSTRAP_SERVER = os.getenv("KAFKA_IP4_ADDRESS")
@@ -160,30 +160,30 @@ MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
 MINIO_BUCKET = os.getenv("MINIO_BUCKET")
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        'django_microservices.common.auth.authentication.JWTAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+  "DEFAULT_AUTHENTICATION_CLASSES": [
+    'django_microservices.common.auth.authentication.JWTAuthentication',
+    'rest_framework.authentication.BasicAuthentication',
+    'rest_framework.authentication.TokenAuthentication',
+  ],
+  'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+  {
+    'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+  },
 ]
 
 # Internationalization
@@ -208,7 +208,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'PRODUCTS SERVICE API',
-    'DESCRIPTION': 'API documentation',
-    'VERSION': '1.0.0',
+  'TITLE': 'PRODUCTS SERVICE API',
+  'DESCRIPTION': 'API documentation',
+  'VERSION': '1.0.0',
 }

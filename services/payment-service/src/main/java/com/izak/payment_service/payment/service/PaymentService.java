@@ -38,7 +38,7 @@ public class PaymentService {
                 "PaymentIntent not found for orderId :" + paymentRequest.orderId()
           )
     );
-    log.info("Searched PaymentIntent for orderId: {}", paymentRequest.orderId());
+    log.info("PaymentIntent for orderId found: {}", paymentRequest.orderId());
 
     // check which type of transaction Type the user want to use
     // Initiate the correct services for the user method of payment
@@ -105,8 +105,8 @@ public class PaymentService {
     PaymentEvent paymentEvent = new PaymentEvent(
           orderId,
           payment.getAmount(),
-          payment.getPaymentStatus().name(),
-          payment.getPaymentMethod().name(),
+          payment.getPaymentStatus(),
+          payment.getPaymentMethod(),
           Instant.now()
     );
     paymentProducer.publishPaymentCompleted(paymentEvent);

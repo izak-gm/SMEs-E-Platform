@@ -37,7 +37,7 @@ build_spring_service(){
   cd "services/$service" || return 1 # returning 1 means exit gracefully
 
   # Clean and package maven build
-  # Skipping tests
+  # Skipping testsdss
   if ! mvn clean package -DskipTests;then
     echo "Maven build failed for $service"
     cd ..

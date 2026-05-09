@@ -28,7 +28,7 @@ structure:
               "annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
           "maven-status":
             type: null
             info: null
@@ -188,7 +188,7 @@ structure:
               "test-annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
       ".gitignore":
         type: "file"
         info:
@@ -308,11 +308,11 @@ structure:
                       "migration":
                         type: null
                         info: null
-                        children: {}
+                        children: { }
                   "templates":
                     type: null
                     info: null
-                    children: {}
+                    children: { }
                   "application.yml":
                     type: "file"
                     info:
@@ -324,7 +324,7 @@ structure:
                   "static":
                     type: null
                     info: null
-                    children: {}
+                    children: { }
       ".gitattributes":
         type: "file"
         info:
@@ -396,7 +396,7 @@ structure:
               "annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
           "maven-status":
             type: null
             info: null
@@ -604,7 +604,7 @@ structure:
               "test-annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
       ".gitignore":
         type: "file"
         info:
@@ -836,7 +836,7 @@ structure:
               "annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
           "maven-status":
             type: null
             info: null
@@ -968,7 +968,7 @@ structure:
               "test-annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
       ".gitignore":
         type: "file"
         info:
@@ -1132,7 +1132,7 @@ structure:
               "annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
           "maven-status":
             type: null
             info: null
@@ -1252,7 +1252,7 @@ structure:
               "test-annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
       ".gitignore":
         type: "file"
         info:
@@ -1404,7 +1404,7 @@ structure:
               "annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
           "maven-status":
             type: null
             info: null
@@ -1824,7 +1824,7 @@ structure:
               "test-annotations":
                 type: null
                 info: null
-                children: {}
+                children: { }
       ".gitignore":
         type: "file"
         info:
@@ -2172,7 +2172,7 @@ structure:
                   "templates":
                     type: null
                     info: null
-                    children: {}
+                    children: { }
                   "application.yml":
                     type: "file"
                     info:
@@ -2184,7 +2184,7 @@ structure:
                   "static":
                     type: null
                     info: null
-                    children: {}
+                    children: { }
       ".gitattributes":
         type: "file"
         info:
@@ -2324,11 +2324,11 @@ structure:
                       "migration":
                         type: null
                         info: null
-                        children: {}
+                        children: { }
                   "templates":
                     type: null
                     info: null
-                    children: {}
+                    children: { }
                   "application.yml":
                     type: "file"
                     info:
@@ -2340,7 +2340,7 @@ structure:
                   "static":
                     type: null
                     info: null
-                    children: {}
+                    children: { }
       ".gitattributes":
         type: "file"
         info:
@@ -2390,8 +2390,8 @@ structure:
                   "extension": ".properties"
                 children: null
 files:
-- path: "payment-service/HELP.md"
-  content: "# Read Me First\nThe following was discovered as part of building this\
+  - path: "payment-service/HELP.md"
+    content: "# Read Me First\nThe following was discovered as part of building this\
     \ project:\n\n* The original package name 'com.izak.payment-service' is invalid\
     \ and this project uses 'com.izak.payment_service' instead.\n\n# Getting Started\n\
     \n### Reference Documentation\nFor further reference, please consider the following\
@@ -2421,64 +2421,64 @@ files:
     \ this, the project POM contains empty overrides for these elements.\nIf you manually\
     \ switch to a different parent and actually want the inheritance, you need to\
     \ remove those overrides.\n\n"
-  info:
-    "size": "2710"
-    "last_modified": "2025-11-16T15:56:14.116877938"
-    "mime_type": "text/x-web-markdown"
-    "extension": ".md"
-- path: "payment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
-  content: "com/izak/payment_service/events/PaymentEvent.class\ncom/izak/payment_service/PaymentServiceApplication.class\n\
+    info:
+      "size": "2710"
+      "last_modified": "2025-11-16T15:56:14.116877938"
+      "mime_type": "text/x-web-markdown"
+      "extension": ".md"
+  - path: "payment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
+    content: "com/izak/payment_service/events/PaymentEvent.class\ncom/izak/payment_service/PaymentServiceApplication.class\n\
     com/izak/payment_service/configurations/KafkaProducerConfig.class\ncom/izak/payment_service/events/OrderEvent.class\n\
     com/izak/payment_service/configurations/KafkaConsumerConfig.class\n"
-  info:
-    "size": "289"
-    "last_modified": "2025-11-16T15:56:14.249988694"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "payment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/payment-service/src/main/java/com/izak/payment_service/PaymentServiceApplication.java\n\
+    info:
+      "size": "289"
+      "last_modified": "2025-11-16T15:56:14.249988694"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "payment-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/payment-service/src/main/java/com/izak/payment_service/PaymentServiceApplication.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/payment-service/src/main/java/com/izak/payment_service/configurations/KafkaConsumerConfig.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/payment-service/src/main/java/com/izak/payment_service/configurations/KafkaProducerConfig.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/payment-service/src/main/java/com/izak/payment_service/events/OrderEvent.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/payment-service/src/main/java/com/izak/payment_service/events/PaymentEvent.java\n"
-  info:
-    "size": "744"
-    "last_modified": "2025-11-16T15:56:14.281338619"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "payment-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
-  content: "com/izak/payment_service/PaymentServiceApplicationTests.class\n"
-  info:
-    "size": "62"
-    "last_modified": "2025-11-16T15:56:14.319526561"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "payment-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/payment-service/src/test/java/com/izak/payment_service/PaymentServiceApplicationTests.java\n"
-  info:
-    "size": "153"
-    "last_modified": "2025-11-16T15:56:14.337584988"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "payment-service/target/test-classes/com/izak/payment_service/PaymentServiceApplicationTests.class"
-  content: "Êþº¾\0\0\0E\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "744"
+      "last_modified": "2025-11-16T15:56:14.281338619"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "payment-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
+    content: "com/izak/payment_service/PaymentServiceApplicationTests.class\n"
+    info:
+      "size": "62"
+      "last_modified": "2025-11-16T15:56:14.319526561"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "payment-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/payment-service/src/testsdss/java/com/izak/payment_service/PaymentServiceApplicationTests.java\n"
+    info:
+      "size": "153"
+      "last_modified": "2025-11-16T15:56:14.337584988"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "payment-service/target/testsdss-classes/com/izak/payment_service/PaymentServiceApplicationTests.class"
+    content: "Êþº¾\0\0\0E\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\07com/izak/payment_service/PaymentServiceApplicationTests\x01\
     \0\x04Code\x01\0\x0fLineNumberTable\x01\0\x12LocalVariableTable\x01\0\x04this\x01\
     \09Lcom/izak/payment_service/PaymentServiceApplicationTests;\x01\0\fcontextLoads\x01\
     \0\x19RuntimeVisibleAnnotations\x01\0\x1cLorg/junit/jupiter/api/Test;\x01\0\n\
-    SourceFile\x01\0#PaymentServiceApplicationTests.java\x01\06Lorg/springframework/boot/test/context/SpringBootTest;\0\
+    SourceFile\x01\0#PaymentServiceApplicationTests.java\x01\06Lorg/springframework/boot/testsdss/context/SpringBootTest;\0\
     \ \0\a\0\x02\0\0\0\0\0\x02\0\0\0\x05\0\x06\0\x01\0\t\0\0\0/\0\x01\0\x01\0\0\0\x05\
     *·\0\x01±\0\0\0\x02\0\n\0\0\0\x06\0\x01\0\0\0\a\0\v\0\0\0\f\0\x01\0\0\0\x05\0\f\
     \0\r\0\0\0\0\0\x0e\0\x06\0\x02\0\t\0\0\0+\0\0\0\x01\0\0\0\x01±\0\0\0\x02\0\n\0\
     \0\0\x06\0\x01\0\0\0\v\0\v\0\0\0\f\0\x01\0\0\0\x01\0\f\0\r\0\0\0\x0f\0\0\0\x06\
     \0\x01\0\x10\0\0\0\x02\0\x11\0\0\0\x02\0\x12\0\x0f\0\0\0\x06\0\x01\0\x13\0\0"
-  info:
-    "size": "577"
-    "last_modified": "2025-11-16T15:56:14.371320611"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "payment-service/target/classes/com/izak/payment_service/events/PaymentEvent.class"
-  content: "Êþº¾\0\0\0E\0n\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0,com/izak/payment_service/events/PaymentEvent\x01\
+    info:
+      "size": "577"
+      "last_modified": "2025-11-16T15:56:14.371320611"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "payment-service/target/classes/com/izak/payment_service/events/PaymentEvent.class"
+    content: "Êþº¾\0\0\0E\0n\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0,com/izak/payment_service/events/PaymentEvent\x01\
     \0\aorderId\x01\0\x12Ljava/lang/String;\t\0\x02\0\b\f\0\t\0\n\x01\0\x06amount\x01\
     \0\x16Ljava/math/BigDecimal;\t\0\x02\0\f\f\0\r\0\x06\x01\0\x06status\t\0\x02\0\
     \x0f\f\0\x10\0\x06\x01\0\rpaymentMethod\n\0\x02\0\x12\f\0\x13\0\x14\x01\0\bcanEqual\x01\
@@ -2563,13 +2563,13 @@ files:
     \0\0\x02\0;\0\0\0\x06\0\x01\0\0\0\v\0<\0\0\0\f\0\x01\0\0\0\x05\0=\0>\0\0\0?\0\0\
     \0\x06\0\x01\0@\0\0\0\x03\0]\0\0\0\x02\0^\0_\0\0\0\b\0\x01\0b\0\x01\0`\0h\0\0\0\
     \n\0\x01\0i\0k\0m\0\x19"
-  info:
-    "size": "3749"
-    "last_modified": "2025-11-16T15:56:14.412497988"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "payment-service/target/classes/com/izak/payment_service/events/OrderEvent.class"
-  content: "Êþº¾\0\0\0E\0Z\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0*com/izak/payment_service/events/OrderEvent\x01\
+    info:
+      "size": "3749"
+      "last_modified": "2025-11-16T15:56:14.412497988"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "payment-service/target/classes/com/izak/payment_service/events/OrderEvent.class"
+    content: "Êþº¾\0\0\0E\0Z\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0*com/izak/payment_service/events/OrderEvent\x01\
     \0\aorderId\x01\0\x12Ljava/lang/String;\t\0\x02\0\b\f\0\t\0\n\x01\0\x06amount\x01\
     \0\x16Ljava/math/BigDecimal;\n\0\x02\0\f\f\0\r\0\x0e\x01\0\bcanEqual\x01\0\x15\
     (Ljava/lang/Object;)Z\n\0\x02\0\x10\f\0\x11\0\x12\x01\0\ngetOrderId\x01\0\x14\
@@ -2628,13 +2628,13 @@ files:
     \0\0/\0\x01\0\x01\0\0\0\x05*·\0*±\0\0\0\x02\0/\0\0\0\x06\0\x01\0\0\0\v\00\0\0\0\
     \f\0\x01\0\0\0\x05\01\02\0\0\03\0\0\0\x06\0\x01\04\0\0\0\x03\0I\0\0\0\x02\0J\0\
     K\0\0\0\b\0\x01\0N\0\x01\0L\0T\0\0\0\n\0\x01\0U\0W\0Y\0\x19"
-  info:
-    "size": "2711"
-    "last_modified": "2025-11-16T15:56:14.434441483"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "payment-service/target/classes/com/izak/payment_service/PaymentServiceApplication.class"
-  content: "Êþº¾\0\0\0E\0\x1d\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "2711"
+      "last_modified": "2025-11-16T15:56:14.434441483"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "payment-service/target/classes/com/izak/payment_service/PaymentServiceApplication.class"
+    content: "Êþº¾\0\0\0E\0\x1d\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\02com/izak/payment_service/PaymentServiceApplication\n\
     \0\n\0\v\a\0\f\f\0\r\0\x0e\x01\0*org/springframework/boot/SpringApplication\x01\
     \0\x03run\x01\0b(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;\x01\
@@ -2649,13 +2649,13 @@ files:
     \0\0\x02\0\x10\0\0\0\n\0\x02\0\0\0\n\0\a\0\v\0\x11\0\0\0\f\0\x01\0\0\0\b\0\x16\
     \0\x17\0\0\0\x18\0\0\0\x05\x01\0\x16\0\0\0\x02\0\x19\0\0\0\x02\0\x1a\0\e\0\0\0\
     \x06\0\x01\0\x1c\0\0"
-  info:
-    "size": "779"
-    "last_modified": "2025-11-16T15:56:14.45615738"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "payment-service/target/classes/com/izak/payment_service/configurations/KafkaProducerConfig.class"
-  content: "Êþº¾\0\0\0E\0:\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "779"
+      "last_modified": "2025-11-16T15:56:14.45615738"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "payment-service/target/classes/com/izak/payment_service/configurations/KafkaProducerConfig.class"
+    content: "Êþº¾\0\0\0E\0:\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\0:org/springframework/signals/core/DefaultKafkaProducerFactory\a\
     \0\n\x01\00org/apache/signals/clients/producer/ProducerConfig\b\0\f\x01\0\x11bootstrap.servers\b\
     \0\x0e\x01\0\x0elocalhost:9092\b\0\x10\x01\0\x0ekey.serializer\a\0\x12\x01\06org/apache/signals/common/serialization/StringSerializer\b\
@@ -2680,13 +2680,13 @@ files:
     3\0\0\0\x01\04\05\0\x03\0+\0\0\06\0\x03\0\x01\0\0\0\f»\0 Y*¶\0\"·\0(°\0\0\0\x02\
     \0,\0\0\0\x06\0\x01\0\0\0\x1c\0-\0\0\0\f\0\x01\0\0\0\f\0.\0/\0\0\00\0\0\0\x02\0\
     6\02\0\0\0\x06\0\x01\03\0\0\0\x02\07\0\0\0\x02\08\02\0\0\0\x06\0\x01\09\0\0"
-  info:
-    "size": "1725"
-    "last_modified": "2025-11-16T15:56:14.466560022"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "payment-service/target/classes/com/izak/payment_service/configurations/KafkaConsumerConfig.class"
-  content: "Êþº¾\0\0\0E\0V\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "1725"
+      "last_modified": "2025-11-16T15:56:14.466560022"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "payment-service/target/classes/com/izak/payment_service/configurations/KafkaConsumerConfig.class"
+    content: "Êþº¾\0\0\0E\0V\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\0=org/springframework/signals/support/serializer/JsonDeserializer\a\
     \0\n\x01\0*com/izak/payment_service/events/OrderEvent\n\0\a\0\f\f\0\x05\0\r\x01\
     \0\x14(Ljava/lang/Class;)V\a\0\x0f\x01\0\x10java/lang/String\b\0\x11\x01\0\x01\
@@ -2725,75 +2725,75 @@ files:
     \x10\0%\0A\0\0\0\x16\0\x02\0\0\0\x12\0B\0C\0\0\0\b\0\n\0N\0O\0\x01\0F\0\0\0\f\0\
     \x01\0\b\0\n\0N\0P\0\x01\0H\0\0\0\x02\0Q\0J\0\0\0\x06\0\x01\0K\0\0\0\x02\0R\0\0\
     \0\x02\0S\0J\0\0\0\n\0\x02\0T\0\0\0U\0\0"
-  info:
-    "size": "2820"
-    "last_modified": "2025-11-16T15:56:14.478258906"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "payment-service/target/classes/application.yml"
-  content: "spring:\n  application:\n    name: payment-service\n  config:\n    import:\
+    info:
+      "size": "2820"
+      "last_modified": "2025-11-16T15:56:14.478258906"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "payment-service/target/classes/application.yml"
+    content: "spring:\n  application:\n    name: payment-service\n  config:\n    import:\
     \ optional:configserver:http://localhost:8888"
-  info:
-    "size": "114"
-    "last_modified": "2025-11-16T15:56:14.511260827"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "payment-service/.gitignore"
-  content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
-    !**/src/test/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
+    info:
+      "size": "114"
+      "last_modified": "2025-11-16T15:56:14.511260827"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "payment-service/.gitignore"
+    content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
+    !**/src/testsdss/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
     .project\n.settings\n.springBeans\n.sts4-cache\n\n### IntelliJ IDEA ###\n.idea\n\
     *.iws\n*.iml\n*.ipr\n\n### NetBeans ###\n/nbproject/private/\n/nbbuild/\n/dist/\n\
-    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/test/**/build/\n\
+    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/testsdss/**/build/\n\
     \n### VS Code ###\n.vscode/\n"
-  info:
-    "size": "394"
-    "last_modified": "2025-11-16T15:56:14.551733134"
-    "mime_type": "text/plain"
-    "extension": ".gitignore"
-- path: "payment-service/src/test/java/com/izak/payment_service/PaymentServiceApplicationTests.java"
-  content: "package com.izak.payment_service;\n\nimport org.junit.jupiter.api.Test;\n\
-    import org.springframework.boot.test.context.SpringBootTest;\n\n@SpringBootTest\n\
+    info:
+      "size": "394"
+      "last_modified": "2025-11-16T15:56:14.551733134"
+      "mime_type": "text/plain"
+      "extension": ".gitignore"
+  - path: "payment-service/src/testsdss/java/com/izak/payment_service/PaymentServiceApplicationTests.java"
+    content: "package com.izak.payment_service;\n\nimport org.junit.jupiter.api.Test;\n\
+    import org.springframework.boot.testsdss.context.SpringBootTest;\n\n@SpringBootTest\n\
     class PaymentServiceApplicationTests {\n\n\t@Test\n\tvoid contextLoads() {\n\t\
     }\n\n}\n"
-  info:
-    "size": "224"
-    "last_modified": "2025-11-16T15:56:14.561535227"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "payment-service/src/main/java/com/izak/payment_service/events/OrderEvent.java"
-  content: "package com.izak.payment_service.events;\n\nimport lombok.AllArgsConstructor;\n\
+    info:
+      "size": "224"
+      "last_modified": "2025-11-16T15:56:14.561535227"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "payment-service/src/main/java/com/izak/payment_service/events/OrderEvent.java"
+    content: "package com.izak.payment_service.events;\n\nimport lombok.AllArgsConstructor;\n\
     import lombok.Data;\nimport lombok.NoArgsConstructor;\n\nimport java.math.BigDecimal;\n\
     \n@Data\n@AllArgsConstructor\n@NoArgsConstructor\npublic class OrderEvent {\n\
     \  private String orderId;\n  private BigDecimal amount;\n\n}\n"
-  info:
-    "size": "289"
-    "last_modified": "2025-11-16T15:56:14.60074973"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "payment-service/src/main/java/com/izak/payment_service/events/PaymentEvent.java"
-  content: "package com.izak.payment_service.events;\n\nimport lombok.AllArgsConstructor;\n\
+    info:
+      "size": "289"
+      "last_modified": "2025-11-16T15:56:14.60074973"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "payment-service/src/main/java/com/izak/payment_service/events/PaymentEvent.java"
+    content: "package com.izak.payment_service.events;\n\nimport lombok.AllArgsConstructor;\n\
     import lombok.Data;\nimport lombok.NoArgsConstructor;\n\nimport java.math.BigDecimal;\n\
     \n@Data\n@AllArgsConstructor\n@NoArgsConstructor\npublic class PaymentEvent {\n\
     \  private String orderId;\n  private BigDecimal amount;\n  private String status;\n\
     \  private String paymentMethod;\n}\n"
-  info:
-    "size": "347"
-    "last_modified": "2025-11-16T15:56:14.60936819"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "payment-service/src/main/java/com/izak/payment_service/PaymentServiceApplication.java"
-  content: "package com.izak.payment_service;\n\nimport org.springframework.boot.SpringApplication;\n\
+    info:
+      "size": "347"
+      "last_modified": "2025-11-16T15:56:14.60936819"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "payment-service/src/main/java/com/izak/payment_service/PaymentServiceApplication.java"
+    content: "package com.izak.payment_service;\n\nimport org.springframework.boot.SpringApplication;\n\
     import org.springframework.boot.autoconfigure.SpringBootApplication;\n\n@SpringBootApplication\n\
     public class PaymentServiceApplication {\n\n\tpublic static void main(String[]\
     \ args) {\n\t\tSpringApplication.run(PaymentServiceApplication.class, args);\n\
     \t}\n\n}\n"
-  info:
-    "size": "333"
-    "last_modified": "2025-11-16T15:56:14.622558206"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "payment-service/src/main/java/com/izak/payment_service/configurations/KafkaConsumerConfig.java"
-  content: "package com.izak.payment_service.configurations;\n\nimport com.izak.payment_service.events.OrderEvent;\n\
+    info:
+      "size": "333"
+      "last_modified": "2025-11-16T15:56:14.622558206"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "payment-service/src/main/java/com/izak/payment_service/configurations/KafkaConsumerConfig.java"
+    content: "package com.izak.payment_service.configurations;\n\nimport com.izak.payment_service.events.OrderEvent;\n\
     import org.apache.signals.clients.consumer.ConsumerConfig;\nimport org.apache.signals.common.serialization.StringDeserializer;\n\
     import org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\n\
     import org.springframework.signals.annotation.EnableKafka;\nimport org.springframework.signals.config.ConcurrentKafkaListenerContainerFactory;\n\
@@ -2811,13 +2811,13 @@ files:
     \ OrderEvent> factory=\n          new ConcurrentKafkaListenerContainerFactory<>();\n\
     \    factory.setConsumerFactory(consumerFactory());\n    return factory;\n  }\n\
     }\n"
-  info:
-    "size": "1663"
-    "last_modified": "2025-11-16T15:56:14.630908739"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "payment-service/src/main/java/com/izak/payment_service/configurations/KafkaProducerConfig.java"
-  content: "package com.izak.payment_service.configurations;\n\nimport com.izak.payment_service.events.PaymentEvent;\n\
+    info:
+      "size": "1663"
+      "last_modified": "2025-11-16T15:56:14.630908739"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "payment-service/src/main/java/com/izak/payment_service/configurations/KafkaProducerConfig.java"
+    content: "package com.izak.payment_service.configurations;\n\nimport com.izak.payment_service.events.PaymentEvent;\n\
     import org.apache.signals.clients.producer.ProducerConfig;\nimport org.apache.signals.common.serialization.StringSerializer;\n\
     import org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\n\
     import org.springframework.signals.core.DefaultKafkaProducerFactory;\nimport org.springframework.signals.core.KafkaTemplate;\n\
@@ -2829,28 +2829,28 @@ files:
     \          ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class\n\
     \    ));\n  }\n\n  @Bean\n  public KafkaTemplate<String, PaymentEvent> kafkaTemplate(){\n\
     \    return new KafkaTemplate<>(producerFactory());\n  }\n}\n"
-  info:
-    "size": "1143"
-    "last_modified": "2025-11-16T15:56:14.638831041"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "payment-service/src/main/resources/application.yml"
-  content: "spring:\n  application:\n    name: payment-service\n  config:\n    import:\
+    info:
+      "size": "1143"
+      "last_modified": "2025-11-16T15:56:14.638831041"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "payment-service/src/main/resources/application.yml"
+    content: "spring:\n  application:\n    name: payment-service\n  config:\n    import:\
     \ optional:configserver:http://localhost:8888"
-  info:
-    "size": "114"
-    "last_modified": "2025-11-16T15:56:14.692530295"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "payment-service/.gitattributes"
-  content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
-  info:
-    "size": "38"
-    "last_modified": "2025-11-16T15:56:14.723331172"
-    "mime_type": "text/plain"
-    "extension": ".gitattributes"
-- path: "payment-service/mvnw"
-  content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
+    info:
+      "size": "114"
+      "last_modified": "2025-11-16T15:56:14.692530295"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "payment-service/.gitattributes"
+    content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
+    info:
+      "size": "38"
+      "last_modified": "2025-11-16T15:56:14.723331172"
+      "mime_type": "text/plain"
+      "extension": ".gitattributes"
+  - path: "payment-service/mvnw"
+    content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
     # Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor\
     \ license agreements.  See the NOTICE file\n# distributed with this work for additional\
     \ information\n# regarding copyright ownership.  The ASF licenses this file\n\
@@ -3000,13 +3000,13 @@ files:
     \ >\"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url\"\nmv -- \"$TMP_DOWNLOAD_DIR/$actualDistributionDir\"\
     \ \"$MAVEN_HOME\" || [ -d \"$MAVEN_HOME\" ] || die \"fail to move MAVEN_HOME\"\
     \n\nclean || :\nexec_maven \"$@\"\n"
-  info:
-    "size": "11790"
-    "last_modified": "2025-11-16T15:56:14.733720757"
-    "mime_type": "application/x-sh"
-    "extension": "."
-- path: "payment-service/pom.xml"
-  content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
+    info:
+      "size": "11790"
+      "last_modified": "2025-11-16T15:56:14.733720757"
+      "mime_type": "application/x-sh"
+      "extension": "."
+  - path: "payment-service/pom.xml"
+    content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
     \ xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"\
     http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\
     >\n\t<modelVersion>4.0.0</modelVersion>\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\
@@ -3040,9 +3040,9 @@ files:
     \t\t<dependency>\n\t\t\t<groupId>org.postgresql</groupId>\n\t\t\t<artifactId>postgresql</artifactId>\n\
     \t\t\t<scope>runtime</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.projectlombok</groupId>\n\
     \t\t\t<artifactId>lombok</artifactId>\n\t\t\t<optional>true</optional>\n\t\t</dependency>\n\
-    \t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\n\
-    \t\t\t<scope>test</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.signals</groupId>\n\
-    \t\t\t<artifactId>spring-signals-test</artifactId>\n\t\t\t<scope>test</scope>\n\t\
+    \t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-testsdss</artifactId>\n\
+    \t\t\t<scope>testsdss</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.signals</groupId>\n\
+    \t\t\t<artifactId>spring-signals-testsdss</artifactId>\n\t\t\t<scope>testsdss</scope>\n\t\
     \t</dependency>\n        <dependency>\n            <groupId>com.fasterxml.jackson.core</groupId>\n\
     \            <artifactId>jackson-databind</artifactId>\n        </dependency>\n\
     \t</dependencies>\n\t<dependencyManagement>\n\t\t<dependencies>\n\t\t\t<dependency>\n\
@@ -3059,13 +3059,13 @@ files:
     \t\t\t<groupId>org.projectlombok</groupId>\n\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\n\
     \t\t\t\t\t\t</exclude>\n\t\t\t\t\t</excludes>\n\t\t\t\t</configuration>\n\t\t\t\
     </plugin>\n\t\t</plugins>\n\t</build>\n\n</project>\n"
-  info:
-    "size": "4360"
-    "last_modified": "2025-11-16T15:56:14.74202648"
-    "mime_type": "application/xml"
-    "extension": ".xml"
-- path: "payment-service/mvnw.cmd"
-  content: "<# : batch portion\r\n@REM ----------------------------------------------------------------------------\r\
+    info:
+      "size": "4360"
+      "last_modified": "2025-11-16T15:56:14.74202648"
+      "mime_type": "application/xml"
+      "extension": ".xml"
+  - path: "payment-service/mvnw.cmd"
+    content: "<# : batch portion\r\n@REM ----------------------------------------------------------------------------\r\
     \n@REM Licensed to the Apache Software Foundation (ASF) under one\r\n@REM or more\
     \ contributor license agreements.  See the NOTICE file\r\n@REM distributed with\
     \ this work for additional information\r\n@REM regarding copyright ownership.\
@@ -3171,20 +3171,20 @@ files:
     \ MAVEN_HOME\"\r\n  }\r\n} finally {\r\n  try { Remove-Item $TMP_DOWNLOAD_DIR\
     \ -Recurse -Force | Out-Null }\r\n  catch { Write-Warning \"Cannot remove $TMP_DOWNLOAD_DIR\"\
     \ }\r\n}\r\n\r\nWrite-Output \"MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD\"\r\n"
-  info:
-    "size": "8481"
-    "last_modified": "2025-11-16T15:56:14.785731023"
-    "mime_type": "application/x-bat"
-    "extension": ".cmd"
-- path: "payment-service/.mvn/wrapper/maven-wrapper.properties"
-  content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
-  info:
-    "size": "168"
-    "last_modified": "2025-11-16T15:56:14.796413479"
-    "mime_type": "text/x-java-properties"
-    "extension": ".properties"
-- path: "config-server/HELP.md"
-  content: "# Read Me First\nThe following was discovered as part of building this\
+    info:
+      "size": "8481"
+      "last_modified": "2025-11-16T15:56:14.785731023"
+      "mime_type": "application/x-bat"
+      "extension": ".cmd"
+  - path: "payment-service/.mvn/wrapper/maven-wrapper.properties"
+    content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
+    info:
+      "size": "168"
+      "last_modified": "2025-11-16T15:56:14.796413479"
+      "mime_type": "text/x-java-properties"
+      "extension": ".properties"
+  - path: "config-server/HELP.md"
+    content: "# Read Me First\nThe following was discovered as part of building this\
     \ project:\n\n* The original package name 'com.izak.config-server' is invalid\
     \ and this project uses 'com.izak.config_server' instead.\n\n# Getting Started\n\
     \n### Reference Documentation\nFor further reference, please consider the following\
@@ -3200,67 +3200,67 @@ files:
     \ the parent.\nTo prevent this, the project POM contains empty overrides for these\
     \ elements.\nIf you manually switch to a different parent and actually want the\
     \ inheritance, you need to remove those overrides.\n\n"
-  info:
-    "size": "1281"
-    "last_modified": "2025-11-16T15:56:14.823005267"
-    "mime_type": "text/x-web-markdown"
-    "extension": ".md"
-- path: "config-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
-  content: "com/izak/config_server/ConfigServerApplication.class\n"
-  info:
-    "size": "53"
-    "last_modified": "2025-11-16T15:56:14.908282576"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "config-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/config-server/src/main/java/com/izak/config_server/ConfigServerApplication.java\n"
-  info:
-    "size": "142"
-    "last_modified": "2025-11-16T15:56:14.934569168"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "config-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
-  content: "com/izak/config_server/ConfigServerApplicationTests.class\n"
-  info:
-    "size": "58"
-    "last_modified": "2025-11-16T15:56:14.970173985"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "config-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/config-server/src/test/java/com/izak/config_server/ConfigServerApplicationTests.java\n"
-  info:
-    "size": "147"
-    "last_modified": "2025-11-16T15:56:14.980662361"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "config-server/target/test-classes/com/izak/config_server/ConfigServerApplicationTests.class"
-  content: "Êþº¾\0\0\0=\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "1281"
+      "last_modified": "2025-11-16T15:56:14.823005267"
+      "mime_type": "text/x-web-markdown"
+      "extension": ".md"
+  - path: "config-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
+    content: "com/izak/config_server/ConfigServerApplication.class\n"
+    info:
+      "size": "53"
+      "last_modified": "2025-11-16T15:56:14.908282576"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "config-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/config-server/src/main/java/com/izak/config_server/ConfigServerApplication.java\n"
+    info:
+      "size": "142"
+      "last_modified": "2025-11-16T15:56:14.934569168"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "config-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
+    content: "com/izak/config_server/ConfigServerApplicationTests.class\n"
+    info:
+      "size": "58"
+      "last_modified": "2025-11-16T15:56:14.970173985"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "config-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/config-server/src/testsdss/java/com/izak/config_server/ConfigServerApplicationTests.java\n"
+    info:
+      "size": "147"
+      "last_modified": "2025-11-16T15:56:14.980662361"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "config-server/target/testsdss-classes/com/izak/config_server/ConfigServerApplicationTests.class"
+    content: "Êþº¾\0\0\0=\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\03com/izak/config_server/ConfigServerApplicationTests\x01\
     \0\x04Code\x01\0\x0fLineNumberTable\x01\0\x12LocalVariableTable\x01\0\x04this\x01\
     \05Lcom/izak/config_server/ConfigServerApplicationTests;\x01\0\fcontextLoads\x01\
     \0\x19RuntimeVisibleAnnotations\x01\0\x1cLorg/junit/jupiter/api/Test;\x01\0\n\
-    SourceFile\x01\0!ConfigServerApplicationTests.java\x01\06Lorg/springframework/boot/test/context/SpringBootTest;\0\
+    SourceFile\x01\0!ConfigServerApplicationTests.java\x01\06Lorg/springframework/boot/testsdss/context/SpringBootTest;\0\
     \ \0\a\0\x02\0\0\0\0\0\x02\0\0\0\x05\0\x06\0\x01\0\t\0\0\0/\0\x01\0\x01\0\0\0\x05\
     *·\0\x01±\0\0\0\x02\0\n\0\0\0\x06\0\x01\0\0\0\a\0\v\0\0\0\f\0\x01\0\0\0\x05\0\f\
     \0\r\0\0\0\0\0\x0e\0\x06\0\x02\0\t\0\0\0+\0\0\0\x01\0\0\0\x01±\0\0\0\x02\0\n\0\
     \0\0\x06\0\x01\0\0\0\v\0\v\0\0\0\f\0\x01\0\0\0\x01\0\f\0\r\0\0\0\x0f\0\0\0\x06\
     \0\x01\0\x10\0\0\0\x02\0\x11\0\0\0\x02\0\x12\0\x0f\0\0\0\x06\0\x01\0\x13\0\0"
-  info:
-    "size": "567"
-    "last_modified": "2025-11-16T15:56:15.02853424"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "config-server/target/classes/application.yaml"
-  content: "spring:\n  profiles:\n    active: native\n  application:\n    name: config-server\n\
+    info:
+      "size": "567"
+      "last_modified": "2025-11-16T15:56:15.02853424"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "config-server/target/classes/application.yaml"
+    content: "spring:\n  profiles:\n    active: native\n  application:\n    name: config-server\n\
     \  cloud:\n    config:\n      server:\n        native:\n          search-locations:\
     \ classpath:/configurations\n\nserver:\n  port: 8888"
-  info:
-    "size": "204"
-    "last_modified": "2025-11-16T15:56:15.060158461"
-    "mime_type": "text/x-yaml"
-    "extension": ".yaml"
-- path: "config-server/target/classes/com/izak/config_server/ConfigServerApplication.class"
-  content: "Êþº¾\0\0\0=\0\x1e\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "204"
+      "last_modified": "2025-11-16T15:56:15.060158461"
+      "mime_type": "text/x-yaml"
+      "extension": ".yaml"
+  - path: "config-server/target/classes/com/izak/config_server/ConfigServerApplication.class"
+    content: "Êþº¾\0\0\0=\0\x1e\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\0.com/izak/config_server/ConfigServerApplication\n\
     \0\n\0\v\a\0\f\f\0\r\0\x0e\x01\0*org/springframework/boot/SpringApplication\x01\
     \0\x03run\x01\0b(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;\x01\
@@ -3275,13 +3275,13 @@ files:
     \0\0\x02\0\x10\0\0\0\n\0\x02\0\0\0\f\0\a\0\r\0\x11\0\0\0\f\0\x01\0\0\0\b\0\x16\
     \0\x17\0\0\0\x18\0\0\0\x05\x01\0\x16\0\0\0\x02\0\x19\0\0\0\x02\0\x1a\0\e\0\0\0\
     \n\0\x02\0\x1c\0\0\0\x1d\0\0"
-  info:
-    "size": "836"
-    "last_modified": "2025-11-16T15:56:15.081526951"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "config-server/target/classes/configurations/payment-service.yml"
-  content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/payment\n\
+    info:
+      "size": "836"
+      "last_modified": "2025-11-16T15:56:15.081526951"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "config-server/target/classes/configurations/payment-service.yml"
+    content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/payment\n\
     \    username: postgres\n    password: izak7901\n    #    url: jdbc:postgresql://localhost:5432/${AUTH_DB}\n\
     \    #    username: ${POSTGRES_USER}\n    #    password: ${POSTGRES_PASSWORD}\n\
     \    driver-class-name: org.postgresql.Driver\n\n  signals:\n    bootstrap-servers:\
@@ -3297,13 +3297,13 @@ files:
     \      schemas: public\n\n  logging:\n    level:\n      org.hibernate.SQL: DEBUG\n\
     \      org.hibernate.type.descriptor.sql.BasicBinder: TRACE\nserver:\n  port:\
     \ 8013\n"
-  info:
-    "size": "1214"
-    "last_modified": "2025-11-16T15:56:15.10931509"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/django-products-service.yml"
-  content: "#django:\n#  config:\n#    import: file:./secrets/secret.yml\n#\n#  database:\n\
+    info:
+      "size": "1214"
+      "last_modified": "2025-11-16T15:56:15.10931509"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/django-products-service.yml"
+    content: "#django:\n#  config:\n#    import: file:./secrets/secret.yml\n#\n#  database:\n\
     #    name: ${DJANGO_DB}\n#    host: ${POSTGRES_HOST}\n#    port: ${POSTGRES_PORT}\n\
     #    user: ${POSTGRES_USER}\n#    password: ${POSTGRES_PASSWORD}\n#  signals:\n\
     #    host: ${KAFKA_HOST}\n#    port: ${KAFKA_PORT}\n##  secret_key: ${DJANGO_SECRET_KEY}\n\
@@ -3314,51 +3314,51 @@ files:
     \ CFHfnFtYZLWhVbHpIB9r\n    MINIO_SECRET_KEY: 1xhS59CFJa4a1tA83l0nzt2U0GHYfPbpEeQr4oms\n\
     \    MINIO_BUCKET: bizhub\n    MINIO_PORT: 9000\n    MINIO_ENDPOINT: localhost:9000\n\
     \n"
-  info:
-    "size": "802"
-    "last_modified": "2025-11-16T15:56:15.125327737"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/secrets/secrets.yml"
-  content: "##postgres\nPOSTGRES_USER: postgres\nPOSTGRES_PASSWORD: izak7901\nPOSTGRES_HOST:\
+    info:
+      "size": "802"
+      "last_modified": "2025-11-16T15:56:15.125327737"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/secrets/secrets.yml"
+    content: "##postgres\nPOSTGRES_USER: postgres\nPOSTGRES_PASSWORD: izak7901\nPOSTGRES_HOST:\
     \ localhost\nPOSTGRES_PORT: 5432\n# Kafka\nKAFKA_PORT: 9092\nKAFKA_HOST: localhost\n\
     ##Auth service\nAUTH_DB: auth\n#\n##Django\nDJANGO_DB: bizhub\nDJANGO_SECRET_KEY:\n"
-  info:
-    "size": "232"
-    "last_modified": "2025-11-16T15:56:15.151736895"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/django-orders-service.yml"
-  content: "django:\n  database:\n    #    name: ${DJANGO_DB}\n    name: orders\n\
+    info:
+      "size": "232"
+      "last_modified": "2025-11-16T15:56:15.151736895"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/django-orders-service.yml"
+    content: "django:\n  database:\n    #    name: ${DJANGO_DB}\n    name: orders\n\
     \    host: localhost\n    port: 5432\n    #    user: ${POSTGRES_USER}\n    user:\
     \ postgres\n    #    password: ${POSTGRES_PASSWORD}\n    password: izak7901\n\
     \  signals:\n    KAFKA_BOOTSTRAP: 172.25.0.3:9092\n    port: 9092\n#  secret_key\n"
-  info:
-    "size": "289"
-    "last_modified": "2025-11-16T15:56:15.168653307"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/discovery-service.yml"
-  content: "eureka:\n  instance:\n    hostname: localhost\n  client:\n    registerWithEureka:\
+    info:
+      "size": "289"
+      "last_modified": "2025-11-16T15:56:15.168653307"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/discovery-service.yml"
+    content: "eureka:\n  instance:\n    hostname: localhost\n  client:\n    registerWithEureka:\
     \ false\n    fetchRegistry: false\n    serviceUrl:\n      defaultZone: http://${eureka.instance.hostname}/${server.port}/eureka/\n\
     \nserver:\n  port: 8761"
-  info:
-    "size": "223"
-    "last_modified": "2025-11-16T15:56:15.180051476"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/orders-service.yml"
-  content: "django:\n  database:\n    #    name: ${DJANGO_DB}\n    name: orders\n\
+    info:
+      "size": "223"
+      "last_modified": "2025-11-16T15:56:15.180051476"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/orders-service.yml"
+    content: "django:\n  database:\n    #    name: ${DJANGO_DB}\n    name: orders\n\
     \    host: localhost\n    port: 5432\n    #    user: ${POSTGRES_USER}\n    user:\
     \ postgres\n    #    password: ${POSTGRES_PASSWORD}\n    password: izak7901\n\
     \  signals:\n    KAFKA_BOOTSTRAP: 172.25.0.3:9092\n    port: 9092\n#  secret_key\n"
-  info:
-    "size": "289"
-    "last_modified": "2025-11-16T15:56:15.191722"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/auth-service.yml"
-  content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/auth\n\
+    info:
+      "size": "289"
+      "last_modified": "2025-11-16T15:56:15.191722"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/auth-service.yml"
+    content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/auth\n\
     \    username: postgres\n    password: izak7901\n#    url: jdbc:postgresql://localhost:5432/${AUTH_DB}\n\
     #    username: ${POSTGRES_USER}\n#    password: ${POSTGRES_PASSWORD}\n    driver-class-name:\
     \ org.postgresql.Driver\n\n  jpa:\n    showSql: true\n    hibernate:\n      ddl-auto:\
@@ -3366,13 +3366,13 @@ files:
     \  default_schema: public\n\n  flyway:\n    enabled: true\n    baseline-on-migrate:\
     \ true\n    schemas: public\n\nlogging:\n  level:\n    org.hibernate.SQL: DEBUG\n\
     \    org.hibernate.type.descriptor.sql.BasicBinder: TRACE\nserver:\n  port: 8090"
-  info:
-    "size": "639"
-    "last_modified": "2025-11-16T15:56:15.210703346"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/products-service.yml"
-  content: "#django:\n#  config:\n#    import: file:./secrets/secret.yml\n#\n#  database:\n\
+    info:
+      "size": "639"
+      "last_modified": "2025-11-16T15:56:15.210703346"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/products-service.yml"
+    content: "#django:\n#  config:\n#    import: file:./secrets/secret.yml\n#\n#  database:\n\
     #    name: ${DJANGO_DB}\n#    host: ${POSTGRES_HOST}\n#    port: ${POSTGRES_PORT}\n\
     #    user: ${POSTGRES_USER}\n#    password: ${POSTGRES_PASSWORD}\n#  signals:\n\
     #    host: ${KAFKA_HOST}\n#    port: ${KAFKA_PORT}\n##  secret_key: ${DJANGO_SECRET_KEY}\n\
@@ -3383,23 +3383,23 @@ files:
     \ CFHfnFtYZLWhVbHpIB9r\n    MINIO_SECRET_KEY: 1xhS59CFJa4a1tA83l0nzt2U0GHYfPbpEeQr4oms\n\
     \    MINIO_BUCKET: bizhub\n    MINIO_PORT: 9000\n    MINIO_ENDPOINT: localhost:9000\n\
     \n"
-  info:
-    "size": "802"
-    "last_modified": "2025-11-16T15:56:15.218596131"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/application.yml"
-  content: "eureka:\n  instance:\n    hostname: localhost\n  client:\n    service-url:\n\
+    info:
+      "size": "802"
+      "last_modified": "2025-11-16T15:56:15.218596131"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/application.yml"
+    content: "eureka:\n  instance:\n    hostname: localhost\n  client:\n    service-url:\n\
     \      defaultZone: http://localhost:8761/eureka\n\nspring:\n  cloud:\n    config:\n\
     \      override-system-properties: false\n\nmanagement:\n  tracing:\n    sampling:\n\
     \      probability: 1.0"
-  info:
-    "size": "249"
-    "last_modified": "2025-11-16T15:56:15.226692781"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/target/classes/configurations/gateway-service.yml"
-  content: "spring:\n  cloud:\n    gateway:\n      discovery:\n        locator:\n\
+    info:
+      "size": "249"
+      "last_modified": "2025-11-16T15:56:15.226692781"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/target/classes/configurations/gateway-service.yml"
+    content: "spring:\n  cloud:\n    gateway:\n      discovery:\n        locator:\n\
     \          enabled: true\n          lower-case-service-id: true\n\n      routes:\n\
     \        - id: auth-service\n          uri: lb://AUTH-SERVICE\n          predicates:\n\
     \            - Path=/api/v1/auth/**\n\n        - id: products-service\n      \
@@ -3408,55 +3408,55 @@ files:
     \ orders-service\n          #uri: lb://DJANGO_ORDERS-SERVICE\n          uri: http://localhost:8011\n\
     \          predicates:\n            - Path=/api/v1/bizhub-orderline/**\n\nserver:\n\
     \  port: 8222\n"
-  info:
-    "size": "632"
-    "last_modified": "2025-11-16T15:56:15.249322254"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/.gitignore"
-  content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
-    !**/src/test/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
+    info:
+      "size": "632"
+      "last_modified": "2025-11-16T15:56:15.249322254"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/.gitignore"
+    content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
+    !**/src/testsdss/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
     .project\n.settings\n.springBeans\n.sts4-cache\n\n### IntelliJ IDEA ###\n.idea\n\
     *.iws\n*.iml\n*.ipr\n\n### NetBeans ###\n/nbproject/private/\n/nbbuild/\n/dist/\n\
-    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/test/**/build/\n\
+    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/testsdss/**/build/\n\
     \n### VS Code ###\n.vscode/\nsecrets/"
-  info:
-    "size": "402"
-    "last_modified": "2025-11-16T15:56:15.296982498"
-    "mime_type": "text/plain"
-    "extension": ".gitignore"
-- path: "config-server/src/test/java/com/izak/config_server/ConfigServerApplicationTests.java"
-  content: "package com.izak.config_server;\n\nimport org.junit.jupiter.api.Test;\n\
-    import org.springframework.boot.test.context.SpringBootTest;\n\n@SpringBootTest\n\
+    info:
+      "size": "402"
+      "last_modified": "2025-11-16T15:56:15.296982498"
+      "mime_type": "text/plain"
+      "extension": ".gitignore"
+  - path: "config-server/src/testsdss/java/com/izak/config_server/ConfigServerApplicationTests.java"
+    content: "package com.izak.config_server;\n\nimport org.junit.jupiter.api.Test;\n\
+    import org.springframework.boot.testsdss.context.SpringBootTest;\n\n@SpringBootTest\n\
     class ConfigServerApplicationTests {\n\n\t@Test\n\tvoid contextLoads() {\n\t}\n\
     \n}\n"
-  info:
-    "size": "220"
-    "last_modified": "2025-11-16T15:56:15.305028332"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "config-server/src/main/java/com/izak/config_server/ConfigServerApplication.java"
-  content: "package com.izak.config_server;\n\nimport org.springframework.boot.SpringApplication;\n\
+    info:
+      "size": "220"
+      "last_modified": "2025-11-16T15:56:15.305028332"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "config-server/src/main/java/com/izak/config_server/ConfigServerApplication.java"
+    content: "package com.izak.config_server;\n\nimport org.springframework.boot.SpringApplication;\n\
     import org.springframework.boot.autoconfigure.SpringBootApplication;\nimport org.springframework.cloud.config.server.EnableConfigServer;\n\
     \n@SpringBootApplication\n@EnableConfigServer\npublic class ConfigServerApplication\
     \ {\n\n\tpublic static void main(String[] args) {\n\t\tSpringApplication.run(ConfigServerApplication.class,\
     \ args);\n\t}\n\n}\n"
-  info:
-    "size": "414"
-    "last_modified": "2025-11-16T15:56:15.340477577"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "config-server/src/main/resources/application.yaml"
-  content: "spring:\n  profiles:\n    active: native\n  application:\n    name: config-server\n\
+    info:
+      "size": "414"
+      "last_modified": "2025-11-16T15:56:15.340477577"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "config-server/src/main/resources/application.yaml"
+    content: "spring:\n  profiles:\n    active: native\n  application:\n    name: config-server\n\
     \  cloud:\n    config:\n      server:\n        native:\n          search-locations:\
     \ classpath:/configurations\n\nserver:\n  port: 8888"
-  info:
-    "size": "204"
-    "last_modified": "2025-11-16T15:56:15.388582164"
-    "mime_type": "text/x-yaml"
-    "extension": ".yaml"
-- path: "config-server/src/main/resources/configurations/payment-service.yml"
-  content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/payment\n\
+    info:
+      "size": "204"
+      "last_modified": "2025-11-16T15:56:15.388582164"
+      "mime_type": "text/x-yaml"
+      "extension": ".yaml"
+  - path: "config-server/src/main/resources/configurations/payment-service.yml"
+    content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/payment\n\
     \    username: postgres\n    password: izak7901\n    #    url: jdbc:postgresql://localhost:5432/${AUTH_DB}\n\
     \    #    username: ${POSTGRES_USER}\n    #    password: ${POSTGRES_PASSWORD}\n\
     \    driver-class-name: org.postgresql.Driver\n\n  signals:\n    bootstrap-servers:\
@@ -3472,13 +3472,13 @@ files:
     \      schemas: public\n\n  logging:\n    level:\n      org.hibernate.SQL: DEBUG\n\
     \      org.hibernate.type.descriptor.sql.BasicBinder: TRACE\nserver:\n  port:\
     \ 8014\n"
-  info:
-    "size": "1214"
-    "last_modified": "2025-11-16T15:56:15.414834617"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/src/main/resources/configurations/django-products-service.yml"
-  content: "#django:\n#  config:\n#    import: file:./secrets/secret.yml\n#\n#  database:\n\
+    info:
+      "size": "1214"
+      "last_modified": "2025-11-16T15:56:15.414834617"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/src/main/resources/configurations/django-products-service.yml"
+    content: "#django:\n#  config:\n#    import: file:./secrets/secret.yml\n#\n#  database:\n\
     #    name: ${DJANGO_DB}\n#    host: ${POSTGRES_HOST}\n#    port: ${POSTGRES_PORT}\n\
     #    user: ${POSTGRES_USER}\n#    password: ${POSTGRES_PASSWORD}\n#  signals:\n\
     #    host: ${KAFKA_HOST}\n#    port: ${KAFKA_PORT}\n##  secret_key: ${DJANGO_SECRET_KEY}\n\
@@ -3489,22 +3489,22 @@ files:
     \ CFHfnFtYZLWhVbHpIB9r\n    MINIO_SECRET_KEY: 1xhS59CFJa4a1tA83l0nzt2U0GHYfPbpEeQr4oms\n\
     \    MINIO_BUCKET: bizhub\n    MINIO_PORT: 9000\n    MINIO_ENDPOINT: localhost:9000\n\
     \n"
-  info:
-    "size": "802"
-    "last_modified": "2025-11-16T15:56:15.422415393"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/src/main/resources/configurations/secrets/secrets.yml"
-  content: "##postgres\nPOSTGRES_USER: postgres\nPOSTGRES_PASSWORD: izak7901\nPOSTGRES_HOST:\
+    info:
+      "size": "802"
+      "last_modified": "2025-11-16T15:56:15.422415393"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/src/main/resources/configurations/secrets/secrets.yml"
+    content: "##postgres\nPOSTGRES_USER: postgres\nPOSTGRES_PASSWORD: izak7901\nPOSTGRES_HOST:\
     \ localhost\nPOSTGRES_PORT: 5432\n# Kafka\nKAFKA_PORT: 9092\nKAFKA_HOST: localhost\n\
     ##Auth service\nAUTH_DB: auth\n#\n##Django\nDJANGO_DB: bizhub\nDJANGO_SECRET_KEY:\n"
-  info:
-    "size": "232"
-    "last_modified": "2025-11-16T15:56:15.430231002"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/src/main/resources/configurations/notification-service.yml"
-  content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/notification\n\
+    info:
+      "size": "232"
+      "last_modified": "2025-11-16T15:56:15.430231002"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/src/main/resources/configurations/notification-service.yml"
+    content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/notification\n\
     \    username: postgres\n    password: izak7901\n    #    url: jdbc:postgresql://localhost:5432/${AUTH_DB}\n\
     \    #    username: ${POSTGRES_USER}\n    #    password: ${POSTGRES_PASSWORD}\n\
     \    driver-class-name: org.postgresql.Driver\n\n  signals:\n    bootstrap-servers:\
@@ -3520,32 +3520,32 @@ files:
     \      schemas: public\n\n  logging:\n    level:\n      org.hibernate.SQL: DEBUG\n\
     \      org.hibernate.type.descriptor.sql.BasicBinder: TRACE\nserver:\n  port:\
     \ 8013\n"
-  info:
-    "size": "1219"
-    "last_modified": "2025-11-16T15:56:15.457079547"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/src/main/resources/configurations/django-orders-service.yml"
-  content: "django:\n  database:\n    #    name: ${DJANGO_DB}\n    name: orders\n\
+    info:
+      "size": "1219"
+      "last_modified": "2025-11-16T15:56:15.457079547"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/src/main/resources/configurations/django-orders-service.yml"
+    content: "django:\n  database:\n    #    name: ${DJANGO_DB}\n    name: orders\n\
     \    host: localhost\n    port: 5432\n    #    user: ${POSTGRES_USER}\n    user:\
     \ postgres\n    #    password: ${POSTGRES_PASSWORD}\n    password: izak7901\n\
     \  signals:\n    KAFKA_BOOTSTRAP: 172.25.0.3:9092\n    port: 9092\n#  secret_key\n"
-  info:
-    "size": "289"
-    "last_modified": "2025-11-16T15:56:15.46490371"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/src/main/resources/configurations/discovery-service.yml"
-  content: "eureka:\n  instance:\n    hostname: localhost\n  client:\n    registerWithEureka:\
+    info:
+      "size": "289"
+      "last_modified": "2025-11-16T15:56:15.46490371"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/src/main/resources/configurations/discovery-service.yml"
+    content: "eureka:\n  instance:\n    hostname: localhost\n  client:\n    registerWithEureka:\
     \ false\n    fetchRegistry: false\n    serviceUrl:\n      defaultZone: http://${eureka.instance.hostname}/${server.port}/eureka/\n\
     \nserver:\n  port: 8761"
-  info:
-    "size": "223"
-    "last_modified": "2025-11-16T15:56:15.472547776"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/src/main/resources/configurations/auth-service.yml"
-  content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/auth\n\
+    info:
+      "size": "223"
+      "last_modified": "2025-11-16T15:56:15.472547776"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/src/main/resources/configurations/auth-service.yml"
+    content: "spring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/auth\n\
     \    username: postgres\n    password: izak7901\n#    url: jdbc:postgresql://localhost:5432/${AUTH_DB}\n\
     #    username: ${POSTGRES_USER}\n#    password: ${POSTGRES_PASSWORD}\n    driver-class-name:\
     \ org.postgresql.Driver\n\n  jpa:\n    showSql: true\n    hibernate:\n      ddl-auto:\
@@ -3553,23 +3553,23 @@ files:
     \  default_schema: public\n\n  flyway:\n    enabled: true\n    baseline-on-migrate:\
     \ true\n    schemas: public\n\nlogging:\n  level:\n    org.hibernate.SQL: DEBUG\n\
     \    org.hibernate.type.descriptor.sql.BasicBinder: TRACE\nserver:\n  port: 8090"
-  info:
-    "size": "639"
-    "last_modified": "2025-11-16T15:56:15.502485536"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/src/main/resources/configurations/application.yml"
-  content: "eureka:\n  instance:\n    hostname: localhost\n  client:\n    service-url:\n\
+    info:
+      "size": "639"
+      "last_modified": "2025-11-16T15:56:15.502485536"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/src/main/resources/configurations/application.yml"
+    content: "eureka:\n  instance:\n    hostname: localhost\n  client:\n    service-url:\n\
     \      defaultZone: http://localhost:8761/eureka\n\nspring:\n  cloud:\n    config:\n\
     \      override-system-properties: false\n\nmanagement:\n  tracing:\n    sampling:\n\
     \      probability: 1.0"
-  info:
-    "size": "249"
-    "last_modified": "2025-11-16T15:56:15.529878359"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/src/main/resources/configurations/gateway-service.yml"
-  content: "spring:\n  cloud:\n    gateway:\n      discovery:\n        locator:\n\
+    info:
+      "size": "249"
+      "last_modified": "2025-11-16T15:56:15.529878359"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/src/main/resources/configurations/gateway-service.yml"
+    content: "spring:\n  cloud:\n    gateway:\n      discovery:\n        locator:\n\
     \          enabled: true\n          lower-case-service-id: true\n\n      routes:\n\
     \        - id: auth-service\n          uri: lb://AUTH-SERVICE\n          predicates:\n\
     \            - Path=/api/v1/auth/**\n\n        - id: products-service\n      \
@@ -3578,20 +3578,20 @@ files:
     \ orders-service\n          #uri: lb://DJANGO_ORDERS-SERVICE\n          uri: http://localhost:8011\n\
     \          predicates:\n            - Path=/api/v1/bizhub-orderline/**\n\nserver:\n\
     \  port: 8222\n"
-  info:
-    "size": "632"
-    "last_modified": "2025-11-16T15:56:15.537352474"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "config-server/.gitattributes"
-  content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
-  info:
-    "size": "38"
-    "last_modified": "2025-11-16T15:56:15.569120527"
-    "mime_type": "text/plain"
-    "extension": ".gitattributes"
-- path: "config-server/mvnw"
-  content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
+    info:
+      "size": "632"
+      "last_modified": "2025-11-16T15:56:15.537352474"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "config-server/.gitattributes"
+    content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
+    info:
+      "size": "38"
+      "last_modified": "2025-11-16T15:56:15.569120527"
+      "mime_type": "text/plain"
+      "extension": ".gitattributes"
+  - path: "config-server/mvnw"
+    content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
     # Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor\
     \ license agreements.  See the NOTICE file\n# distributed with this work for additional\
     \ information\n# regarding copyright ownership.  The ASF licenses this file\n\
@@ -3741,13 +3741,13 @@ files:
     \ >\"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url\"\nmv -- \"$TMP_DOWNLOAD_DIR/$actualDistributionDir\"\
     \ \"$MAVEN_HOME\" || [ -d \"$MAVEN_HOME\" ] || die \"fail to move MAVEN_HOME\"\
     \n\nclean || :\nexec_maven \"$@\"\n"
-  info:
-    "size": "11790"
-    "last_modified": "2025-11-16T15:56:15.576609035"
-    "mime_type": "application/x-sh"
-    "extension": "."
-- path: "config-server/pom.xml"
-  content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
+    info:
+      "size": "11790"
+      "last_modified": "2025-11-16T15:56:15.576609035"
+      "mime_type": "application/x-sh"
+      "extension": "."
+  - path: "config-server/pom.xml"
+    content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
     \ xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"\
     http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\
     >\n\t<modelVersion>4.0.0</modelVersion>\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\
@@ -3762,7 +3762,7 @@ files:
     <dependencies>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.cloud</groupId>\n\
     \t\t\t<artifactId>spring-cloud-config-server</artifactId>\n\t\t</dependency>\n\
     \n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t\
-    <artifactId>spring-boot-starter-test</artifactId>\n\t\t\t<scope>test</scope>\n\
+    <artifactId>spring-boot-starter-testsdss</artifactId>\n\t\t\t<scope>testsdss</scope>\n\
     \t\t</dependency>\n\t</dependencies>\n\t<dependencyManagement>\n\t\t<dependencies>\n\
     \t\t\t<dependency>\n\t\t\t\t<groupId>org.springframework.cloud</groupId>\n\t\t\
     \t\t<artifactId>spring-cloud-dependencies</artifactId>\n\t\t\t\t<version>${spring-cloud.version}</version>\n\
@@ -3770,13 +3770,13 @@ files:
     \t\t</dependencies>\n\t</dependencyManagement>\n\n\t<build>\n\t\t<plugins>\n\t\
     \t\t<plugin>\n\t\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\n\
     \t\t\t</plugin>\n\t\t</plugins>\n\t</build>\n\n</project>\n"
-  info:
-    "size": "1781"
-    "last_modified": "2025-11-16T15:56:15.583606084"
-    "mime_type": "application/xml"
-    "extension": ".xml"
-- path: "config-server/mvnw.cmd"
-  content: "<# : batch portion\n@REM ----------------------------------------------------------------------------\n\
+    info:
+      "size": "1781"
+      "last_modified": "2025-11-16T15:56:15.583606084"
+      "mime_type": "application/xml"
+      "extension": ".xml"
+  - path: "config-server/mvnw.cmd"
+    content: "<# : batch portion\n@REM ----------------------------------------------------------------------------\n\
     @REM Licensed to the Apache Software Foundation (ASF) under one\n@REM or more\
     \ contributor license agreements.  See the NOTICE file\n@REM distributed with\
     \ this work for additional information\n@REM regarding copyright ownership.  The\
@@ -3879,20 +3879,20 @@ files:
     \ $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }\n  catch { Write-Warning \"Cannot\
     \ remove $TMP_DOWNLOAD_DIR\" }\n}\n\nWrite-Output \"MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD\"\
     \n"
-  info:
-    "size": "8292"
-    "last_modified": "2025-11-16T15:56:15.59262506"
-    "mime_type": "application/x-bat"
-    "extension": ".cmd"
-- path: "config-server/.mvn/wrapper/maven-wrapper.properties"
-  content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
-  info:
-    "size": "168"
-    "last_modified": "2025-11-16T15:56:15.603555065"
-    "mime_type": "text/x-java-properties"
-    "extension": ".properties"
-- path: "gateway/HELP.md"
-  content: "# Getting Started\n\n### Reference Documentation\nFor further reference,\
+    info:
+      "size": "8292"
+      "last_modified": "2025-11-16T15:56:15.59262506"
+      "mime_type": "application/x-bat"
+      "extension": ".cmd"
+  - path: "config-server/.mvn/wrapper/maven-wrapper.properties"
+    content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
+    info:
+      "size": "168"
+      "last_modified": "2025-11-16T15:56:15.603555065"
+      "mime_type": "text/x-java-properties"
+      "extension": ".properties"
+  - path: "gateway/HELP.md"
+    content: "# Getting Started\n\n### Reference Documentation\nFor further reference,\
     \ please consider the following sections:\n\n* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)\n\
     * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.5.7/maven-plugin)\n\
     * [Create an OCI image](https://docs.spring.io/spring-boot/3.5.7/maven-plugin/build-image.html)\n\
@@ -3907,59 +3907,59 @@ files:
     \ the parent.\nTo prevent this, the project POM contains empty overrides for these\
     \ elements.\nIf you manually switch to a different parent and actually want the\
     \ inheritance, you need to remove those overrides.\n\n"
-  info:
-    "size": "1374"
-    "last_modified": "2025-11-16T15:56:15.628739399"
-    "mime_type": "text/x-web-markdown"
-    "extension": ".md"
-- path: "gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
-  content: "com/izak/gateway/configuration/CorsConfig.class\n"
-  info:
-    "size": "48"
-    "last_modified": "2025-11-16T15:56:15.664254891"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/gateway/src/main/java/com/izak/gateway/GatewayApplication.java\n\
+    info:
+      "size": "1374"
+      "last_modified": "2025-11-16T15:56:15.628739399"
+      "mime_type": "text/x-web-markdown"
+      "extension": ".md"
+  - path: "gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
+    content: "com/izak/gateway/configuration/CorsConfig.class\n"
+    info:
+      "size": "48"
+      "last_modified": "2025-11-16T15:56:15.664254891"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/gateway/src/main/java/com/izak/gateway/GatewayApplication.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/gateway/src/main/java/com/izak/gateway/configuration/CorsConfig.java\n"
-  info:
-    "size": "256"
-    "last_modified": "2025-11-16T15:56:15.687232282"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "gateway/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
-  content: "com/izak/gateway/GatewayApplicationTests.class\n"
-  info:
-    "size": "47"
-    "last_modified": "2025-11-16T15:56:15.706553021"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "gateway/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/gateway/src/test/java/com/izak/gateway/GatewayApplicationTests.java\n"
-  info:
-    "size": "130"
-    "last_modified": "2025-11-16T15:56:15.714291491"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "gateway/target/test-classes/com/izak/gateway/GatewayApplicationTests.class"
-  content: "Êþº¾\0\0\0E\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "256"
+      "last_modified": "2025-11-16T15:56:15.687232282"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "gateway/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
+    content: "com/izak/gateway/GatewayApplicationTests.class\n"
+    info:
+      "size": "47"
+      "last_modified": "2025-11-16T15:56:15.706553021"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "gateway/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/gateway/src/testsdss/java/com/izak/gateway/GatewayApplicationTests.java\n"
+    info:
+      "size": "130"
+      "last_modified": "2025-11-16T15:56:15.714291491"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "gateway/target/testsdss-classes/com/izak/gateway/GatewayApplicationTests.class"
+    content: "Êþº¾\0\0\0E\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\0(com/izak/gateway/GatewayApplicationTests\x01\
     \0\x04Code\x01\0\x0fLineNumberTable\x01\0\x12LocalVariableTable\x01\0\x04this\x01\
     \0*Lcom/izak/gateway/GatewayApplicationTests;\x01\0\fcontextLoads\x01\0\x19RuntimeVisibleAnnotations\x01\
     \0\x1cLorg/junit/jupiter/api/Test;\x01\0\nSourceFile\x01\0\x1cGatewayApplicationTests.java\x01\
-    \06Lorg/springframework/boot/test/context/SpringBootTest;\0 \0\a\0\x02\0\0\0\0\
+    \06Lorg/springframework/boot/testsdss/context/SpringBootTest;\0 \0\a\0\x02\0\0\0\0\
     \0\x02\0\0\0\x05\0\x06\0\x01\0\t\0\0\0/\0\x01\0\x01\0\0\0\x05*·\0\x01±\0\0\0\x02\
     \0\n\0\0\0\x06\0\x01\0\0\0\a\0\v\0\0\0\f\0\x01\0\0\0\x05\0\f\0\r\0\0\0\0\0\x0e\
     \0\x06\0\x02\0\t\0\0\0+\0\0\0\x01\0\0\0\x01±\0\0\0\x02\0\n\0\0\0\x06\0\x01\0\0\
     \0\v\0\v\0\0\0\f\0\x01\0\0\0\x01\0\f\0\r\0\0\0\x0f\0\0\0\x06\0\x01\0\x10\0\0\0\
     \x02\0\x11\0\0\0\x02\0\x12\0\x0f\0\0\0\x06\0\x01\0\x13\0\0"
-  info:
-    "size": "540"
-    "last_modified": "2025-11-16T15:56:15.744314215"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "gateway/target/classes/com/izak/gateway/GatewayApplication.class"
-  content: "Êþº¾\0\0\0D\0\x1d\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "540"
+      "last_modified": "2025-11-16T15:56:15.744314215"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "gateway/target/classes/com/izak/gateway/GatewayApplication.class"
+    content: "Êþº¾\0\0\0D\0\x1d\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\0#com/izak/gateway/GatewayApplication\n\0\n\
     \0\v\a\0\f\f\0\r\0\x0e\x01\0*org/springframework/boot/SpringApplication\x01\0\x03\
     run\x01\0b(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;\x01\
@@ -3973,13 +3973,13 @@ files:
     \a*¸\0\tW±\0\0\0\x02\0\x10\0\0\0\n\0\x02\0\0\0\n\0\a\0\v\0\x11\0\0\0\f\0\x01\0\
     \0\0\b\0\x16\0\x17\0\0\0\x18\0\0\0\x05\x01\0\x16\0\0\0\x02\0\x19\0\0\0\x02\0\x1a\
     \0\e\0\0\0\x06\0\x01\0\x1c\0\0"
-  info:
-    "size": "742"
-    "last_modified": "2025-11-16T15:56:15.791173224"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "gateway/target/classes/com/izak/gateway/configuration/CorsConfig.class"
-  content: "Êþº¾\0\0\0D\0K\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "742"
+      "last_modified": "2025-11-16T15:56:15.791173224"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "gateway/target/classes/com/izak/gateway/configuration/CorsConfig.class"
+    content: "Êþº¾\0\0\0D\0K\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\0.org/springframework/web/cors/CorsConfiguration\n\
     \0\a\0\x03\n\0\v\0\f\a\0\r\f\0\x0e\0\x0f\x01\0\x11java/lang/Boolean\x01\0\avalueOf\x01\
     \0\x16(Z)Ljava/lang/Boolean;\n\0\a\0\x11\f\0\x12\0\x13\x01\0\x13setAllowCredentials\x01\
@@ -4008,42 +4008,42 @@ files:
     \x12\0&\0\x13\0,\0\x15\04\0\x16\0;\0\x17\0=\0\0\0 \0\x03\0\0\0D\0>\0?\0\0\0\b\0\
     <\0B\0C\0\x01\04\0\x10\0D\0E\0\x02\0F\0\0\0\x06\0\x01\0G\0\0\0\x02\0H\0\0\0\x02\
     \0I\0F\0\0\0\x06\0\x01\0J\0\0"
-  info:
-    "size": "1651"
-    "last_modified": "2025-11-16T15:56:15.817624465"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "gateway/target/classes/application.yml"
-  content: "spring:\n  config:\n    import: optional:configserver:http://localhost:8888\n\
+    info:
+      "size": "1651"
+      "last_modified": "2025-11-16T15:56:15.817624465"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "gateway/target/classes/application.yml"
+    content: "spring:\n  config:\n    import: optional:configserver:http://localhost:8888\n\
     \  application:\n    name: gateway-service\n"
-  info:
-    "size": "115"
-    "last_modified": "2025-11-16T15:56:15.861489401"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "gateway/.gitignore"
-  content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
-    !**/src/test/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
+    info:
+      "size": "115"
+      "last_modified": "2025-11-16T15:56:15.861489401"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "gateway/.gitignore"
+    content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
+    !**/src/testsdss/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
     .project\n.settings\n.springBeans\n.sts4-cache\n\n### IntelliJ IDEA ###\n.idea\n\
     *.iws\n*.iml\n*.ipr\n\n### NetBeans ###\n/nbproject/private/\n/nbbuild/\n/dist/\n\
-    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/test/**/build/\n\
+    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/testsdss/**/build/\n\
     \n### VS Code ###\n.vscode/\n"
-  info:
-    "size": "394"
-    "last_modified": "2025-11-16T15:56:15.897291512"
-    "mime_type": "text/plain"
-    "extension": ".gitignore"
-- path: "gateway/src/test/java/com/izak/gateway/GatewayApplicationTests.java"
-  content: "package com.izak.gateway;\n\nimport org.junit.jupiter.api.Test;\nimport\
-    \ org.springframework.boot.test.context.SpringBootTest;\n\n@SpringBootTest\nclass\
+    info:
+      "size": "394"
+      "last_modified": "2025-11-16T15:56:15.897291512"
+      "mime_type": "text/plain"
+      "extension": ".gitignore"
+  - path: "gateway/src/testsdss/java/com/izak/gateway/GatewayApplicationTests.java"
+    content: "package com.izak.gateway;\n\nimport org.junit.jupiter.api.Test;\nimport\
+    \ org.springframework.boot.testsdss.context.SpringBootTest;\n\n@SpringBootTest\nclass\
     \ GatewayApplicationTests {\n\n\t@Test\n\tvoid contextLoads() {\n\t}\n\n}\n"
-  info:
-    "size": "209"
-    "last_modified": "2025-11-16T15:56:15.923330216"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "gateway/src/main/java/com/izak/gateway/configuration/CorsConfig.java"
-  content: "package com.izak.gateway.configuration;\n\nimport org.springframework.context.annotation.Bean;\n\
+    info:
+      "size": "209"
+      "last_modified": "2025-11-16T15:56:15.923330216"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "gateway/src/main/java/com/izak/gateway/configuration/CorsConfig.java"
+    content: "package com.izak.gateway.configuration;\n\nimport org.springframework.context.annotation.Bean;\n\
     import org.springframework.context.annotation.Configuration;\nimport org.springframework.web.cors.CorsConfiguration;\n\
     import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;\n\
     import org.springframework.web.cors.reactive.CorsWebFilter;\n\nimport java.util.Arrays;\n\
@@ -4054,38 +4054,38 @@ files:
     \ UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();\n\
     \    source.registerCorsConfiguration(\"/**\", config);\n    return new CorsWebFilter(source);\n\
     \  }\n}\n"
-  info:
-    "size": "878"
-    "last_modified": "2025-11-16T15:56:15.976617633"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "gateway/src/main/java/com/izak/gateway/GatewayApplication.java"
-  content: "package com.izak.gateway;\n\nimport org.springframework.boot.SpringApplication;\n\
+    info:
+      "size": "878"
+      "last_modified": "2025-11-16T15:56:15.976617633"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "gateway/src/main/java/com/izak/gateway/GatewayApplication.java"
+    content: "package com.izak.gateway;\n\nimport org.springframework.boot.SpringApplication;\n\
     import org.springframework.boot.autoconfigure.SpringBootApplication;\n\n@SpringBootApplication\n\
     public class GatewayApplication {\n\n\tpublic static void main(String[] args)\
     \ {\n\t\tSpringApplication.run(GatewayApplication.class, args);\n\t}\n\n}\n"
-  info:
-    "size": "311"
-    "last_modified": "2025-11-16T15:56:16.010803504"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "gateway/src/main/resources/application.yml"
-  content: "spring:\n  config:\n    import: optional:configserver:http://localhost:8888\n\
+    info:
+      "size": "311"
+      "last_modified": "2025-11-16T15:56:16.010803504"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "gateway/src/main/resources/application.yml"
+    content: "spring:\n  config:\n    import: optional:configserver:http://localhost:8888\n\
     \  application:\n    name: gateway-service\n"
-  info:
-    "size": "115"
-    "last_modified": "2025-11-16T15:56:16.057229199"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "gateway/.gitattributes"
-  content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
-  info:
-    "size": "38"
-    "last_modified": "2025-11-16T15:56:16.093371758"
-    "mime_type": "text/plain"
-    "extension": ".gitattributes"
-- path: "gateway/mvnw"
-  content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
+    info:
+      "size": "115"
+      "last_modified": "2025-11-16T15:56:16.057229199"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "gateway/.gitattributes"
+    content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
+    info:
+      "size": "38"
+      "last_modified": "2025-11-16T15:56:16.093371758"
+      "mime_type": "text/plain"
+      "extension": ".gitattributes"
+  - path: "gateway/mvnw"
+    content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
     # Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor\
     \ license agreements.  See the NOTICE file\n# distributed with this work for additional\
     \ information\n# regarding copyright ownership.  The ASF licenses this file\n\
@@ -4235,13 +4235,13 @@ files:
     \ >\"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url\"\nmv -- \"$TMP_DOWNLOAD_DIR/$actualDistributionDir\"\
     \ \"$MAVEN_HOME\" || [ -d \"$MAVEN_HOME\" ] || die \"fail to move MAVEN_HOME\"\
     \n\nclean || :\nexec_maven \"$@\"\n"
-  info:
-    "size": "11790"
-    "last_modified": "2025-11-16T15:56:16.104667895"
-    "mime_type": "application/x-sh"
-    "extension": "."
-- path: "gateway/pom.xml"
-  content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
+    info:
+      "size": "11790"
+      "last_modified": "2025-11-16T15:56:16.104667895"
+      "mime_type": "application/x-sh"
+      "extension": "."
+  - path: "gateway/pom.xml"
+    content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
     \ xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"\
     http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\
     >\n\t<modelVersion>4.0.0</modelVersion>\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\
@@ -4259,7 +4259,7 @@ files:
     \t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.cloud</groupId>\n\
     \t\t\t<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>\n\t\t\
     </dependency>\n\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\
-    \t\t\t<artifactId>spring-boot-starter-test</artifactId>\n\t\t\t<scope>test</scope>\n\
+    \t\t\t<artifactId>spring-boot-starter-testsdss</artifactId>\n\t\t\t<scope>testsdss</scope>\n\
     \t\t</dependency>\n        <dependency>\n            <groupId>org.springframework.boot</groupId>\n\
     \            <artifactId>spring-boot-starter-actuator</artifactId>\n        </dependency>\n\
     \        <dependency>\n            <groupId>io.micrometer</groupId>\n        \
@@ -4273,13 +4273,13 @@ files:
     \n\t<build>\n\t\t<plugins>\n\t\t\t<plugin>\n\t\t\t\t<groupId>org.springframework.boot</groupId>\n\
     \t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\n\t\t\t</plugin>\n\t\
     \t</plugins>\n\t</build>\n\n</project>\n"
-  info:
-    "size": "2545"
-    "last_modified": "2025-11-16T15:56:16.11535501"
-    "mime_type": "application/xml"
-    "extension": ".xml"
-- path: "gateway/mvnw.cmd"
-  content: "<# : batch portion\r\n@REM ----------------------------------------------------------------------------\r\
+    info:
+      "size": "2545"
+      "last_modified": "2025-11-16T15:56:16.11535501"
+      "mime_type": "application/xml"
+      "extension": ".xml"
+  - path: "gateway/mvnw.cmd"
+    content: "<# : batch portion\r\n@REM ----------------------------------------------------------------------------\r\
     \n@REM Licensed to the Apache Software Foundation (ASF) under one\r\n@REM or more\
     \ contributor license agreements.  See the NOTICE file\r\n@REM distributed with\
     \ this work for additional information\r\n@REM regarding copyright ownership.\
@@ -4385,20 +4385,20 @@ files:
     \ MAVEN_HOME\"\r\n  }\r\n} finally {\r\n  try { Remove-Item $TMP_DOWNLOAD_DIR\
     \ -Recurse -Force | Out-Null }\r\n  catch { Write-Warning \"Cannot remove $TMP_DOWNLOAD_DIR\"\
     \ }\r\n}\r\n\r\nWrite-Output \"MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD\"\r\n"
-  info:
-    "size": "8481"
-    "last_modified": "2025-11-16T15:56:16.126963767"
-    "mime_type": "application/x-bat"
-    "extension": ".cmd"
-- path: "gateway/.mvn/wrapper/maven-wrapper.properties"
-  content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
-  info:
-    "size": "168"
-    "last_modified": "2025-11-16T15:56:16.138973998"
-    "mime_type": "text/x-java-properties"
-    "extension": ".properties"
-- path: "discovery-server/HELP.md"
-  content: "# Read Me First\nThe following was discovered as part of building this\
+    info:
+      "size": "8481"
+      "last_modified": "2025-11-16T15:56:16.126963767"
+      "mime_type": "application/x-bat"
+      "extension": ".cmd"
+  - path: "gateway/.mvn/wrapper/maven-wrapper.properties"
+    content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
+    info:
+      "size": "168"
+      "last_modified": "2025-11-16T15:56:16.138973998"
+      "mime_type": "text/x-java-properties"
+      "extension": ".properties"
+  - path: "discovery-server/HELP.md"
+    content: "# Read Me First\nThe following was discovered as part of building this\
     \ project:\n\n* The original package name 'com.izak.discovery-server' is invalid\
     \ and this project uses 'com.izak.discovery_server' instead.\n\n# Getting Started\n\
     \n### Reference Documentation\nFor further reference, please consider the following\
@@ -4415,58 +4415,58 @@ files:
     \ the parent.\nTo prevent this, the project POM contains empty overrides for these\
     \ elements.\nIf you manually switch to a different parent and actually want the\
     \ inheritance, you need to remove those overrides.\n\n"
-  info:
-    "size": "1460"
-    "last_modified": "2025-11-16T15:56:16.174878194"
-    "mime_type": "text/x-web-markdown"
-    "extension": ".md"
-- path: "discovery-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
-  content: "com/izak/discovery_server/DiscoveryServerApplication.class\n"
-  info:
-    "size": "59"
-    "last_modified": "2025-11-16T15:56:16.220533166"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "discovery-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/discovery-server/src/main/java/com/izak/discovery_server/DiscoveryServerApplication.java\n"
-  info:
-    "size": "151"
-    "last_modified": "2025-11-16T15:56:16.234278607"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "discovery-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
-  content: "com/izak/discovery_server/DiscoveryServerApplicationTests.class\n"
-  info:
-    "size": "64"
-    "last_modified": "2025-11-16T15:56:16.253182732"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "discovery-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/discovery-server/src/test/java/com/izak/discovery_server/DiscoveryServerApplicationTests.java\n"
-  info:
-    "size": "156"
-    "last_modified": "2025-11-16T15:56:16.2607772"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "discovery-server/target/test-classes/com/izak/discovery_server/DiscoveryServerApplicationTests.class"
-  content: "Êþº¾\0\0\0=\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "1460"
+      "last_modified": "2025-11-16T15:56:16.174878194"
+      "mime_type": "text/x-web-markdown"
+      "extension": ".md"
+  - path: "discovery-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
+    content: "com/izak/discovery_server/DiscoveryServerApplication.class\n"
+    info:
+      "size": "59"
+      "last_modified": "2025-11-16T15:56:16.220533166"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "discovery-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/discovery-server/src/main/java/com/izak/discovery_server/DiscoveryServerApplication.java\n"
+    info:
+      "size": "151"
+      "last_modified": "2025-11-16T15:56:16.234278607"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "discovery-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
+    content: "com/izak/discovery_server/DiscoveryServerApplicationTests.class\n"
+    info:
+      "size": "64"
+      "last_modified": "2025-11-16T15:56:16.253182732"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "discovery-server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/discovery-server/src/testsdss/java/com/izak/discovery_server/DiscoveryServerApplicationTests.java\n"
+    info:
+      "size": "156"
+      "last_modified": "2025-11-16T15:56:16.2607772"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "discovery-server/target/testsdss-classes/com/izak/discovery_server/DiscoveryServerApplicationTests.class"
+    content: "Êþº¾\0\0\0=\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\09com/izak/discovery_server/DiscoveryServerApplicationTests\x01\
     \0\x04Code\x01\0\x0fLineNumberTable\x01\0\x12LocalVariableTable\x01\0\x04this\x01\
     \0;Lcom/izak/discovery_server/DiscoveryServerApplicationTests;\x01\0\fcontextLoads\x01\
     \0\x19RuntimeVisibleAnnotations\x01\0\x1cLorg/junit/jupiter/api/Test;\x01\0\n\
-    SourceFile\x01\0$DiscoveryServerApplicationTests.java\x01\06Lorg/springframework/boot/test/context/SpringBootTest;\0\
+    SourceFile\x01\0$DiscoveryServerApplicationTests.java\x01\06Lorg/springframework/boot/testsdss/context/SpringBootTest;\0\
     \ \0\a\0\x02\0\0\0\0\0\x02\0\0\0\x05\0\x06\0\x01\0\t\0\0\0/\0\x01\0\x01\0\0\0\x05\
     *·\0\x01±\0\0\0\x02\0\n\0\0\0\x06\0\x01\0\0\0\a\0\v\0\0\0\f\0\x01\0\0\0\x05\0\f\
     \0\r\0\0\0\0\0\x0e\0\x06\0\x02\0\t\0\0\0+\0\0\0\x01\0\0\0\x01±\0\0\0\x02\0\n\0\
     \0\0\x06\0\x01\0\0\0\v\0\v\0\0\0\f\0\x01\0\0\0\x01\0\f\0\r\0\0\0\x0f\0\0\0\x06\
     \0\x01\0\x10\0\0\0\x02\0\x11\0\0\0\x02\0\x12\0\x0f\0\0\0\x06\0\x01\0\x13\0\0"
-  info:
-    "size": "582"
-    "last_modified": "2025-11-16T15:56:16.292203025"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "discovery-server/target/classes/com/izak/discovery_server/DiscoveryServerApplication.class"
-  content: "Êþº¾\0\0\0=\0\x1e\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "582"
+      "last_modified": "2025-11-16T15:56:16.292203025"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "discovery-server/target/classes/com/izak/discovery_server/DiscoveryServerApplication.class"
+    content: "Êþº¾\0\0\0=\0\x1e\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\04com/izak/discovery_server/DiscoveryServerApplication\n\
     \0\n\0\v\a\0\f\f\0\r\0\x0e\x01\0*org/springframework/boot/SpringApplication\x01\
     \0\x03run\x01\0b(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;\x01\
@@ -4481,69 +4481,69 @@ files:
     \a*¸\0\tW±\0\0\0\x02\0\x10\0\0\0\n\0\x02\0\0\0\f\0\a\0\r\0\x11\0\0\0\f\0\x01\0\
     \0\0\b\0\x16\0\x17\0\0\0\x18\0\0\0\x05\x01\0\x16\0\0\0\x02\0\x19\0\0\0\x02\0\x1a\
     \0\e\0\0\0\n\0\x02\0\x1c\0\0\0\x1d\0\0"
-  info:
-    "size": "859"
-    "last_modified": "2025-11-16T15:56:16.32274679"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "discovery-server/target/classes/application.yml"
-  content: "spring:\n  config:\n    import: optional:configserver:http://localhost:8888\n\
+    info:
+      "size": "859"
+      "last_modified": "2025-11-16T15:56:16.32274679"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "discovery-server/target/classes/application.yml"
+    content: "spring:\n  config:\n    import: optional:configserver:http://localhost:8888\n\
     \  application:\n    name: discovery-service\n"
-  info:
-    "size": "117"
-    "last_modified": "2025-11-16T15:56:16.357604854"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "discovery-server/.gitignore"
-  content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
-    !**/src/test/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
+    info:
+      "size": "117"
+      "last_modified": "2025-11-16T15:56:16.357604854"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "discovery-server/.gitignore"
+    content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
+    !**/src/testsdss/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
     .project\n.settings\n.springBeans\n.sts4-cache\n\n### IntelliJ IDEA ###\n.idea\n\
     *.iws\n*.iml\n*.ipr\n\n### NetBeans ###\n/nbproject/private/\n/nbbuild/\n/dist/\n\
-    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/test/**/build/\n\
+    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/testsdss/**/build/\n\
     \n### VS Code ###\n.vscode/\n"
-  info:
-    "size": "394"
-    "last_modified": "2025-11-16T15:56:16.395478399"
-    "mime_type": "text/plain"
-    "extension": ".gitignore"
-- path: "discovery-server/src/test/java/com/izak/discovery_server/DiscoveryServerApplicationTests.java"
-  content: "package com.izak.discovery_server;\n\nimport org.junit.jupiter.api.Test;\n\
-    import org.springframework.boot.test.context.SpringBootTest;\n\n@SpringBootTest\n\
+    info:
+      "size": "394"
+      "last_modified": "2025-11-16T15:56:16.395478399"
+      "mime_type": "text/plain"
+      "extension": ".gitignore"
+  - path: "discovery-server/src/testsdss/java/com/izak/discovery_server/DiscoveryServerApplicationTests.java"
+    content: "package com.izak.discovery_server;\n\nimport org.junit.jupiter.api.Test;\n\
+    import org.springframework.boot.testsdss.context.SpringBootTest;\n\n@SpringBootTest\n\
     class DiscoveryServerApplicationTests {\n\n\t@Test\n\tvoid contextLoads() {\n\t\
     }\n\n}\n"
-  info:
-    "size": "226"
-    "last_modified": "2025-11-16T15:56:16.403426034"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "discovery-server/src/main/java/com/izak/discovery_server/DiscoveryServerApplication.java"
-  content: "package com.izak.discovery_server;\n\nimport org.springframework.boot.SpringApplication;\n\
+    info:
+      "size": "226"
+      "last_modified": "2025-11-16T15:56:16.403426034"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "discovery-server/src/main/java/com/izak/discovery_server/DiscoveryServerApplication.java"
+    content: "package com.izak.discovery_server;\n\nimport org.springframework.boot.SpringApplication;\n\
     import org.springframework.boot.autoconfigure.SpringBootApplication;\nimport org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;\n\
     \n@SpringBootApplication\n@EnableEurekaServer\npublic class DiscoveryServerApplication\
     \ {\n\n\tpublic static void main(String[] args) {\n\t\tSpringApplication.run(DiscoveryServerApplication.class,\
     \ args);\n\t}\n\n}\n"
-  info:
-    "size": "431"
-    "last_modified": "2025-11-16T15:56:16.440911519"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "discovery-server/src/main/resources/application.yml"
-  content: "spring:\n  config:\n    import: optional:configserver:http://localhost:8888\n\
+    info:
+      "size": "431"
+      "last_modified": "2025-11-16T15:56:16.440911519"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "discovery-server/src/main/resources/application.yml"
+    content: "spring:\n  config:\n    import: optional:configserver:http://localhost:8888\n\
     \  application:\n    name: discovery-service\n"
-  info:
-    "size": "117"
-    "last_modified": "2025-11-16T15:56:16.484204026"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "discovery-server/.gitattributes"
-  content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
-  info:
-    "size": "38"
-    "last_modified": "2025-11-16T15:56:16.523374838"
-    "mime_type": "text/plain"
-    "extension": ".gitattributes"
-- path: "discovery-server/mvnw"
-  content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
+    info:
+      "size": "117"
+      "last_modified": "2025-11-16T15:56:16.484204026"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "discovery-server/.gitattributes"
+    content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
+    info:
+      "size": "38"
+      "last_modified": "2025-11-16T15:56:16.523374838"
+      "mime_type": "text/plain"
+      "extension": ".gitattributes"
+  - path: "discovery-server/mvnw"
+    content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
     # Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor\
     \ license agreements.  See the NOTICE file\n# distributed with this work for additional\
     \ information\n# regarding copyright ownership.  The ASF licenses this file\n\
@@ -4693,13 +4693,13 @@ files:
     \ >\"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url\"\nmv -- \"$TMP_DOWNLOAD_DIR/$actualDistributionDir\"\
     \ \"$MAVEN_HOME\" || [ -d \"$MAVEN_HOME\" ] || die \"fail to move MAVEN_HOME\"\
     \n\nclean || :\nexec_maven \"$@\"\n"
-  info:
-    "size": "11790"
-    "last_modified": "2025-11-16T15:56:16.531059712"
-    "mime_type": "application/x-sh"
-    "extension": "."
-- path: "discovery-server/pom.xml"
-  content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
+    info:
+      "size": "11790"
+      "last_modified": "2025-11-16T15:56:16.531059712"
+      "mime_type": "application/x-sh"
+      "extension": "."
+  - path: "discovery-server/pom.xml"
+    content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
     \ xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"\
     http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\
     >\n\t<modelVersion>4.0.0</modelVersion>\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\
@@ -4715,7 +4715,7 @@ files:
     \t\t\t<artifactId>spring-cloud-starter-config</artifactId>\n\t\t</dependency>\n\
     \t\t<dependency>\n\t\t\t<groupId>org.springframework.cloud</groupId>\n\t\t\t<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>\n\
     \t\t</dependency>\n\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\
-    \t\t\t<artifactId>spring-boot-starter-test</artifactId>\n\t\t\t<scope>test</scope>\n\
+    \t\t\t<artifactId>spring-boot-starter-testsdss</artifactId>\n\t\t\t<scope>testsdss</scope>\n\
     \t\t</dependency>\n\t</dependencies>\n\t<dependencyManagement>\n\t\t<dependencies>\n\
     \t\t\t<dependency>\n\t\t\t\t<groupId>org.springframework.cloud</groupId>\n\t\t\
     \t\t<artifactId>spring-cloud-dependencies</artifactId>\n\t\t\t\t<version>${spring-cloud.version}</version>\n\
@@ -4723,13 +4723,13 @@ files:
     \t\t</dependencies>\n\t</dependencyManagement>\n\n\t<build>\n\t\t<plugins>\n\t\
     \t\t<plugin>\n\t\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\n\
     \t\t\t</plugin>\n\t\t</plugins>\n\t</build>\n\n</project>\n"
-  info:
-    "size": "1941"
-    "last_modified": "2025-11-16T15:56:16.537951495"
-    "mime_type": "application/xml"
-    "extension": ".xml"
-- path: "discovery-server/mvnw.cmd"
-  content: "<# : batch portion\n@REM ----------------------------------------------------------------------------\n\
+    info:
+      "size": "1941"
+      "last_modified": "2025-11-16T15:56:16.537951495"
+      "mime_type": "application/xml"
+      "extension": ".xml"
+  - path: "discovery-server/mvnw.cmd"
+    content: "<# : batch portion\n@REM ----------------------------------------------------------------------------\n\
     @REM Licensed to the Apache Software Foundation (ASF) under one\n@REM or more\
     \ contributor license agreements.  See the NOTICE file\n@REM distributed with\
     \ this work for additional information\n@REM regarding copyright ownership.  The\
@@ -4832,20 +4832,20 @@ files:
     \ $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }\n  catch { Write-Warning \"Cannot\
     \ remove $TMP_DOWNLOAD_DIR\" }\n}\n\nWrite-Output \"MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD\"\
     \n"
-  info:
-    "size": "8292"
-    "last_modified": "2025-11-16T15:56:16.546010579"
-    "mime_type": "application/x-bat"
-    "extension": ".cmd"
-- path: "discovery-server/.mvn/wrapper/maven-wrapper.properties"
-  content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
-  info:
-    "size": "168"
-    "last_modified": "2025-11-16T15:56:16.553735406"
-    "mime_type": "text/x-java-properties"
-    "extension": ".properties"
-- path: "auth-service/HELP.md"
-  content: "# Read Me First\nThe following was discovered as part of building this\
+    info:
+      "size": "8292"
+      "last_modified": "2025-11-16T15:56:16.546010579"
+      "mime_type": "application/x-bat"
+      "extension": ".cmd"
+  - path: "discovery-server/.mvn/wrapper/maven-wrapper.properties"
+    content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
+    info:
+      "size": "168"
+      "last_modified": "2025-11-16T15:56:16.553735406"
+      "mime_type": "text/x-java-properties"
+      "extension": ".properties"
+  - path: "auth-service/HELP.md"
+    content: "# Read Me First\nThe following was discovered as part of building this\
     \ project:\n\n* The original package name 'com.izak.auth-service' is invalid and\
     \ this project uses 'com.izak.auth_service' instead.\n\n# Getting Started\n\n\
     ### Reference Documentation\nFor further reference, please consider the following\
@@ -4875,13 +4875,13 @@ files:
     \ this, the project POM contains empty overrides for these elements.\nIf you manually\
     \ switch to a different parent and actually want the inheritance, you need to\
     \ remove those overrides.\n\n"
-  info:
-    "size": "2630"
-    "last_modified": "2025-11-16T15:56:16.579714075"
-    "mime_type": "text/x-web-markdown"
-    "extension": ".md"
-- path: "auth-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
-  content: "com/izak/auth_service/configuration/ApplicationConfiguration.class\ncom/izak/auth_service/address/dto/AddressRequest$AddressRequestBuilder.class\n\
+    info:
+      "size": "2630"
+      "last_modified": "2025-11-16T15:56:16.579714075"
+      "mime_type": "text/x-web-markdown"
+      "extension": ".md"
+  - path: "auth-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst"
+    content: "com/izak/auth_service/configuration/ApplicationConfiguration.class\ncom/izak/auth_service/address/dto/AddressRequest$AddressRequestBuilder.class\n\
     com/izak/auth_service/user/repository/UserRepository.class\ncom/izak/auth_service/user/enums/Auth.class\n\
     com/izak/auth_service/auth/dto/AuthenticateRequest$AuthenticateRequestBuilder.class\n\
     com/izak/auth_service/AuthServiceApplication.class\ncom/izak/auth_service/user/entity/User$UserBuilder.class\n\
@@ -4895,13 +4895,13 @@ files:
     com/izak/auth_service/address/dto/AddressRequest.class\ncom/izak/auth_service/address/mapper/AddressMapper.class\n\
     com/izak/auth_service/auth/dto/AuthenticateRequest.class\ncom/izak/auth_service/auth/dto/AuthResponse.class\n\
     com/izak/auth_service/auth/dto/AuthResponse$AuthResponseBuilder.class\ncom/izak/auth_service/auth/dto/RegisterRequest.class\n"
-  info:
-    "size": "1581"
-    "last_modified": "2025-11-16T15:56:16.615501213"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "auth-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/main/java/com/izak/auth_service/AuthServiceApplication.java\n\
+    info:
+      "size": "1581"
+      "last_modified": "2025-11-16T15:56:16.615501213"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "auth-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/main/java/com/izak/auth_service/AuthServiceApplication.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/main/java/com/izak/auth_service/address/controller/AddressController.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/main/java/com/izak/auth_service/address/dto/AddressRequest.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/main/java/com/izak/auth_service/address/entity/Address.java\n\
@@ -4924,44 +4924,44 @@ files:
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/main/java/com/izak/auth_service/user/entity/User.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/main/java/com/izak/auth_service/user/enums/Auth.java\n\
     /home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/main/java/com/izak/auth_service/user/repository/UserRepository.java\n"
-  info:
-    "size": "3312"
-    "last_modified": "2025-11-16T15:56:16.623246306"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "auth-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
-  content: "com/izak/auth_service/AuthServiceApplicationTests.class\n"
-  info:
-    "size": "56"
-    "last_modified": "2025-11-16T15:56:16.649806804"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "auth-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
-  content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/test/java/com/izak/auth_service/AuthServiceApplicationTests.java\n"
-  info:
-    "size": "144"
-    "last_modified": "2025-11-16T15:56:16.660891919"
-    "mime_type": "text/plain"
-    "extension": ".lst"
-- path: "auth-service/target/test-classes/com/izak/auth_service/AuthServiceApplicationTests.class"
-  content: "Êþº¾\0\0\0C\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "3312"
+      "last_modified": "2025-11-16T15:56:16.623246306"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "auth-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst"
+    content: "com/izak/auth_service/AuthServiceApplicationTests.class\n"
+    info:
+      "size": "56"
+      "last_modified": "2025-11-16T15:56:16.649806804"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "auth-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst"
+    content: "/home/izak/development/SMEs platform/SMEs-E-Platform/services/auth-service/src/testsdss/java/com/izak/auth_service/AuthServiceApplicationTests.java\n"
+    info:
+      "size": "144"
+      "last_modified": "2025-11-16T15:56:16.660891919"
+      "mime_type": "text/plain"
+      "extension": ".lst"
+  - path: "auth-service/target/testsdss-classes/com/izak/auth_service/AuthServiceApplicationTests.class"
+    content: "Êþº¾\0\0\0C\0\x14\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\01com/izak/auth_service/AuthServiceApplicationTests\x01\
     \0\x04Code\x01\0\x0fLineNumberTable\x01\0\x12LocalVariableTable\x01\0\x04this\x01\
     \03Lcom/izak/auth_service/AuthServiceApplicationTests;\x01\0\fcontextLoads\x01\
     \0\x19RuntimeVisibleAnnotations\x01\0\x1cLorg/junit/jupiter/api/Test;\x01\0\n\
-    SourceFile\x01\0 AuthServiceApplicationTests.java\x01\06Lorg/springframework/boot/test/context/SpringBootTest;\0\
+    SourceFile\x01\0 AuthServiceApplicationTests.java\x01\06Lorg/springframework/boot/testsdss/context/SpringBootTest;\0\
     \ \0\a\0\x02\0\0\0\0\0\x02\0\0\0\x05\0\x06\0\x01\0\t\0\0\0/\0\x01\0\x01\0\0\0\x05\
     *·\0\x01±\0\0\0\x02\0\n\0\0\0\x06\0\x01\0\0\0\a\0\v\0\0\0\f\0\x01\0\0\0\x05\0\f\
     \0\r\0\0\0\0\0\x0e\0\x06\0\x02\0\t\0\0\0+\0\0\0\x01\0\0\0\x01±\0\0\0\x02\0\n\0\
     \0\0\x06\0\x01\0\0\0\v\0\v\0\0\0\f\0\x01\0\0\0\x01\0\f\0\r\0\0\0\x0f\0\0\0\x06\
     \0\x01\0\x10\0\0\0\x02\0\x11\0\0\0\x02\0\x12\0\x0f\0\0\0\x06\0\x01\0\x13\0\0"
-  info:
-    "size": "562"
-    "last_modified": "2025-11-16T15:56:16.69213138"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/db/migration/V2__create_address_table.sql"
-  content: "-- Create sequence\nCREATE SEQUENCE IF NOT EXISTS public.user_sequence\
+    info:
+      "size": "562"
+      "last_modified": "2025-11-16T15:56:16.69213138"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/db/migration/V2__create_address_table.sql"
+    content: "-- Create sequence\nCREATE SEQUENCE IF NOT EXISTS public.user_sequence\
     \ START 1 INCREMENT 1;\n\n-- Create table\nCREATE TABLE IF NOT EXISTS public._user\
     \ (\n    id BIGINT PRIMARY KEY DEFAULT nextval('public.user_sequence'),\n    first_name\
     \ VARCHAR(255),\n    last_name VARCHAR(255),\n    email VARCHAR(255) UNIQUE,\n\
@@ -4976,13 +4976,13 @@ files:
     \    county VARCHAR(255),\n    postal_code VARCHAR(255),\n    CONSTRAINT pk_address\
     \ PRIMARY KEY (id),\n    CONSTRAINT fk_address_user FOREIGN KEY (user_id) REFERENCES\
     \ _user(id) ON DELETE CASCADE\n);\n"
-  info:
-    "size": "1132"
-    "last_modified": "2025-11-16T15:56:16.723863973"
-    "mime_type": "text/x-sql"
-    "extension": ".sql"
-- path: "auth-service/target/classes/db/migration/V1__init_schema.sql"
-  content: "-- Create sequence\nCREATE SEQUENCE IF NOT EXISTS public.user_sequence\
+    info:
+      "size": "1132"
+      "last_modified": "2025-11-16T15:56:16.723863973"
+      "mime_type": "text/x-sql"
+      "extension": ".sql"
+  - path: "auth-service/target/classes/db/migration/V1__init_schema.sql"
+    content: "-- Create sequence\nCREATE SEQUENCE IF NOT EXISTS public.user_sequence\
     \ START 1 INCREMENT 1;\n\n-- Create table\nCREATE TABLE IF NOT EXISTS public._user\
     \ (\n    id INT PRIMARY KEY DEFAULT nextval('public.user_sequence'),\n    first_name\
     \ VARCHAR(255),\n    last_name VARCHAR(255),\n    email VARCHAR(255) UNIQUE,\n\
@@ -4990,13 +4990,13 @@ files:
     \    auth VARCHAR(50),\n    password VARCHAR(255),\n    is_enabled BOOLEAN DEFAULT\
     \ TRUE,\n    is_account_non_locked BOOLEAN DEFAULT TRUE,\n    is_credentials_non_expired\
     \ BOOLEAN DEFAULT TRUE,\n    is_account_non_expired BOOLEAN DEFAULT TRUE\n);\n"
-  info:
-    "size": "616"
-    "last_modified": "2025-11-16T15:56:16.731772091"
-    "mime_type": "text/x-sql"
-    "extension": ".sql"
-- path: "auth-service/target/classes/com/izak/auth_service/AuthServiceApplication.class"
-  content: "Êþº¾\0\0\0C\0\x1d\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "616"
+      "last_modified": "2025-11-16T15:56:16.731772091"
+      "mime_type": "text/x-sql"
+      "extension": ".sql"
+  - path: "auth-service/target/classes/com/izak/auth_service/AuthServiceApplication.class"
+    content: "Êþº¾\0\0\0C\0\x1d\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\a\0\b\x01\0,com/izak/auth_service/AuthServiceApplication\n\
     \0\n\0\v\a\0\f\f\0\r\0\x0e\x01\0*org/springframework/boot/SpringApplication\x01\
     \0\x03run\x01\0b(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;\x01\
@@ -5010,13 +5010,13 @@ files:
     \a*¸\0\tW±\0\0\0\x02\0\x10\0\0\0\n\0\x02\0\0\0\n\0\a\0\v\0\x11\0\0\0\f\0\x01\0\
     \0\0\b\0\x16\0\x17\0\0\0\x18\0\0\0\x05\x01\0\x16\0\0\0\x02\0\x19\0\0\0\x02\0\x1a\
     \0\e\0\0\0\x06\0\x01\0\x1c\0\0"
-  info:
-    "size": "764"
-    "last_modified": "2025-11-16T15:56:16.750801821"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/configuration/ApplicationConfiguration.class"
-  content: "Êþº¾\0\0\0C\0j\x12\0\0\0\x02\f\0\x03\0\x04\x01\0\x12loadUserByUsername\x01\
+    info:
+      "size": "764"
+      "last_modified": "2025-11-16T15:56:16.750801821"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/configuration/ApplicationConfiguration.class"
+    content: "Êþº¾\0\0\0C\0j\x12\0\0\0\x02\f\0\x03\0\x04\x01\0\x12loadUserByUsername\x01\
     \0\x82(Lcom/izak/auth_service/configuration/ApplicationConfiguration;)Lorg/springframework/security/core/userdetails/UserDetailsService;\n\
     \0\x06\0\a\a\0\b\f\0\t\0\n\x01\0gorg/springframework/security/config/annotation/authentication/configuration/AuthenticationConfiguration\x01\
     \0\x18getAuthenticationManager\x01\0E()Lorg/springframework/security/authentication/AuthenticationManager;\a\
@@ -5066,13 +5066,13 @@ files:
     \06\0\0\0\x06\0\x01\0\0\0\x16\0\x04\0O\0\0\0\x02\0P\0:\0\0\0\x06\0\x01\0Q\0\0\0\
     R\0\0\0\x16\0\x02\0]\0\x03\0S\0T\0S\0]\0\x03\0W\0Y\0\\\0d\0\0\0\n\0\x01\0e\0g\0\
     i\0\x19"
-  info:
-    "size": "3416"
-    "last_modified": "2025-11-16T15:56:16.758438632"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/configuration/SecurityConfiguration.class"
-  content: "Êþº¾\0\0\0C\0É\x12\0\0\0\x02\f\0\x03\0\x04\x01\0\tcustomize\x01\0m(Lcom/izak/auth_service/configuration/SecurityConfiguration;)Lorg/springframework/security/config/Customizer;\n\
+    info:
+      "size": "3416"
+      "last_modified": "2025-11-16T15:56:16.758438632"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/configuration/SecurityConfiguration.class"
+    content: "Êþº¾\0\0\0C\0É\x12\0\0\0\x02\f\0\x03\0\x04\x01\0\tcustomize\x01\0m(Lcom/izak/auth_service/configuration/SecurityConfiguration;)Lorg/springframework/security/config/Customizer;\n\
     \0\x06\0\a\a\0\b\f\0\t\0\n\x01\0Horg/springframework/security/config/annotation/web/builders/HttpSecurity\x01\
     \0\x04cors\x01\0|(Lorg/springframework/security/config/Customizer;)Lorg/springframework/security/config/annotation/web/builders/HttpSecurity;\x12\
     \0\x01\0\f\f\0\x03\0\r\x01\02()Lorg/springframework/security/config/Customizer;\n\
@@ -5154,13 +5154,13 @@ files:
     \0\0\0\n\0\x02\0\x9e\0\0\0\x9f\0\0\0\_\0\0\0*\0\x04\0¸\0\x03\0¡\0£\0¦\0¸\0\x03\
     \0¡\0§\0®\0¸\0\x03\0¡\0°\0³\0¸\0\x03\0¡\0´\0·\0¿\0\0\0\x1a\0\x03\0F\0À\0Â\0\x11\
     \0K\0À\0Ã\0\x01\0Ä\0Æ\0È\0\x19"
-  info:
-    "size": "6324"
-    "last_modified": "2025-11-16T15:56:16.765753986"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/configuration/SwaggerConfig.class"
-  content: "Êþº¾\0\0\0C\00\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "6324"
+      "last_modified": "2025-11-16T15:56:16.765753986"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/configuration/SwaggerConfig.class"
+    content: "Êþº¾\0\0\0C\00\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\n\0\b\0\t\a\0\n\f\0\v\0\f\x01\0(org/springdoc/core/models/GroupedOpenApi\x01\
     \0\abuilder\x01\04()Lorg/springdoc/core/models/GroupedOpenApi$Builder;\b\0\x0e\
     \x01\0\bAuth_Api\n\0\x10\0\x11\a\0\x12\f\0\x13\0\x14\x01\00org/springdoc/core/models/GroupedOpenApi$Builder\x01\
@@ -5179,13 +5179,13 @@ files:
     $\0\0\0\x16\0\x05\0\0\0\f\0\x05\0\r\0\x11\0\x0e\0\x14\0\x0f\0\x17\0\f\0%\0\0\0\
     \f\0\x01\0\0\0\x18\0&\0'\0\0\0)\0\0\0\x06\0\x01\0*\0\0\0\x03\0+\0\0\0\x02\0,\0\
     )\0\0\0\x06\0\x01\0-\0\0\0.\0\0\0\n\0\x01\0\x10\0\b\0/\0\t"
-  info:
-    "size": "1121"
-    "last_modified": "2025-11-16T15:56:16.772839065"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/configuration/JwtAuthenticationFilter.class"
-  content: "Êþº¾\0\0\0C\0\x86\b\0\x02\x01\0\rAuthorization\v\0\x04\0\x05\a\0\x06\f\
+    info:
+      "size": "1121"
+      "last_modified": "2025-11-16T15:56:16.772839065"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/configuration/JwtAuthenticationFilter.class"
+    content: "Êþº¾\0\0\0C\0\x86\b\0\x02\x01\0\rAuthorization\v\0\x04\0\x05\a\0\x06\f\
     \0\a\0\b\x01\0'jakarta/servlet/http/HttpServletRequest\x01\0\tgetHeader\x01\0\
     &(Ljava/lang/String;)Ljava/lang/String;\b\0\n\x01\0\x06Bearer\n\0\f\0\r\a\0\x0e\
     \f\0\x0f\0\x10\x01\0\x10java/lang/String\x01\0\nstartsWith\x01\0\x15(Ljava/lang/String;)Z\v\
@@ -5243,13 +5243,13 @@ files:
     \0\x01\0\0\0\x14\0d\0\0\0 \0\x03\0\0\0\x0f\0i\0j\0\0\0\0\0\x0f\0\x1f\0 \0\x01\0\
     \0\0\x0f\04\05\0\x02\0{\0\0\0\t\x02\0\x1f\0\x10\04\0\x10\0\x80\0\0\0\x06\0\x01\
     \0\x81\0\0\0\x02\0\x82\0\0\0\x02\0\x83\0\x84\0\0\0\x06\0\x01\0\N\0\0"
-  info:
-    "size": "3811"
-    "last_modified": "2025-11-16T15:56:16.780786337"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/configuration/JwtService.class"
-  content: "Êþº¾\0\0\0C\x01\x10\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "3811"
+      "last_modified": "2025-11-16T15:56:16.780786337"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/configuration/JwtService.class"
+    content: "Êþº¾\0\0\0C\x01\x10\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\x12\0\0\0\b\f\0\t\0\n\x01\0\x05apply\x01\0\x1f()Ljava/util/function/Function;\n\
     \0\f\0\r\a\0\x0e\f\0\x0f\0\x10\x01\0.com/izak/auth_service/configuration/JwtService\x01\
     \0\fextractClaim\x01\0C(Ljava/lang/String;Ljava/util/function/Function;)Ljava/lang/Object;\a\
@@ -5354,13 +5354,13 @@ files:
     é\0\0\0\x02\0ê\0È\0\0\0\x06\0\x01\0ë\0\0\0ì\0\0\0 \0\x03\x01\x03\0\x03\0í\0î\0\
     ò\x01\x03\0\x03\0í\0ô\0ú\x01\x03\0\x03\0í\0ü\x01\x01\x01\n\0\0\0\n\0\x01\x01\v\
     \x01\r\x01\x0f\0\x19"
-  info:
-    "size": "5972"
-    "last_modified": "2025-11-16T15:56:16.800549964"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/user/repository/UserRepository.class"
-  content: "Êþº¾\0\0\0C\0\x10\a\0\x02\x01\04com/izak/auth_service/user/repository/UserRepository\a\
+    info:
+      "size": "5972"
+      "last_modified": "2025-11-16T15:56:16.800549964"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/user/repository/UserRepository.class"
+    content: "Êþº¾\0\0\0C\0\x10\a\0\x02\x01\04com/izak/auth_service/user/repository/UserRepository\a\
     \0\x04\x01\0\x10java/lang/Object\a\0\x06\x01\05org/springframework/data/jpa/repository/JpaRepository\x01\
     \0\vfindByEmail\x01\0((Ljava/lang/String;)Ljava/util/Optional;\x01\0\x10MethodParameters\x01\
     \0\x05email\x01\0\tSignature\x01\0R(Ljava/lang/String;)Ljava/util/Optional<Lcom/izak/auth_service/user/entity/User;>;\x01\
@@ -5368,13 +5368,13 @@ files:
     \0\nSourceFile\x01\0\x13UserRepository.java\x06\x01\0\x01\0\x03\0\x01\0\x05\0\0\
     \0\x01\x04\x01\0\a\0\b\0\x02\0\t\0\0\0\x05\x01\0\n\0\0\0\v\0\0\0\x02\0\f\0\x02\
     \0\v\0\0\0\x02\0\r\0\x0e\0\0\0\x02\0\x0f"
-  info:
-    "size": "558"
-    "last_modified": "2025-11-16T15:56:16.813599621"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/user/entity/User$UserBuilder.class"
-  content: "Êþº¾\0\0\0C\0m\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "558"
+      "last_modified": "2025-11-16T15:56:16.813599621"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/user/entity/User$UserBuilder.class"
+    content: "Êþº¾\0\0\0C\0m\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\02com/izak/auth_service/user/entity/User$UserBuilder\x01\
     \0\x02id\x01\0\x10Ljava/lang/Long;\t\0\b\0\x0e\f\0\x0f\0\x10\x01\0\tfirstName\x01\
     \0\x12Ljava/lang/String;\t\0\b\0\x12\f\0\x13\0\x10\x01\0\blastName\t\0\b\0\x15\
@@ -5462,13 +5462,13 @@ files:
     \0\0\x06\0\x01\0I\0\0\0\x05\0Z\0\0\0\x02\0[\0H\0\0\0\x06\0\x01\0I\0\0\0\\\0\0\0\
     \x02\09\0]\0\0\0\b\0\x01\0`\0\x01\0^\0f\0\0\0\x12\0\x02\0\b\09\0g\0\t\0h\0j\0\
     l\0\x19"
-  info:
-    "size": "4578"
-    "last_modified": "2025-11-16T15:56:16.826728749"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/user/entity/User.class"
-  content: "Êþº¾\0\0\0C\x01\n\a\0\x02\x01\0Borg/springframework/security/core/authority/SimpleGrantedAuthority\t\
+    info:
+      "size": "4578"
+      "last_modified": "2025-11-16T15:56:16.826728749"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/user/entity/User.class"
+    content: "Êþº¾\0\0\0C\x01\n\a\0\x02\x01\0Borg/springframework/security/core/authority/SimpleGrantedAuthority\t\
     \0\x04\0\x05\a\0\x06\f\0\a\0\b\x01\0&com/izak/auth_service/user/entity/User\x01\
     \0\x04auth\x01\0'Lcom/izak/auth_service/user/enums/Auth;\n\0\n\0\v\a\0\f\f\0\r\
     \0\x0e\x01\0%com/izak/auth_service/user/enums/Auth\x01\0\x04name\x01\0\x14()Ljava/lang/String;\x12\
@@ -5689,13 +5689,13 @@ files:
     \x05\0ò\0\0\0\x02\0ó\0\x92\0\0\0\x0f\0\x02\0ô\0\0\0õ\0\x01\0\rs\0ö\0÷\0\0\0\x04\
     \0\x01\01\0ø\0\0\0\x0e\0\x02\0ý\0\x01\0ù\0ý\0\x01\0û\x01\x03\0\0\0\x12\0\x02\0\
     1\0\x04\x01\x04\0\t\x01\x05\x01\a\x01\t\0\x19"
-  info:
-    "size": "10108"
-    "last_modified": "2025-11-16T15:56:16.834731629"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/user/enums/Auth.class"
-  content: "Êþº¾\0\0\0C\0=\a\0\x02\x01\0%com/izak/auth_service/user/enums/Auth\t\0\
+    info:
+      "size": "10108"
+      "last_modified": "2025-11-16T15:56:16.834731629"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/user/enums/Auth.class"
+    content: "Êþº¾\0\0\0C\0=\a\0\x02\x01\0%com/izak/auth_service/user/enums/Auth\t\0\
     \x01\0\x04\f\0\x05\0\x06\x01\0\vSUPER_ADMIN\x01\0'Lcom/izak/auth_service/user/enums/Auth;\t\
     \0\x01\0\b\f\0\t\0\x06\x01\0\x05ADMIN\t\0\x01\0\v\f\0\f\0\x06\x01\0\x06SELLER\t\
     \0\x01\0\x0e\f\0\x0f\0\x06\x01\0\x04USER\t\0\x01\0\x11\f\0\x12\0\x13\x01\0\a$VALUES\x01\
@@ -5722,25 +5722,25 @@ files:
     ·\0$³\0\a»\0\x01Y\x12&\x05·\0$³\0\n»\0\x01Y\x12'\x06·\0$³\0\r¸\0(³\0\x10±\0\0\0\
     \x01\0.\0\0\0\x16\0\x05\0\0\0\x04\0\r\0\x05\0\x1a\0\x06\0'\0\a\04\0\x03\0\x02\0\
     7\0\0\0\x02\0:\0;\0\0\0\x02\0<"
-  info:
-    "size": "1277"
-    "last_modified": "2025-11-16T15:56:16.847390634"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/address/repository/AddressRepository.class"
-  content: "Êþº¾\0\0\0C\0\r\a\0\x02\x01\0:com/izak/auth_service/address/repository/AddressRepository\a\
+    info:
+      "size": "1277"
+      "last_modified": "2025-11-16T15:56:16.847390634"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/address/repository/AddressRepository.class"
+    content: "Êþº¾\0\0\0C\0\r\a\0\x02\x01\0:com/izak/auth_service/address/repository/AddressRepository\a\
     \0\x04\x01\0\x10java/lang/Object\a\0\x06\x01\05org/springframework/data/jpa/repository/JpaRepository\x01\
     \0\tSignature\x01\0\x8cLjava/lang/Object;Lorg/springframework/data/jpa/repository/JpaRepository<Lcom/izak/auth_service/address/entity/Address;Ljava/lang/Integer;>;\x01\
     \0\nSourceFile\x01\0\x16AddressRepository.java\x01\0\x19RuntimeVisibleAnnotations\x01\
     \0+Lorg/springframework/stereotype/Repository;\x06\x01\0\x01\0\x03\0\x01\0\x05\
     \0\0\0\0\0\x03\0\a\0\0\0\x02\0\b\0\t\0\0\0\x02\0\n\0\v\0\0\0\x06\0\x01\0\f\0\0"
-  info:
-    "size": "466"
-    "last_modified": "2025-11-16T15:56:16.865937424"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/address/mapper/AddressMapper.class"
-  content: "Êþº¾\0\0\0C\0\x8b\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\00com/izak/auth_service/address/dto/AddressRequest\x01\
+    info:
+      "size": "466"
+      "last_modified": "2025-11-16T15:56:16.865937424"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/address/mapper/AddressMapper.class"
+    content: "Êþº¾\0\0\0C\0\x8b\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\00com/izak/auth_service/address/dto/AddressRequest\x01\
     \0\x04user\x01\0*()Lcom/izak/auth_service/user/entity/User;\n\0\b\0\t\a\0\n\f\0\
     \v\0\f\x01\0&com/izak/auth_service/user/entity/User\x01\0\x05getId\x01\0\x12()Ljava/lang/Long;\t\
     \0\x0e\0\x0f\a\0\x10\f\0\x11\0\x12\x01\02com/izak/auth_service/address/mapper/AddressMapper\x01\
@@ -5790,13 +5790,13 @@ files:
     \x0e\0`\0a\0\0\0\x04\0i\0\0\0\x02\0j\0k\0\0\0\x06\0\x01\0l\0\0\0m\0\0\0\x12\0\x02\
     \0w\0\x03\0n\0p\0s\0~\0\x01\0u\0\x84\0\0\0\x12\0\x02\0*\0$\0\N\0\t\0\x86\0\x88\
     \0\x8a\0\x19"
-  info:
-    "size": "3323"
-    "last_modified": "2025-11-16T15:56:16.880235929"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/address/entity/Address$AddressBuilder.class"
-  content: "Êþº¾\0\0\0C\0O\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "3323"
+      "last_modified": "2025-11-16T15:56:16.880235929"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/address/entity/Address$AddressBuilder.class"
+    content: "Êþº¾\0\0\0C\0O\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\0;com/izak/auth_service/address/entity/Address$AddressBuilder\x01\
     \0\x02id\x01\0\x13Ljava/lang/Integer;\t\0\b\0\x0e\f\0\x0f\0\x10\x01\0\x04user\x01\
     \0(Lcom/izak/auth_service/user/entity/User;\t\0\b\0\x12\f\0\x13\0\x14\x01\0\x04\
@@ -5848,13 +5848,13 @@ files:
     \x06\0\x01\0.\0\0\0\x05\0<\0\0\0\x02\0=\0-\0\0\0\x06\0\x01\0.\0\0\0>\0\0\0\x02\
     \0\x1e\0?\0\0\0\b\0\x01\0B\0\x01\0@\0H\0\0\0\x12\0\x02\0\b\0\x1e\0I\0\t\0J\0L\0\
     N\0\x19"
-  info:
-    "size": "2840"
-    "last_modified": "2025-11-16T15:56:16.89361161"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/address/entity/Address.class"
-  content: "Êþº¾\0\0\0C\0X\a\0\x02\x01\0;com/izak/auth_service/address/entity/Address$AddressBuilder\n\
+    info:
+      "size": "2840"
+      "last_modified": "2025-11-16T15:56:16.89361161"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/address/entity/Address.class"
+    content: "Êþº¾\0\0\0C\0X\a\0\x02\x01\0;com/izak/auth_service/address/entity/Address$AddressBuilder\n\
     \0\x01\0\x04\f\0\x05\0\x06\x01\0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\
     \f\x01\0,com/izak/auth_service/address/entity/Address\x01\0\x02id\x01\0\x13Ljava/lang/Integer;\t\
     \0\b\0\x0e\f\0\x0f\0\x10\x01\0\x04user\x01\0(Lcom/izak/auth_service/user/entity/User;\t\
@@ -5921,13 +5921,13 @@ files:
     \x10\0\x13\0\x10\0\x17\0\x10\0\x1a\0\x10\0\x1d\0\x10\08\0\0\0\x06\0\x01\09\0\0\
     \0\x04\0Q\0\0\0\x02\0R\0!\0\0\0\x0f\0\x02\0S\0\0\0T\0\x01\0$s\00\0U\0\0\0\x04\0\
     \x01\0\x01\0V\0\0\0\n\0\x01\0\x01\0\b\0W\0\t"
-  info:
-    "size": "3115"
-    "last_modified": "2025-11-16T15:56:16.900855873"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/address/controller/AddressController.class"
-  content: "Êþº¾\0\0\0C\05\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0:com/izak/auth_service/address/controller/AddressController\x01\
+    info:
+      "size": "3115"
+      "last_modified": "2025-11-16T15:56:16.900855873"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/address/controller/AddressController.class"
+    content: "Êþº¾\0\0\0C\05\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0:com/izak/auth_service/address/controller/AddressController\x01\
     \0\x0eaddressService\x01\06Lcom/izak/auth_service/address/service/AddressService;\n\
     \0\b\0\t\a\0\n\f\0\v\0\f\x01\04com/izak/auth_service/address/service/AddressService\x01\
     \0\blocation\x01\0f(Lcom/izak/auth_service/address/dto/AddressRequest;)Lcom/izak/auth_service/address/dto/AddressRequest;\n\
@@ -5955,13 +5955,13 @@ files:
     \0\x1c\0\0\0\x16\0\x02\0\0\0\n\0\x1d\0\x1e\0\0\0\0\0\n\0\x05\0\x06\0\x01\0\"\0\
     \0\0\x05\x01\0\x05\0\x10\0.\0\0\0\x06\0\x01\0/\0\0\0\x02\00\0\0\0\x02\01\0%\0\0\
     \0\x12\0\x02\02\0\0\03\0\x01\0'[\0\x01s\04"
-  info:
-    "size": "1846"
-    "last_modified": "2025-11-16T15:56:16.913676011"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/address/service/AddressService.class"
-  content: "Êþº¾\0\0\0C\0b\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\04com/izak/auth_service/address/service/AddressService\x01\
+    info:
+      "size": "1846"
+      "last_modified": "2025-11-16T15:56:16.913676011"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/address/service/AddressService.class"
+    content: "Êþº¾\0\0\0C\0b\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\04com/izak/auth_service/address/service/AddressService\x01\
     \0\x11addressRepository\x01\0<Lcom/izak/auth_service/address/repository/AddressRepository;\t\
     \0\x02\0\b\f\0\t\0\n\x01\0\raddressMapper\x01\04Lcom/izak/auth_service/address/mapper/AddressMapper;\n\
     \0\f\0\r\a\0\x0e\f\0\x0f\0\x10\x01\02com/izak/auth_service/address/mapper/AddressMapper\x01\
@@ -5998,13 +5998,13 @@ files:
     \x05\0\x06\0\x01\0\0\0\x0f\0\t\0\n\0\x02\0X\0\0\0\t\x02\0\x05\0\x10\0\t\0\x10\0\
     Z\0\0\0\x06\0\x01\0[\0\0\0\x03\0\\\0\0\0\x02\0]\0^\0\0\0\x06\0\x01\0_\0\0\0`\0\
     \0\0\n\0\x01\0$\0\x1a\0a\0\t"
-  info:
-    "size": "2480"
-    "last_modified": "2025-11-16T15:56:16.926439224"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/address/dto/AddressRequest$AddressRequestBuilder.class"
-  content: "Êþº¾\0\0\0C\0O\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "2480"
+      "last_modified": "2025-11-16T15:56:16.926439224"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/address/dto/AddressRequest$AddressRequestBuilder.class"
+    content: "Êþº¾\0\0\0C\0O\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\0Fcom/izak/auth_service/address/dto/AddressRequest$AddressRequestBuilder\x01\
     \0\x02id\x01\0\x13Ljava/lang/Integer;\t\0\b\0\x0e\f\0\x0f\0\x10\x01\0\x04user\x01\
     \0(Lcom/izak/auth_service/user/entity/User;\t\0\b\0\x12\f\0\x13\0\x14\x01\0\x04\
@@ -6056,13 +6056,13 @@ files:
     \x06\0\x01\0.\0\0\0\x05\0<\0\0\0\x02\0=\0-\0\0\0\x06\0\x01\0.\0\0\0>\0\0\0\x02\
     \0\x1e\0?\0\0\0\b\0\x01\0B\0\x01\0@\0H\0\0\0\x12\0\x02\0\b\0\x1e\0I\0\t\0J\0L\0\
     N\0\x19"
-  info:
-    "size": "2931"
-    "last_modified": "2025-11-16T15:56:16.939220495"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/address/dto/AddressRequest.class"
-  content: "Êþº¾\0\0\0C\0b\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Record\x01\
+    info:
+      "size": "2931"
+      "last_modified": "2025-11-16T15:56:16.939220495"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/address/dto/AddressRequest.class"
+    content: "Êþº¾\0\0\0C\0b\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Record\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\00com/izak/auth_service/address/dto/AddressRequest\x01\
     \0\x02id\x01\0\x13Ljava/lang/Integer;\t\0\b\0\x0e\f\0\x0f\0\x10\x01\0\x04user\x01\
     \0(Lcom/izak/auth_service/user/entity/User;\t\0\b\0\x12\f\0\x13\0\x14\x01\0\x04\
@@ -6126,13 +6126,13 @@ files:
     \x01\01\0\0\0\r\0\x01\x13\0\0.\0\x01\0/s\03\0\x1d\0\x14\0\0\0K\0\0\0\x16\0\x01\
     \0T\0\b\0\b\0L\0N\0O\0P\0Q\0R\0S\0[\0\0\0\x12\0\x02\0\x1e\0\b\0\\\0\t\0]\0_\0\
     a\0\x19"
-  info:
-    "size": "3277"
-    "last_modified": "2025-11-16T15:56:16.947165508"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/mapper/AuthMapper.class"
-  content: "Êþº¾\0\0\0C\0y\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0&com/izak/auth_service/user/entity/User\x01\
+    info:
+      "size": "3277"
+      "last_modified": "2025-11-16T15:56:16.947165508"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/mapper/AuthMapper.class"
+    content: "Êþº¾\0\0\0C\0y\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0&com/izak/auth_service/user/entity/User\x01\
     \0\abuilder\x01\06()Lcom/izak/auth_service/user/entity/User$UserBuilder;\n\0\b\
     \0\t\a\0\n\f\0\v\0\f\x01\0.com/izak/auth_service/auth/dto/RegisterRequest\x01\0\
     \x02id\x01\0\x12()Ljava/lang/Long;\n\0\x0e\0\x0f\a\0\x10\f\0\v\0\x11\x01\02com/izak/auth_service/user/entity/User$UserBuilder\x01\
@@ -6182,13 +6182,13 @@ files:
     \0\x16\0\x02\0\0\0\n\0f\0g\0\0\0\0\0\n\0'\0(\0\x01\0j\0\0\0\x05\x01\0'\0\x10\0\
     q\0\0\0\x06\0\x01\0r\0\0\0\x03\0s\0\0\0\x02\0t\0u\0\0\0\x06\0\x01\0v\0\0\0w\0\0\
     \0\n\0\x01\0\x0e\0\x02\0x\0\t"
-  info:
-    "size": "2905"
-    "last_modified": "2025-11-16T15:56:16.965499362"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/contoller/AuthController.class"
-  content: "Êþº¾\0\0\0C\0O\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\03com/izak/auth_service/auth/contoller/AuthController\x01\
+    info:
+      "size": "2905"
+      "last_modified": "2025-11-16T15:56:16.965499362"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/contoller/AuthController.class"
+    content: "Êþº¾\0\0\0C\0O\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\03com/izak/auth_service/auth/contoller/AuthController\x01\
     \0\vauthService\x01\00Lcom/izak/auth_service/auth/service/AuthService;\n\0\b\0\
     \t\a\0\n\f\0\v\0\f\x01\0.com/izak/auth_service/auth/service/AuthService\x01\0\b\
     register\x01\0_(Lcom/izak/auth_service/auth/dto/RegisterRequest;)Lcom/izak/auth_service/auth/dto/AuthResponse;\n\
@@ -6243,13 +6243,13 @@ files:
     \0\0\x16\0\x02\0\0\0\n\0%\0&\0\0\0\0\0\n\0\x05\0\x06\0\x01\0)\0\0\0\x05\x01\0\x05\
     \0\x10\0H\0\0\0\x06\0\x01\0I\0\0\0\x02\0J\0\0\0\x02\0K\0,\0\0\0\x12\0\x02\0L\0\
     \0\0M\0\x01\0.[\0\x01s\0N"
-  info:
-    "size": "3533"
-    "last_modified": "2025-11-16T15:56:16.979016535"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/service/AuthService.class"
-  content: "Êþº¾\0\0\0C\0Ò\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0.com/izak/auth_service/auth/service/AuthService\x01\
+    info:
+      "size": "3533"
+      "last_modified": "2025-11-16T15:56:16.979016535"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/service/AuthService.class"
+    content: "Êþº¾\0\0\0C\0Ò\t\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0.com/izak/auth_service/auth/service/AuthService\x01\
     \0\x0euserRepository\x01\06Lcom/izak/auth_service/user/repository/UserRepository;\t\
     \0\x02\0\b\f\0\t\0\n\x01\0\nauthMapper\x01\0.Lcom/izak/auth_service/auth/mapper/AuthMapper;\n\
     \0\f\0\r\a\0\x0e\f\0\x0f\0\x10\x01\0,com/izak/auth_service/auth/mapper/AuthMapper\x01\
@@ -6337,13 +6337,13 @@ files:
     \0\0\0\0\n»\0\x93Y\x12\x95·\0\x97°\0\0\0\x01\0\x9a\0\0\0\x06\0\x01\0\0\07\0\x04\
     \0µ\0\0\0\x02\0¶\0·\0\0\0\x06\0\x01\0¸\0\0\0¹\0\0\0\x16\0\x02\0Ä\0\x03\0º\0¼\0\
     ¿\0Ä\0\x03\0º\0À\0Ã\0Ë\0\0\0\x12\0\x02\0*\0$\0Ì\0\t\0Í\0Ï\0Ñ\0\x19"
-  info:
-    "size": "5616"
-    "last_modified": "2025-11-16T15:56:16.991861254"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/dto/AuthResponse.class"
-  content: "Êþº¾\0\0\0C\0M\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "5616"
+      "last_modified": "2025-11-16T15:56:16.991861254"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/dto/AuthResponse.class"
+    content: "Êþº¾\0\0\0C\0M\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\0+com/izak/auth_service/auth/dto/AuthResponse\x01\
     \0\x05token\x01\0\x12Ljava/lang/String;\a\0\x0e\x01\0?com/izak/auth_service/auth/dto/AuthResponse$AuthResponseBuilder\n\
     \0\r\0\x03\n\0\b\0\x11\f\0\x12\0\x13\x01\0\bcanEqual\x01\0\x15(Ljava/lang/Object;)Z\n\
@@ -6389,13 +6389,13 @@ files:
     \0\0\0\x02\0%\0\0\0\x06\0\x01\0\0\0\n\0&\0\0\0\f\0\x01\0\0\0\n\0'\0(\0\0\0*\0\0\
     \0\x06\0\x01\0+\0\0\0\x04\0:\0\0\0\x02\0;\0<\0\0\0\x04\0\x01\0\r\0=\0\0\0\b\0\x01\
     \0@\0\x01\0>\0F\0\0\0\x12\0\x02\0\r\0\b\0G\0\t\0H\0J\0L\0\x19"
-  info:
-    "size": "2221"
-    "last_modified": "2025-11-16T15:56:17.005254732"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/dto/AuthResponse$AuthResponseBuilder.class"
-  content: "Êþº¾\0\0\0C\06\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "2221"
+      "last_modified": "2025-11-16T15:56:17.005254732"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/dto/AuthResponse$AuthResponseBuilder.class"
+    content: "Êþº¾\0\0\0C\06\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\0?com/izak/auth_service/auth/dto/AuthResponse$AuthResponseBuilder\x01\
     \0\x05token\x01\0\x12Ljava/lang/String;\a\0\x0e\x01\0+com/izak/auth_service/auth/dto/AuthResponse\n\
     \0\r\0\x10\f\0\x05\0\x11\x01\0\x15(Ljava/lang/String;)V\x12\0\0\0\x13\f\0\x14\0\
@@ -6423,13 +6423,13 @@ files:
     \f\0\x01\0\0\0\n\0\e\0\x1c\0\0\0\x16\0\0\0\x06\0\x01\0\x17\0\0\0\x05\0#\0\0\0\x02\
     \0$\0\x16\0\0\0\x06\0\x01\0\x17\0\0\0%\0\0\0\x02\0\r\0&\0\0\0\b\0\x01\0)\0\x01\
     \0'\0/\0\0\0\x12\0\x02\0\b\0\r\00\0\t\01\03\05\0\x19"
-  info:
-    "size": "1569"
-    "last_modified": "2025-11-16T15:56:17.013331882"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/dto/AuthenticateRequest$AuthenticateRequestBuilder.class"
-  content: "Êþº¾\0\0\0C\09\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
+    info:
+      "size": "1569"
+      "last_modified": "2025-11-16T15:56:17.013331882"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/dto/AuthenticateRequest$AuthenticateRequestBuilder.class"
+    content: "Êþº¾\0\0\0C\09\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Object\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\0Mcom/izak/auth_service/auth/dto/AuthenticateRequest$AuthenticateRequestBuilder\x01\
     \0\x05email\x01\0\x12Ljava/lang/String;\t\0\b\0\x0e\f\0\x0f\0\f\x01\0\bpassword\a\
     \0\x11\x01\02com/izak/auth_service/auth/dto/AuthenticateRequest\n\0\x10\0\x13\f\
@@ -6462,13 +6462,13 @@ files:
     \0\0\0\x0e\0\x1e\0\x1f\0\0\0\x19\0\0\0\x06\0\x01\0\x1a\0\0\0\x05\0&\0\0\0\x02\0\
     '\0\x19\0\0\0\x06\0\x01\0\x1a\0\0\0(\0\0\0\x02\0\x10\0)\0\0\0\b\0\x01\0,\0\x01\
     \0*\02\0\0\0\x12\0\x02\0\b\0\x10\03\0\t\04\06\08\0\x19"
-  info:
-    "size": "1846"
-    "last_modified": "2025-11-16T15:56:17.02221655"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/dto/RegisterRequest.class"
-  content: "Êþº¾\0\0\0C\0Q\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Record\x01\
+    info:
+      "size": "1846"
+      "last_modified": "2025-11-16T15:56:17.02221655"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/dto/RegisterRequest.class"
+    content: "Êþº¾\0\0\0C\0Q\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Record\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\0.com/izak/auth_service/auth/dto/RegisterRequest\x01\
     \0\x02id\x01\0\x10Ljava/lang/Long;\t\0\b\0\x0e\f\0\x0f\0\x10\x01\0\x05email\x01\
     \0\x12Ljava/lang/String;\t\0\b\0\x12\f\0\x13\0\x14\x01\0\x04auth\x01\0'Lcom/izak/auth_service/user/enums/Auth;\t\
@@ -6519,13 +6519,13 @@ files:
     \x01\0)\0\0\0\x13\0\x02\x13\0\0%\0\0\x13\0\0&\0\x01\0's\0(\0\x13\0\x14\0\0\0\x17\
     \0\x10\0\x01\0)\0\0\0\r\0\x01\x13\0\0&\0\x01\0's\0*\0=\0\0\0\x12\0\x01\0D\0\x06\
     \0\b\0>\0@\0A\0B\0C\0K\0\0\0\n\0\x01\0L\0N\0P\0\x19"
-  info:
-    "size": "2582"
-    "last_modified": "2025-11-16T15:56:17.02969339"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/dto/UpdateUser.class"
-  content: "Êþº¾\0\0\0C\0K\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Record\x01\
+    info:
+      "size": "2582"
+      "last_modified": "2025-11-16T15:56:17.02969339"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/dto/UpdateUser.class"
+    content: "Êþº¾\0\0\0C\0K\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Record\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\0)com/izak/auth_service/auth/dto/UpdateUser\x01\
     \0\tfirstName\x01\0\x12Ljava/lang/String;\t\0\b\0\x0e\f\0\x0f\0\f\x01\0\blastName\t\
     \0\b\0\x11\f\0\x12\0\f\x01\0\vphoneNumber\t\0\b\0\x14\f\0\x15\0\x16\x01\0\x03\
@@ -6567,13 +6567,13 @@ files:
     \0\x05\0*\0+\0\0\0\x04\03\0\0\0\x02\04\05\0\0\0 \0\x05\0\v\0\f\0\0\0\x0f\0\f\0\
     \0\0\x12\0\f\0\0\0\x15\0\x16\0\0\0\x19\0\f\0\0\06\0\0\0\x14\0\x01\0>\0\a\0\b\0\
     7\09\0:\0;\0<\0=\0E\0\0\0\n\0\x01\0F\0H\0J\0\x19"
-  info:
-    "size": "2095"
-    "last_modified": "2025-11-16T15:56:17.037868948"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/com/izak/auth_service/auth/dto/AuthenticateRequest.class"
-  content: "Êþº¾\0\0\0C\0F\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Record\x01\
+    info:
+      "size": "2095"
+      "last_modified": "2025-11-16T15:56:17.037868948"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/com/izak/auth_service/auth/dto/AuthenticateRequest.class"
+    content: "Êþº¾\0\0\0C\0F\n\0\x02\0\x03\a\0\x04\f\0\x05\0\x06\x01\0\x10java/lang/Record\x01\
     \0\x06<init>\x01\0\x03()V\t\0\b\0\t\a\0\n\f\0\v\0\f\x01\02com/izak/auth_service/auth/dto/AuthenticateRequest\x01\
     \0\x05email\x01\0\x12Ljava/lang/String;\t\0\b\0\x0e\f\0\x0f\0\f\x01\0\bpassword\a\
     \0\x11\x01\0Mcom/izak/auth_service/auth/dto/AuthenticateRequest$AuthenticateRequestBuilder\n\
@@ -6608,62 +6608,62 @@ files:
     \0\"\0\0\0\f\0\x01\0\0\0\x05\0#\0$\0\0\0\x05\0/\0\0\0\x02\00\01\0\0\0\x04\0\x01\
     \0\x10\02\0\0\0\x0e\0\x02\0\v\0\f\0\0\0\x0f\0\f\0\0\03\0\0\0\x0e\0\x01\08\0\x04\
     \0\b\04\06\07\0?\0\0\0\x12\0\x02\0\x10\0\b\0@\0\t\0A\0C\0E\0\x19"
-  info:
-    "size": "2017"
-    "last_modified": "2025-11-16T15:56:17.045035084"
-    "mime_type": "application/java-vm"
-    "extension": ".class"
-- path: "auth-service/target/classes/application.yml"
-  content: "spring:\n  application:\n    name: auth-service\n  config:\n    import:\
+    info:
+      "size": "2017"
+      "last_modified": "2025-11-16T15:56:17.045035084"
+      "mime_type": "application/java-vm"
+      "extension": ".class"
+  - path: "auth-service/target/classes/application.yml"
+    content: "spring:\n  application:\n    name: auth-service\n  config:\n    import:\
     \ optional:configserver:http://localhost:8888"
-  info:
-    "size": "111"
-    "last_modified": "2025-11-16T15:56:17.08074268"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "auth-service/.gitignore"
-  content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
-    !**/src/test/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
+    info:
+      "size": "111"
+      "last_modified": "2025-11-16T15:56:17.08074268"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "auth-service/.gitignore"
+    content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
+    !**/src/testsdss/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
     .project\n.settings\n.springBeans\n.sts4-cache\n\n### IntelliJ IDEA ###\n.idea\n\
     *.iws\n*.iml\n*.ipr\n\n### NetBeans ###\n/nbproject/private/\n/nbbuild/\n/dist/\n\
-    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/test/**/build/\n\
+    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/testsdss/**/build/\n\
     \n### VS Code ###\n.vscode/\n"
-  info:
-    "size": "394"
-    "last_modified": "2025-11-16T15:56:17.112831489"
-    "mime_type": "text/plain"
-    "extension": ".gitignore"
-- path: "auth-service/src/test/java/com/izak/auth_service/AuthServiceApplicationTests.java"
-  content: "package com.izak.auth_service;\n\nimport org.junit.jupiter.api.Test;\n\
-    import org.springframework.boot.test.context.SpringBootTest;\n\n@SpringBootTest\n\
+    info:
+      "size": "394"
+      "last_modified": "2025-11-16T15:56:17.112831489"
+      "mime_type": "text/plain"
+      "extension": ".gitignore"
+  - path: "auth-service/src/testsdss/java/com/izak/auth_service/AuthServiceApplicationTests.java"
+    content: "package com.izak.auth_service;\n\nimport org.junit.jupiter.api.Test;\n\
+    import org.springframework.boot.testsdss.context.SpringBootTest;\n\n@SpringBootTest\n\
     class AuthServiceApplicationTests {\n\n\t@Test\n\tvoid contextLoads() {\n\t}\n\
     \n}\n"
-  info:
-    "size": "218"
-    "last_modified": "2025-11-16T15:56:17.121106667"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/exceptions/UserNotFoundException.java"
-  content: "//package com.izak.auth_service.exceptions;\n//\n//\n//public class UserNotFoundException\
+    info:
+      "size": "218"
+      "last_modified": "2025-11-16T15:56:17.121106667"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/exceptions/UserNotFoundException.java"
+    content: "//package com.izak.auth_service.exceptions;\n//\n//\n//public class UserNotFoundException\
     \ extends @org.jetbrains.annotations.NotNull X {\n//  public UserNotFoundException(String\
     \ userNotFoundWithId) {\n//  }\n//}\n"
-  info:
-    "size": "206"
-    "last_modified": "2025-11-16T15:56:17.159088713"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/AuthServiceApplication.java"
-  content: "package com.izak.auth_service;\n\nimport org.springframework.boot.SpringApplication;\n\
+    info:
+      "size": "206"
+      "last_modified": "2025-11-16T15:56:17.159088713"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/AuthServiceApplication.java"
+    content: "package com.izak.auth_service;\n\nimport org.springframework.boot.SpringApplication;\n\
     import org.springframework.boot.autoconfigure.SpringBootApplication;\n\n@SpringBootApplication\n\
     public class AuthServiceApplication {\n\n\tpublic static void main(String[] args)\
     \ {\n\t\tSpringApplication.run(AuthServiceApplication.class, args);\n\t}\n\n}\n"
-  info:
-    "size": "324"
-    "last_modified": "2025-11-16T15:56:17.172375362"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/configuration/ApplicationConfiguration.java"
-  content: "package com.izak.auth_service.configuration;\n\nimport com.izak.auth_service.user.repository.UserRepository;\n\
+    info:
+      "size": "324"
+      "last_modified": "2025-11-16T15:56:17.172375362"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/configuration/ApplicationConfiguration.java"
+    content: "package com.izak.auth_service.configuration;\n\nimport com.izak.auth_service.user.repository.UserRepository;\n\
     import lombok.RequiredArgsConstructor;\nimport org.springframework.context.annotation.Bean;\n\
     import org.springframework.context.annotation.Configuration;\nimport org.springframework.security.authentication.AuthenticationManager;\n\
     import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;\n\
@@ -6678,13 +6678,13 @@ files:
     \ authenticationConfiguration)throws Exception{\n    return authenticationConfiguration.getAuthenticationManager();\n\
     \  }\n\n  @Bean\n  public PasswordEncoder passwordEncoder() {\n    return new\
     \ BCryptPasswordEncoder();\n  }\n}\n"
-  info:
-    "size": "1376"
-    "last_modified": "2025-11-16T15:56:17.180198753"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/configuration/JwtService.java"
-  content: "package com.izak.auth_service.configuration;\n\nimport com.izak.auth_service.user.entity.User;\n\
+    info:
+      "size": "1376"
+      "last_modified": "2025-11-16T15:56:17.180198753"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/configuration/JwtService.java"
+    content: "package com.izak.auth_service.configuration;\n\nimport com.izak.auth_service.user.entity.User;\n\
     import io.jsonwebtoken.Claims;\nimport io.jsonwebtoken.Jwts;\nimport io.jsonwebtoken.security.Keys;\n\
     import org.springframework.beans.factory.annotation.Value;\nimport org.springframework.security.core.GrantedAuthority;\n\
     import org.springframework.security.core.userdetails.UserDetails;\nimport org.springframework.stereotype.Service;\n\
@@ -6715,24 +6715,24 @@ files:
     \ {\n    return extractExpiration(token).before(new Date());\n  }\n\n  private\
     \ Date extractExpiration(String token) {\n    return extractClaim(token, Claims::getExpiration);\n\
     \  }\n}\n"
-  info:
-    "size": "2527"
-    "last_modified": "2025-11-16T15:56:17.202400028"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/configuration/SwaggerConfig.java"
-  content: "package com.izak.auth_service.configuration;\n\nimport org.springframework.context.annotation.Bean;\n\
+    info:
+      "size": "2527"
+      "last_modified": "2025-11-16T15:56:17.202400028"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/configuration/SwaggerConfig.java"
+    content: "package com.izak.auth_service.configuration;\n\nimport org.springframework.context.annotation.Bean;\n\
     import org.springframework.context.annotation.Configuration;\nimport org.springdoc.core.models.GroupedOpenApi;\n\
     \n@Configuration\npublic class SwaggerConfig {\n\n  @Bean\n  public GroupedOpenApi\
     \ publicApi() {\n    return GroupedOpenApi.builder()\n          .group(\"Auth_Api\"\
     )\n          .pathsToMatch(\"/api/**\")\n          .build();\n  }\n}\n"
-  info:
-    "size": "426"
-    "last_modified": "2025-11-16T15:56:17.210682658"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/configuration/JwtAuthenticationFilter.java"
-  content: "package com.izak.auth_service.configuration;\n\nimport jakarta.servlet.FilterChain;\n\
+    info:
+      "size": "426"
+      "last_modified": "2025-11-16T15:56:17.210682658"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/configuration/JwtAuthenticationFilter.java"
+    content: "package com.izak.auth_service.configuration;\n\nimport jakarta.servlet.FilterChain;\n\
     import jakarta.servlet.ServletException;\nimport jakarta.servlet.http.HttpServletRequest;\n\
     import jakarta.servlet.http.HttpServletResponse;\nimport jakarta.validation.constraints.NotNull;\n\
     import lombok.RequiredArgsConstructor;\nimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;\n\
@@ -6757,13 +6757,13 @@ files:
     \        );\n        authenticationToken.setDetails(\n              new WebAuthenticationDetailsSource().buildDetails(request)\n\
     \        );\n        SecurityContextHolder.getContext().setAuthentication(authenticationToken);\n\
     \      }\n    }\n    filterChain.doFilter(request,response);\n  }\n}\n"
-  info:
-    "size": "2265"
-    "last_modified": "2025-11-16T15:56:17.218008216"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/configuration/SecurityConfiguration.java"
-  content: "package com.izak.auth_service.configuration;\n\nimport lombok.RequiredArgsConstructor;\n\
+    info:
+      "size": "2265"
+      "last_modified": "2025-11-16T15:56:17.218008216"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/configuration/SecurityConfiguration.java"
+    content: "package com.izak.auth_service.configuration;\n\nimport lombok.RequiredArgsConstructor;\n\
     import org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\n\
     import org.springframework.security.config.annotation.web.builders.HttpSecurity;\n\
     import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;\n\
@@ -6790,23 +6790,23 @@ files:
     \                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)\n   \
     \       )\n          .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)\n\
     \          .build();\n  }\n}\n"
-  info:
-    "size": "2247"
-    "last_modified": "2025-11-16T15:56:17.225639009"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/user/repository/UserRepository.java"
-  content: "package com.izak.auth_service.user.repository;\n\nimport com.izak.auth_service.user.entity.User;\n\
+    info:
+      "size": "2247"
+      "last_modified": "2025-11-16T15:56:17.225639009"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/user/repository/UserRepository.java"
+    content: "package com.izak.auth_service.user.repository;\n\nimport com.izak.auth_service.user.entity.User;\n\
     import org.springframework.data.jpa.repository.JpaRepository;\n\nimport java.util.Optional;\n\
     \npublic interface UserRepository extends JpaRepository<User,Long> {\n  Optional<User>\
     \ findByEmail (String email);\n}\n"
-  info:
-    "size": "300"
-    "last_modified": "2025-11-16T15:56:17.239673169"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/user/entity/User.java"
-  content: "package com.izak.auth_service.user.entity;\n\nimport com.izak.auth_service.address.entity.Address;\n\
+    info:
+      "size": "300"
+      "last_modified": "2025-11-16T15:56:17.239673169"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/user/entity/User.java"
+    content: "package com.izak.auth_service.user.entity;\n\nimport com.izak.auth_service.address.entity.Address;\n\
     import com.izak.auth_service.user.enums.Auth;\nimport jakarta.persistence.*;\n\
     import lombok.*;\nimport org.springframework.security.core.GrantedAuthority;\n\
     import org.springframework.security.core.authority.SimpleGrantedAuthority;\nimport\
@@ -6833,31 +6833,31 @@ files:
     \ isCredentialsNonExpired() {\n    return this.isCredentialsNonExpired;\n  }\n\
     \n  @Override\n  public boolean isEnabled() {\n    return this.isEnabled;\n  }\n\
     \n}\n"
-  info:
-    "size": "2057"
-    "last_modified": "2025-11-16T15:56:17.27560524"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/user/enums/Auth.java"
-  content: "package com.izak.auth_service.user.enums;\n\npublic enum Auth {\n  SUPER_ADMIN,\n\
+    info:
+      "size": "2057"
+      "last_modified": "2025-11-16T15:56:17.27560524"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/user/enums/Auth.java"
+    content: "package com.izak.auth_service.user.enums;\n\npublic enum Auth {\n  SUPER_ADMIN,\n\
     \  ADMIN,\n  SELLER,\n  USER\n}\n"
-  info:
-    "size": "105"
-    "last_modified": "2025-11-16T15:56:17.31544734"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/address/repository/AddressRepository.java"
-  content: "package com.izak.auth_service.address.repository;\n\nimport com.izak.auth_service.address.entity.Address;\n\
+    info:
+      "size": "105"
+      "last_modified": "2025-11-16T15:56:17.31544734"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/address/repository/AddressRepository.java"
+    content: "package com.izak.auth_service.address.repository;\n\nimport com.izak.auth_service.address.entity.Address;\n\
     import org.springframework.data.jpa.repository.JpaRepository;\nimport org.springframework.stereotype.Repository;\n\
     \n@Repository\npublic interface AddressRepository extends JpaRepository<Address,Integer>\
     \ {\n}\n"
-  info:
-    "size": "307"
-    "last_modified": "2025-11-16T15:56:17.350503384"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/address/mapper/AddressMapper.java"
-  content: "package com.izak.auth_service.address.mapper;\n\nimport com.izak.auth_service.address.dto.AddressRequest;\n\
+    info:
+      "size": "307"
+      "last_modified": "2025-11-16T15:56:17.350503384"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/address/mapper/AddressMapper.java"
+    content: "package com.izak.auth_service.address.mapper;\n\nimport com.izak.auth_service.address.dto.AddressRequest;\n\
     import com.izak.auth_service.address.entity.Address;\nimport com.izak.auth_service.user.entity.User;\n\
     import com.izak.auth_service.user.repository.UserRepository;\nimport lombok.AllArgsConstructor;\n\
     import org.springframework.stereotype.Service;\n\nimport java.util.Optional;\n\
@@ -6869,13 +6869,13 @@ files:
     \          .town(addressRequest.town())\n          .city(addressRequest.city())\n\
     \          .county(addressRequest.county())\n          .postalCode(addressRequest.postalCode())\n\
     \          .build();\n  }\n}\n"
-  info:
-    "size": "977"
-    "last_modified": "2025-11-16T15:56:17.369350329"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/address/entity/Address.java"
-  content: "package com.izak.auth_service.address.entity;\n\nimport com.izak.auth_service.user.entity.User;\n\
+    info:
+      "size": "977"
+      "last_modified": "2025-11-16T15:56:17.369350329"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/address/entity/Address.java"
+    content: "package com.izak.auth_service.address.entity;\n\nimport com.izak.auth_service.user.entity.User;\n\
     import jakarta.persistence.*;\nimport lombok.*;\n\n@Getter\n@Setter\n@NoArgsConstructor\n\
     @AllArgsConstructor\n@Builder\n@Entity\n@Table(name = \"address\")\npublic class\
     \ Address {\n  @Id\n  @SequenceGenerator(\n        name = \"address_sequence\"\
@@ -6885,13 +6885,13 @@ files:
     \ = \"address\", cascade = CascadeType.ALL)\n  private User user;\n  private String\
     \ town;\n  private String city;\n  private String county;\n  private String postalCode;\n\
     }\n"
-  info:
-    "size": "712"
-    "last_modified": "2025-11-16T15:56:17.388071772"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/address/controller/AddressController.java"
-  content: "package com.izak.auth_service.address.controller;\n\nimport com.izak.auth_service.address.dto.AddressRequest;\n\
+    info:
+      "size": "712"
+      "last_modified": "2025-11-16T15:56:17.388071772"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/address/controller/AddressController.java"
+    content: "package com.izak.auth_service.address.controller;\n\nimport com.izak.auth_service.address.dto.AddressRequest;\n\
     import com.izak.auth_service.address.service.AddressService;\nimport jakarta.validation.Valid;\n\
     import lombok.AllArgsConstructor;\nimport lombok.NoArgsConstructor;\nimport lombok.RequiredArgsConstructor;\n\
     import org.springframework.http.ResponseEntity;\nimport org.springframework.web.bind.annotation.PostMapping;\n\
@@ -6902,13 +6902,13 @@ files:
     )\n  public ResponseEntity<AddressRequest> location(@Valid @RequestBody AddressRequest\
     \ addressRequest) {\n    AddressRequest savedAddress = addressService.location(addressRequest);\n\
     \    return ResponseEntity.ok(savedAddress);\n  }\n}\n"
-  info:
-    "size": "1011"
-    "last_modified": "2025-11-16T15:56:17.404395313"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/address/service/AddressService.java"
-  content: "package com.izak.auth_service.address.service;\n\nimport com.izak.auth_service.address.dto.AddressRequest;\n\
+    info:
+      "size": "1011"
+      "last_modified": "2025-11-16T15:56:17.404395313"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/address/service/AddressService.java"
+    content: "package com.izak.auth_service.address.service;\n\nimport com.izak.auth_service.address.dto.AddressRequest;\n\
     import com.izak.auth_service.address.entity.Address;\nimport com.izak.auth_service.address.mapper.AddressMapper;\n\
     import com.izak.auth_service.address.repository.AddressRepository;\nimport jakarta.validation.Valid;\n\
     import lombok.AllArgsConstructor;\nimport org.springframework.stereotype.Service;\n\
@@ -6920,25 +6920,25 @@ files:
     \          .town(savedAddress.getTown())\n          .city(savedAddress.getCity())\n\
     \          .county(savedAddress.getCounty())\n          .postalCode(savedAddress.getPostalCode())\n\
     \          .build();\n  }\n}\n"
-  info:
-    "size": "992"
-    "last_modified": "2025-11-16T15:56:17.433322808"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/address/dto/AddressRequest.java"
-  content: "package com.izak.auth_service.address.dto;\n\nimport com.izak.auth_service.user.entity.User;\n\
+    info:
+      "size": "992"
+      "last_modified": "2025-11-16T15:56:17.433322808"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/address/dto/AddressRequest.java"
+    content: "package com.izak.auth_service.address.dto;\n\nimport com.izak.auth_service.user.entity.User;\n\
     import jakarta.validation.constraints.NotNull;\nimport lombok.Builder;\n\n@Builder\n\
     public record AddressRequest(\n      Integer id,\n      User user,\n      @NotNull(message\
     \ = \"Town is required\")\n      String town,\n      @NotNull(message = \"City\
     \ is required\")\n      String city,\n      @NotNull(message = \"County is required\"\
     )\n      String county,\n      String postalCode\n) {\n}\n"
-  info:
-    "size": "462"
-    "last_modified": "2025-11-16T15:56:17.446475428"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/auth/mapper/AuthMapper.java"
-  content: "package com.izak.auth_service.auth.mapper;\n\nimport com.izak.auth_service.auth.dto.RegisterRequest;\n\
+    info:
+      "size": "462"
+      "last_modified": "2025-11-16T15:56:17.446475428"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/auth/mapper/AuthMapper.java"
+    content: "package com.izak.auth_service.auth.mapper;\n\nimport com.izak.auth_service.auth.dto.RegisterRequest;\n\
     import com.izak.auth_service.auth.dto.UpdateUser;\nimport com.izak.auth_service.user.entity.User;\n\
     import com.izak.auth_service.user.enums.Auth;\nimport lombok.AllArgsConstructor;\n\
     import org.springframework.security.crypto.password.PasswordEncoder;\nimport org.springframework.stereotype.Service;\n\
@@ -6957,13 +6957,13 @@ files:
     \       .lastName(updateUser.lastName())\n          .dob(updateUser.dob())\n \
     \         .gender(updateUser.gender())\n          .phoneNumber(updateUser.phoneNumber())\n\
     \          .build();\n  }\n}\n"
-  info:
-    "size": "1677"
-    "last_modified": "2025-11-16T15:56:17.465537315"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/auth/contoller/AuthController.java"
-  content: "package com.izak.auth_service.auth.contoller;\n\nimport com.izak.auth_service.auth.dto.AuthResponse;\n\
+    info:
+      "size": "1677"
+      "last_modified": "2025-11-16T15:56:17.465537315"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/auth/contoller/AuthController.java"
+    content: "package com.izak.auth_service.auth.contoller;\n\nimport com.izak.auth_service.auth.dto.AuthResponse;\n\
     import com.izak.auth_service.auth.dto.AuthenticateRequest;\nimport com.izak.auth_service.auth.dto.RegisterRequest;\n\
     import com.izak.auth_service.auth.dto.UpdateUser;\nimport com.izak.auth_service.auth.service.AuthService;\n\
     import com.izak.auth_service.user.entity.User;\nimport jakarta.validation.Valid;\n\
@@ -6983,13 +6983,13 @@ files:
     \ updateProfile(\n        @RequestBody UpdateUser updateRequest,\n        @PathVariable\
     \ Long id\n  ){\n    User updateUser=authService.updateProfile(id,updateRequest);\n\
     \    return ResponseEntity.ok(updateUser);\n  }\n}\n"
-  info:
-    "size": "1800"
-    "last_modified": "2025-11-16T15:56:17.479192299"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/auth/service/AuthService.java"
-  content: "package com.izak.auth_service.auth.service;\n\nimport com.izak.auth_service.auth.dto.AuthResponse;\n\
+    info:
+      "size": "1800"
+      "last_modified": "2025-11-16T15:56:17.479192299"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/auth/service/AuthService.java"
+    content: "package com.izak.auth_service.auth.service;\n\nimport com.izak.auth_service.auth.dto.AuthResponse;\n\
     import com.izak.auth_service.auth.dto.AuthenticateRequest;\nimport com.izak.auth_service.auth.dto.RegisterRequest;\n\
     import com.izak.auth_service.auth.dto.UpdateUser;\nimport com.izak.auth_service.auth.mapper.AuthMapper;\n\
     //import com.izak.auth_service.exceptions.UserNotFoundException;\nimport com.izak.auth_service.configuration.JwtService;\n\
@@ -7022,53 +7022,53 @@ files:
     \    user.setLastName(updateUser.lastName());\n    user.setDob(updateUser.dob());\n\
     \    user.setGender(updateUser.gender());\n    user.setPhoneNumber(updateUser.phoneNumber());\n\
     \    return userRepository.save(user);\n  }\n}\n"
-  info:
-    "size": "2975"
-    "last_modified": "2025-11-16T15:56:17.492287868"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/auth/dto/AuthenticateRequest.java"
-  content: "package com.izak.auth_service.auth.dto;\n\nimport lombok.Builder;\n\n\
+    info:
+      "size": "2975"
+      "last_modified": "2025-11-16T15:56:17.492287868"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/auth/dto/AuthenticateRequest.java"
+    content: "package com.izak.auth_service.auth.dto;\n\nimport lombok.Builder;\n\n\
     @Builder\npublic record AuthenticateRequest(\n      String email,\n      String\
     \ password) {\n}\n"
-  info:
-    "size": "156"
-    "last_modified": "2025-11-16T15:56:17.505834671"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/auth/dto/RegisterRequest.java"
-  content: "package com.izak.auth_service.auth.dto;\n\nimport com.izak.auth_service.user.enums.Auth;\n\
+    info:
+      "size": "156"
+      "last_modified": "2025-11-16T15:56:17.505834671"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/auth/dto/RegisterRequest.java"
+    content: "package com.izak.auth_service.auth.dto;\n\nimport com.izak.auth_service.user.enums.Auth;\n\
     import jakarta.validation.constraints.Email;\nimport jakarta.validation.constraints.NotNull;\n\
     \nimport java.util.Date;\n\npublic record RegisterRequest(\n      Long id,\n \
     \     @Email\n      @NotNull(message = \" Email is required\")\n      String email,\n\
     \      Auth auth,\n      @NotNull(message = \"Password is Required\")\n      String\
     \ password\n) {\n}\n"
-  info:
-    "size": "424"
-    "last_modified": "2025-11-16T15:56:17.528245785"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/auth/dto/UpdateUser.java"
-  content: "package com.izak.auth_service.auth.dto;\n\nimport java.util.Date;\n\n\
+    info:
+      "size": "424"
+      "last_modified": "2025-11-16T15:56:17.528245785"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/auth/dto/UpdateUser.java"
+    content: "package com.izak.auth_service.auth.dto;\n\nimport java.util.Date;\n\n\
     public record UpdateUser(\n      String firstName,\n      String lastName,\n//\
     \      String email,\n      String phoneNumber,\n      Date dob,\n      String\
     \ gender\n) {\n}\n"
-  info:
-    "size": "228"
-    "last_modified": "2025-11-16T15:56:17.535848528"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/java/com/izak/auth_service/auth/dto/AuthResponse.java"
-  content: "package com.izak.auth_service.auth.dto;\n\nimport lombok.Builder;\nimport\
+    info:
+      "size": "228"
+      "last_modified": "2025-11-16T15:56:17.535848528"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/java/com/izak/auth_service/auth/dto/AuthResponse.java"
+    content: "package com.izak.auth_service.auth.dto;\n\nimport lombok.Builder;\nimport\
     \ lombok.Data;\nimport lombok.Getter;\nimport lombok.Setter;\n\n@Getter\n@Setter\n\
     @Data\n@Builder\npublic class AuthResponse {\n  private String token;\n}\n"
-  info:
-    "size": "214"
-    "last_modified": "2025-11-16T15:56:17.543430442"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "auth-service/src/main/resources/db/migration/V2__create_address_table.sql"
-  content: "-- Create sequence\nCREATE SEQUENCE IF NOT EXISTS public.user_sequence\
+    info:
+      "size": "214"
+      "last_modified": "2025-11-16T15:56:17.543430442"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "auth-service/src/main/resources/db/migration/V2__create_address_table.sql"
+    content: "-- Create sequence\nCREATE SEQUENCE IF NOT EXISTS public.user_sequence\
     \ START 1 INCREMENT 1;\n\n-- Create table\nCREATE TABLE IF NOT EXISTS public._user\
     \ (\n    id BIGINT PRIMARY KEY DEFAULT nextval('public.user_sequence'),\n    first_name\
     \ VARCHAR(255),\n    last_name VARCHAR(255),\n    email VARCHAR(255) UNIQUE,\n\
@@ -7083,13 +7083,13 @@ files:
     \    county VARCHAR(255),\n    postal_code VARCHAR(255),\n    CONSTRAINT pk_address\
     \ PRIMARY KEY (id),\n    CONSTRAINT fk_address_user FOREIGN KEY (user_id) REFERENCES\
     \ _user(id) ON DELETE CASCADE\n);\n"
-  info:
-    "size": "1132"
-    "last_modified": "2025-11-16T15:56:17.586230589"
-    "mime_type": "text/x-sql"
-    "extension": ".sql"
-- path: "auth-service/src/main/resources/db/migration/V1__init_schema.sql"
-  content: "-- Create sequence\nCREATE SEQUENCE IF NOT EXISTS public.user_sequence\
+    info:
+      "size": "1132"
+      "last_modified": "2025-11-16T15:56:17.586230589"
+      "mime_type": "text/x-sql"
+      "extension": ".sql"
+  - path: "auth-service/src/main/resources/db/migration/V1__init_schema.sql"
+    content: "-- Create sequence\nCREATE SEQUENCE IF NOT EXISTS public.user_sequence\
     \ START 1 INCREMENT 1;\n\n-- Create table\nCREATE TABLE IF NOT EXISTS public._user\
     \ (\n    id INT PRIMARY KEY DEFAULT nextval('public.user_sequence'),\n    first_name\
     \ VARCHAR(255),\n    last_name VARCHAR(255),\n    email VARCHAR(255) UNIQUE,\n\
@@ -7097,28 +7097,28 @@ files:
     \    auth VARCHAR(50),\n    password VARCHAR(255),\n    is_enabled BOOLEAN DEFAULT\
     \ TRUE,\n    is_account_non_locked BOOLEAN DEFAULT TRUE,\n    is_credentials_non_expired\
     \ BOOLEAN DEFAULT TRUE,\n    is_account_non_expired BOOLEAN DEFAULT TRUE\n);\n"
-  info:
-    "size": "616"
-    "last_modified": "2025-11-16T15:56:17.594683391"
-    "mime_type": "text/x-sql"
-    "extension": ".sql"
-- path: "auth-service/src/main/resources/application.yml"
-  content: "spring:\n  application:\n    name: auth-service\n  config:\n    import:\
+    info:
+      "size": "616"
+      "last_modified": "2025-11-16T15:56:17.594683391"
+      "mime_type": "text/x-sql"
+      "extension": ".sql"
+  - path: "auth-service/src/main/resources/application.yml"
+    content: "spring:\n  application:\n    name: auth-service\n  config:\n    import:\
     \ optional:configserver:http://localhost:8888"
-  info:
-    "size": "111"
-    "last_modified": "2025-11-16T15:56:17.619854186"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "auth-service/.gitattributes"
-  content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
-  info:
-    "size": "38"
-    "last_modified": "2025-11-16T15:56:17.65126024"
-    "mime_type": "text/plain"
-    "extension": ".gitattributes"
-- path: "auth-service/mvnw"
-  content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
+    info:
+      "size": "111"
+      "last_modified": "2025-11-16T15:56:17.619854186"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "auth-service/.gitattributes"
+    content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
+    info:
+      "size": "38"
+      "last_modified": "2025-11-16T15:56:17.65126024"
+      "mime_type": "text/plain"
+      "extension": ".gitattributes"
+  - path: "auth-service/mvnw"
+    content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
     # Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor\
     \ license agreements.  See the NOTICE file\n# distributed with this work for additional\
     \ information\n# regarding copyright ownership.  The ASF licenses this file\n\
@@ -7268,13 +7268,13 @@ files:
     \ >\"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url\"\nmv -- \"$TMP_DOWNLOAD_DIR/$actualDistributionDir\"\
     \ \"$MAVEN_HOME\" || [ -d \"$MAVEN_HOME\" ] || die \"fail to move MAVEN_HOME\"\
     \n\nclean || :\nexec_maven \"$@\"\n"
-  info:
-    "size": "11790"
-    "last_modified": "2025-11-16T15:56:17.659015395"
-    "mime_type": "application/x-sh"
-    "extension": "."
-- path: "auth-service/pom.xml"
-  content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
+    info:
+      "size": "11790"
+      "last_modified": "2025-11-16T15:56:17.659015395"
+      "mime_type": "application/x-sh"
+      "extension": "."
+  - path: "auth-service/pom.xml"
+    content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
     \ xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"\
     http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\
     >\n\t<modelVersion>4.0.0</modelVersion>\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\
@@ -7302,9 +7302,9 @@ files:
     \t\t\t<artifactId>postgresql</artifactId>\n\t\t\t<scope>runtime</scope>\n\t\t\
     </dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.projectlombok</groupId>\n\t\
     \t\t<artifactId>lombok</artifactId>\n\t\t\t<optional>true</optional>\n\t\t</dependency>\n\
-    \t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\n\
-    \t\t\t<scope>test</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.security</groupId>\n\
-    \t\t\t<artifactId>spring-security-test</artifactId>\n\t\t\t<scope>test</scope>\n\
+    \t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-testsdss</artifactId>\n\
+    \t\t\t<scope>testsdss</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.security</groupId>\n\
+    \t\t\t<artifactId>spring-security-testsdss</artifactId>\n\t\t\t<scope>testsdss</scope>\n\
     \t\t</dependency>\n        <dependency>\n            <groupId>io.jsonwebtoken</groupId>\n\
     \            <artifactId>jjwt-api</artifactId>\n            <version>0.12.3</version>\n\
     \        </dependency>\n        <dependency>\n            <groupId>io.jsonwebtoken</groupId>\n\
@@ -7337,13 +7337,13 @@ files:
     \t\t\t\t\t\t\t<artifactId>lombok</artifactId>\n\t\t\t\t\t\t</exclude>\n\t\t\t\t\
     \t</excludes>\n\t\t\t\t</configuration>\n\t\t\t</plugin>\n\t\t</plugins>\n\t</build>\n\
     \n</project>\n"
-  info:
-    "size": "5179"
-    "last_modified": "2025-11-16T15:56:17.666334759"
-    "mime_type": "application/xml"
-    "extension": ".xml"
-- path: "auth-service/mvnw.cmd"
-  content: "<# : batch portion\n@REM ----------------------------------------------------------------------------\n\
+    info:
+      "size": "5179"
+      "last_modified": "2025-11-16T15:56:17.666334759"
+      "mime_type": "application/xml"
+      "extension": ".xml"
+  - path: "auth-service/mvnw.cmd"
+    content: "<# : batch portion\n@REM ----------------------------------------------------------------------------\n\
     @REM Licensed to the Apache Software Foundation (ASF) under one\n@REM or more\
     \ contributor license agreements.  See the NOTICE file\n@REM distributed with\
     \ this work for additional information\n@REM regarding copyright ownership.  The\
@@ -7446,20 +7446,20 @@ files:
     \ $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }\n  catch { Write-Warning \"Cannot\
     \ remove $TMP_DOWNLOAD_DIR\" }\n}\n\nWrite-Output \"MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD\"\
     \n"
-  info:
-    "size": "8292"
-    "last_modified": "2025-11-16T15:56:17.674270795"
-    "mime_type": "application/x-bat"
-    "extension": ".cmd"
-- path: "auth-service/.mvn/wrapper/maven-wrapper.properties"
-  content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
-  info:
-    "size": "168"
-    "last_modified": "2025-11-16T15:56:17.682215689"
-    "mime_type": "text/x-java-properties"
-    "extension": ".properties"
-- path: "notification-service/HELP.md"
-  content: "# Read Me First\nThe following was discovered as part of building this\
+    info:
+      "size": "8292"
+      "last_modified": "2025-11-16T15:56:17.674270795"
+      "mime_type": "application/x-bat"
+      "extension": ".cmd"
+  - path: "auth-service/.mvn/wrapper/maven-wrapper.properties"
+    content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
+    info:
+      "size": "168"
+      "last_modified": "2025-11-16T15:56:17.682215689"
+      "mime_type": "text/x-java-properties"
+      "extension": ".properties"
+  - path: "notification-service/HELP.md"
+    content: "# Read Me First\nThe following was discovered as part of building this\
     \ project:\n\n* The original package name 'com.izak.notification-service' is invalid\
     \ and this project uses 'com.izak.notification_service' instead.\n\n# Getting\
     \ Started\n\n### Reference Documentation\nFor further reference, please consider\
@@ -7490,61 +7490,61 @@ files:
     \ the parent.\nTo prevent this, the project POM contains empty overrides for these\
     \ elements.\nIf you manually switch to a different parent and actually want the\
     \ inheritance, you need to remove those overrides.\n\n"
-  info:
-    "size": "2859"
-    "last_modified": "2025-11-16T15:56:17.70670508"
-    "mime_type": "text/x-web-markdown"
-    "extension": ".md"
-- path: "notification-service/.gitignore"
-  content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
-    !**/src/test/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
+    info:
+      "size": "2859"
+      "last_modified": "2025-11-16T15:56:17.70670508"
+      "mime_type": "text/x-web-markdown"
+      "extension": ".md"
+  - path: "notification-service/.gitignore"
+    content: "HELP.md\ntarget/\n.mvn/wrapper/maven-wrapper.jar\n!**/src/main/**/target/\n\
+    !**/src/testsdss/**/target/\n\n### STS ###\n.apt_generated\n.classpath\n.factorypath\n\
     .project\n.settings\n.springBeans\n.sts4-cache\n\n### IntelliJ IDEA ###\n.idea\n\
     *.iws\n*.iml\n*.ipr\n\n### NetBeans ###\n/nbproject/private/\n/nbbuild/\n/dist/\n\
-    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/test/**/build/\n\
+    /nbdist/\n/.nb-gradle/\nbuild/\n!**/src/main/**/build/\n!**/src/testsdss/**/build/\n\
     \n### VS Code ###\n.vscode/\n"
-  info:
-    "size": "394"
-    "last_modified": "2025-11-16T15:56:17.714223117"
-    "mime_type": "text/plain"
-    "extension": ".gitignore"
-- path: "notification-service/src/test/java/com/izak/notification_service/NotificationServiceApplicationTests.java"
-  content: "package com.izak.notification_service;\n\nimport org.junit.jupiter.api.Test;\n\
-    import org.springframework.boot.test.context.SpringBootTest;\n\n@SpringBootTest\n\
+    info:
+      "size": "394"
+      "last_modified": "2025-11-16T15:56:17.714223117"
+      "mime_type": "text/plain"
+      "extension": ".gitignore"
+  - path: "notification-service/src/testsdss/java/com/izak/notification_service/NotificationServiceApplicationTests.java"
+    content: "package com.izak.notification_service;\n\nimport org.junit.jupiter.api.Test;\n\
+    import org.springframework.boot.testsdss.context.SpringBootTest;\n\n@SpringBootTest\n\
     class NotificationServiceApplicationTests {\n\n\t@Test\n\tvoid contextLoads()\
     \ {\n\t}\n\n}\n"
-  info:
-    "size": "234"
-    "last_modified": "2025-11-16T15:56:17.722517232"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "notification-service/src/main/java/com/izak/notification_service/NotificationServiceApplication.java"
-  content: "package com.izak.notification_service;\n\nimport org.springframework.boot.SpringApplication;\n\
+    info:
+      "size": "234"
+      "last_modified": "2025-11-16T15:56:17.722517232"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "notification-service/src/main/java/com/izak/notification_service/NotificationServiceApplication.java"
+    content: "package com.izak.notification_service;\n\nimport org.springframework.boot.SpringApplication;\n\
     import org.springframework.boot.autoconfigure.SpringBootApplication;\n\n@SpringBootApplication\n\
     public class NotificationServiceApplication {\n\n\tpublic static void main(String[]\
     \ args) {\n\t\tSpringApplication.run(NotificationServiceApplication.class, args);\n\
     \t}\n\n}\n"
-  info:
-    "size": "348"
-    "last_modified": "2025-11-16T15:56:17.759526017"
-    "mime_type": "text/x-java-source"
-    "extension": ".java"
-- path: "notification-service/src/main/resources/application.yml"
-  content: "spring:\n  application:\n    name: notification-service\n  config:\n \
+    info:
+      "size": "348"
+      "last_modified": "2025-11-16T15:56:17.759526017"
+      "mime_type": "text/x-java-source"
+      "extension": ".java"
+  - path: "notification-service/src/main/resources/application.yml"
+    content: "spring:\n  application:\n    name: notification-service\n  config:\n \
     \   import: optional:configserver:http://localhost:8888\n"
-  info:
-    "size": "120"
-    "last_modified": "2025-11-16T15:56:17.807887375"
-    "mime_type": "text/x-yaml"
-    "extension": ".yml"
-- path: "notification-service/.gitattributes"
-  content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
-  info:
-    "size": "38"
-    "last_modified": "2025-11-16T15:56:17.838092948"
-    "mime_type": "text/plain"
-    "extension": ".gitattributes"
-- path: "notification-service/mvnw"
-  content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
+    info:
+      "size": "120"
+      "last_modified": "2025-11-16T15:56:17.807887375"
+      "mime_type": "text/x-yaml"
+      "extension": ".yml"
+  - path: "notification-service/.gitattributes"
+    content: "/mvnw text eol=lf\n*.cmd text eol=crlf\n"
+    info:
+      "size": "38"
+      "last_modified": "2025-11-16T15:56:17.838092948"
+      "mime_type": "text/plain"
+      "extension": ".gitattributes"
+  - path: "notification-service/mvnw"
+    content: "#!/bin/sh\n# ----------------------------------------------------------------------------\n\
     # Licensed to the Apache Software Foundation (ASF) under one\n# or more contributor\
     \ license agreements.  See the NOTICE file\n# distributed with this work for additional\
     \ information\n# regarding copyright ownership.  The ASF licenses this file\n\
@@ -7694,13 +7694,13 @@ files:
     \ >\"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url\"\nmv -- \"$TMP_DOWNLOAD_DIR/$actualDistributionDir\"\
     \ \"$MAVEN_HOME\" || [ -d \"$MAVEN_HOME\" ] || die \"fail to move MAVEN_HOME\"\
     \n\nclean || :\nexec_maven \"$@\"\n"
-  info:
-    "size": "11790"
-    "last_modified": "2025-11-16T15:56:17.845490136"
-    "mime_type": "application/x-sh"
-    "extension": "."
-- path: "notification-service/pom.xml"
-  content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
+    info:
+      "size": "11790"
+      "last_modified": "2025-11-16T15:56:17.845490136"
+      "mime_type": "application/x-sh"
+      "extension": "."
+  - path: "notification-service/pom.xml"
+    content: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\
     \ xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"\
     http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\"\
     >\n\t<modelVersion>4.0.0</modelVersion>\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\
@@ -7734,9 +7734,9 @@ files:
     \t\t<dependency>\n\t\t\t<groupId>org.postgresql</groupId>\n\t\t\t<artifactId>postgresql</artifactId>\n\
     \t\t\t<scope>runtime</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.projectlombok</groupId>\n\
     \t\t\t<artifactId>lombok</artifactId>\n\t\t\t<optional>true</optional>\n\t\t</dependency>\n\
-    \t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\n\
-    \t\t\t<scope>test</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.signals</groupId>\n\
-    \t\t\t<artifactId>spring-signals-test</artifactId>\n\t\t\t<scope>test</scope>\n\t\
+    \t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-testsdss</artifactId>\n\
+    \t\t\t<scope>testsdss</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.signals</groupId>\n\
+    \t\t\t<artifactId>spring-signals-testsdss</artifactId>\n\t\t\t<scope>testsdss</scope>\n\t\
     \t</dependency>\n\t</dependencies>\n\t<dependencyManagement>\n\t\t<dependencies>\n\
     \t\t\t<dependency>\n\t\t\t\t<groupId>org.springframework.cloud</groupId>\n\t\t\
     \t\t<artifactId>spring-cloud-dependencies</artifactId>\n\t\t\t\t<version>${spring-cloud.version}</version>\n\
@@ -7752,13 +7752,13 @@ files:
     \t\t\t\t\t\t\t<artifactId>lombok</artifactId>\n\t\t\t\t\t\t</exclude>\n\t\t\t\t\
     \t</excludes>\n\t\t\t\t</configuration>\n\t\t\t</plugin>\n\t\t</plugins>\n\t</build>\n\
     \n</project>\n"
-  info:
-    "size": "4213"
-    "last_modified": "2025-11-16T15:56:17.852767083"
-    "mime_type": "application/xml"
-    "extension": ".xml"
-- path: "notification-service/mvnw.cmd"
-  content: "<# : batch portion\r\n@REM ----------------------------------------------------------------------------\r\
+    info:
+      "size": "4213"
+      "last_modified": "2025-11-16T15:56:17.852767083"
+      "mime_type": "application/xml"
+      "extension": ".xml"
+  - path: "notification-service/mvnw.cmd"
+    content: "<# : batch portion\r\n@REM ----------------------------------------------------------------------------\r\
     \n@REM Licensed to the Apache Software Foundation (ASF) under one\r\n@REM or more\
     \ contributor license agreements.  See the NOTICE file\r\n@REM distributed with\
     \ this work for additional information\r\n@REM regarding copyright ownership.\
@@ -7864,15 +7864,15 @@ files:
     \ MAVEN_HOME\"\r\n  }\r\n} finally {\r\n  try { Remove-Item $TMP_DOWNLOAD_DIR\
     \ -Recurse -Force | Out-Null }\r\n  catch { Write-Warning \"Cannot remove $TMP_DOWNLOAD_DIR\"\
     \ }\r\n}\r\n\r\nWrite-Output \"MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD\"\r\n"
-  info:
-    "size": "8481"
-    "last_modified": "2025-11-16T15:56:17.861120377"
-    "mime_type": "application/x-bat"
-    "extension": ".cmd"
-- path: "notification-service/.mvn/wrapper/maven-wrapper.properties"
-  content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
-  info:
-    "size": "168"
-    "last_modified": "2025-11-16T15:56:17.869111507"
-    "mime_type": "text/x-java-properties"
-    "extension": ".properties"
+    info:
+      "size": "8481"
+      "last_modified": "2025-11-16T15:56:17.861120377"
+      "mime_type": "application/x-bat"
+      "extension": ".cmd"
+  - path: "notification-service/.mvn/wrapper/maven-wrapper.properties"
+    content: "wrapperVersion=3.3.4\ndistributionType=only-script\ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip\n"
+    info:
+      "size": "168"
+      "last_modified": "2025-11-16T15:56:17.869111507"
+      "mime_type": "text/x-java-properties"
+      "extension": ".properties"

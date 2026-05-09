@@ -1,0 +1,75 @@
+)
+from django.contrib.auth import get_user_model
+from rest_framework import status
+from rest_framework.reverse import reverse
+from rest_framework.test import APITestCase, APIClient
+
+from ...models import Store
+
+User = get_user_model()
+
+
+class BaseTestCase(APITestCase):
+    def setUp(self):
+        self.client = APIClient()
+        self.admin_user = User.objects.create(
+            username="admin",
+            email="admin@gmail.cm",
+            password="admin123",
+            role="ADMIN"
+        )
+        self.seller_user = User.objects.create(
+            username="seller",
+            email="seller@gmail.com",
+            password="seller123",
+            role="SELLER"
+        )
+        self.buyer_user = User.objects.create(
+            username="buyer",
+            email="buyer@gmail.com",
+            password="buyer123",
+            role="BUYER"
+        )
+        self.store = Store.objects.create(
+            name='Test Store',
+            description='Test Store',
+            Slug='Test-Store',
+            owner=self.seller_user,
+            status=Store.Status.ACTIVE
+        )
+
+        self.store_data = {
+            "name": "Test Store",
+            "slug": "test-store",
+            "description": "Test description",
+        }
+
+
+class StoreViewTestCase(BaseTestCase):
+    def setUp(self):
+        super().setUp()
+
+        # create pending store for approval tests
+        self.pending_store = Store.objects.create(
+            name='Pending Store',
+            description='Pending Store',
+            Slug='Pending Store',
+            owner=self.seller_user,
+            status=Store.Status.PENDING
+        )
+
+    def authenticate_as(self, user):
+        """Helper method to authenticate as different users"""
+        # Mock JWT authentication - adjust based on your JWT implementation
+        self.client.force_authenticate(user=user)
+
+    def test_unauthenticated_cannot_create_store(self):
+        # Test that unauthenticated users cannot create stores
+        url = reverse('store-list')
+        data = {
+            "name": "Test Store",
+            "slug": "test-store",
+            "description": "Test description"
+        }
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)

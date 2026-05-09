@@ -21,3 +21,7 @@ opentelemetry-exporter-zipkin
 opentelemetry-instrumentation-django
 opentelemetry-instrumentation-requests
 opentelemetry-propagator-b3
+
+# testsdss
+pytest-django
+pytest

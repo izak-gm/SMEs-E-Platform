@@ -33,7 +33,6 @@ public class PaymentMapper {
 
     String transactionReference = generateTransactionReference();
     return Payment.builder()
-          .id(paymentRequest.id())
           .amount(order_amount)
           // generate the transaction reference here when building the payment request
           .transactionReference(transactionReference)
