@@ -51,13 +51,13 @@ class TestStoreAPI:
     assert response.status_code == status.HTTP_200_OK
 
   # Get tests for store
-  def test_all_users_can_see_store(self, client, mock_seller_auth, seller_store):
+  def test_all_users_can_see_stores(self, client, mock_admin_auth, mock_seller_auth, mock_buyer_auth, seller_store):
     """Test that all users can see pending and active stores"""
     url = f"/v1/api/bizhub/stores/"
     response = client.get(url, content_type='application/json')
     assert response.status_code == status.HTTP_200_OK
 
-  def test_users_can_get_all_stores(self, client, mock_admin_auth, seller_store):
+  def test_users_can_get_store_list(self, client, mock_admin_auth, mock_seller_auth, mock_buyer_auth, seller_store):
     """Test that admin can see pending and active stores"""
     url = f"/v1/api/bizhub/stores/{seller_store.id}/"
     response = client.get(url)
