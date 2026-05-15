@@ -1,18 +1,22 @@
+from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
+from django.utils import timezone
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from django_microservices.common.auth.authentication import JWTAuthentication
 from django_microservices.common.auth.role_based_permissions import IsSeller, IsAdmin
 from .models import (
-  Product, Store, SellerKYC, Brand, Category, ProductVariant, ProductImage
+  Product, Store, SellerKYC, Brand, Category
 )
 from .serializers import (
-  ProductSerializer, StoreKYCSerializer, BrandSerializer, StoreSerializer,
-  CategorySerializer, ProductVariantSerializer, ProductImageSerializer
+  StoreKYCSerializer, BrandSerializer, StoreSerializer,
+  CategorySerializer, ProductSerializer, ProductVariantSerializer
 )
+from .services.product_service import ProductService
 
 
 # --- Store Views ---
@@ -26,10 +30,14 @@ class StoreViewSet(viewsets.ModelViewSet):
     if self.action in ['list', 'retrieve']:
       return [IsAuthenticated()]
     # Only sellers can create/update/destroy
-    if self.action in ["create", "update", "partial_update", "destroy"]:
+    if self.action in ["create"]:
+      return [IsAuthenticated(), IsSeller()]
+    if self.action in ["create", "update", "partial_update"]:
       return [IsAuthenticated(), IsSeller()]
     # Only admins can approve/delete
-    if self.action in ["approve", "destroy"]:
+    if self.action in ["destroy"]:
+      return [IsAuthenticated(), IsAdmin()]
+    if self.action in ["approve"]:
       return [IsAuthenticated(), IsAdmin()]
 
     return [IsAuthenticated()]
@@ -71,26 +79,118 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 # --- Product Views ---
 class ProductViewSet(viewsets.ModelViewSet):
-  queryset = Product.objects.all()
-  serializer_class = ProductSerializer
   authentication_classes = [JWTAuthentication]
-  permission_classes = [IsSeller]  # only sellers can post, put, delete
+  permission_classes = [IsAuthenticated, IsSeller]  # only sellers can post, put, delete
+  parser_classes = [MultiPartParser, FormParser, ]
+  lookup_field = 'id'
+
+  def get_queryset(self):
+    queryset = (Product.objects
+                .filter(is_deleted=False)
+                .prefetch_related(
+      Prefetch("variants"),
+      Prefetch("images")
+    )
+                .order_by('created_at')
+                )
+    return queryset
+
+  def get_serializer_class(self):
+    if self.action in ['retrieve']:
+      return ProductSerializer
+    return ProductSerializer
 
   def get_permissions(self):
     if self.request.method in ['GET', 'HEAD']:
-      return [AllowAny()]  # Anyone can view
+      return [IsAuthenticated()]  # Anyone can view
     return [IsAuthenticated(), IsSeller()]
 
+  def create(self, request, *args, **kwargs):
+    serializer = self.get_serializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    product = ProductService.create_product(
+      validated_data=serializer.validated_data,
+    )
 
-class ProductVariantViewSet(viewsets.ModelViewSet):
-  queryset = ProductVariant.objects.all()
-  serializer_class = ProductVariantSerializer
-  authentication_classes = [JWTAuthentication]
-  permission_classes = [IsSeller]
+    return Response({
+      "message": "Product Created",
+      "product_id": product.id
+    }, status=status.HTTP_201_CREATED)
 
+  # adding variants
+  @action(detail=True, methods=["post"])
+  def add_variants(self, request, id=None):
+    product = self.get_object()
+    variants = request.data.get("variants", [])
+    created = (ProductService.bulk_create_variants(
+      product=product,
+      variants_data=variants
+    ))
+    return Response({
+      "message": "Variants Added",
+      "count": len(variants),
+      "created": ProductVariantSerializer(
+        created,
+        many=True,
+      ).data
+    })
 
-class ProductImageViewSet(viewsets.ModelViewSet):
-  queryset = ProductImage.objects.all()
-  serializer_class = ProductImageSerializer
-  authentication_classes = [JWTAuthentication]
-  permission_classes = [IsSeller]
+  @action(detail=True, methods=["post"])
+  def upload_images(self, request, id=None):
+    product = self.get_object()
+    files = request.FILES.getlist('files')
+    uploaded = ProductService.upload_images(
+      product=product,
+      images_data=files
+    )
+
+    return Response(
+      {
+        "message": "Images uploaded",
+        "count": len(uploaded),
+      }
+    )
+
+  @action(detail=True, methods=["get"])
+  def status(self, request, id=None):
+    product = self.get_object()
+    return Response({
+      "product_id": product.id,
+      "status": product.status,
+    })
+
+  def destroy(self, request, *args, **kwargs):
+    product = self.get_object()
+
+    product.is_deleted = True
+    product.deleted_at = timezone.now()
+    product.is_active = False
+    product.save()
+
+    return Response({
+      "message": "Product deleted (soft delete)",
+      "product_id": product.id
+    })
+
+  @action(detail=True, methods=["post"])
+  def restore(self, request, id=None):
+    product = self.get_object()
+
+    product.is_deleted = False
+    product.deleted_at = None
+    product.is_active = True
+    product.save()
+
+    return Response({
+      "message": "Product restored",
+      "product_id": product.id
+    })
+
+  @action(detail=True, methods=["delete"], permission_classes=[IsAdmin])
+  def hard_delete(self, request, id=None):
+    product = self.get_object()
+    product.delete()
+
+    return Response({
+      "message": "Product permanently deleted"
+    })

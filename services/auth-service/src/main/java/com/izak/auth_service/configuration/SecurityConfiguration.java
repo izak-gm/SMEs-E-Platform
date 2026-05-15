@@ -16,25 +16,27 @@ import org.springframework.web.cors.CorsConfigurationSource;
 @RequiredArgsConstructor
 public class SecurityConfiguration {
   private static final String[] WHITE_LIST_URL = {
-        "/v1/api/auth/**",
-        "/swagger-ui/**",
-        "/v3/api-docs/**"
+      "/v1/api/auth/register",
+      "/v1/api/auth/register/**",
+      "/v1/api/auth/login",
+      "/swagger-ui/**",
+      "/v3/api-docs/**"
   };
 
   private static final String[] WHITE_LIST_USER_URL = {
-        "/v1/api/auth/me/**"
+      "/v1/api/auth/me/**"
   };
 
   private static final String[] WHITE_LIST_SELLER_URL = {
-        "/v1/api/auth/me/**",
-        "/v1/api/auth/buyers/**"
+      "/v1/api/auth/me/**",
+      "/v1/api/auth/buyers/**"
   };
 
   private static final String[] WHITE_LIST_ADMIN_URL = {
-        "/v1/api/auth/me/**",
-        "/v1/api/auth/users/**",
-        "/v1/api/auth/buyers/**",
-        "/v1/api/auth/sellers/**"
+      "/v1/api/auth/me/**",
+      "/v1/api/auth/users/**",
+      "/v1/api/auth/buyers/**",
+      "/v1/api/auth/sellers/**"
   };
 
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -44,20 +46,20 @@ public class SecurityConfiguration {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
     return httpSecurity
-          .cors(cors -> cors.configurationSource(corsConfigurationSource)) //  use external config
-          .csrf(AbstractHttpConfigurer::disable)
-          .authorizeHttpRequests(auth -> auth
-                .requestMatchers(WHITE_LIST_URL).permitAll()
-                .requestMatchers(WHITE_LIST_SELLER_URL).hasRole("SELLER")
-                .requestMatchers(WHITE_LIST_USER_URL).hasRole("USER")
-                .requestMatchers(WHITE_LIST_ADMIN_URL).hasAnyRole("ADMIN", "SERVICE")
-                .anyRequest().fullyAuthenticated()
-          )
-          .sessionManagement(session -> session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-          )
-          .addFilterBefore(internalServiceAuthFilter, UsernamePasswordAuthenticationFilter.class)
-          .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-          .build();
+        .cors(cors -> cors.configurationSource(corsConfigurationSource)) //  use external config
+        .csrf(AbstractHttpConfigurer::disable)
+        .authorizeHttpRequests(auth -> auth
+            .requestMatchers(WHITE_LIST_URL).permitAll()
+            .requestMatchers(WHITE_LIST_SELLER_URL).hasRole("SELLER")
+            .requestMatchers(WHITE_LIST_USER_URL).hasRole("USER")
+            .requestMatchers(WHITE_LIST_ADMIN_URL).hasAnyRole("ADMIN", "SERVICE")
+            .anyRequest().fullyAuthenticated()
+        )
+        .sessionManagement(session -> session
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        )
+        .addFilterBefore(internalServiceAuthFilter, UsernamePasswordAuthenticationFilter.class)
+        .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+        .build();
   }
 }

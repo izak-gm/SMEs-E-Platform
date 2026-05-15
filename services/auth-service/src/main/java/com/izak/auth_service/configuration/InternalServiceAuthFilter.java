@@ -21,40 +21,46 @@ import java.util.Map;
 @Slf4j
 public class InternalServiceAuthFilter extends OncePerRequestFilter {
 
-
   private static final Map<String, String> VALID_TOKENS = Map.of(
-        "django-order-service", "DJANGO_ORDER_SERVICE_TOKEN",
-        "notification-service", "NOTIFICATION_SERVICE_TOKEN",
-        "auth-service", "AUTH_SERVICE_TOKEN"
+      "django-order-service", "DJANGO_ORDER_SERVICE_TOKEN",
+      "notification-service", "NOTIFICATION_SERVICE_TOKEN",
+      "auth-service", "AUTH_SERVICE_TOKEN"
   );
 
   @Override
-  protected void doFilterInternal(HttpServletRequest request,
-                                  HttpServletResponse response,
-                                  FilterChain filterChain)
-        throws ServletException, IOException {
+  protected void doFilterInternal(
+      HttpServletRequest request,
+      HttpServletResponse response,
+      FilterChain filterChain
+  ) throws ServletException, IOException {
 
     String authHeader = request.getHeader("Authorization");
     log.info("Auth header: {}", authHeader);
     if (authHeader != null && authHeader.startsWith("Bearer ")) {
+
       String token = authHeader.substring(7);
 
       if (VALID_TOKENS.containsKey(token)) {
-        // Mark request as authenticated
+
         String serviceName = VALID_TOKENS.get(token);
+
         List<GrantedAuthority> authorities =
-              List.of(new SimpleGrantedAuthority("ROLE_SERVICE"));
-        Authentication authentication = new UsernamePasswordAuthenticationToken(
-              serviceName,
-              null,
-              authorities
-        );
+            List.of(new SimpleGrantedAuthority("ROLE_SERVICE"));
+
+        Authentication authentication =
+            new UsernamePasswordAuthenticationToken(
+                serviceName,
+                null,
+                authorities
+            );
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
+        request.setAttribute("isService", true);
         log.info("Internal Service authenticated: {}", serviceName);
-        filterChain.doFilter(request, response);
       }
-      
     }
+
+    // ALWAYS continue the chain
+    filterChain.doFilter(request, response);
   }
 }
