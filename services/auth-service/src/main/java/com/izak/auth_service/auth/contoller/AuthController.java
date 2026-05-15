@@ -26,12 +26,12 @@ public class AuthController {
     return ResponseEntity.ok(authService.register(registerRequest));
   }
 
-  @PostMapping("admin/register")
+  @PostMapping("register/admin")
   public ResponseEntity<AuthResponse> registerSeller(@RequestBody @Valid RegisterRequest registerRequest) {
     return ResponseEntity.ok(authService.registerSeller(registerRequest));
   }
 
-  @PostMapping("seller/register")
+  @PostMapping("register/seller")
   public ResponseEntity<AuthResponse> registerAdmin(@RequestBody @Valid RegisterRequest registerRequest) {
     return ResponseEntity.ok(authService.registerAdmin(registerRequest));
   }

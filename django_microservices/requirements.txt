@@ -24,4 +24,7 @@ opentelemetry-propagator-b3
 
 # testsdss
 pytest-django
-pytest
+#pytest
+#celery
+#redis
+#django-celery-results
