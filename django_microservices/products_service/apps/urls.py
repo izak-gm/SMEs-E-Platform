@@ -1,7 +1,7 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from .minio.views_minio import upload_file_to_minio
+from .minio.minio_client import upload_file_to_minio
 from .views import ProductViewSet, StoreViewSet, StoreKYCViewSet, BrandViewSet, CategoryViewSet
 
 # from .views import

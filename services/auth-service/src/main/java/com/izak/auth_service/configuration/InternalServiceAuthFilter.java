@@ -4,10 +4,10 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -19,48 +19,59 @@ import java.util.Map;
 
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class InternalServiceAuthFilter extends OncePerRequestFilter {
 
-  private static final Map<String, String> VALID_TOKENS = Map.of(
-      "django-order-service", "DJANGO_ORDER_SERVICE_TOKEN",
-      "notification-service", "NOTIFICATION_SERVICE_TOKEN",
-      "auth-service", "AUTH_SERVICE_TOKEN"
-  );
+  private final InternalServiceTokens tokens;
 
   @Override
   protected void doFilterInternal(
-      HttpServletRequest request,
-      HttpServletResponse response,
-      FilterChain filterChain
+        HttpServletRequest request,
+        HttpServletResponse response,
+        FilterChain filterChain
   ) throws ServletException, IOException {
 
-    String authHeader = request.getHeader("Authorization");
-    log.info("Auth header: {}", authHeader);
-    if (authHeader != null && authHeader.startsWith("Bearer ")) {
+    String token = request.getHeader("X-API-KEY");
 
-      String token = authHeader.substring(7);
+    Map<String, String> serviceTokens = Map.of(
+          "django-order-service", tokens.getDjangoToken(),
+          "notification-service", tokens.getNotificationToken(),
+          "auth-service", tokens.getAuthToken()
+    );
 
-      if (VALID_TOKENS.containsKey(token)) {
+    String serviceName = serviceTokens.entrySet()
+          .stream()
+          .filter(entry -> entry.getValue().equals(token))
+          .map(Map.Entry::getKey)
+          .findFirst()
+          .orElse(null);
 
-        String serviceName = VALID_TOKENS.get(token);
-
-        List<GrantedAuthority> authorities =
-            List.of(new SimpleGrantedAuthority("ROLE_SERVICE"));
-
-        Authentication authentication =
-            new UsernamePasswordAuthenticationToken(
-                serviceName,
-                null,
-                authorities
-            );
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        request.setAttribute("isService", true);
-        log.info("Internal Service authenticated: {}", serviceName);
-      }
+    if (token != null && serviceName == null) {
+      response.sendError(
+            HttpServletResponse.SC_UNAUTHORIZED,
+            "Invalid internal API key"
+      );
+      return;
     }
 
-    // ALWAYS continue the chain
+    if (serviceName != null) {
+
+      Authentication authentication =
+            new UsernamePasswordAuthenticationToken(
+                  serviceName,
+                  null,
+                  List.of(new SimpleGrantedAuthority("ROLE_SERVICE"))
+            );
+
+      SecurityContextHolder.getContext()
+            .setAuthentication(authentication);
+
+      request.setAttribute("isService", true);
+      request.setAttribute("serviceName", serviceName);
+
+      log.info("Authenticated internal service: {}", serviceName);
+    }
+
     filterChain.doFilter(request, response);
   }
 }

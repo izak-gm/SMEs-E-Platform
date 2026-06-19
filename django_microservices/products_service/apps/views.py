@@ -1,9 +1,11 @@
+import json
+
 from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
-from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -30,8 +32,6 @@ class StoreViewSet(viewsets.ModelViewSet):
     if self.action in ['list', 'retrieve']:
       return [IsAuthenticated()]
     # Only sellers can create/update/destroy
-    if self.action in ["create"]:
-      return [IsAuthenticated(), IsSeller()]
     if self.action in ["create", "update", "partial_update"]:
       return [IsAuthenticated(), IsSeller()]
     # Only admins can approve/delete
@@ -81,7 +81,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
   authentication_classes = [JWTAuthentication]
   permission_classes = [IsAuthenticated, IsSeller]  # only sellers can post, put, delete
-  parser_classes = [MultiPartParser, FormParser, ]
+  parser_classes = [MultiPartParser, FormParser, JSONParser]
   lookup_field = 'id'
 
   def get_queryset(self):
@@ -101,8 +101,12 @@ class ProductViewSet(viewsets.ModelViewSet):
     return ProductSerializer
 
   def get_permissions(self):
-    if self.request.method in ['GET', 'HEAD']:
-      return [IsAuthenticated()]  # Anyone can view
+    if self.action in ["list", "retrieve"]:
+      return [IsAuthenticated()]
+
+    if self.action in ["destroy", "hard_delete"]:
+      return [IsAuthenticated(), IsAdmin()]
+
     return [IsAuthenticated(), IsSeller()]
 
   def create(self, request, *args, **kwargs):
@@ -118,24 +122,35 @@ class ProductViewSet(viewsets.ModelViewSet):
     }, status=status.HTTP_201_CREATED)
 
   # adding variants
-  @action(detail=True, methods=["post"])
+  @action(detail=True, methods=["post"], parser_classes=[JSONParser])
   def add_variants(self, request, id=None):
     product = self.get_object()
-    variants = request.data.get("variants", [])
+    variants = request.data.get("variants")
+
+    # handle FormData string case
+    if isinstance(variants, str):
+      try:
+        variants = json.loads(variants)
+      except json.JSONDecodeError:
+        return Response({"error": "Invalid JSON"}, status=400)
+
+    if not isinstance(variants, list):
+      return Response({"error": "variants must be a list"}, status=400)
+
     created = (ProductService.bulk_create_variants(
       product=product,
       variants_data=variants
     ))
     return Response({
       "message": "Variants Added",
-      "count": len(variants),
+      "count": len(created),
       "created": ProductVariantSerializer(
         created,
         many=True,
       ).data
     })
 
-  @action(detail=True, methods=["post"])
+  @action(detail=True, methods=["post"], parser_classes=[MultiPartParser, FormParser], )
   def upload_images(self, request, id=None):
     product = self.get_object()
     files = request.FILES.getlist('files')

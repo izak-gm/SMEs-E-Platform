@@ -216,3 +216,9 @@ SPECTACULAR_SETTINGS = {
   'DESCRIPTION': 'API documentation',
   'VERSION': '1.0.0',
 }
+
+INTERNAL_SERVICE_TOKENS = {
+  os.getenv("NOTIFICATION_SERVICE_TOKEN"): "notification-service",
+  os.getenv("DJANGO_ORDER_SERVICE_TOKEN"): "django-order-service",
+  os.getenv("AUTH_SERVICE_TOKEN"): "auth-service",
+}
