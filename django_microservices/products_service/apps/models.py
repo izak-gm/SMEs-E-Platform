@@ -73,7 +73,9 @@ class Product(models.Model):
   status = models.CharField(max_length=20, choices=Status.choices, default=Status.DRAFT, )
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
-
+  is_deleted = models.BooleanField(default=False)
+  deleted_at = models.DateTimeField(null=True, blank=True)
+  
   class Meta:
     indexes = [
       models.Index(fields=["status"]),
@@ -99,7 +101,7 @@ class ProductVariant(models.Model):
   created_at = models.DateTimeField(auto_now_add=True)
   is_deleted = models.BooleanField(default=False)
   deleted_at = models.DateTimeField(null=True, blank=True)
-  
+
   class Meta:
     unique_together = (
       "product",

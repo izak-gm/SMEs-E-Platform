@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 @Slf4j
 public class FeignConfig {
+
   private final ServiceTokenProvider tokenProvider;
 
   @Bean
@@ -23,11 +24,15 @@ public class FeignConfig {
     return requestTemplate -> {
       // Feign client name
       String serviceName = requestTemplate.feignTarget().name();
-      log.debug("service Name: {}", serviceName);
+      log.debug("Feign target service: {}", serviceName);
+
       String token = tokenProvider.getToken(serviceName);
 
       if (token != null) {
-        requestTemplate.header("Authorization", "Bearer " + token);
+        requestTemplate.header("X-API-KEY", token);
+        log.debug("API key attached for service: {}", serviceName);
+      } else {
+        log.warn("No API key found for service: {}", serviceName);
       }
     };
   }

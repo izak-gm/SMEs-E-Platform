@@ -4,30 +4,34 @@ from rest_framework import authentication
 
 
 class InternalServiceAuthentication(authentication.BaseAuthentication):
-    def authenticate(self, request):
-        auth_header = request.headers.get("Authorization")
-        print("AUTH HEADER:", auth_header)  # 👈 ADD THIS
+  def authenticate(self, request):
+    api_key = request.headers.get("X-API-KEY")
+    print("API KEY RECEIVED:", api_key)
 
-        if not auth_header:
-            return None
-        parts = auth_header.split(" ")
-        if len(parts) != 2 or parts[0] != "Bearer":
-            return None
-        token = parts[1]
-        print("TOKEN RECEIVED:", token)  # 👈 ADD THIS
+    if not api_key:
+      return None
 
-        INTERNAL_TOKENS = {
-            "NOTIFICATION_SERVICE_TOKEN": "notification-service",
-            "DJANGO_ORDER_SERVICE_TOKEN": "order-service",
-            "AUTH_SERVICE_TOKEN": "auth-service",
+    from django.conf import settings
 
-        }
+    INTERNAL_SERVICE_TOKENS = {
+      "notification-service": settings.NOTIFICATION_SERVICE_API_KEY,
+      "django-order-service": settings.DJANGO_ORDER_SERVICE_API_KEY,
+      "auth-service": settings.AUTH_SERVICE_API_KEY,
+    }
 
-        if token in INTERNAL_TOKENS:
-            user = SimpleNamespace(
-                id="internal-service",
-                is_authenticated=True,
-                is_service=True,
-            )
-            return user, token
-        return None
+    service_name = None
+
+    for name, token in INTERNAL_SERVICE_TOKENS.items():
+      if token == api_key:
+        service_name = name
+        break
+
+    if service_name:
+      user = SimpleNamespace(
+        id="internal-service",
+        is_authenticated=True,
+        is_service=True,
+        service_name=service_name,
+      )
+      return user, api_key
+    return None

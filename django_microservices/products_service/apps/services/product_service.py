@@ -3,6 +3,7 @@ from rest_framework.exceptions import ValidationError
 
 from django_microservices.products_service.apps.models import Product, ProductVariant, ProductImage
 from django_microservices.products_service.apps.signals.product_events import send_product_published_event
+from django_microservices.products_service.apps.utils.minio_client import upload_to_minio
 from django_microservices.products_service.apps.utils.sku_generator import generate_sku
 
 
@@ -23,28 +24,30 @@ class ProductService:
       validated_data["status"] = Product.Status.DRAFT
     product = Product.objects.create(**validated_data)
 
-    return product
+    return product, variants_data, images_data
 
   @staticmethod
   @transaction.atomic
   def bulk_create_variants(product, variants_data):
+
     variants = []
+
     for v in variants_data:
-      sku = v.get("sku")
-      if not sku:
-        sku = generate_sku("VAR")
+      if not isinstance(v, dict):
+        raise ValueError("Each variant must be an object")
 
-      variant = ProductVariant(
-        product=product,
-        sku=sku,
-        attributes=v.get("attributes", {}),
-        price=v["price"],
-        stock_quantity=v.get("stock_quantity", 0),
-        reserved_stock=v.get("reserved_stock", 0),
-        active=v.get("active", True),
+      sku = v.get("sku") or generate_sku("VAR")
+      variants.append(
+        ProductVariant(
+          product=product,
+          sku=sku,
+          attributes=v.get("attributes", {}),
+          price=v["price"],
+          stock_quantity=v.get("stock_quantity", 0),
+          reserved_stock=v.get("reserved_stock", 0),
+          active=v.get("active", True),
+        )
       )
-
-      variants.append(variant)
 
     return ProductVariant.objects.bulk_create(variants)
 
@@ -54,14 +57,12 @@ class ProductService:
     if not images_data:
       return []
     images = []
-    for i in images_data:
-      if not i.get("url"):
-        raise ValidationError("Image URL required")
-
+    for file in images_data:
+      url = upload_to_minio(file)
       image = ProductImage(
         product=product,
-        url=i["url"],  # already uploaded to MinIO
-        alt_text=i.get("alt_text", ""),
+        url=url,  # already uploaded to MinIO
+        alt_text=""
       )
       images.append(image)
 
@@ -70,23 +71,23 @@ class ProductService:
   @staticmethod
   @transaction.atomic
   def publish_product(product):
-    # check variants
     if not product.variants.exists():
       raise ValidationError("Product has no variants. Need at least one variant")
-    # images
+
     if not product.images.exists():
       raise ValidationError("Product has no images. Need at least one image")
 
-    # stock
     total_stock = sum(
-      variant.stock_quantity
-      for variant in product.variants.all())
-    if not total_stock <= 0:
-      raise ValidationError("Product stock cannot be less than zero")
+      v.stock_quantity for v in product.variants.all()
+    )
+
+    # ✅ FIXED LOGIC
+    if total_stock <= 0:
+      raise ValidationError("Product stock must be greater than zero")
 
     product.status = Product.Status.PUBLISHED
-    product.save(
-      update_fields=["status"]
-    )
+    product.save(update_fields=["status"])
+
     send_product_published_event(product)
+
     return product
